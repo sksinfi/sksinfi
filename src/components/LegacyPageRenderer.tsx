@@ -28,7 +28,46 @@ export default function LegacyPageRenderer({ slug, initialData }: LegacyPageRend
   const jsonLd = initialData?.jsonLd || [];
 
   useEffect(() => {
-    // 1. Initialize Home Loan EMI Calculator if present on the page
+    // 0. Robust FAQ Accordion Interactive Toggler
+
+
+    const accordionButtons = document.querySelectorAll(".accordion-button");
+    accordionButtons.forEach((btn) => {
+      if ((btn as any)._faqBound) return;
+      (btn as any)._faqBound = true;
+
+      btn.addEventListener("click", (e) => {
+        const targetSelector = btn.getAttribute("data-bs-target");
+        if (!targetSelector) return;
+        const targetEl = document.querySelector(targetSelector) as HTMLElement | null;
+        if (!targetEl) return;
+
+        e.preventDefault();
+        const isShown = targetEl.classList.contains("show");
+        const parentSelector = targetEl.getAttribute("data-bs-parent");
+        const parentContainer = parentSelector ? document.querySelector(parentSelector) : targetEl.closest(".accordion");
+
+        if (parentContainer) {
+          parentContainer.querySelectorAll(".accordion-collapse").forEach((c) => {
+            c.classList.remove("show");
+          });
+          parentContainer.querySelectorAll(".accordion-button").forEach((b) => {
+            b.classList.add("collapsed");
+            b.setAttribute("aria-expanded", "false");
+          });
+        }
+
+        if (!isShown) {
+          targetEl.classList.add("show");
+          btn.classList.remove("collapsed");
+          btn.setAttribute("aria-expanded", "true");
+        }
+      });
+    });
+
+
+
+
     const loanAmount = document.getElementById("loanAmount") as HTMLInputElement | null;
     const loanAmountInput = document.getElementById("loanAmountInput") as HTMLInputElement | null;
     const interestRate = document.getElementById("interestRate") as HTMLInputElement | null;

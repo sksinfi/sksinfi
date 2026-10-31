@@ -15620,3 +15620,115 @@ input.lvca-button, button.lvca-button, a.lvca-button, .lvca-button:active, .lvca
   opacity: 1 !important;
   visibility: visible !important;
 }
+
+/* ==========================================================================
+   FAQ ACCORDION DESIGN SYSTEM & TAILWIND CONFLICT RESOLUTION
+   ========================================================================== */
+
+.accordion-collapse,
+.accordion-collapse.collapse,
+.accordion-collapse.collapse.show,
+.accordion-collapse.collapsing,
+.accordion-body,
+.collapse.show {
+  visibility: visible !important;
+}
+
+.accordion-collapse.collapse:not(.show) {
+  display: none !important;
+}
+
+.accordion-collapse.collapse.show {
+  display: block !important;
+  height: auto !important;
+  opacity: 1 !important;
+}
+
+.faq-section {
+  padding-top: 3.5rem !important;
+  padding-bottom: 4.5rem !important;
+  background: #fbfcfd !important;
+}
+
+.faq-section h2 {
+  font-family: 'Poppins', sans-serif !important;
+  color: #094b57 !important;
+  font-weight: 700 !important;
+  font-size: 32px !important;
+  margin-bottom: 2rem !important;
+  text-align: center !important;
+}
+
+.faq-section .accordion {
+  max-width: 980px !important;
+  margin: 0 auto !important;
+}
+
+.accordion-item {
+  border: 1px solid rgba(9, 75, 87, 0.12) !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  margin-bottom: 14px !important;
+  background: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.accordion-item:hover {
+  border-color: rgba(182, 148, 85, 0.45) !important;
+  box-shadow: 0 6px 18px rgba(9, 75, 87, 0.07) !important;
+}
+
+.accordion-header {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.accordion-button {
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 16px !important;
+  color: #094b57 !important;
+  padding: 18px 24px !important;
+  background: #ffffff !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  transition: all 0.25s ease !important;
+}
+
+.accordion-button:not(.collapsed) {
+  color: #094b57 !important;
+  background: #fdfaf3 !important;
+  border-bottom: 2px solid #b69455 !important;
+  box-shadow: inset 0 -1px 0 rgba(182, 148, 85, 0.2) !important;
+}
+
+.accordion-button:focus {
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.accordion-body {
+  font-family: 'Poppins', sans-serif !important;
+  color: #374151 !important;
+  font-size: 15px !important;
+  line-height: 1.75 !important;
+  padding: 22px 26px !important;
+  background-color: #ffffff !important;
+  font-weight: 400 !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.accordion-body p {
+  color: #374151 !important;
+  margin-bottom: 0.75rem !important;
+  line-height: 1.75 !important;
+}
+
+.accordion-body p:last-child {
+  margin-bottom: 0 !important;
+}
+
