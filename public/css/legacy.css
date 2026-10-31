@@ -296,20 +296,9 @@ body {
             text-align: center;
         }
 
-        button {
-            width: 100%;
-            padding: 10px;
-            font-size: 16px;
-            color: white;
-            background-color: #094b57;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
+        .calculator-container button { width: 100%; padding: 10px; font-size: 16px; color: white; background-color: #094b57; border: none; border-radius: 4px; cursor: pointer; }
 
-        button:hover {
-            background-color: #218838;
-        }
+        .calculator-container button:hover { background-color: #218838; }
 
 
         @media screen and (max-width: 480px) {
@@ -11395,20 +11384,9 @@ input[type="number"] {
   text-align: center;
 }
 
-button {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  color: white;
-  background-color: #094b57;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
+.calculator-container button { width: 100%; padding: 10px; font-size: 16px; color: white; background-color: #094b57; border: none; border-radius: 4px; cursor: pointer; }
 
-button:hover {
-  background-color: #218838;
-}
+.calculator-container button:hover { background-color: #218838; }
 
 .logoss {
   height: 100px;

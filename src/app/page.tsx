@@ -1,20 +1,23 @@
 import React from "react";
 import type { Metadata } from "next";
-import LegacyPageRenderer from "@/components/LegacyPageRenderer";
-import pagesDataRaw from "@/data/pagesContent.json";
-
-const pagesData = pagesDataRaw as Record<
-  string,
-  { slug: string; file: string; title: string; metaDescription: string; html: string; jsonLd?: string[] }
->;
+import ModernNavbar from "@/components/ModernNavbar";
+import ModernHome from "@/components/ModernHome";
+import ModernFooter from "@/components/ModernFooter";
 
 export const metadata: Metadata = {
-  title: "Financial Consultant in Jaipur | Trusted SKS INFI Experts",
+  title: "Financial Consultant in Jaipur | Trusted SKS INFI Experts | Compare Best Loans",
   description:
-    "SKS INFI provides expert financial planning, investment, loan and insurance services as a trusted Financial Consultant in Jaipur. Contact us today for guidance.",
+    "Compare best loan offers with lowest interest rates in Jaipur from 45+ banks. SKS INFI provides expert Home Loans, LAP, Business Loans, Mutual Funds, and Insurance advisory.",
 };
 
 export default function HomePage() {
-  const page = pagesData["index"];
-  return <LegacyPageRenderer slug="index" initialData={page} />;
+  return (
+    <div className="min-h-screen flex flex-col bg-white">
+      <ModernNavbar />
+      <main className="flex-1 w-full">
+        <ModernHome />
+      </main>
+      <ModernFooter />
+    </div>
+  );
 }
