@@ -1,0 +1,71 @@
+import React from "react";
+import { notFound } from "next/navigation";
+import type { Metadata } from "next";
+import Link from "next/link";
+import { BLOGS_DATA, getBlogPostBySlug, BlogPost } from "@/data/blogsData";
+import SingleBlogClient from "./SingleBlogClient";
+
+interface PageProps {
+  params: Promise<{ slug: string }>;
+}
+
+export async function generateStaticParams() {
+  return BLOGS_DATA.map((post) => ({
+    slug: post.slug,
+  }));
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getBlogPostBySlug(slug);
+
+  if (!post) {
+    return {
+      title: "Blog Not Found | SKS INFI",
+      description: "The requested financial advisory article could not be found.",
+    };
+  }
+
+  return {
+    title: `${post.title} | SKS INFI`,
+    description: post.excerpt,
+    keywords: post.tags,
+    authors: [{ name: post.author.name }],
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      type: "article",
+      publishedTime: post.publishedDate,
+      authors: [post.author.name],
+      tags: post.tags,
+      images: [
+        {
+          url: post.coverImage,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+      images: [post.coverImage],
+    },
+  };
+}
+
+export default async function SingleBlogPage({ params }: PageProps) {
+  const { slug } = await params;
+  const post = getBlogPostBySlug(slug);
+
+  if (!post) {
+    notFound();
+  }
+
+  // Find related articles (same category or recent)
+  const relatedPosts = BLOGS_DATA.filter((p) => p.slug !== post.slug).slice(0, 3);
+
+  return <SingleBlogClient post={post} relatedPosts={relatedPosts} />;
+}

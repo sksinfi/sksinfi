@@ -1,0 +1,5 @@
+# Vercel deployment ignore file
+legacy_php/
+scripts/
+run.bat
+run_localhost.bat
