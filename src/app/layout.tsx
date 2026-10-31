@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import Preloader from "@/components/Preloader";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -36,9 +35,7 @@ export const metadata: Metadata = {
     type: "website"
   },
   icons: {
-    icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" }
-    ]
+    icon: "/favicon.ico"
   }
 };
 
@@ -48,9 +45,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth" data-scroll-behavior="smooth" suppressHydrationWarning>
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
@@ -75,7 +71,6 @@ export default function RootLayout({
         <link rel="stylesheet" href="/css/legacy.css" />
       </head>
       <body className="antialiased min-h-screen text-[#333333] bg-white font-['Poppins',sans-serif]" suppressHydrationWarning>
-        <Preloader />
         {children}
         <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" strategy="afterInteractive" />
         <Script src="https://cdn.jsdelivr.net/npm/chart.js" strategy="afterInteractive" />
