@@ -88,6 +88,7 @@ export default function ModernFooter({ onOpenEnquiry }: ModernFooterProps) {
                   alt="SKS INFI Logo"
                   width={190}
                   height={65}
+                  style={{ width: "auto", height: "auto" }}
                   className="h-10 w-auto object-contain"
                 />
               </div>

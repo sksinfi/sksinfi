@@ -139,6 +139,7 @@ export default function ModernNavbar({ onOpenEnquiry }: ModernNavbarProps) {
               width={180}
               height={55}
               priority
+              style={{ width: "auto", height: "auto" }}
               className="h-10 sm:h-12 w-auto object-contain transition-transform group-hover:scale-[1.02]"
             />
           </Link>

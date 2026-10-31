@@ -39,6 +39,7 @@ export default function Preloader() {
             width={240}
             height={85}
             priority
+            style={{ width: "auto", height: "auto" }}
             className="w-48 sm:w-60 h-auto object-contain drop-shadow-sm"
           />
         </div>

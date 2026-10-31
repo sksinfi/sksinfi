@@ -36,7 +36,9 @@ export const metadata: Metadata = {
     type: "website"
   },
   icons: {
-    icon: "/favicon.ico"
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" }
+    ]
   }
 };
 
@@ -46,8 +48,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+    <html lang="en" className="scroll-smooth" data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
