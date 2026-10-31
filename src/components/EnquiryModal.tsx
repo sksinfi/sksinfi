@@ -79,13 +79,13 @@ export default function EnquiryModal({
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200">
       <div className="relative w-full max-w-xl bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-100 animate-in zoom-in-95 duration-200">
         {/* Header Bar */}
-        <div className="bg-gradient-to-r from-[#072238] to-[#14619d] p-6 text-white flex justify-between items-center">
+        <div className="bg-gradient-to-r from-[#052b32] via-[#094b57] to-[#0d5e6d] p-6 text-white flex justify-between items-center">
           <div>
-            <div className="inline-flex items-center gap-1 text-[11px] font-bold text-sky-200 uppercase tracking-wider">
-              <Sparkles size={12} />
+            <div className="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#f9f0df] uppercase tracking-wider bg-white/10 px-2.5 py-0.5 rounded-full border border-white/15">
+              <Sparkles size={12} className="text-[#b69455]" />
               <span>SKS INFI Fast-Track Desk</span>
             </div>
-            <h3 className="text-xl font-black text-white mt-0.5">
+            <h3 className="text-xl font-black text-white mt-1">
               Get Free Instant Eligibility & Quote
             </h3>
           </div>
@@ -104,7 +104,7 @@ export default function EnquiryModal({
               <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 mx-auto flex items-center justify-center animate-bounce">
                 <CheckCircle2 size={36} />
               </div>
-              <h4 className="text-2xl font-black text-[#072238]">
+              <h4 className="text-2xl font-black text-[#094b57]">
                 Application Received Successfully!
               </h4>
               <p className="text-sm text-slate-600 max-w-md mx-auto">
@@ -116,7 +116,7 @@ export default function EnquiryModal({
                     setSuccess(false);
                     onClose();
                   }}
-                  className="bg-[#0b3456] text-white px-6 py-2.5 rounded-xl font-bold text-sm shadow hover:bg-[#072238] transition"
+                  className="btn-gold px-6 py-2.5 rounded-full font-bold text-sm shadow hover:shadow-lg transition"
                 >
                   Done
                 </button>
@@ -262,7 +262,7 @@ export default function EnquiryModal({
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full bg-gradient-to-r from-[#0b3456] to-[#14619d] hover:from-[#072238] hover:to-[#0f4977] text-white py-3.5 rounded-xl font-bold text-sm shadow-lg flex items-center justify-center gap-2 transition disabled:opacity-50"
+                  className="w-full bg-gradient-to-r from-[#094b57] via-[#0d6170] to-[#094b57] hover:from-[#06333b] hover:to-[#094b57] text-white py-3.5 rounded-xl font-bold text-sm shadow-md hover:shadow-lg flex items-center justify-center gap-2 transition disabled:opacity-50"
                 >
                   {loading ? (
                     <>

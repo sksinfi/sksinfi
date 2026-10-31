@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import Preloader from "@/components/Preloader";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -49,6 +50,7 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preload" href="/img/sksl.jpg" as="image" />
         <link
           href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"
@@ -71,6 +73,7 @@ export default function RootLayout({
         <link rel="stylesheet" href="/css/legacy.css" />
       </head>
       <body className="antialiased min-h-screen text-[#333333] bg-white font-['Poppins',sans-serif]" suppressHydrationWarning>
+        <Preloader />
         {children}
         <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" strategy="afterInteractive" />
         <Script src="https://cdn.jsdelivr.net/npm/chart.js" strategy="afterInteractive" />
