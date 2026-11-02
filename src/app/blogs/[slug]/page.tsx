@@ -70,5 +70,40 @@ export default async function SingleBlogPage({ params }: PageProps) {
   // Find related articles (same category or recent)
   const relatedPosts = BLOGS_DATA.filter((p) => p.slug !== post.slug).slice(0, 3);
 
-  return <SingleBlogClient post={post} relatedPosts={relatedPosts} />;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.excerpt,
+    image: `https://www.sksinfi.com${post.coverImage}`,
+    datePublished: post.publishedDate,
+    author: {
+      "@type": "Person",
+      name: post.author.name,
+      jobTitle: post.author.role,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "SKS INFI",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.sksinfi.com/images/skslogo.png",
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://www.sksinfi.com/blogs/${slug}`,
+    },
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <SingleBlogClient post={post} relatedPosts={relatedPosts} />
+    </>
+  );
 }
+

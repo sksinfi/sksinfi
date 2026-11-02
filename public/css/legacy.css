@@ -11604,7 +11604,7 @@ form button:hover {
 }
 
 h1 {
-  text-transform: uppercase !important;
+  text-transform: uppercase;
 }
 
 .divider_line {
