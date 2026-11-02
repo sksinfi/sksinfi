@@ -1,0 +1,145 @@
+# ==================================================
+# SKS INFI - Robots.txt
+# SEO + AEO + GEO Optimized
+# https://www.sksinfi.com
+# ==================================================
+
+User-agent: *
+Allow: /
+
+# Important resources
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /img/
+Allow: /ajax/
+
+# Protected/System folders
+Disallow: /admin/
+Disallow: /backup/
+Disallow: /cache/
+Disallow: /tmp/
+Disallow: /logs/
+Disallow: /includes/
+Disallow: /cgi-bin/
+
+# ==================================================
+# Google Crawlers
+# ==================================================
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-News
+Allow: /
+
+User-agent: Googlebot-Video
+Allow: /
+
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# ==================================================
+# Microsoft Bing
+# ==================================================
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: MSNBot
+Allow: /
+
+# ==================================================
+# Yahoo
+# ==================================================
+
+User-agent: Slurp
+Allow: /
+
+# ==================================================
+# DuckDuckGo
+# ==================================================
+
+User-agent: DuckDuckBot
+Allow: /
+
+# ==================================================
+# Yandex
+# ==================================================
+
+User-agent: Yandex
+Allow: /
+
+# ==================================================
+# Baidu
+# ==================================================
+
+User-agent: Baiduspider
+Allow: /
+
+# ==================================================
+# OpenAI
+# ==================================================
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# ==================================================
+# Anthropic
+# ==================================================
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+# ==================================================
+# Perplexity
+# ==================================================
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# ==================================================
+# Common AI Crawlers
+# ==================================================
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# ==================================================
+# Sitemap
+# ==================================================
+
+Sitemap: https://www.sksinfi.com/sitemap.xml
+
+# ==================================================
+# Host
+# ==================================================
+
+Host: https://www.sksinfi.com

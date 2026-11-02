@@ -47,6 +47,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         },
       ],
     },
+    alternates: {
+      canonical: `https://www.sksinfi.com/blogs/${slug}`
+    },
     twitter: {
       card: "summary_large_image",
       title: post.title,
