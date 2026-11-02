@@ -69,6 +69,163 @@ h1.blog-hero-title {
   opacity: 0.95 !important;
 }
 
+/* ==========================================================================
+   BLOG ARTICLE PROSE OVERRIDES
+   Reset global heading rules inside the blog rich-text body so Tailwind prose
+   and custom overrides applied via Tailwind arbitrary variants can take effect.
+   ========================================================================== */
+.blog-prose-body h1,
+.blog-prose-body h2,
+.blog-prose-body h3,
+.blog-prose-body h4,
+.blog-prose-body h5,
+.blog-prose-body h6 {
+  font-family: 'Poppins', Arial, sans-serif;
+  color: #094b57 !important;
+  text-transform: none !important;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+.blog-prose-body h2 {
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  margin-top: 2.5rem !important;
+  margin-bottom: 1rem !important;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid rgba(9, 75, 87, 0.12);
+}
+
+.blog-prose-body h3 {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  margin-top: 2rem !important;
+  margin-bottom: 0.75rem !important;
+}
+
+.blog-prose-body h4 {
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  color: #0d5f6f !important;
+  margin-top: 1.5rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.blog-prose-body p {
+  font-size: 1.0125rem !important;
+  line-height: 1.8 !important;
+  color: #374151 !important;
+  margin-bottom: 1.25rem !important;
+}
+
+.blog-prose-body ul,
+.blog-prose-body ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.blog-prose-body ul li,
+.blog-prose-body ol li {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+.blog-prose-body ul {
+  list-style-type: disc;
+}
+
+.blog-prose-body ol {
+  list-style-type: decimal;
+}
+
+.blog-prose-body blockquote {
+  border-left: 4px solid #b69455;
+  background: rgba(250, 241, 224, 0.5);
+  padding: 1.25rem 1.5rem;
+  border-radius: 0 1rem 1rem 0;
+  margin: 2rem 0;
+  font-style: italic;
+  color: #374151;
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.blog-prose-body strong {
+  color: #094b57;
+  font-weight: 700;
+}
+
+.blog-prose-body a {
+  color: #094b57;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 500;
+}
+
+.blog-prose-body a:hover {
+  color: #b69455;
+}
+
+.blog-prose-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+.blog-prose-body table thead {
+  background-color: #094b57;
+  color: #ffffff;
+}
+
+.blog-prose-body table th,
+.blog-prose-body table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.blog-prose-body table td {
+  border-bottom: 1px solid #e2e8f0;
+  color: #374151;
+}
+
+.blog-prose-body table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.blog-prose-body table tbody tr:nth-child(even) {
+  background-color: #f8fafc;
+}
+
+/* Blog card hover animation */
+@keyframes card-rise {
+  from { transform: translateY(0); box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  to   { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(9,75,87,0.12); }
+}
+
+/* Featured editorial label - fix letter spacing */
+.blog-featured-label {
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+}
+
+/* Smooth scroll progress for reading indicator */
+.blog-reading-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(to right, #094b57, #b69455);
+  z-index: 9999;
+  transition: width 0.1s linear;
+}
+
 a {
   color: inherit;
   text-decoration: none;

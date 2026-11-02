@@ -143,8 +143,8 @@ function BlogsContent() {
           </section>
 
           {/* ================= CATEGORY FILTER BAR ================= */}
-          <section className="bg-white border-b border-gray-200 sticky top-0 z-30 shadow-xs">
-            <div className="container mx-auto px-4 py-3.5">
+          <section className="bg-white border-b border-gray-200 sticky top-0 z-30 shadow-sm">
+            <div className="container mx-auto px-4 py-3">
               <div className="flex items-center gap-2 overflow-x-auto pb-1 md:pb-0 scrollbar-none justify-start md:justify-center">
                 {categories.map((cat) => {
                   const count =
@@ -158,22 +158,23 @@ function BlogsContent() {
                       key={cat}
                       onClick={() => setSelectedCategory(cat)}
                       style={{
-                        backgroundColor: isActive ? "#094b57" : "#f1f5f9",
-                        color: isActive ? "#ffffff" : "#334155"
+                        backgroundColor: isActive ? "#094b57" : "transparent",
+                        color: isActive ? "#ffffff" : "#475569",
+                        border: isActive ? "1.5px solid #094b57" : "1.5px solid #d1d5db"
                       }}
-                      className={`whitespace-nowrap px-4 py-2 rounded-full text-xs md:text-sm font-semibold transition-all flex items-center gap-2 cursor-pointer ${
+                      className={`whitespace-nowrap px-4 py-1.5 rounded-full text-xs md:text-sm font-semibold transition-all flex items-center gap-2 cursor-pointer ${
                         isActive
-                          ? "shadow-md shadow-[#094b57]/25 ring-2 ring-[#094b57]/30"
-                          : "hover:bg-gray-200 hover:text-gray-900"
+                          ? "shadow-md shadow-[#094b57]/20"
+                          : "hover:border-[#094b57] hover:text-[#094b57] hover:bg-[#094b57]/5"
                       }`}
                     >
                       <span>{cat}</span>
                       <span
                         style={{
-                          backgroundColor: isActive ? "#b69455" : "#e2e8f0",
-                          color: isActive ? "#ffffff" : "#475569"
+                          backgroundColor: isActive ? "rgba(182,148,85,0.9)" : "#e5e7eb",
+                          color: isActive ? "#ffffff" : "#6b7280"
                         }}
-                        className="text-[10px] px-2 py-0.5 rounded-full font-bold"
+                        className="text-[10px] px-1.5 py-0.5 rounded-full font-bold min-w-[18px] text-center"
                       >
                         {count}
                       </span>
@@ -186,39 +187,48 @@ function BlogsContent() {
 
           {/* ================= FEATURED POST SPOTLIGHT ================= */}
           {selectedCategory === "All" && !searchQuery && featuredPost && (
-            <section className="py-10 md:py-14 bg-gradient-to-b from-gray-50/80 to-transparent">
+            <section className="py-10 md:py-14 bg-gradient-to-b from-[#f0f7f8]/70 to-transparent">
               <div className="container mx-auto px-4">
                 <div className="max-w-6xl mx-auto">
-                  <div className="flex items-center gap-2 mb-4">
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#b69455]" />
-                    <h2
-                      style={{ textTransform: "none", color: "#094b57" }}
-                      className="text-xs uppercase tracking-widest font-bold"
+                  {/* Section label — fixed letter-spacing */}
+                  <div className="flex items-center gap-2.5 mb-5">
+                    <span className="w-1 h-5 rounded-full bg-[#b69455]" />
+                    <span
+                      style={{
+                        color: "#b69455",
+                        fontSize: "11px",
+                        fontWeight: "700",
+                        letterSpacing: "0.1em",
+                        textTransform: "uppercase"
+                      }}
                     >
                       Featured Editorial
-                    </h2>
+                    </span>
                   </div>
 
-                  <div className="bg-white rounded-[24px] border border-gray-200/90 shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden grid grid-cols-1 lg:grid-cols-12">
-                    {/* Left Column: Image */}
-                    <div className="lg:col-span-5 relative h-64 lg:h-auto min-h-[300px] overflow-hidden bg-gray-100">
+                  <div className="bg-white rounded-[20px] border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-400 overflow-hidden grid grid-cols-1 lg:grid-cols-12">
+                    {/* Left Column: Image — taller min-height */}
+                    <div className="lg:col-span-5 relative h-72 lg:h-auto min-h-[400px] overflow-hidden bg-gray-100 flex-shrink-0">
                       <img
                         src={featuredPost.coverImage}
                         alt={featuredPost.title}
-                        className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                       />
+                      {/* Gradient overlay at bottom */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
                       <div className="absolute top-4 left-4">
                         <span
                           style={{
                             backgroundColor: "#094b57",
                             color: "#ffffff",
-                            fontSize: "11px",
+                            fontSize: "10px",
                             fontWeight: "700",
                             padding: "5px 14px",
                             borderRadius: "9999px",
-                            letterSpacing: "0.05em",
+                            letterSpacing: "0.08em",
+                            textTransform: "uppercase",
                             display: "inline-block",
-                            boxShadow: "0 2px 8px rgba(0,0,0,0.3)"
+                            boxShadow: "0 2px 10px rgba(0,0,0,0.35)"
                           }}
                         >
                           {featuredPost.category}
@@ -226,87 +236,94 @@ function BlogsContent() {
                       </div>
                     </div>
 
-                    {/* Right Column: Content */}
-                    <div className="lg:col-span-7 p-6 md:p-10 flex flex-col justify-between">
-                      <div>
-                        <div className="flex flex-wrap items-center gap-3 text-xs text-gray-500 mb-3">
-                          <span className="flex items-center gap-1.5 font-medium">
+                    {/* Right Column: Content — top-aligned with padding */}
+                    <div className="lg:col-span-7 p-7 md:p-10 flex flex-col justify-between gap-6">
+                      <div className="flex flex-col gap-4">
+                        {/* Meta row */}
+                        <div className="flex flex-wrap items-center gap-3 text-xs text-gray-400 font-medium">
+                          <span className="flex items-center gap-1.5">
                             <Calendar className="w-3.5 h-3.5 text-[#b69455]" />
                             {featuredPost.publishedDate}
                           </span>
-                          <span>•</span>
-                          <span className="flex items-center gap-1.5 font-medium">
+                          <span className="text-gray-300">•</span>
+                          <span className="flex items-center gap-1.5">
                             <Clock className="w-3.5 h-3.5 text-[#b69455]" />
                             {featuredPost.readTime}
                           </span>
                         </div>
 
+                        {/* Title */}
                         <h3
-                          style={{ textTransform: "none", color: "#094b57" }}
-                          className="text-xl md:text-2xl lg:text-3xl font-bold leading-snug mb-4 hover:text-[#b69455] transition"
+                          style={{ textTransform: "none", color: "#0d2b33", lineHeight: "1.3" }}
+                          className="text-xl md:text-2xl lg:text-[1.7rem] font-bold"
                         >
                           <Link
                             href={`/blogs/${featuredPost.slug}`}
-                            style={{ color: "#094b57", textDecoration: "none" }}
-                            className="hover:text-[#b69455] transition"
+                            style={{ color: "#0d2b33", textDecoration: "none" }}
+                            className="hover:text-[#094b57] transition"
                           >
                             {featuredPost.title}
                           </Link>
                         </h3>
 
-                        <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-6">
+                        {/* Excerpt */}
+                        <p className="text-gray-500 text-sm leading-relaxed line-clamp-3">
                           {featuredPost.excerpt}
                         </p>
 
-                        {/* Key Takeaway snippet */}
-                        <div className="bg-[#faf1e0]/80 border-l-4 border-[#b69455] p-4 rounded-r-xl mb-6 shadow-2xs">
-                          <p className="text-xs md:text-sm text-gray-800 font-medium leading-relaxed">
-                            <strong className="text-[#094b57] font-bold">Key Insight: </strong>
+                        {/* Key Takeaway */}
+                        <div className="bg-amber-50 border-l-[3px] border-[#b69455] px-4 py-3 rounded-r-lg">
+                          <p className="text-xs text-gray-700 leading-relaxed">
+                            <strong className="text-[#094b57] font-semibold">Key Insight: </strong>
                             {featuredPost.takeaways[0]}
                           </p>
                         </div>
                       </div>
 
+                      {/* Footer row */}
                       <div className="flex flex-wrap items-center justify-between gap-4 pt-5 border-t border-gray-100">
+                        {/* Author */}
                         <div className="flex items-center gap-3">
                           <div
                             style={{
-                              width: "40px",
-                              height: "40px",
+                              width: "38px",
+                              height: "38px",
                               borderRadius: "50%",
-                              backgroundColor: "rgba(9, 75, 87, 0.12)",
-                              color: "#094b57",
+                              background: "linear-gradient(135deg, #094b57, #0d6b7a)",
+                              color: "#ffffff",
                               display: "flex",
                               alignItems: "center",
                               justifyContent: "center",
                               fontWeight: "700",
                               fontSize: "15px",
-                              flexShrink: 0
+                              flexShrink: 0,
+                              boxShadow: "0 2px 8px rgba(9,75,87,0.3)"
                             }}
                           >
                             {featuredPost.author.name.charAt(0)}
                           </div>
                           <div>
-                            <p className="text-xs md:text-sm font-bold text-gray-900">
+                            <p className="text-sm font-bold text-gray-900 leading-tight">
                               {featuredPost.author.name}
                             </p>
-                            <p className="text-[11px] text-gray-500">
+                            <p className="text-[11px] text-gray-400 mt-0.5">
                               {featuredPost.author.role}
                             </p>
                           </div>
                         </div>
 
+                        {/* CTA — outlined style, less heavy */}
                         <Link
                           href={`/blogs/${featuredPost.slug}`}
                           style={{
-                            backgroundColor: "#094b57",
-                            color: "#ffffff",
-                            textDecoration: "none"
+                            color: "#094b57",
+                            textDecoration: "none",
+                            border: "1.5px solid #094b57"
                           }}
-                          className="inline-flex items-center gap-2 text-xs md:text-sm font-semibold px-6 py-2.5 rounded-full transition shadow-md hover:bg-[#073942]"
+                          className="inline-flex items-center gap-2 text-xs md:text-sm font-semibold px-5 py-2 rounded-full hover:bg-[#094b57] hover:text-white transition-all duration-200 group"
                         >
-                          <span style={{ color: "#ffffff" }}>Read Full Article</span>
-                          <ArrowRight className="w-4 h-4" style={{ color: "#ffffff" }} />
+                          <span>Read Full Article</span>
+                          <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
                         </Link>
                       </div>
                     </div>
@@ -462,14 +479,15 @@ function BlogsContent() {
                                     width: "28px",
                                     height: "28px",
                                     borderRadius: "50%",
-                                    backgroundColor: "rgba(9, 75, 87, 0.12)",
-                                    color: "#094b57",
+                                    background: "linear-gradient(135deg, #094b57, #0d6b7a)",
+                                    color: "#ffffff",
                                     display: "flex",
                                     alignItems: "center",
                                     justifyContent: "center",
                                     fontWeight: "700",
-                                    fontSize: "12px",
-                                    flexShrink: 0
+                                    fontSize: "11px",
+                                    flexShrink: 0,
+                                    boxShadow: "0 1px 6px rgba(9,75,87,0.3)"
                                   }}
                                 >
                                   {post.author.name.charAt(0)}

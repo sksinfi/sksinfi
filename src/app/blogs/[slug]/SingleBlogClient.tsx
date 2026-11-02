@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -31,6 +31,23 @@ export default function SingleBlogClient({ post, relatedPosts }: SingleBlogClien
   const [modalOpen, setModalOpen] = useState(false);
   const [modalCategory, setModalCategory] = useState<string | undefined>(post.category);
   const [copied, setCopied] = useState(false);
+  const [readingProgress, setReadingProgress] = useState(0);
+  const articleRef = useRef<HTMLDivElement>(null);
+
+  // Reading progress bar
+  useEffect(() => {
+    const updateProgress = () => {
+      const el = articleRef.current;
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      const totalHeight = el.offsetHeight;
+      const scrolled = -rect.top;
+      const progress = Math.min(Math.max((scrolled / totalHeight) * 100, 0), 100);
+      setReadingProgress(progress);
+    };
+    window.addEventListener("scroll", updateProgress, { passive: true });
+    return () => window.removeEventListener("scroll", updateProgress);
+  }, []);
 
   const handleCopyLink = () => {
     if (typeof window !== "undefined") {
@@ -46,6 +63,11 @@ export default function SingleBlogClient({ post, relatedPosts }: SingleBlogClien
 
   return (
     <>
+      {/* Reading Progress Bar */}
+      <div
+        className="blog-reading-bar"
+        style={{ width: `${readingProgress}%` }}
+      />
       <div className="min-h-screen flex flex-col bg-white text-[#333333]">
         <Navbar
           onOpenEnquiry={(cat) => {
@@ -53,19 +75,23 @@ export default function SingleBlogClient({ post, relatedPosts }: SingleBlogClien
             setModalOpen(true);
           }}
         />
-        <main className="flex-1 w-full pb-16">
-          {/* ================= BREADCRUMBS & HEADER ================= */}
-          <section className="bg-gradient-to-b from-gray-50/90 to-white pt-8 pb-10 border-b border-gray-100">
-            <div className="container mx-auto px-4">
+        <main className="flex-1 w-full pb-16" ref={articleRef}>
+          {/* ================= ARTICLE HEADER ================= */}
+          <section className="relative bg-gradient-to-br from-[#06323a] via-[#083d49] to-[#0a4f5e] text-white pt-10 pb-12 overflow-hidden">
+            {/* Ambient glows */}
+            <div className="absolute top-0 right-0 -mr-24 -mt-24 w-96 h-96 rounded-full bg-white/5 blur-3xl pointer-events-none" />
+            <div className="absolute bottom-0 left-0 -ml-16 -mb-16 w-72 h-72 rounded-full bg-[#b69455]/10 blur-2xl pointer-events-none" />
+
+            <div className="container mx-auto px-4 relative z-10">
               <div className="max-w-4xl mx-auto">
                 {/* Back to blogs link */}
-                <div className="mb-6">
+                <div className="mb-5">
                   <Link
                     href="/blogs"
-                    className="inline-flex items-center gap-2 text-xs md:text-sm font-semibold text-[#094b57] hover:text-[#b69455] transition group"
+                    className="inline-flex items-center gap-2 text-xs md:text-sm font-semibold text-white/80 hover:text-white transition group"
                   >
-                    <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1 text-[#b69455]" />
-                    <span>Back to all Financial Insights</span>
+                    <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1 text-[#e9c787]" />
+                    <span>Back to Financial Insights</span>
                   </Link>
                 </div>
 
@@ -74,19 +100,20 @@ export default function SingleBlogClient({ post, relatedPosts }: SingleBlogClien
                   <Link
                     href={`/blogs?category=${encodeURIComponent(post.category)}`}
                     style={{
-                      backgroundColor: "#094b57",
-                      color: "#ffffff",
+                      backgroundColor: "rgba(182, 148, 85, 0.25)",
+                      color: "#e9c787",
+                      border: "1px solid rgba(182, 148, 85, 0.4)",
                       display: "inline-flex",
                       alignItems: "center",
                       padding: "6px 18px",
                       borderRadius: "9999px",
-                      fontSize: "12px",
+                      fontSize: "11px",
                       fontWeight: "700",
-                      letterSpacing: "0.05em",
+                      letterSpacing: "0.08em",
                       textTransform: "uppercase",
                       textDecoration: "none"
                     }}
-                    className="shadow-xs hover:bg-[#073942] transition"
+                    className="hover:bg-white/20 transition"
                   >
                     {post.category}
                   </Link>
@@ -94,65 +121,66 @@ export default function SingleBlogClient({ post, relatedPosts }: SingleBlogClien
 
                 {/* Article Title */}
                 <h1
-                  style={{ textTransform: "none", color: "#094b57" }}
-                  className="blog-article-title text-2xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6"
+                  style={{ textTransform: "none", color: "#ffffff" }}
+                  className="blog-article-title text-2xl md:text-4xl lg:text-[2.75rem] font-bold leading-tight mb-7"
                 >
                   {post.title}
                 </h1>
 
-                {/* Metadata & Social Share Row */}
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 py-4 border-y border-gray-200">
+                {/* Author + Metadata row */}
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-5 border-t border-white/15">
                   <div className="flex items-center gap-3">
                     <div
                       style={{
                         width: "44px",
                         height: "44px",
                         borderRadius: "50%",
-                        backgroundColor: "rgba(9, 75, 87, 0.12)",
-                        color: "#094b57",
+                        backgroundColor: "rgba(255, 255, 255, 0.15)",
+                        color: "#ffffff",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
                         fontWeight: "700",
                         fontSize: "16px",
-                        flexShrink: 0
+                        flexShrink: 0,
+                        border: "2px solid rgba(255,255,255,0.3)"
                       }}
                     >
                       {post.author.name.charAt(0)}
                     </div>
                     <div>
                       <div className="flex items-center gap-2">
-                        <p className="text-sm font-bold text-gray-900 leading-tight">
+                        <p className="text-sm font-bold text-white leading-tight">
                           {post.author.name}
                         </p>
-                        <span className="text-[10px] bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded-full font-bold">
+                        <span className="text-[10px] bg-emerald-400/20 text-emerald-300 px-2 py-0.5 rounded-full font-bold border border-emerald-400/30">
                           Verified
                         </span>
                       </div>
-                      <p className="text-xs text-gray-500 mt-0.5">{post.author.role}</p>
+                      <p className="text-xs text-white/60 mt-0.5">{post.author.role}</p>
                     </div>
                   </div>
 
-                  <div className="flex flex-wrap items-center gap-4 text-xs text-gray-500">
+                  <div className="flex flex-wrap items-center gap-3 text-xs text-white/70">
                     <span className="flex items-center gap-1.5 font-medium">
-                      <Calendar className="w-3.5 h-3.5 text-[#b69455]" />
+                      <Calendar className="w-3.5 h-3.5 text-[#e9c787]" />
                       {post.publishedDate}
                     </span>
-                    <span>•</span>
+                    <span className="text-white/40">•</span>
                     <span className="flex items-center gap-1.5 font-medium">
-                      <Clock className="w-3.5 h-3.5 text-[#b69455]" />
+                      <Clock className="w-3.5 h-3.5 text-[#e9c787]" />
                       {post.readTime}
                     </span>
-                    <span>•</span>
+                    <span className="text-white/40">•</span>
 
                     {/* Social Share Buttons */}
                     <div className="flex items-center gap-1.5">
-                      <span className="text-gray-400 font-semibold mr-1">Share:</span>
+                      <span className="text-white/50 font-semibold mr-1">Share:</span>
                       <a
                         href={`https://wa.me/?text=${encodedTitle}%20${encodedUrl}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-8 h-8 rounded-full bg-emerald-50 text-emerald-600 hover:bg-emerald-600 hover:text-white flex items-center justify-center transition"
+                        className="w-8 h-8 rounded-full bg-white/10 text-white hover:bg-emerald-500 flex items-center justify-center transition border border-white/20"
                         title="Share on WhatsApp"
                       >
                         <i className="fab fa-whatsapp text-sm"></i>
@@ -161,7 +189,7 @@ export default function SingleBlogClient({ post, relatedPosts }: SingleBlogClien
                         href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-8 h-8 rounded-full bg-blue-50 text-blue-700 hover:bg-blue-700 hover:text-white flex items-center justify-center transition"
+                        className="w-8 h-8 rounded-full bg-white/10 text-white hover:bg-blue-600 flex items-center justify-center transition border border-white/20"
                         title="Share on LinkedIn"
                       >
                         <i className="fab fa-linkedin-in text-sm"></i>
@@ -170,7 +198,7 @@ export default function SingleBlogClient({ post, relatedPosts }: SingleBlogClien
                         href={`https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-8 h-8 rounded-full bg-gray-100 text-gray-700 hover:bg-gray-800 hover:text-white flex items-center justify-center transition"
+                        className="w-8 h-8 rounded-full bg-white/10 text-white hover:bg-gray-900 flex items-center justify-center transition border border-white/20"
                         title="Share on X"
                       >
                         <i className="fa-brands fa-x-twitter text-sm"></i>
@@ -181,19 +209,19 @@ export default function SingleBlogClient({ post, relatedPosts }: SingleBlogClien
                           width: "32px",
                           height: "32px",
                           borderRadius: "50%",
-                          backgroundColor: "#f1f5f9",
-                          color: "#334155",
+                          backgroundColor: "rgba(255,255,255,0.1)",
+                          color: "rgba(255,255,255,0.8)",
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "center",
-                          border: "1px solid #e2e8f0",
+                          border: "1px solid rgba(255,255,255,0.2)",
                           cursor: "pointer"
                         }}
-                        className="hover:bg-gray-200 transition"
+                        className="hover:bg-white/20 transition"
                         title="Copy Article Link"
                       >
                         {copied ? (
-                          <Check className="w-3.5 h-3.5 text-green-600" />
+                          <Check className="w-3.5 h-3.5 text-emerald-300" />
                         ) : (
                           <Copy className="w-3.5 h-3.5" />
                         )}
@@ -254,14 +282,7 @@ export default function SingleBlogClient({ post, relatedPosts }: SingleBlogClien
 
                 {/* Rich Blog Content */}
                 <div
-                  className="prose prose-lg max-w-none text-gray-700 leading-relaxed font-sans
-                    [&>h2]:text-xl [&>h2]:md:text-2xl [&>h2]:font-bold [&>h2]:text-[#094b57] [&>h2]:mt-10 [&>h2]:mb-4 [&>h2]:normal-case
-                    [&>h3]:text-lg [&>h3]:md:text-xl [&>h3]:font-bold [&>h3]:text-[#094b57] [&>h3]:mt-8 [&>h3]:mb-3 [&>h3]:normal-case
-                    [&>p]:text-base [&>p]:leading-relaxed [&>p]:mb-5 [&>p]:text-gray-700
-                    [&>ul]:list-disc [&>ul]:pl-6 [&>ul]:mb-6 [&>ul>li]:mb-2 [&>ul>li]:text-gray-700
-                    [&>ol]:list-decimal [&>ol]:pl-6 [&>ol]:mb-6 [&>ol>li]:mb-2 [&>ol>li]:text-gray-700
-                    [&>blockquote]:border-l-4 [&>blockquote]:border-[#b69455] [&>blockquote]:bg-[#faf1e0]/40 [&>blockquote]:p-6 [&>blockquote]:rounded-r-xl [&>blockquote]:italic [&>blockquote]:text-gray-800 [&>blockquote]:my-8 [&>blockquote]:shadow-2xs
-                    [&>strong]:text-[#094b57]"
+                  className="blog-prose-body max-w-none"
                   dangerouslySetInnerHTML={{ __html: post.content }}
                 />
 
