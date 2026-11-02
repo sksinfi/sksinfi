@@ -42,11 +42,25 @@ function BlogsContent() {
     }
   }, [searchParams]);
 
+  const [blogsList, setBlogsList] = useState(BLOGS_DATA);
+
+  // Sync with dynamic blogs API if available
+  useEffect(() => {
+    fetch("/api/admin/blogs")
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        if (Array.isArray(data) && data.length > 0) {
+          setBlogsList(data);
+        }
+      })
+      .catch(() => {});
+  }, []);
+
   const categories = getAllCategories();
 
   // Filter blogs based on category & search term
   const filteredBlogs = useMemo(() => {
-    return BLOGS_DATA.filter((post) => {
+    return blogsList.filter((post) => {
       const matchesCategory =
         selectedCategory === "All" || post.category === selectedCategory;
 
@@ -60,11 +74,11 @@ function BlogsContent() {
 
       return matchesCategory && matchesSearch;
     });
-  }, [selectedCategory, searchQuery]);
+  }, [blogsList, selectedCategory, searchQuery]);
 
   const featuredPost = useMemo(() => {
-    return BLOGS_DATA.find((p) => p.featured) || BLOGS_DATA[0];
-  }, []);
+    return blogsList.find((p) => p.featured) || blogsList[0];
+  }, [blogsList]);
 
   return (
     <>
