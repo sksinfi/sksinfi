@@ -187,12 +187,12 @@ function BlogsContent() {
 
           {/* ================= FEATURED POST SPOTLIGHT ================= */}
           {selectedCategory === "All" && !searchQuery && featuredPost && (
-            <section className="py-10 md:py-14 bg-gradient-to-b from-[#f0f7f8]/70 to-transparent">
+            <section className="py-8 md:py-10">
               <div className="container mx-auto px-4">
                 <div className="max-w-6xl mx-auto">
-                  {/* Section label — fixed letter-spacing */}
-                  <div className="flex items-center gap-2.5 mb-5">
-                    <span className="w-1 h-5 rounded-full bg-[#b69455]" />
+                  {/* Section label */}
+                  <div className="flex items-center gap-2.5 mb-4">
+                    <span className="w-1 h-4 rounded-full bg-[#b69455]" />
                     <span
                       style={{
                         color: "#b69455",
@@ -206,16 +206,26 @@ function BlogsContent() {
                     </span>
                   </div>
 
-                  <div className="bg-white rounded-[20px] border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-400 overflow-hidden grid grid-cols-1 lg:grid-cols-12">
-                    {/* Left Column: Image — taller min-height */}
-                    <div className="lg:col-span-5 relative h-72 lg:h-auto min-h-[400px] overflow-hidden bg-gray-100 flex-shrink-0">
+                  {/* Card — flex row */}
+                  {/* Card — flex row */}
+                  <div className="bg-white rounded-[20px] border border-gray-200 shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden flex flex-col lg:flex-row">
+                    {/* Image side — self-stretch makes it take full card height */}
+                    <div className="relative lg:w-[42%] shrink-0 h-64 sm:h-72 lg:h-auto self-stretch overflow-hidden bg-gray-100 min-h-[260px]">
                       <img
                         src={featuredPost.coverImage}
                         alt={featuredPost.title}
-                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                        style={{
+                          position: "absolute",
+                          top: 0,
+                          left: 0,
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover",
+                          display: "block"
+                        }}
+                        className="transition-transform duration-700 hover:scale-105"
                       />
-                      {/* Gradient overlay at bottom */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent pointer-events-none" />
                       <div className="absolute top-4 left-4">
                         <span
                           style={{
@@ -223,7 +233,7 @@ function BlogsContent() {
                             color: "#ffffff",
                             fontSize: "10px",
                             fontWeight: "700",
-                            padding: "5px 14px",
+                            padding: "5px 13px",
                             borderRadius: "9999px",
                             letterSpacing: "0.08em",
                             textTransform: "uppercase",
@@ -236,10 +246,10 @@ function BlogsContent() {
                       </div>
                     </div>
 
-                    {/* Right Column: Content — top-aligned with padding */}
-                    <div className="lg:col-span-7 p-7 md:p-10 flex flex-col justify-between gap-6">
-                      <div className="flex flex-col gap-4">
-                        {/* Meta row */}
+                    {/* Content side */}
+                    <div className="flex-1 p-6 sm:p-8 md:p-9 flex flex-col justify-between gap-4">
+                      <div className="flex flex-col gap-3">
+                        {/* Meta */}
                         <div className="flex flex-wrap items-center gap-3 text-xs text-gray-400 font-medium">
                           <span className="flex items-center gap-1.5">
                             <Calendar className="w-3.5 h-3.5 text-[#b69455]" />
@@ -250,58 +260,86 @@ function BlogsContent() {
                             <Clock className="w-3.5 h-3.5 text-[#b69455]" />
                             {featuredPost.readTime}
                           </span>
+                          <span className="text-gray-300">•</span>
+                          <span className="text-[#b69455] font-semibold flex items-center gap-1">
+                            <Sparkles className="w-3.5 h-3.5" />
+                            Top Editorial Pick
+                          </span>
                         </div>
 
                         {/* Title */}
                         <h3
                           style={{ textTransform: "none", color: "#0d2b33", lineHeight: "1.3" }}
-                          className="text-xl md:text-2xl lg:text-[1.7rem] font-bold"
+                          className="text-xl sm:text-2xl lg:text-[26px] font-bold tracking-tight"
                         >
                           <Link
                             href={`/blogs/${featuredPost.slug}`}
                             style={{ color: "#0d2b33", textDecoration: "none" }}
-                            className="hover:text-[#094b57] transition"
+                            className="hover:text-[#094b57] transition-colors"
                           >
                             {featuredPost.title}
                           </Link>
                         </h3>
 
                         {/* Excerpt */}
-                        <p className="text-gray-500 text-sm leading-relaxed line-clamp-3">
+                        <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
                           {featuredPost.excerpt}
                         </p>
 
                         {/* Key Takeaway */}
-                        <div className="bg-amber-50 border-l-[3px] border-[#b69455] px-4 py-3 rounded-r-lg">
-                          <p className="text-xs text-gray-700 leading-relaxed">
-                            <strong className="text-[#094b57] font-semibold">Key Insight: </strong>
-                            {featuredPost.takeaways[0]}
-                          </p>
-                        </div>
+                        {featuredPost.takeaways && featuredPost.takeaways.length > 0 && (
+                          <div className="bg-[#fcf8f0] border-l-[3px] border-[#b69455] px-4 py-3 rounded-r-xl">
+                            <p className="text-xs text-gray-700 leading-relaxed">
+                              <strong className="text-[#094b57] font-semibold">Key Insight: </strong>
+                              {featuredPost.takeaways[0]}
+                            </p>
+                          </div>
+                        )}
+
+                        {/* Tags */}
+                        {featuredPost.tags && featuredPost.tags.length > 0 && (
+                          <div className="flex flex-wrap items-center gap-2 pt-1">
+                            {featuredPost.tags.slice(0, 4).map((tag) => (
+                              <span
+                                key={tag}
+                                className="text-[11px] font-medium text-gray-500 bg-gray-100 hover:bg-gray-200 px-2.5 py-1 rounded-md transition"
+                              >
+                                #{tag}
+                              </span>
+                            ))}
+                          </div>
+                        )}
                       </div>
 
                       {/* Footer row */}
-                      <div className="flex flex-wrap items-center justify-between gap-4 pt-5 border-t border-gray-100">
-                        {/* Author */}
+                      <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-gray-100 mt-2">
                         <div className="flex items-center gap-3">
-                          <div
-                            style={{
-                              width: "38px",
-                              height: "38px",
-                              borderRadius: "50%",
-                              background: "linear-gradient(135deg, #094b57, #0d6b7a)",
-                              color: "#ffffff",
-                              display: "flex",
-                              alignItems: "center",
-                              justifyContent: "center",
-                              fontWeight: "700",
-                              fontSize: "15px",
-                              flexShrink: 0,
-                              boxShadow: "0 2px 8px rgba(9,75,87,0.3)"
-                            }}
-                          >
-                            {featuredPost.author.name.charAt(0)}
-                          </div>
+                          {featuredPost.author.avatar ? (
+                            <img
+                              src={featuredPost.author.avatar}
+                              alt={featuredPost.author.name}
+                              className="w-10 h-10 rounded-full object-cover border border-gray-200"
+                              style={{ width: "40px", height: "40px" }}
+                            />
+                          ) : (
+                            <div
+                              style={{
+                                width: "40px",
+                                height: "40px",
+                                borderRadius: "50%",
+                                background: "linear-gradient(135deg, #094b57, #0d6b7a)",
+                                color: "#ffffff",
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                                fontWeight: "700",
+                                fontSize: "14px",
+                                flexShrink: 0
+                              }}
+                            >
+                              {featuredPost.author.name.charAt(0)}
+                            </div>
+                          )}
                           <div>
                             <p className="text-sm font-bold text-gray-900 leading-tight">
                               {featuredPost.author.name}
@@ -312,18 +350,17 @@ function BlogsContent() {
                           </div>
                         </div>
 
-                        {/* CTA — outlined style, less heavy */}
                         <Link
                           href={`/blogs/${featuredPost.slug}`}
                           style={{
-                            color: "#094b57",
-                            textDecoration: "none",
-                            border: "1.5px solid #094b57"
+                            backgroundColor: "#094b57",
+                            color: "#ffffff",
+                            textDecoration: "none"
                           }}
-                          className="inline-flex items-center gap-2 text-xs md:text-sm font-semibold px-5 py-2 rounded-full hover:bg-[#094b57] hover:text-white transition-all duration-200 group"
+                          className="inline-flex items-center gap-2 text-xs font-semibold px-5 py-2.5 rounded-full hover:bg-[#073942] transition-all shadow-xs group"
                         >
                           <span>Read Full Article</span>
-                          <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
+                          <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
                         </Link>
                       </div>
                     </div>
@@ -332,6 +369,7 @@ function BlogsContent() {
               </div>
             </section>
           )}
+
 
           {/* ================= ARTICLES GRID ================= */}
           <section className="py-10 md:py-16">
