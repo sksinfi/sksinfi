@@ -213,7 +213,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
         style={{ backgroundColor: "#094b57" }}
         className="w-full relative z-30 border-b border-white/10 text-white font-sans text-xs"
       >
-        <div className="max-w-[1520px] w-full mx-auto px-3 sm:px-4 lg:px-6 py-2 sm:py-2.5 flex items-center justify-between gap-2 sm:gap-3">
+        <div className="max-w-[1150px] w-full mx-auto px-4 sm:px-6 py-2 sm:py-2.5 flex items-center justify-between gap-2 sm:gap-3">
           {/* NRI 24/7 Helpline */}
           <div className="flex items-center gap-1.5 sm:gap-2">
             <span className="relative flex h-2 w-2 shrink-0">
@@ -344,7 +344,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
         }}
         className="w-full font-sans transition-all duration-200 border-b border-gray-100"
       >
-        <div className="max-w-[1520px] w-full mx-auto px-4 lg:px-6">
+        <div className="max-w-[1150px] w-full mx-auto px-4 sm:px-6">
           <div
             style={{
               height: isScrolled ? "66px" : "74px",
@@ -362,10 +362,10 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                   src="/img/sksl.jpg"
                   alt="SKS INFI"
                   style={{
-                    height: isScrolled ? "42px" : "48px",
-                    maxHeight: "50px",
+                    height: isScrolled ? "40px" : "46px",
+                    maxHeight: "48px",
                     width: "auto",
-                    maxWidth: "155px",
+                    maxWidth: "145px",
                     objectFit: "contain",
                     transition: "height 0.2s ease"
                   }}
@@ -376,7 +376,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
 
             {/* Center: Desktop Navigation Links */}
             <nav
-              className="sks-desktop-nav flex items-center justify-center mx-auto gap-0.5 xl:gap-1.5"
+              className="sks-desktop-nav flex items-center justify-center mx-auto gap-0.5 lg:gap-1 xl:gap-1.5"
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -404,7 +404,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                         textDecoration: "none",
                         whiteSpace: "nowrap"
                       }}
-                      className={`relative inline-flex items-center gap-1 px-1.5 xl:px-2.5 py-1.5 text-[11px] xl:text-[12px] 2xl:text-[12.5px] font-bold uppercase tracking-wider rounded-lg transition-all ${
+                      className={`relative inline-flex items-center gap-1 px-1.5 lg:px-2 xl:px-2.5 py-1.5 text-[11px] lg:text-[11.5px] xl:text-[12px] font-bold uppercase tracking-wider rounded-lg transition-all ${
                         active
                           ? "bg-[#faf1e0]/70 font-bold"
                           : "hover:text-[#b69455] hover:bg-[#094b57]/[0.04]"
@@ -524,31 +524,8 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
               })}
             </nav>
 
-            {/* Right: Contact Callout & Action CTA */}
-            <div className="sks-desktop-cta flex items-center gap-2.5 xl:gap-3 shrink-0">
-              {/* Phone call pill on wider screens */}
-              <a
-                href="tel:+919928593122"
-                style={{ textDecoration: "none" }}
-                className="hidden 2xl:flex items-center gap-2 py-1.5 px-3 rounded-full hover:bg-gray-50 transition-colors border border-gray-200/80 group"
-                title="Call SKS INFI Financial Advisory"
-              >
-                <div className="w-6 h-6 rounded-full bg-[#094b57]/10 flex items-center justify-center text-[#094b57] group-hover:bg-[#b69455] group-hover:text-white transition-colors shrink-0">
-                  <Phone className="w-3 h-3" />
-                </div>
-                <div className="text-left">
-                  <span className="block text-[9px] uppercase tracking-wider text-gray-500 font-bold leading-none mb-0.5">
-                    Advisory Desk
-                  </span>
-                  <span
-                    style={{ color: "#094b57" }}
-                    className="block text-[11.5px] font-bold group-hover:text-[#b69455] transition-colors leading-none"
-                  >
-                    +91 99285 93122
-                  </span>
-                </div>
-              </a>
-
+            {/* Right: Action CTA */}
+            <div className="sks-desktop-cta flex items-center shrink-0">
               {/* Primary Consultation Action Button */}
               <button
                 onClick={handleEnquiryClick}
@@ -556,7 +533,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                   background: "linear-gradient(135deg, #b69455 0%, #c4a25f 50%, #b69455 100%)",
                   color: "#ffffff"
                 }}
-                className="relative inline-flex items-center gap-1.5 px-4 xl:px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider hover:shadow-[0_4px_16px_rgba(182,148,85,0.4)] hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer border-none shadow-xs whitespace-nowrap"
+                className="relative inline-flex items-center justify-center gap-1.5 px-4 xl:px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider hover:shadow-[0_4px_16px_rgba(182,148,85,0.4)] hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer border-none shadow-xs whitespace-nowrap"
               >
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>Enquire Now</span>

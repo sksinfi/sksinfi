@@ -96,28 +96,28 @@ function BlogsContent() {
         />
         <main className="flex-1 w-full">
           {/* ================= HERO SECTION ================= */}
-          <section className="relative bg-gradient-to-br from-[#06323a] via-[#094b57] to-[#0c5c6b] text-white py-16 sm:py-20 md:py-24 shadow-md">
+          <section className="relative bg-gradient-to-br from-[#06323a] via-[#094b57] to-[#0c5c6b] text-white py-10 sm:py-12 md:py-14 shadow-md">
             {/* Ambient Background Glows */}
             <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-white/5 blur-3xl pointer-events-none" />
             <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-[#b69455]/15 blur-2xl pointer-events-none" />
 
-            <div className="container mx-auto px-4 relative z-10">
+            <div className="max-w-[1150px] w-full mx-auto px-4 sm:px-6 relative z-10">
               <div className="max-w-3xl mx-auto text-center">
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-[#e9c787] text-xs md:text-sm font-semibold mb-4 border border-white/15 shadow-xs">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-[#e9c787] text-xs md:text-sm font-semibold mb-3.5 border border-white/15 shadow-xs">
                   <Sparkles className="w-4 h-4 text-[#e9c787]" />
                   <span>Financial Knowledge Hub • SKS INFI</span>
                 </div>
 
                 <h1
                   style={{ textTransform: "none", color: "#ffffff", lineHeight: "1.25" }}
-                  className="blog-hero-title text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4 text-white leading-[1.25] py-1 overflow-visible"
+                  className="blog-hero-title text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-3.5 text-white leading-[1.25] py-1 overflow-visible"
                 >
                   Expert Financial Insights &amp; Market Advisory
                 </h1>
 
                 <p
                   style={{ color: "#ffffff", opacity: 0.95 }}
-                  className="blog-hero-p text-sm md:text-base lg:text-lg leading-relaxed mb-8 max-w-2xl mx-auto"
+                  className="blog-hero-p text-sm md:text-base lg:text-lg leading-relaxed mb-6 max-w-2xl mx-auto"
                 >
                   Clear, actionable guidance on Home Loans, SIP Compounding, MSME Subsidies,
                   NRI Investments, and Tax Planning from Jaipur&apos;s leading financial consultants.
@@ -137,7 +137,7 @@ function BlogsContent() {
                   {searchQuery && (
                     <button
                       onClick={() => setSearchQuery("")}
-                      className="absolute right-4 top-1/2 -translate-y-1/2 text-xs bg-gray-200 hover:bg-gray-300 text-gray-700 px-2.5 py-1 rounded-full transition font-medium"
+                      className="absolute right-4 top-1/2 -translate-y-1/2 text-xs bg-gray-200 hover:bg-gray-300 text-gray-700 px-2.5 py-1 rounded-full transition font-medium cursor-pointer"
                     >
                       Clear
                     </button>
@@ -148,9 +148,9 @@ function BlogsContent() {
           </section>
 
           {/* ================= CATEGORY FILTER BAR ================= */}
-          <section className="bg-white border-b border-gray-200 sticky top-[66px] sm:top-[74px] z-40 shadow-xs">
-            <div className="container mx-auto px-4 py-3">
-              <div className="flex items-center gap-2 overflow-x-auto pb-1 md:pb-0 scrollbar-none justify-start md:justify-center">
+          <section className="bg-white border-b border-gray-200">
+            <div className="max-w-[1150px] w-full mx-auto px-4 sm:px-6 py-3">
+              <div className="flex items-center gap-2 sm:gap-2.5 overflow-x-auto pb-1 md:pb-0 scrollbar-none justify-start md:justify-center">
                 {categories.map((cat) => {
                   const count =
                     cat === "All"
@@ -167,19 +167,19 @@ function BlogsContent() {
                         color: isActive ? "#ffffff" : "#475569",
                         border: isActive ? "1.5px solid #094b57" : "1.5px solid #d1d5db"
                       }}
-                      className={`whitespace-nowrap px-4 py-1.5 rounded-full text-xs md:text-sm font-semibold transition-all flex items-center gap-2 cursor-pointer ${
+                      className={`whitespace-nowrap h-[38px] px-3.5 sm:px-4 rounded-full text-xs sm:text-sm font-semibold transition-all inline-flex items-center justify-center gap-2 cursor-pointer shrink-0 ${
                         isActive
-                          ? "shadow-md shadow-[#094b57]/20"
+                          ? "shadow-sm shadow-[#094b57]/20 font-bold"
                           : "hover:border-[#094b57] hover:text-[#094b57] hover:bg-[#094b57]/5"
                       }`}
                     >
-                      <span>{cat}</span>
+                      <span className="leading-none">{cat}</span>
                       <span
                         style={{
                           backgroundColor: isActive ? "rgba(182,148,85,0.9)" : "#e5e7eb",
                           color: isActive ? "#ffffff" : "#6b7280"
                         }}
-                        className="text-[10px] px-1.5 py-0.5 rounded-full font-bold min-w-[18px] text-center"
+                        className="text-[10px] px-1.5 py-0.5 rounded-full font-bold min-w-[18px] text-center leading-none"
                       >
                         {count}
                       </span>
@@ -192,9 +192,9 @@ function BlogsContent() {
 
           {/* ================= FEATURED POST SPOTLIGHT ================= */}
           {selectedCategory === "All" && !searchQuery && featuredPost && (
-            <section className="pt-3 pb-8 md:pt-4 md:pb-10">
-              <div className="container mx-auto px-4">
-                <div className="w-full mx-auto">
+            <section className="pt-6 pb-8 md:pt-8 md:pb-10">
+              <div className="max-w-[1150px] w-full mx-auto px-4 sm:px-6">
+                <div>
                   {/* Section label — tightly coupled with card */}
                   <div className="flex items-center gap-2.5 mb-2.5 sm:mb-3">
                     <span className="w-1.5 h-4 rounded-full bg-[#b69455]" />
@@ -211,10 +211,14 @@ function BlogsContent() {
                     </span>
                   </div>
 
-                  {/* Editorial Card — Wide, horizontal two-column (41.67% / 58.33%) */}
-                  <article className="w-full bg-white rounded-[20px] md:rounded-[24px] border border-gray-200/90 shadow-[0_4px_24px_rgba(9,75,87,0.06)] hover:shadow-[0_12px_36px_rgba(9,75,87,0.12)] transition-shadow duration-300 overflow-hidden grid grid-cols-1 md:grid-cols-12 items-stretch">
+                  {/* Editorial Card — Wide, horizontal two-column on desktop (41.67% / 58.33%) */}
+                  <div
+                    role="article"
+                    style={{ display: "grid" }}
+                    className="w-full bg-white rounded-[20px] md:rounded-[24px] border border-gray-200/90 shadow-[0_4px_24px_rgba(9,75,87,0.06)] hover:shadow-[0_12px_36px_rgba(9,75,87,0.12)] transition-shadow duration-300 overflow-hidden grid grid-cols-1 lg:grid-cols-12 items-stretch"
+                  >
                     {/* Left Column: Image (40–45% width: 5 of 12 cols = 41.67%, stretches full card height) */}
-                    <div className="md:col-span-5 relative w-full h-72 sm:h-80 md:h-full min-h-[280px] md:min-h-[420px] overflow-hidden bg-gray-100">
+                    <div className="lg:col-span-5 relative w-full h-72 sm:h-80 lg:h-full min-h-[280px] lg:min-h-[420px] overflow-hidden bg-gray-100">
                       <img
                         src={featuredPost.coverImage}
                         alt={featuredPost.title}
@@ -247,7 +251,7 @@ function BlogsContent() {
                     </div>
 
                     {/* Right Column: Article Content (55–60% width: 7 of 12 cols = 58.33%, 28–36px internal padding) */}
-                    <div className="md:col-span-7 p-6 md:p-7 lg:p-9 flex flex-col justify-between">
+                    <div className="lg:col-span-7 p-6 sm:p-7 lg:p-9 flex flex-col justify-between">
                       {/* Section 1: Article content */}
                       <div className="flex flex-col">
                         {/* Meta: High contrast date, read time, and editorial badge */}
@@ -357,7 +361,7 @@ function BlogsContent() {
                         </div>
                       </div>
                     </div>
-                  </article>
+                  </div>
                 </div>
               </div>
             </section>
@@ -365,10 +369,9 @@ function BlogsContent() {
 
 
           {/* ================= ARTICLES GRID ================= */}
-          <section className="py-10 md:py-16">
-            <div className="container mx-auto px-4">
-              <div className="max-w-6xl mx-auto">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-8 pb-4 border-b border-gray-200">
+          <section className="py-8 sm:py-10 md:py-12">
+            <div className="max-w-[1150px] w-full mx-auto px-4 sm:px-6">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6 sm:mb-8 pb-4 border-b border-gray-200">
                   <div>
                     <h2
                       style={{ textTransform: "none", color: "#094b57" }}
@@ -418,21 +421,28 @@ function BlogsContent() {
                     </button>
                   </div>
                 ) : (
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 items-stretch">
                     {filteredBlogs.map((post) => (
-                      <article
+                      <div
                         key={post.slug}
-                        className="bg-white rounded-[20px] border border-gray-200/90 shadow-xs hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col overflow-hidden"
+                        role="article"
+                        style={{ display: "flex", flexDirection: "column" }}
+                        className="bg-white rounded-[20px] border border-gray-200/90 shadow-xs hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col h-full overflow-hidden"
                       >
                         {/* Card Thumbnail */}
                         <Link
                           href={`/blogs/${post.slug}`}
-                          className="relative block h-52 overflow-hidden bg-gray-100 group"
+                          className="relative block h-48 sm:h-52 w-full overflow-hidden bg-gray-100 group shrink-0"
                         >
                           <img
                             src={post.coverImage}
                             alt={post.title}
                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            style={{
+                              width: "100%",
+                              height: "100%",
+                              objectFit: "cover"
+                            }}
                           />
                           <div className="absolute top-3 left-3">
                             <span
@@ -448,11 +458,11 @@ function BlogsContent() {
                           </div>
                         </Link>
 
-                        {/* Card Body */}
-                        <div className="p-6 flex-1 flex flex-col justify-between">
-                          <div>
+                        {/* Card Body with consistent internal padding */}
+                        <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between">
+                          <div className="flex-1 flex flex-col">
                             {/* Metadata */}
-                            <div className="flex items-center gap-3 text-[11px] text-gray-500 font-medium mb-3">
+                            <div className="flex items-center gap-2.5 text-[11px] sm:text-xs text-gray-500 font-medium mb-2.5">
                               <span className="flex items-center gap-1.5">
                                 <Calendar className="w-3.5 h-3.5 text-[#b69455]" />
                                 {post.publishedDate}
@@ -464,10 +474,17 @@ function BlogsContent() {
                               </span>
                             </div>
 
-                            {/* Title with uniform height */}
+                            {/* Title */}
                             <h3
-                              style={{ textTransform: "none", color: "#094b57" }}
-                              className="text-base md:text-lg font-bold leading-snug mb-3 hover:text-[#b69455] transition line-clamp-2 min-h-[52px] flex items-start"
+                              style={{
+                                textTransform: "none",
+                                color: "#094b57",
+                                fontSize: "17.5px",
+                                lineHeight: "1.4",
+                                paddingBottom: "0",
+                                margin: "0 0 10px 0"
+                              }}
+                              className="font-bold leading-snug hover:text-[#b69455] transition line-clamp-2"
                             >
                               <Link
                                 href={`/blogs/${post.slug}`}
@@ -478,16 +495,16 @@ function BlogsContent() {
                               </Link>
                             </h3>
 
-                            {/* Excerpt with uniform height */}
-                            <p className="text-xs md:text-sm text-gray-600 leading-relaxed mb-4 line-clamp-3 min-h-[64px]">
+                            {/* Excerpt */}
+                            <p className="text-xs sm:text-sm text-gray-600 leading-relaxed line-clamp-3 mb-4" style={{ paddingBottom: "0" }}>
                               {post.excerpt}
                             </p>
                           </div>
 
-                          {/* Card Footer */}
-                          <div>
+                          {/* Card Footer pinned to bottom */}
+                          <div className="mt-auto pt-3 flex flex-col gap-3">
                             {/* Tags */}
-                            <div className="flex flex-wrap gap-1.5 mb-4">
+                            <div className="flex flex-wrap items-center gap-1.5">
                               {post.tags.slice(0, 2).map((tag) => (
                                 <span
                                   key={tag}
@@ -539,19 +556,18 @@ function BlogsContent() {
                             </div>
                           </div>
                         </div>
-                      </article>
+                      </div>
                     ))}
                   </div>
                 )}
-              </div>
             </div>
           </section>
 
           {/* ================= ADVISORY CALL TO ACTION ================= */}
-          <section className="py-16 bg-[#094b57] text-white relative overflow-hidden">
-            <div className="container mx-auto px-4 relative z-10">
+          <section className="py-12 sm:py-16 bg-[#094b57] text-white relative overflow-hidden">
+            <div className="max-w-[1150px] w-full mx-auto px-4 sm:px-6 relative z-10">
               <div
-                className="max-w-4xl mx-auto p-8 md:p-12 rounded-[24px] border border-white/15 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8"
+                className="w-full mx-auto p-8 md:p-12 rounded-[24px] border border-white/15 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8"
                 style={{
                   background: "linear-gradient(135deg, #06323a 0%, #094b57 100%)",
                   color: "#ffffff"
