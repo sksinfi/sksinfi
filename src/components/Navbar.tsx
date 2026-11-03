@@ -344,7 +344,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
         }}
         className="w-full font-sans transition-all duration-200 border-b border-gray-100"
       >
-        <div className="max-w-[1400px] w-full mx-auto px-5 sm:px-8 lg:px-10">
+        <div className="max-w-[1400px] w-full mx-auto px-4 sm:px-6 lg:px-8">
           <div
             style={{
               height: isScrolled ? "72px" : "80px",
@@ -524,49 +524,15 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
               })}
             </nav>
 
-            {/* Right: Contact Callout & Action CTA */}
-            <div className="sks-desktop-cta flex items-center gap-2 xl:gap-3 shrink-0">
-              {/* Phone call card on ultra-wide screens */}
-              <a
-                href="tel:+919928593122"
-                style={{ textDecoration: "none" }}
-                className="hidden 2xl:flex items-center gap-2 py-1.5 px-3 rounded-full hover:bg-gray-50 transition-colors border border-gray-200/90 group"
-                title="Call SKS INFI Financial Advisory"
-              >
-                <div className="w-6 h-6 rounded-full bg-[#094b57]/10 flex items-center justify-center text-[#094b57] group-hover:bg-[#b69455] group-hover:text-white transition-colors shrink-0">
-                  <Phone className="w-3 h-3 text-[#b69455] group-hover:text-white" />
-                </div>
-                <div className="text-left">
-                  <span className="block text-[9px] uppercase tracking-wider text-gray-500 font-bold leading-none mb-0.5">
-                    Advisory Desk
-                  </span>
-                  <span
-                    style={{ color: "#094b57" }}
-                    className="block text-[11px] font-bold group-hover:text-[#b69455] transition-colors leading-none"
-                  >
-                    +91 99285 93122
-                  </span>
-                </div>
-              </a>
-
-              {/* Compact quick-call button on standard desktop (1280px-1535px) */}
-              <a
-                href="tel:+919928593122"
-                style={{ textDecoration: "none" }}
-                className="hidden xl:flex 2xl:hidden items-center justify-center w-[38px] h-[38px] rounded-full hover:bg-gray-50 hover:border-[#b69455] transition-colors border border-gray-200/90 group"
-                title="Call SKS INFI Advisory: +91 99285 93122"
-              >
-                <Phone className="w-3.5 h-3.5 text-[#b69455] group-hover:scale-110 transition-transform" />
-              </a>
-
-              {/* Primary Consultation Action Button */}
+            {/* Right: Consultation Action Button */}
+            <div className="sks-desktop-cta flex items-center shrink-0">
               <button
                 onClick={handleEnquiryClick}
                 style={{
                   background: "linear-gradient(135deg, #b69455 0%, #c4a25f 50%, #b69455 100%)",
                   color: "#ffffff"
                 }}
-                className="relative inline-flex items-center justify-center gap-1.5 h-[40px] px-3.5 xl:px-4 rounded-full text-xs font-bold uppercase tracking-wider hover:shadow-[0_4px_16px_rgba(182,148,85,0.4)] hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer border-none shadow-xs whitespace-nowrap"
+                className="relative inline-flex items-center justify-center gap-1.5 h-[40px] px-4 rounded-full text-xs font-bold uppercase tracking-wider hover:shadow-[0_4px_16px_rgba(182,148,85,0.4)] hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer border-none shadow-xs whitespace-nowrap"
               >
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>Enquire Now</span>
