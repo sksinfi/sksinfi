@@ -23,6 +23,11 @@ import {
   DollarSign
 } from "lucide-react";
 
+// Helper to format editorial title and avoid orphan ampersand wrap
+const formatEditorialTitle = (title: string) => {
+  return title.replace(/(\S)\s+&\s+(\S)/g, "$1\u00A0&\u00A0$2");
+};
+
 function BlogsContent() {
   const searchParams = useSearchParams();
   const initialCategory = searchParams.get("category") || "All";
@@ -187,18 +192,18 @@ function BlogsContent() {
 
           {/* ================= FEATURED POST SPOTLIGHT ================= */}
           {selectedCategory === "All" && !searchQuery && featuredPost && (
-            <section className="py-8 md:py-10">
+            <section className="py-8 md:py-12">
               <div className="container mx-auto px-4">
                 <div className="max-w-6xl mx-auto">
                   {/* Section label */}
                   <div className="flex items-center gap-2.5 mb-4">
-                    <span className="w-1 h-4 rounded-full bg-[#b69455]" />
+                    <span className="w-1.5 h-4 rounded-full bg-[#b69455]" />
                     <span
                       style={{
                         color: "#b69455",
-                        fontSize: "11px",
+                        fontSize: "12px",
                         fontWeight: "700",
-                        letterSpacing: "0.1em",
+                        letterSpacing: "0.12em",
                         textTransform: "uppercase"
                       }}
                     >
@@ -206,51 +211,37 @@ function BlogsContent() {
                     </span>
                   </div>
 
-                  {/* Card — flex row */}
-                  {/* Card — flex row */}
-                  <div className="bg-white rounded-[20px] border border-gray-200 shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden flex flex-col lg:flex-row">
-                    {/* Image side — self-stretch makes it take full card height */}
-                    <div className="relative lg:w-[42%] shrink-0 h-64 sm:h-72 lg:h-auto self-stretch overflow-hidden bg-gray-100 min-h-[260px]">
+                  {/* Editorial Card — 42% / 58% balanced two-column */}
+                  <article className="bg-white rounded-[20px] md:rounded-[24px] border border-gray-200/90 shadow-[0_4px_24px_rgba(9,75,87,0.06)] hover:shadow-[0_12px_36px_rgba(9,75,87,0.12)] transition-shadow duration-300 overflow-hidden flex flex-col lg:flex-row items-stretch">
+                    {/* Left Column: Image (~42% desktop width, stretches full card height) */}
+                    <div className="relative w-full lg:w-[42%] shrink-0 h-64 sm:h-72 lg:h-auto min-h-[260px] lg:min-h-full overflow-hidden bg-gray-100">
                       <img
                         src={featuredPost.coverImage}
                         alt={featuredPost.title}
-                        style={{
-                          position: "absolute",
-                          top: 0,
-                          left: 0,
-                          width: "100%",
-                          height: "100%",
-                          objectFit: "cover",
-                          display: "block"
-                        }}
-                        className="transition-transform duration-700 hover:scale-105"
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105 block"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent pointer-events-none" />
-                      <div className="absolute top-4 left-4">
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-black/10 to-transparent pointer-events-none" />
+
+                      {/* Category badge */}
+                      <div className="absolute top-5 left-5 z-10">
                         <span
                           style={{
                             backgroundColor: "#094b57",
-                            color: "#ffffff",
-                            fontSize: "10px",
-                            fontWeight: "700",
-                            padding: "5px 13px",
-                            borderRadius: "9999px",
-                            letterSpacing: "0.08em",
-                            textTransform: "uppercase",
-                            display: "inline-block",
-                            boxShadow: "0 2px 10px rgba(0,0,0,0.35)"
+                            color: "#ffffff"
                           }}
+                          className="inline-block text-[11px] font-bold tracking-wider uppercase px-3.5 py-1.5 rounded-full shadow-md border border-white/20"
                         >
                           {featuredPost.category}
                         </span>
                       </div>
                     </div>
 
-                    {/* Content side */}
-                    <div className="flex-1 p-6 sm:p-8 md:p-9 flex flex-col justify-between gap-4">
-                      <div className="flex flex-col gap-3">
-                        {/* Meta */}
-                        <div className="flex flex-wrap items-center gap-3 text-xs text-gray-400 font-medium">
+                    {/* Right Column: Article Content (~58% desktop width, 32-40px consistent padding) */}
+                    <div className="w-full lg:w-[58%] flex-1 p-6 sm:p-8 lg:p-10 flex flex-col justify-between">
+                      {/* Top content stack with consistent alignment */}
+                      <div className="flex flex-col">
+                        {/* Meta: High contrast date, read time, and editorial badge */}
+                        <div className="flex flex-wrap items-center gap-3 text-xs sm:text-[13px] text-gray-600 font-semibold mb-3">
                           <span className="flex items-center gap-1.5">
                             <Calendar className="w-3.5 h-3.5 text-[#b69455]" />
                             {featuredPost.publishedDate}
@@ -261,36 +252,40 @@ function BlogsContent() {
                             {featuredPost.readTime}
                           </span>
                           <span className="text-gray-300">•</span>
-                          <span className="text-[#b69455] font-semibold flex items-center gap-1">
+                          <span className="text-[#b69455] font-bold flex items-center gap-1">
                             <Sparkles className="w-3.5 h-3.5" />
                             Top Editorial Pick
                           </span>
                         </div>
 
-                        {/* Title */}
-                        <h3
-                          style={{ textTransform: "none", color: "#0d2b33", lineHeight: "1.3" }}
-                          className="text-xl sm:text-2xl lg:text-[26px] font-bold tracking-tight"
+                        {/* Headline: Serif font, 38-42px desktop, line-height 1.15-1.25, balanced wrap */}
+                        <h2
+                          style={{
+                            fontFamily: "'Playfair Display', Georgia, Cambria, 'Times New Roman', serif",
+                            textTransform: "none",
+                            lineHeight: "1.2"
+                          }}
+                          className="text-2xl sm:text-3xl lg:text-[38px] xl:text-[40px] font-bold text-[#094b57] tracking-tight [text-wrap:balance] mb-3.5"
                         >
                           <Link
                             href={`/blogs/${featuredPost.slug}`}
-                            style={{ color: "#0d2b33", textDecoration: "none" }}
-                            className="hover:text-[#094b57] transition-colors"
+                            className="hover:text-[#0c5c6b] transition-colors"
+                            style={{ textDecoration: "none", color: "inherit" }}
                           >
-                            {featuredPost.title}
+                            {formatEditorialTitle(featuredPost.title)}
                           </Link>
-                        </h3>
+                        </h2>
 
-                        {/* Excerpt */}
-                        <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
+                        {/* Description: 17-18px body, line-height 1.6, left-aligned */}
+                        <p className="text-[17px] lg:text-[18px] text-gray-600 leading-[1.6] line-clamp-3 sm:line-clamp-4 mb-0">
                           {featuredPost.excerpt}
                         </p>
 
-                        {/* Key Takeaway */}
+                        {/* Key Insight: Visually distinct, subtle, brand color, comfortable spacing */}
                         {featuredPost.takeaways && featuredPost.takeaways.length > 0 && (
-                          <div className="bg-[#fcf8f0] border-l-[3px] border-[#b69455] px-4 py-3 rounded-r-xl">
-                            <p className="text-xs text-gray-700 leading-relaxed">
-                              <strong className="text-[#094b57] font-semibold">Key Insight: </strong>
+                          <div className="mt-4 sm:mt-5 bg-[#fbf9f4] border-l-[3px] border-[#b69455] rounded-r-lg px-4 py-3 sm:px-4.5 sm:py-3.5">
+                            <p className="text-sm sm:text-[15px] text-gray-700 leading-relaxed m-0">
+                              <strong className="text-[#094b57] font-bold">Key Insight: </strong>
                               {featuredPost.takeaways[0]}
                             </p>
                           </div>
@@ -298,11 +293,11 @@ function BlogsContent() {
 
                         {/* Tags */}
                         {featuredPost.tags && featuredPost.tags.length > 0 && (
-                          <div className="flex flex-wrap items-center gap-2 pt-1">
+                          <div className="flex flex-wrap items-center gap-2 mt-3.5">
                             {featuredPost.tags.slice(0, 4).map((tag) => (
                               <span
                                 key={tag}
-                                className="text-[11px] font-medium text-gray-500 bg-gray-100 hover:bg-gray-200 px-2.5 py-1 rounded-md transition"
+                                className="text-[11px] font-medium text-gray-500 bg-gray-100/80 hover:bg-gray-200/80 px-2.5 py-1 rounded-md transition"
                               >
                                 #{tag}
                               </span>
@@ -311,60 +306,43 @@ function BlogsContent() {
                         )}
                       </div>
 
-                      {/* Footer row */}
-                      <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-gray-100 mt-2">
-                        <div className="flex items-center gap-3">
+                      {/* Author Section and CTA: Proper footer with subtle divider */}
+                      <div className="mt-6 sm:mt-8 pt-5 sm:pt-6 border-t border-gray-100 sm:border-gray-200/70 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                        {/* Author Info */}
+                        <div className="flex items-center gap-3.5">
                           {featuredPost.author.avatar ? (
                             <img
                               src={featuredPost.author.avatar}
                               alt={featuredPost.author.name}
-                              className="w-10 h-10 rounded-full object-cover border border-gray-200"
-                              style={{ width: "40px", height: "40px" }}
+                              className="w-11 h-11 rounded-full object-cover border border-gray-200 shrink-0"
                             />
                           ) : (
-                            <div
-                              style={{
-                                width: "40px",
-                                height: "40px",
-                                borderRadius: "50%",
-                                background: "linear-gradient(135deg, #094b57, #0d6b7a)",
-                                color: "#ffffff",
-                                display: "flex",
-                                alignItems: "center",
-                                justifyContent: "center",
-                                fontWeight: "700",
-                                fontSize: "14px",
-                                flexShrink: 0
-                              }}
-                            >
+                            <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#094b57] to-[#0c5c6b] text-white flex items-center justify-center font-bold text-base shrink-0">
                               {featuredPost.author.name.charAt(0)}
                             </div>
                           )}
                           <div>
-                            <p className="text-sm font-bold text-gray-900 leading-tight">
+                            <p className="text-sm sm:text-[15px] font-bold text-gray-900 leading-snug">
                               {featuredPost.author.name}
                             </p>
-                            <p className="text-[11px] text-gray-400 mt-0.5">
+                            <p className="text-xs text-gray-500 mt-0.5 leading-snug">
                               {featuredPost.author.role}
                             </p>
                           </div>
                         </div>
 
+                        {/* CTA Button: Refined outline style, 48-54px height, smooth hover */}
                         <Link
                           href={`/blogs/${featuredPost.slug}`}
-                          style={{
-                            backgroundColor: "#094b57",
-                            color: "#ffffff",
-                            textDecoration: "none"
-                          }}
-                          className="inline-flex items-center gap-2 text-xs font-semibold px-5 py-2.5 rounded-full hover:bg-[#073942] transition-all shadow-xs group"
+                          className="h-[48px] sm:h-[50px] px-6 sm:px-7 inline-flex items-center justify-center gap-2 border-2 border-[#094b57] text-[#094b57] bg-transparent hover:bg-[#094b57] hover:text-white rounded-full font-semibold text-sm transition-all duration-300 shadow-xs hover:shadow-md group w-full sm:w-auto"
+                          style={{ textDecoration: "none" }}
                         >
                           <span>Read Full Article</span>
-                          <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                          <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
                         </Link>
                       </div>
                     </div>
-                  </div>
+                  </article>
                 </div>
               </div>
             </section>
