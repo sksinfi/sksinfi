@@ -88,7 +88,8 @@ export default function SingleBlogClient({ post, relatedPosts }: SingleBlogClien
                 <div className="mb-5">
                   <Link
                     href="/blogs"
-                    className="inline-flex items-center gap-2 text-xs md:text-sm font-semibold text-white/80 hover:text-white transition group"
+                    style={{ color: "rgba(255, 255, 255, 0.85)", textDecoration: "none" }}
+                    className="inline-flex items-center gap-2 text-xs md:text-sm font-semibold hover:text-white transition group"
                   >
                     <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1 text-[#e9c787]" />
                     <span>Back to Financial Insights</span>
@@ -150,14 +151,28 @@ export default function SingleBlogClient({ post, relatedPosts }: SingleBlogClien
                     </div>
                     <div>
                       <div className="flex items-center gap-2">
-                        <p className="text-sm font-bold text-white leading-tight">
+                        <p
+                          className="text-sm font-bold text-white leading-tight"
+                          style={{ color: "#ffffff", margin: 0 }}
+                        >
                           {post.author.name}
                         </p>
                         <span className="text-[10px] bg-emerald-400/20 text-emerald-300 px-2 py-0.5 rounded-full font-bold border border-emerald-400/30">
                           Verified
                         </span>
                       </div>
-                      <p className="text-xs text-white/60 mt-0.5">{post.author.role}</p>
+                      <p
+                        className="text-xs mt-0.5"
+                        style={{
+                          color: "#e9c787",
+                          fontSize: "12px",
+                          lineHeight: "1.3",
+                          margin: "2px 0 0 0",
+                          fontWeight: 500
+                        }}
+                      >
+                        {post.author.role}
+                      </p>
                     </div>
                   </div>
 
