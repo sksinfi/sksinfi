@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import Preloader from "@/components/Preloader";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -137,7 +136,6 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased min-h-screen text-[#333333] bg-white font-['Poppins',sans-serif]" suppressHydrationWarning>
-        <Preloader />
         {children}
 
         {/* Google Analytics / Google Tag Manager (gtag.js) */}

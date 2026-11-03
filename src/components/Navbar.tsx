@@ -163,146 +163,146 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
 
   return (
     <>
-      <header
-        className="w-full sticky top-0 z-[1000] font-sans"
+      {/* ================= 1. TOP HEADER BAR ================= */}
+      <div
+        id="sks-top-bar"
         style={{
+          backgroundColor: "#094b57"
+        }}
+        className="w-full relative z-30 border-b border-white/15 text-white text-xs font-sans"
+      >
+        <div className="container mx-auto px-4 py-2 sm:py-2.5 flex flex-wrap items-center justify-between gap-2.5 sm:gap-3">
+          {/* NRI Helpline */}
+          <div className="flex items-center gap-2">
+            <span
+              style={{ color: "rgba(255, 255, 255, 0.85)" }}
+              className="text-[11px] sm:text-xs font-medium"
+            >
+              24/7 Service Available to NRI:
+            </span>
+            <a
+              href="tel:+919928593122"
+              style={{ color: "#ffffff", textDecoration: "none" }}
+              className="hover:text-[#e9c787] font-bold text-xs inline-flex items-center gap-1.5 transition"
+            >
+              <Phone className="w-3.5 h-3.5 text-[#b69455]" />
+              <span>+91 99285 93122</span>
+            </a>
+          </div>
+
+          {/* Quick Links & Socials */}
+          <div className="flex items-center gap-3">
+            <nav className="hidden md:flex items-center gap-3 text-[11px] sm:text-xs">
+              <Link
+                href="/sksinfin"
+                style={{ color: "#ffffff", textDecoration: "none" }}
+                className="hover:text-[#e9c787] font-medium transition"
+              >
+                WHY SKSINFI
+              </Link>
+              <span style={{ color: "rgba(255, 255, 255, 0.3)" }}>|</span>
+              <Link
+                href="/enquirynow"
+                style={{ color: "#ffffff", textDecoration: "none" }}
+                className="hover:text-[#e9c787] font-medium transition"
+              >
+                Get In Touch
+              </Link>
+              <span style={{ color: "rgba(255, 255, 255, 0.3)" }}>|</span>
+              <Link
+                href="/partner-with-us"
+                style={{ color: "#ffffff", textDecoration: "none" }}
+                className="hover:text-[#e9c787] font-medium transition"
+              >
+                BECOME OUR PARTNER
+              </Link>
+              <span style={{ color: "rgba(255, 255, 255, 0.3)" }}>|</span>
+              <Link
+                href="/blogs"
+                style={{ color: "#e9c787", textDecoration: "none" }}
+                className="hover:text-white font-bold transition"
+              >
+                BLOGS
+              </Link>
+            </nav>
+
+            {/* Social Icons */}
+            <div className="flex items-center gap-1.5 sm:gap-2 sm:pl-3 sm:border-l sm:border-white/20">
+              <a
+                href="https://www.facebook.com/profile.php?id=61580467109664"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                style={{ textDecoration: "none" }}
+                className="w-6 h-6 rounded-full bg-white/10 hover:bg-[#b69455] text-white flex items-center justify-center transition text-[11px]"
+              >
+                <i className="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/sksinfi"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                style={{ textDecoration: "none" }}
+                className="w-6 h-6 rounded-full bg-white/10 hover:bg-[#b69455] text-white flex items-center justify-center transition text-[11px]"
+              >
+                <i className="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://www.youtube.com/@sksinfi"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube"
+                style={{ textDecoration: "none" }}
+                className="w-6 h-6 rounded-full bg-white/10 hover:bg-[#b69455] text-white flex items-center justify-center transition text-[11px]"
+              >
+                <i className="fab fa-youtube"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/sksinfi/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                style={{ textDecoration: "none" }}
+                className="w-6 h-6 rounded-full bg-white/10 hover:bg-[#b69455] text-white flex items-center justify-center transition text-[11px]"
+              >
+                <i className="fab fa-linkedin-in"></i>
+              </a>
+              <a
+                href="https://x.com/infi_sks"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="X Twitter"
+                style={{ textDecoration: "none" }}
+                className="w-6 h-6 rounded-full bg-white/10 hover:bg-[#b69455] text-white flex items-center justify-center transition text-[11px]"
+              >
+                <i className="fa-brands fa-x-twitter"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ================= 2. MAIN NAVIGATION (Sticky) ================= */}
+      <header
+        id="sks-main-header"
+        className="w-full sticky top-0 z-50 font-sans transition-shadow duration-200"
+        style={{
+          position: "sticky",
+          top: 0,
+          zIndex: 50,
+          backgroundColor: "#ffffff",
           boxShadow: isScrolled
             ? "0 4px 20px rgba(0, 0, 0, 0.08)"
             : "0 1px 3px rgba(0, 0, 0, 0.04)"
         }}
       >
-        {/* ================= 1. TOP HEADER BAR ================= */}
-        <div
-          style={{
-            backgroundColor: "#094b57",
-            maxHeight: isScrolled ? "0px" : "44px",
-            opacity: isScrolled ? 0 : 1,
-            overflow: "hidden",
-            paddingTop: isScrolled ? "0px" : "7px",
-            paddingBottom: isScrolled ? "0px" : "7px",
-            transition: "max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease, padding 0.3s ease"
-          }}
-          className="border-b border-white/15 text-white text-xs"
-        >
-          <div className="container mx-auto px-4 flex flex-wrap items-center justify-between gap-3">
-            {/* NRI Helpline */}
-            <div className="flex items-center gap-2">
-              <span
-                style={{ color: "rgba(255, 255, 255, 0.85)" }}
-                className="text-[11px] sm:text-xs font-medium"
-              >
-                24/7 Service Available to NRI:
-              </span>
-              <a
-                href="tel:+919928593122"
-                style={{ color: "#ffffff", textDecoration: "none" }}
-                className="hover:text-[#e9c787] font-bold text-xs inline-flex items-center gap-1.5 transition"
-              >
-                <Phone className="w-3.5 h-3.5 text-[#b69455]" />
-                <span>+91 99285 93122</span>
-              </a>
-            </div>
-
-            {/* Quick Links & Socials */}
-            <div className="flex items-center gap-3">
-              <nav className="hidden md:flex items-center gap-3 text-[11px] sm:text-xs">
-                <Link
-                  href="/sksinfin"
-                  style={{ color: "#ffffff", textDecoration: "none" }}
-                  className="hover:text-[#e9c787] font-medium transition"
-                >
-                  WHY SKSINFI
-                </Link>
-                <span style={{ color: "rgba(255, 255, 255, 0.3)" }}>|</span>
-                <Link
-                  href="/enquirynow"
-                  style={{ color: "#ffffff", textDecoration: "none" }}
-                  className="hover:text-[#e9c787] font-medium transition"
-                >
-                  Get In Touch
-                </Link>
-                <span style={{ color: "rgba(255, 255, 255, 0.3)" }}>|</span>
-                <Link
-                  href="/partner-with-us"
-                  style={{ color: "#ffffff", textDecoration: "none" }}
-                  className="hover:text-[#e9c787] font-medium transition"
-                >
-                  BECOME OUR PARTNER
-                </Link>
-                <span style={{ color: "rgba(255, 255, 255, 0.3)" }}>|</span>
-                <Link
-                  href="/blogs"
-                  style={{ color: "#e9c787", textDecoration: "none" }}
-                  className="hover:text-white font-bold transition"
-                >
-                  BLOGS
-                </Link>
-              </nav>
-
-              {/* Social Icons */}
-              <div className="flex items-center gap-1.5 sm:gap-2 sm:pl-3 sm:border-l sm:border-white/20">
-                <a
-                  href="https://www.facebook.com/profile.php?id=61580467109664"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Facebook"
-                  style={{ textDecoration: "none" }}
-                  className="w-6 h-6 rounded-full bg-white/10 hover:bg-[#b69455] text-white flex items-center justify-center transition text-[11px]"
-                >
-                  <i className="fab fa-facebook-f"></i>
-                </a>
-                <a
-                  href="https://www.instagram.com/sksinfi"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Instagram"
-                  style={{ textDecoration: "none" }}
-                  className="w-6 h-6 rounded-full bg-white/10 hover:bg-[#b69455] text-white flex items-center justify-center transition text-[11px]"
-                >
-                  <i className="fab fa-instagram"></i>
-                </a>
-                <a
-                  href="https://www.youtube.com/@sksinfi"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="YouTube"
-                  style={{ textDecoration: "none" }}
-                  className="w-6 h-6 rounded-full bg-white/10 hover:bg-[#b69455] text-white flex items-center justify-center transition text-[11px]"
-                >
-                  <i className="fab fa-youtube"></i>
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/sksinfi/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="LinkedIn"
-                  style={{ textDecoration: "none" }}
-                  className="w-6 h-6 rounded-full bg-white/10 hover:bg-[#b69455] text-white flex items-center justify-center transition text-[11px]"
-                >
-                  <i className="fab fa-linkedin-in"></i>
-                </a>
-                <a
-                  href="https://x.com/infi_sks"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="X Twitter"
-                  style={{ textDecoration: "none" }}
-                  className="w-6 h-6 rounded-full bg-white/10 hover:bg-[#b69455] text-white flex items-center justify-center transition text-[11px]"
-                >
-                  <i className="fa-brands fa-x-twitter"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* ================= 2. MAIN NAVIGATION ================= */}
         <div
           style={{
             backgroundColor: "#ffffff",
             borderBottom: "1px solid #eef2f6"
           }}
-          className="w-full transition-all duration-200"
+          className="w-full"
         >
           <div
             className="container mx-auto px-4"

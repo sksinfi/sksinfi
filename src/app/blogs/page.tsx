@@ -96,7 +96,7 @@ function BlogsContent() {
         />
         <main className="flex-1 w-full">
           {/* ================= HERO SECTION ================= */}
-          <section className="relative bg-gradient-to-br from-[#06323a] via-[#094b57] to-[#0c5c6b] text-white py-16 md:py-20 overflow-hidden shadow-md">
+          <section className="relative bg-gradient-to-br from-[#06323a] via-[#094b57] to-[#0c5c6b] text-white py-16 sm:py-20 md:py-24 shadow-md">
             {/* Ambient Background Glows */}
             <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-white/5 blur-3xl pointer-events-none" />
             <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-[#b69455]/15 blur-2xl pointer-events-none" />
@@ -109,8 +109,8 @@ function BlogsContent() {
                 </div>
 
                 <h1
-                  style={{ textTransform: "none", color: "#ffffff" }}
-                  className="blog-hero-title text-3xl md:text-5xl font-bold tracking-tight mb-4 text-white leading-tight"
+                  style={{ textTransform: "none", color: "#ffffff", lineHeight: "1.25" }}
+                  className="blog-hero-title text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4 text-white leading-[1.25] py-1 overflow-visible"
                 >
                   Expert Financial Insights &amp; Market Advisory
                 </h1>
@@ -148,7 +148,7 @@ function BlogsContent() {
           </section>
 
           {/* ================= CATEGORY FILTER BAR ================= */}
-          <section className="bg-white border-b border-gray-200 sticky top-0 z-30 shadow-sm">
+          <section className="bg-white border-b border-gray-200 sticky top-[66px] sm:top-[74px] z-40 shadow-xs">
             <div className="container mx-auto px-4 py-3">
               <div className="flex items-center gap-2 overflow-x-auto pb-1 md:pb-0 scrollbar-none justify-start md:justify-center">
                 {categories.map((cat) => {

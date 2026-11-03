@@ -62,6 +62,8 @@ h1.blog-article-title,
 h1.blog-hero-title {
   text-transform: none !important;
   letter-spacing: -0.02em !important;
+  line-height: 1.25 !important;
+  overflow: visible !important;
 }
 
 .blog-hero-p {
