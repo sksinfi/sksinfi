@@ -64,7 +64,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 The platform is 100% Vercel-ready:
 
-1. Import this repository into [Vercel](https://vercel.com/new).
+1. Import this repository into [Vercel](https://vercel.com/new). 
 2. Framework Preset will be automatically detected as **Next.js**.
 3. (Optional) Add your Environment Variables in the Vercel Project Settings:
    - `NEXT_PUBLIC_SUPABASE_URL`
