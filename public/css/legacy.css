@@ -9741,7 +9741,7 @@ body,
         }
 
         .et_pb_image_0 {
-            transform: translateX(-7px) translateY(190px);
+            transform: none;
             /*transform-origin: ;*/
             border-radius: 30px 0 30px 0;
             text-align: left;
