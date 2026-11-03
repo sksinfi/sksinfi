@@ -96,28 +96,28 @@ function BlogsContent() {
         />
         <main className="flex-1 w-full">
           {/* ================= HERO SECTION ================= */}
-          <section className="relative bg-gradient-to-br from-[#06323a] via-[#094b57] to-[#0c5c6b] text-white py-10 sm:py-12 md:py-14 shadow-md">
+          <section className="relative bg-gradient-to-br from-[#06323a] via-[#094b57] to-[#0c5c6b] text-white py-8 sm:py-9 shadow-md">
             {/* Ambient Background Glows */}
             <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-white/5 blur-3xl pointer-events-none" />
             <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-[#b69455]/15 blur-2xl pointer-events-none" />
 
-            <div className="max-w-[1150px] w-full mx-auto px-4 sm:px-6 relative z-10">
+            <div className="max-w-[1200px] w-full mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
               <div className="max-w-3xl mx-auto text-center">
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-[#e9c787] text-xs md:text-sm font-semibold mb-3.5 border border-white/15 shadow-xs">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-[#e9c787] text-xs md:text-sm font-semibold mb-3 border border-white/15 shadow-xs">
                   <Sparkles className="w-4 h-4 text-[#e9c787]" />
                   <span>Financial Knowledge Hub • SKS INFI</span>
                 </div>
 
                 <h1
                   style={{ textTransform: "none", color: "#ffffff", lineHeight: "1.25" }}
-                  className="blog-hero-title text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-3.5 text-white leading-[1.25] py-1 overflow-visible"
+                  className="blog-hero-title text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-3 text-white leading-[1.25] py-1 overflow-visible"
                 >
                   Expert Financial Insights &amp; Market Advisory
                 </h1>
 
                 <p
                   style={{ color: "#ffffff", opacity: 0.95 }}
-                  className="blog-hero-p text-sm md:text-base lg:text-lg leading-relaxed mb-6 max-w-2xl mx-auto"
+                  className="blog-hero-p text-sm md:text-base lg:text-lg leading-relaxed mb-5 max-w-2xl mx-auto"
                 >
                   Clear, actionable guidance on Home Loans, SIP Compounding, MSME Subsidies,
                   NRI Investments, and Tax Planning from Jaipur&apos;s leading financial consultants.
@@ -132,7 +132,7 @@ function BlogsContent() {
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     style={{ color: "#111827", backgroundColor: "#ffffff" }}
-                    className="w-full pl-12 pr-12 py-3.5 rounded-full shadow-lg focus:outline-none focus:ring-4 focus:ring-[#b69455]/40 text-sm md:text-base border border-transparent"
+                    className="w-full pl-12 pr-12 py-3 rounded-full shadow-lg focus:outline-none focus:ring-4 focus:ring-[#b69455]/40 text-sm md:text-base border border-transparent"
                   />
                   {searchQuery && (
                     <button
@@ -148,9 +148,12 @@ function BlogsContent() {
           </section>
 
           {/* ================= CATEGORY FILTER BAR ================= */}
-          <section className="bg-white border-b border-gray-200">
-            <div className="max-w-[1150px] w-full mx-auto px-4 sm:px-6 py-3">
-              <div className="flex items-center gap-2 sm:gap-2.5 overflow-x-auto pb-1 md:pb-0 scrollbar-none justify-start md:justify-center">
+          <section
+            style={{ paddingTop: "22px", paddingBottom: "22px" }}
+            className="bg-white border-b border-gray-200"
+          >
+            <div className="max-w-[1200px] w-full mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="flex items-center gap-3 sm:gap-3.5 overflow-x-auto pb-1 md:pb-0 scrollbar-none justify-start md:justify-center">
                 {categories.map((cat) => {
                   const count =
                     cat === "All"
@@ -163,11 +166,12 @@ function BlogsContent() {
                       key={cat}
                       onClick={() => setSelectedCategory(cat)}
                       style={{
+                        height: "40px",
                         backgroundColor: isActive ? "#094b57" : "transparent",
                         color: isActive ? "#ffffff" : "#475569",
                         border: isActive ? "1.5px solid #094b57" : "1.5px solid #d1d5db"
                       }}
-                      className={`whitespace-nowrap h-[38px] px-3.5 sm:px-4 rounded-full text-xs sm:text-sm font-semibold transition-all inline-flex items-center justify-center gap-2 cursor-pointer shrink-0 ${
+                      className={`whitespace-nowrap h-[40px] px-4 sm:px-4.5 rounded-full text-xs sm:text-[13px] font-semibold transition-all inline-flex items-center justify-center gap-2.5 cursor-pointer shrink-0 ${
                         isActive
                           ? "shadow-sm shadow-[#094b57]/20 font-bold"
                           : "hover:border-[#094b57] hover:text-[#094b57] hover:bg-[#094b57]/5"
@@ -179,7 +183,7 @@ function BlogsContent() {
                           backgroundColor: isActive ? "rgba(182,148,85,0.9)" : "#e5e7eb",
                           color: isActive ? "#ffffff" : "#6b7280"
                         }}
-                        className="text-[10px] px-1.5 py-0.5 rounded-full font-bold min-w-[18px] text-center leading-none"
+                        className="text-[10px] h-[20px] min-w-[20px] px-1.5 rounded-full font-bold inline-flex items-center justify-center leading-none text-center"
                       >
                         {count}
                       </span>
@@ -192,8 +196,8 @@ function BlogsContent() {
 
           {/* ================= FEATURED POST SPOTLIGHT ================= */}
           {selectedCategory === "All" && !searchQuery && featuredPost && (
-            <section className="pt-6 pb-8 md:pt-8 md:pb-10">
-              <div className="max-w-[1150px] w-full mx-auto px-4 sm:px-6">
+            <section className="pt-7 pb-8 md:pt-8 md:pb-10">
+              <div className="max-w-[1200px] w-full mx-auto px-4 sm:px-6 lg:px-8">
                 <div>
                   {/* Section label — tightly coupled with card */}
                   <div className="flex items-center gap-2.5 mb-2.5 sm:mb-3">
@@ -251,7 +255,10 @@ function BlogsContent() {
                     </div>
 
                     {/* Right Column: Article Content (55–60% width: 7 of 12 cols = 58.33%, 28–36px internal padding) */}
-                    <div className="lg:col-span-7 p-6 sm:p-7 lg:p-9 flex flex-col justify-between">
+                    <div
+                      style={{ padding: "32px" }}
+                      className="lg:col-span-7 flex flex-col justify-between"
+                    >
                       {/* Section 1: Article content */}
                       <div className="flex flex-col">
                         {/* Meta: High contrast date, read time, and editorial badge */}
@@ -369,203 +376,249 @@ function BlogsContent() {
 
 
           {/* ================= ARTICLES GRID ================= */}
-          <section className="py-8 sm:py-10 md:py-12">
-            <div className="max-w-[1150px] w-full mx-auto px-4 sm:px-6">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6 sm:mb-8 pb-4 border-b border-gray-200">
-                  <div>
-                    <h2
-                      style={{ textTransform: "none", color: "#094b57" }}
-                      className="text-2xl md:text-3xl font-bold"
-                    >
-                      {selectedCategory === "All"
-                        ? "All Financial Articles"
-                        : `${selectedCategory} Insights`}
-                    </h2>
-                    <p className="text-xs md:text-sm text-gray-500 mt-1">
-                      Showing {filteredBlogs.length} {filteredBlogs.length === 1 ? "article" : "articles"}
-                      {searchQuery ? ` matching "${searchQuery}"` : ""}
-                    </p>
-                  </div>
-
-                  {(selectedCategory !== "All" || searchQuery) && (
-                    <button
-                      onClick={() => {
-                        setSelectedCategory("All");
-                        setSearchQuery("");
-                      }}
-                      className="text-xs font-semibold text-[#094b57] hover:text-[#b69455] self-start sm:self-auto underline cursor-pointer"
-                    >
-                      Clear all filters
-                    </button>
-                  )}
+          <section
+            style={{ paddingTop: "28px", paddingBottom: "60px" }}
+            className="pb-14 sm:pb-16"
+          >
+            <div className="max-w-[1200px] w-full mx-auto px-4 sm:px-6 lg:px-8">
+              <div
+                style={{ marginBottom: "24px", paddingBottom: "16px" }}
+                className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-gray-200"
+              >
+                <div>
+                  <h2
+                    style={{ textTransform: "none", color: "#094b57" }}
+                    className="text-2xl md:text-3xl font-bold"
+                  >
+                    {selectedCategory === "All"
+                      ? "All Financial Articles"
+                      : `${selectedCategory} Insights`}
+                  </h2>
+                  <p className="text-xs md:text-sm text-gray-500 mt-1">
+                    Showing {filteredBlogs.length} {filteredBlogs.length === 1 ? "article" : "articles"}
+                    {searchQuery ? ` matching "${searchQuery}"` : ""}
+                  </p>
                 </div>
 
-                {filteredBlogs.length === 0 ? (
-                  <div className="text-center py-16 bg-white rounded-[24px] border border-gray-200 p-8 max-w-lg mx-auto shadow-sm">
-                    <BookOpen className="w-12 h-12 text-gray-300 mx-auto mb-4" />
-                    <h3 className="text-lg font-bold text-gray-800 mb-2">
-                      No articles found
-                    </h3>
-                    <p className="text-sm text-gray-500 mb-6">
-                      We couldn&apos;t find any articles matching &quot;{searchQuery}&quot; in the &quot;{selectedCategory}&quot; category.
-                    </p>
-                    <button
-                      onClick={() => {
-                        setSelectedCategory("All");
-                        setSearchQuery("");
-                      }}
-                      style={{ backgroundColor: "#094b57", color: "#ffffff" }}
-                      className="text-xs font-semibold px-6 py-2.5 rounded-full hover:bg-[#073942] transition shadow-sm cursor-pointer"
+                {(selectedCategory !== "All" || searchQuery) && (
+                  <button
+                    onClick={() => {
+                      setSelectedCategory("All");
+                      setSearchQuery("");
+                    }}
+                    className="text-xs font-semibold text-[#094b57] hover:text-[#b69455] self-start sm:self-auto underline cursor-pointer"
+                  >
+                    Clear all filters
+                  </button>
+                )}
+              </div>
+
+              {filteredBlogs.length === 0 ? (
+                <div className="text-center py-16 bg-white rounded-[24px] border border-gray-200 p-8 max-w-lg mx-auto shadow-sm">
+                  <BookOpen className="w-12 h-12 text-gray-300 mx-auto mb-4" />
+                  <h3 className="text-lg font-bold text-gray-800 mb-2">
+                    No articles found
+                  </h3>
+                  <p className="text-sm text-gray-500 mb-6">
+                    We couldn&apos;t find any articles matching &quot;{searchQuery}&quot; in the &quot;{selectedCategory}&quot; category.
+                  </p>
+                  <button
+                    onClick={() => {
+                      setSelectedCategory("All");
+                      setSearchQuery("");
+                    }}
+                    style={{ backgroundColor: "#094b57", color: "#ffffff" }}
+                    className="text-xs font-semibold px-6 py-2.5 rounded-full hover:bg-[#073942] transition shadow-sm cursor-pointer"
+                  >
+                    Reset All Filters
+                  </button>
+                </div>
+              ) : (
+                <div
+                  style={{
+                    display: "grid",
+                    columnGap: "32px",
+                    rowGap: "38px"
+                  }}
+                  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-stretch"
+                >
+                  {filteredBlogs.map((post) => (
+                    <div
+                      key={post.slug}
+                      role="article"
+                      style={{ display: "flex", flexDirection: "column", height: "100%" }}
+                      className="bg-white rounded-[20px] md:rounded-[22px] border border-gray-200/90 shadow-xs hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col h-full overflow-hidden"
                     >
-                      Reset All Filters
-                    </button>
-                  </div>
-                ) : (
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 items-stretch">
-                    {filteredBlogs.map((post) => (
-                      <div
-                        key={post.slug}
-                        role="article"
-                        style={{ display: "flex", flexDirection: "column" }}
-                        className="bg-white rounded-[20px] border border-gray-200/90 shadow-xs hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col h-full overflow-hidden"
+                      {/* Card Thumbnail */}
+                      <Link
+                        href={`/blogs/${post.slug}`}
+                        className="relative block h-48 sm:h-52 w-full overflow-hidden bg-gray-100 group shrink-0"
                       >
-                        {/* Card Thumbnail */}
-                        <Link
-                          href={`/blogs/${post.slug}`}
-                          className="relative block h-48 sm:h-52 w-full overflow-hidden bg-gray-100 group shrink-0"
-                        >
-                          <img
-                            src={post.coverImage}
-                            alt={post.title}
-                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        <img
+                          src={post.coverImage}
+                          alt={post.title}
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                          style={{
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "cover"
+                          }}
+                        />
+                        <div className="absolute top-3 left-3">
+                          <span
                             style={{
-                              width: "100%",
-                              height: "100%",
-                              objectFit: "cover"
+                              backgroundColor: "rgba(9, 75, 87, 0.92)",
+                              color: "#ffffff",
+                              backdropFilter: "blur(4px)"
                             }}
-                          />
-                          <div className="absolute top-3 left-3">
-                            <span
-                              style={{
-                                backgroundColor: "rgba(9, 75, 87, 0.92)",
-                                color: "#ffffff",
-                                backdropFilter: "blur(4px)"
-                              }}
-                              className="text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm"
-                            >
-                              {post.category}
+                            className="text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm"
+                          >
+                            {post.category}
+                          </span>
+                        </div>
+                      </Link>
+
+                      {/* Card Body with explicit 20px internal padding (bypassing Bootstrap .p-5 collision) */}
+                      <div
+                        style={{
+                          padding: "20px",
+                          display: "flex",
+                          flexDirection: "column",
+                          flex: 1,
+                          justifyContent: "space-between"
+                        }}
+                        className="flex-1 flex flex-col justify-between"
+                      >
+                        <div className="flex-1 flex flex-col">
+                          {/* Metadata */}
+                          <div
+                            style={{ margin: "0 0 10px 0" }}
+                            className="flex items-center gap-2.5 text-[11px] sm:text-xs text-gray-500 font-medium"
+                          >
+                            <span className="flex items-center gap-1.5">
+                              <Calendar className="w-3.5 h-3.5 text-[#b69455]" />
+                              {post.publishedDate}
+                            </span>
+                            <span>•</span>
+                            <span className="flex items-center gap-1.5">
+                              <Clock className="w-3.5 h-3.5 text-[#b69455]" />
+                              {post.readTime}
                             </span>
                           </div>
-                        </Link>
 
-                        {/* Card Body with consistent internal padding */}
-                        <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between">
-                          <div className="flex-1 flex flex-col">
-                            {/* Metadata */}
-                            <div className="flex items-center gap-2.5 text-[11px] sm:text-xs text-gray-500 font-medium mb-2.5">
-                              <span className="flex items-center gap-1.5">
-                                <Calendar className="w-3.5 h-3.5 text-[#b69455]" />
-                                {post.publishedDate}
-                              </span>
-                              <span>•</span>
-                              <span className="flex items-center gap-1.5">
-                                <Clock className="w-3.5 h-3.5 text-[#b69455]" />
-                                {post.readTime}
-                              </span>
-                            </div>
-
-                            {/* Title */}
-                            <h3
-                              style={{
-                                textTransform: "none",
-                                color: "#094b57",
-                                fontSize: "17.5px",
-                                lineHeight: "1.4",
-                                paddingBottom: "0",
-                                margin: "0 0 10px 0"
-                              }}
-                              className="font-bold leading-snug hover:text-[#b69455] transition line-clamp-2"
+                          {/* Title */}
+                          <h3
+                            style={{
+                              textTransform: "none",
+                              color: "#094b57",
+                              fontSize: "17.5px",
+                              lineHeight: "1.4",
+                              paddingBottom: "0",
+                              margin: "0 0 12px 0"
+                            }}
+                            className="font-bold leading-snug hover:text-[#b69455] transition line-clamp-2"
+                          >
+                            <Link
+                              href={`/blogs/${post.slug}`}
+                              style={{ color: "#094b57", textDecoration: "none" }}
+                              className="hover:text-[#b69455] transition"
                             >
-                              <Link
-                                href={`/blogs/${post.slug}`}
-                                style={{ color: "#094b57", textDecoration: "none" }}
-                                className="hover:text-[#b69455] transition"
-                              >
-                                {post.title}
-                              </Link>
-                            </h3>
+                              {post.title}
+                            </Link>
+                          </h3>
 
-                            {/* Excerpt */}
-                            <p className="text-xs sm:text-sm text-gray-600 leading-relaxed line-clamp-3 mb-4" style={{ paddingBottom: "0" }}>
-                              {post.excerpt}
-                            </p>
+                          {/* Excerpt */}
+                          <p
+                            style={{
+                              fontSize: "13.5px",
+                              lineHeight: "1.6",
+                              color: "#4b5563",
+                              paddingBottom: "0",
+                              margin: "0 0 16px 0"
+                            }}
+                            className="line-clamp-3"
+                          >
+                            {post.excerpt}
+                          </p>
+                        </div>
+
+                        {/* Card Footer pinned to bottom */}
+                        <div className="mt-auto flex flex-col gap-3">
+                          {/* Tags */}
+                          <div
+                            style={{ margin: "0 0 2px 0" }}
+                            className="flex flex-wrap items-center gap-1.5"
+                          >
+                            {post.tags.slice(0, 2).map((tag) => (
+                              <span
+                                key={tag}
+                                className="text-[10px] bg-gray-100 text-gray-600 px-2.5 py-0.5 rounded-md font-medium"
+                              >
+                                #{tag}
+                              </span>
+                            ))}
+                            {post.tags.length > 2 && (
+                              <span className="text-[10px] text-gray-400 self-center font-medium">
+                                +{post.tags.length - 2} more
+                              </span>
+                            )}
                           </div>
 
-                          {/* Card Footer pinned to bottom */}
-                          <div className="mt-auto pt-3 flex flex-col gap-3">
-                            {/* Tags */}
-                            <div className="flex flex-wrap items-center gap-1.5">
-                              {post.tags.slice(0, 2).map((tag) => (
-                                <span
-                                  key={tag}
-                                  className="text-[10px] bg-gray-100 text-gray-600 px-2.5 py-0.5 rounded-md font-medium"
-                                >
-                                  #{tag}
-                                </span>
-                              ))}
-                              {post.tags.length > 2 && (
-                                <span className="text-[10px] text-gray-400 self-center font-medium">
-                                  +{post.tags.length - 2} more
-                                </span>
-                              )}
-                            </div>
-
-                            <div className="pt-3 border-t border-gray-100 flex items-center justify-between gap-2">
-                              <div className="flex items-center gap-2 min-w-0">
-                                <div
-                                  style={{
-                                    width: "28px",
-                                    height: "28px",
-                                    borderRadius: "50%",
-                                    background: "linear-gradient(135deg, #094b57, #0d6b7a)",
-                                    color: "#ffffff",
-                                    display: "flex",
-                                    alignItems: "center",
-                                    justifyContent: "center",
-                                    fontWeight: "700",
-                                    fontSize: "11px",
-                                    flexShrink: 0,
-                                    boxShadow: "0 1px 6px rgba(9,75,87,0.3)"
-                                  }}
-                                >
-                                  {post.author.name.charAt(0)}
-                                </div>
-                                <span className="text-xs font-semibold text-gray-700 truncate">
-                                  {post.author.name}
-                                </span>
-                              </div>
-
-                              <Link
-                                href={`/blogs/${post.slug}`}
-                                style={{ color: "#094b57", textDecoration: "none" }}
-                                className="text-xs font-bold hover:text-[#b69455] flex items-center gap-1 transition shrink-0"
+                          <div
+                            style={{
+                              paddingTop: "14px",
+                              borderTop: "1px solid #f3f4f6",
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "space-between"
+                            }}
+                            className="flex items-center justify-between gap-2"
+                          >
+                            <div className="flex items-center gap-2 min-w-0">
+                              <div
+                                style={{
+                                  width: "28px",
+                                  height: "28px",
+                                  borderRadius: "50%",
+                                  background: "linear-gradient(135deg, #094b57, #0d6b7a)",
+                                  color: "#ffffff",
+                                  display: "flex",
+                                  alignItems: "center",
+                                  justifyContent: "center",
+                                  fontWeight: "700",
+                                  fontSize: "11px",
+                                  flexShrink: 0,
+                                  boxShadow: "0 1px 6px rgba(9,75,87,0.3)"
+                                }}
                               >
-                                <span>Read More</span>
-                                <ArrowRight className="w-3.5 h-3.5 text-[#b69455]" />
-                              </Link>
+                                {post.author.name.charAt(0)}
+                              </div>
+                              <span className="text-xs font-semibold text-gray-700 truncate">
+                                {post.author.name}
+                              </span>
                             </div>
+
+                            <Link
+                              href={`/blogs/${post.slug}`}
+                              style={{ color: "#094b57", textDecoration: "none" }}
+                              className="text-xs font-bold hover:text-[#b69455] inline-flex items-center gap-1 transition shrink-0"
+                            >
+                              <span>Read More</span>
+                              <ArrowRight className="w-3.5 h-3.5 text-[#b69455]" />
+                            </Link>
                           </div>
                         </div>
                       </div>
-                    ))}
-                  </div>
-                )}
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           </section>
 
           {/* ================= ADVISORY CALL TO ACTION ================= */}
           <section className="py-12 sm:py-16 bg-[#094b57] text-white relative overflow-hidden">
-            <div className="max-w-[1150px] w-full mx-auto px-4 sm:px-6 relative z-10">
+            <div className="max-w-[1200px] w-full mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
               <div
                 className="w-full mx-auto p-8 md:p-12 rounded-[24px] border border-white/15 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8"
                 style={{
