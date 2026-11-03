@@ -15,6 +15,7 @@ import {
   ArrowRight,
   User,
   Sparkles,
+  Phone,
   CheckCircle,
   HelpCircle,
   TrendingUp,
@@ -620,47 +621,111 @@ function BlogsContent() {
           <section className="py-12 sm:py-16 bg-[#094b57] text-white relative overflow-hidden">
             <div className="max-w-[1200px] w-full mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
               <div
-                className="w-full mx-auto p-8 md:p-12 rounded-[24px] border border-white/15 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8"
+                className="w-full mx-auto rounded-[24px] border border-white/15 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-8"
                 style={{
                   background: "linear-gradient(135deg, #06323a 0%, #094b57 100%)",
-                  color: "#ffffff"
+                  color: "#ffffff",
+                  padding: "clamp(24px, 4vw, 36px) clamp(18px, 4vw, 40px)",
+                  borderRadius: "24px"
                 }}
               >
-                <div className="text-center md:text-left">
-                  <span className="text-[#e9c787] text-xs font-bold uppercase tracking-widest block mb-2">
+                <div className="text-center lg:text-left flex-1 min-w-0">
+                  <span
+                    style={{ letterSpacing: "0.14em" }}
+                    className="text-[#e9c787] text-xs font-bold uppercase tracking-widest block mb-2"
+                  >
                     Complimentary Financial Advisory
                   </span>
                   <h3
-                    style={{ textTransform: "none", color: "#ffffff" }}
-                    className="text-2xl md:text-3xl font-bold mb-3"
+                    style={{
+                      textTransform: "none",
+                      color: "#ffffff",
+                      fontSize: "26px",
+                      lineHeight: "1.3",
+                      fontWeight: "700",
+                      margin: "0 0 10px 0",
+                      paddingBottom: "0"
+                    }}
+                    className="text-xl sm:text-2xl lg:text-[28px] font-bold"
                   >
                     Have a Question About Your Loans or Investments?
                   </h3>
                   <p
-                    style={{ color: "rgba(255, 255, 255, 0.88)" }}
-                    className="text-sm max-w-xl leading-relaxed"
+                    style={{
+                      color: "rgba(255, 255, 255, 0.9)",
+                      fontSize: "14.5px",
+                      lineHeight: "1.6",
+                      margin: "0",
+                      paddingBottom: "0",
+                      maxWidth: "540px"
+                    }}
+                    className="mx-auto lg:mx-0"
                   >
                     Our certified consultants evaluate your loan eligibility, mutual fund
                     portfolios, and tax obligations to deliver tailored, zero-conflict advice.
                   </p>
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto shrink-0">
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "14px",
+                    flexShrink: 0
+                  }}
+                  className="flex flex-col sm:flex-row items-center gap-3.5 w-full sm:w-auto shrink-0"
+                >
                   <button
                     onClick={() => {
                       setModalCategory("Loans");
                       setModalOpen(true);
                     }}
-                    style={{ backgroundColor: "#b69455", color: "#ffffff" }}
-                    className="font-semibold text-sm px-7 py-3.5 rounded-full transition shadow-md text-center hover:bg-[#a58446] cursor-pointer"
+                    style={{
+                      background: "linear-gradient(135deg, #b69455 0%, #c4a25f 100%)",
+                      color: "#ffffff",
+                      height: "48px",
+                      padding: "0 28px",
+                      borderRadius: "9999px",
+                      fontSize: "13.5px",
+                      fontWeight: "700",
+                      border: "none",
+                      cursor: "pointer",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: "8px",
+                      whiteSpace: "nowrap",
+                      boxShadow: "0 4px 14px rgba(0, 0, 0, 0.15)",
+                      transition: "all 0.2s ease"
+                    }}
+                    className="hover:scale-[1.02] active:scale-[0.98] transition-transform w-full sm:w-auto"
                   >
-                    Book Free Consultation
+                    <Sparkles className="w-4 h-4 text-white" />
+                    <span>Book Free Consultation</span>
                   </button>
                   <a
-                    href="tel:+919928529222"
-                    className="bg-white/10 hover:bg-white/20 text-white font-semibold text-sm px-6 py-3.5 rounded-full transition text-center border border-white/20"
+                    href="tel:+919928593122"
+                    style={{
+                      backgroundColor: "rgba(255, 255, 255, 0.1)",
+                      color: "#ffffff",
+                      height: "48px",
+                      padding: "0 24px",
+                      borderRadius: "9999px",
+                      fontSize: "13.5px",
+                      fontWeight: "600",
+                      border: "1.5px solid rgba(255, 255, 255, 0.3)",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: "8px",
+                      whiteSpace: "nowrap",
+                      textDecoration: "none",
+                      transition: "all 0.2s ease"
+                    }}
+                    className="hover:bg-white/20 hover:border-white/50 hover:scale-[1.02] active:scale-[0.98] transition-all w-full sm:w-auto"
                   >
-                    Call +91 99285 29222
+                    <Phone className="w-4 h-4 text-[#e9c787]" />
+                    <span>Call +91 99285 93122</span>
                   </a>
                 </div>
               </div>
