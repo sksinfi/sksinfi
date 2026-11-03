@@ -239,6 +239,18 @@ a:hover {
 /* ==========================================================================
    SKS INFI NAVBAR RESPONSIVE RULES (Bulletproof isolation from Bootstrap/legacy)
    ========================================================================== */
+@media (max-width: 767px) {
+  .sks-top-nav {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .sks-top-nav {
+    display: flex !important;
+  }
+}
+
 @media (max-width: 1023px) {
   .sks-desktop-nav {
     display: none !important;
