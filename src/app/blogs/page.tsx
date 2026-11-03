@@ -126,19 +126,32 @@ function BlogsContent() {
 
                 {/* Search Bar */}
                 <div className="relative max-w-xl mx-auto">
-                  <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5 pointer-events-none" />
+                  <Search
+                    style={{ left: "18px" }}
+                    className="absolute top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5 pointer-events-none z-10"
+                  />
                   <input
                     type="text"
                     placeholder="Search articles by topic, loan type, mutual funds, or tax..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    style={{ color: "#111827", backgroundColor: "#ffffff" }}
-                    className="w-full pl-12 pr-12 py-3 rounded-full shadow-lg focus:outline-none focus:ring-4 focus:ring-[#b69455]/40 text-sm md:text-base border border-transparent"
+                    style={{
+                      color: "#111827",
+                      backgroundColor: "#ffffff",
+                      paddingLeft: "52px",
+                      paddingRight: "52px",
+                      paddingTop: "14px",
+                      paddingBottom: "14px",
+                      height: "52px",
+                      borderRadius: "9999px"
+                    }}
+                    className="w-full shadow-lg focus:outline-none focus:ring-4 focus:ring-[#b69455]/40 text-sm md:text-base border border-transparent"
                   />
                   {searchQuery && (
                     <button
                       onClick={() => setSearchQuery("")}
-                      className="absolute right-4 top-1/2 -translate-y-1/2 text-xs bg-gray-200 hover:bg-gray-300 text-gray-700 px-2.5 py-1 rounded-full transition font-medium cursor-pointer"
+                      style={{ right: "16px" }}
+                      className="absolute top-1/2 -translate-y-1/2 text-xs bg-gray-200 hover:bg-gray-300 text-gray-700 px-2.5 py-1 rounded-full transition font-medium cursor-pointer z-10"
                     >
                       Clear
                     </button>
@@ -246,9 +259,17 @@ function BlogsContent() {
                         <span
                           style={{
                             backgroundColor: "#094b57",
-                            color: "#ffffff"
+                            color: "#ffffff",
+                            padding: "6px 18px",
+                            borderRadius: "9999px",
+                            display: "inline-flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            lineHeight: "1.2",
+                            letterSpacing: "0.08em",
+                            whiteSpace: "nowrap"
                           }}
-                          className="inline-block text-[11px] font-bold tracking-wider uppercase px-3.5 py-1.5 rounded-full shadow-md border border-white/20"
+                          className="text-[11px] font-bold tracking-wider uppercase shadow-md border border-white/20"
                         >
                           {featuredPost.category}
                         </span>
@@ -470,9 +491,17 @@ function BlogsContent() {
                             style={{
                               backgroundColor: "rgba(9, 75, 87, 0.92)",
                               color: "#ffffff",
-                              backdropFilter: "blur(4px)"
+                              backdropFilter: "blur(4px)",
+                              padding: "4px 14px",
+                              borderRadius: "9999px",
+                              display: "inline-flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              lineHeight: "1.2",
+                              letterSpacing: "0.06em",
+                              whiteSpace: "nowrap"
                             }}
-                            className="text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm"
+                            className="text-[11px] font-bold uppercase tracking-wider shadow-sm"
                           >
                             {post.category}
                           </span>
