@@ -1395,4 +1395,18 @@ button.btn-primary:active {
   }
 }
 
+/* ==========================================================================
+   LEGACY DIVI SIDEBAR SEPARATOR FIX
+   Disable the legacy WordPress Divi sidebar separator line (1px #e2e2e2)
+   that inadvertently renders across containers in Next.js.
+   ========================================================================== */
+#main-content .container::before,
+#main-content .container:before,
+.container::before,
+.container:before {
+  display: none !important;
+  content: none !important;
+}
+
+
 

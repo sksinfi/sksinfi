@@ -1764,12 +1764,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
             }
 
             #main-content .container:before {
-                content: "";
-                position: absolute;
-                top: 0;
-                height: 100%;
-                width: 1px;
-                background-color: #e2e2e2
+                display: none !important
             }
 
             .et_full_width_page #left-area,
