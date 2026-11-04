@@ -44,3 +44,8 @@ next-env.d.ts
 
 # legacy php source archive (not used in Next.js / Vercel build)
 legacy_php/
+
+# temporary scratch & debug scripts
+scratch/
+*.tmp
+

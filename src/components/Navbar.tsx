@@ -120,10 +120,6 @@ const NAV_ITEMS: NavItem[] = [
     ]
   },
   {
-    label: "BLOGS",
-    href: "/blogs"
-  },
-  {
     label: "CONTACT US",
     href: "/contact"
   }
@@ -630,7 +626,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
               </div>
 
               {/* Drawer Quick Action Pills */}
-              <div className="p-3 bg-gray-50/80 border-b border-gray-100 grid grid-cols-2 gap-2 text-xs font-semibold shrink-0">
+              <div className="p-3 bg-gray-50/80 border-b border-gray-100 grid grid-cols-3 gap-2 text-xs font-semibold shrink-0">
                 <Link
                   href="/sksinfin"
                   onClick={() => setMobileMenuOpen(false)}
@@ -639,7 +635,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                     backgroundColor: "#ffffff",
                     textDecoration: "none"
                   }}
-                  className="p-2.5 rounded-xl text-center font-bold border border-gray-200/80 shadow-xs hover:border-[#b69455] transition-colors"
+                  className="p-2 rounded-xl text-center font-bold border border-gray-200/80 shadow-xs hover:border-[#b69455] transition-colors text-[11.5px]"
                 >
                   Why SKSINFI
                 </Link>
@@ -651,9 +647,21 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                     backgroundColor: "#ffffff",
                     textDecoration: "none"
                   }}
-                  className="p-2.5 rounded-xl text-center font-bold border border-gray-200/80 shadow-xs hover:border-[#b69455] transition-colors"
+                  className="p-2 rounded-xl text-center font-bold border border-gray-200/80 shadow-xs hover:border-[#b69455] transition-colors text-[11.5px]"
                 >
                   Partner With Us
+                </Link>
+                <Link
+                  href="/blogs"
+                  onClick={() => setMobileMenuOpen(false)}
+                  style={{
+                    color: "#094b57",
+                    backgroundColor: "#ffffff",
+                    textDecoration: "none"
+                  }}
+                  className="p-2 rounded-xl text-center font-bold border border-gray-200/80 shadow-xs hover:border-[#b69455] transition-colors text-[11.5px]"
+                >
+                  Blogs
                 </Link>
               </div>
 
