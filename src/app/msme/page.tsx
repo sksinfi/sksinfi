@@ -279,40 +279,110 @@ export default function MsmePage() {
   const currentTabService = MSME_SERVICES.find((s) => s.id === selectedServiceTab) || MSME_SERVICES[0];
 
   return (
-    <div className="msme-page min-h-screen flex flex-col bg-[#fcfcfa] text-[#333333]" suppressHydrationWarning>
+    <div
+      className="msme-page min-h-screen flex flex-col bg-[#fcfcfa] text-[#333333] overflow-x-hidden"
+      style={{ overflowX: "hidden" }}
+      suppressHydrationWarning
+    >
       <Navbar onOpenEnquiry={(cat) => handleOpenModal(cat || "MSME Financial Solutions")} />
 
-      <main className="flex-1 w-full">
+      <main className="flex-1 w-full overflow-x-hidden" style={{ overflowX: "hidden" }}>
         {/* ================= HERO SECTION ================= */}
-        <section className="msme-dark-sec relative bg-gradient-to-br from-[#06323a] via-[#083d49] to-[#0a4f5e] text-white pt-12 pb-20 overflow-hidden">
+        <section
+          className="msme-dark-sec relative bg-gradient-to-br from-[#06323a] via-[#083d49] to-[#0a4f5e] text-white overflow-hidden"
+          style={{
+            paddingTop: "60px",
+            paddingBottom: "60px",
+            margin: 0,
+            overflow: "hidden"
+          }}
+        >
           {/* Ambient Lighting Gradients */}
           <div className="absolute top-0 right-0 -mr-28 -mt-28 w-[460px] h-[460px] rounded-full bg-white/5 blur-3xl pointer-events-none" />
           <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-[400px] h-[400px] rounded-full bg-[#b69455]/15 blur-3xl pointer-events-none" />
 
-          <div className="container mx-auto px-4 relative z-10">
+          <div
+            style={{
+              maxWidth: "1200px",
+              width: "100%",
+              margin: "0 auto",
+              padding: "0 20px",
+              position: "relative",
+              zIndex: 10
+            }}
+          >
             {/* Breadcrumb */}
-            <div className="flex items-center gap-2 text-xs text-white/70 mb-6">
-              <Link href="/" style={{ color: "rgba(255, 255, 255, 0.75)", textDecoration: "none" }} className="hover:text-white transition">Home</Link>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "8px",
+                fontSize: "12px",
+                marginBottom: "14px"
+              }}
+            >
+              <Link
+                href="/"
+                style={{ color: "rgba(255, 255, 255, 0.75)", textDecoration: "none" }}
+                className="hover:text-white transition"
+              >
+                Home
+              </Link>
               <span style={{ color: "rgba(255, 255, 255, 0.5)" }}>/</span>
               <span style={{ color: "#e9c787", fontWeight: 600 }}>MSME Solutions</span>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-              {/* Left Column: Headline & Action */}
-              <div className="lg:col-span-7 space-y-6">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-[#e9c787] text-xs font-semibold tracking-wide border border-[#b69455]/30">
-                  <Sparkles size={14} className="text-[#e9c787]" />
-                  <span style={{ color: "#e9c787" }}>360° MSME Capital & Growth Advisory • SKS INFI</span>
+            <div
+              className="flex flex-col lg:flex-row items-center justify-between"
+              style={{
+                display: "flex",
+                gap: "48px",
+                alignItems: "center"
+              }}
+            >
+              {/* Left Column: Headline & Action (~55% width) */}
+              <div
+                className="w-full lg:w-[55%]"
+                style={{
+                  display: "flex",
+                  flexDirection: "column"
+                }}
+              >
+                {/* Small Badge */}
+                <div
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "8px",
+                    padding: "6px 14px",
+                    borderRadius: "9999px",
+                    backgroundColor: "rgba(255, 255, 255, 0.1)",
+                    border: "1px solid rgba(182, 148, 85, 0.35)",
+                    marginBottom: "14px",
+                    width: "fit-content",
+                    maxWidth: "100%"
+                  }}
+                >
+                  <Sparkles size={14} className="text-[#e9c787] shrink-0" />
+                  <span
+                    style={{ color: "#e9c787", fontWeight: 600, letterSpacing: "0.02em" }}
+                    className="text-[11px] sm:text-xs"
+                  >
+                    <span className="hidden sm:inline">360° MSME Capital & Growth Advisory • SKS INFI</span>
+                    <span className="sm:hidden inline">360° MSME Capital & Growth Advisory</span>
+                  </span>
                 </div>
 
                 <h1
                   style={{
                     color: "#ffffff",
                     textTransform: "none",
-                    lineHeight: "1.2",
-                    letterSpacing: "-0.02em"
+                    lineHeight: "1.26",
+                    letterSpacing: "-0.015em",
+                    margin: "0 0 16px 0",
+                    fontWeight: 700
                   }}
-                  className="text-3xl sm:text-4xl lg:text-[2.85rem] font-bold tracking-tight font-serif"
+                  className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-serif break-words"
                 >
                   Scale Your MSME with Strategic Capital, Subsidies & Public Listing
                 </h1>
@@ -321,45 +391,69 @@ export default function MsmePage() {
                   style={{
                     color: "rgba(255, 255, 255, 0.9)",
                     lineHeight: "1.65",
-                    fontSize: "16px",
+                    fontSize: "15px",
                     fontWeight: 300,
-                    margin: "0 0 20px 0"
+                    margin: "0 0 22px 0"
                   }}
                 >
                   From working capital and government subsidies to collateral-free credit lines, venture capital, and SME IPO listing on BSE SME & NSE Emerge. SKS INFI delivers turnkey financial advisory with 20+ years of proven expertise.
                 </p>
 
-                {/* Key Checklist Badges */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-sm text-slate-100">
+                {/* Key Checklist Badges (20px vertical row gap) */}
+                <div
+                  className="grid grid-cols-1 sm:grid-cols-2 text-sm text-slate-100"
+                  style={{
+                    display: "grid",
+                    rowGap: "20px",
+                    columnGap: "24px",
+                    marginBottom: "26px"
+                  }}
+                >
                   <div className="flex items-center gap-2.5">
                     <CheckCircle2 size={18} className="text-[#e9c787] shrink-0" />
-                    <span style={{ color: "rgba(255, 255, 255, 0.95)" }}>Collateral-Free Loans up to ₹5–10 Cr</span>
+                    <span style={{ color: "rgba(255, 255, 255, 0.95)", fontSize: "14px", lineHeight: 1.4 }}>
+                      Collateral-Free Loans up to ₹5–10 Cr
+                    </span>
                   </div>
                   <div className="flex items-center gap-2.5">
                     <CheckCircle2 size={18} className="text-[#e9c787] shrink-0" />
-                    <span style={{ color: "rgba(255, 255, 255, 0.95)" }}>Up to 40% Govt Subsidy (RIPS 2024 / PMEGP)</span>
+                    <span style={{ color: "rgba(255, 255, 255, 0.95)", fontSize: "14px", lineHeight: 1.4 }}>
+                      Up to 40% Govt Subsidy (RIPS 2024 / PMEGP)
+                    </span>
                   </div>
                   <div className="flex items-center gap-2.5">
                     <CheckCircle2 size={18} className="text-[#e9c787] shrink-0" />
-                    <span style={{ color: "rgba(255, 255, 255, 0.95)" }}>RBI-Approved TReDS Invoice Liquidity</span>
+                    <span style={{ color: "rgba(255, 255, 255, 0.95)", fontSize: "14px", lineHeight: 1.4 }}>
+                      RBI-Approved TReDS Invoice Liquidity
+                    </span>
                   </div>
                   <div className="flex items-center gap-2.5">
                     <CheckCircle2 size={18} className="text-[#e9c787] shrink-0" />
-                    <span style={{ color: "rgba(255, 255, 255, 0.95)" }}>Turnkey BSE SME & NSE Emerge IPO Listing</span>
+                    <span style={{ color: "rgba(255, 255, 255, 0.95)", fontSize: "14px", lineHeight: 1.4 }}>
+                      Turnkey BSE SME & NSE Emerge IPO Listing
+                    </span>
                   </div>
                 </div>
 
-                {/* Hero Action Buttons */}
-                <div className="flex flex-wrap items-center gap-4 pt-4">
+                {/* Hero Action Buttons (Primary & Secondary on same row with 18px gap) */}
+                <div
+                  className="flex flex-col sm:flex-row items-stretch sm:items-center"
+                  style={{
+                    display: "flex",
+                    gap: "18px"
+                  }}
+                >
                   <button
                     onClick={() => handleOpenModal("MSME Financial Solutions")}
                     style={{
                       backgroundColor: "#b69455",
                       color: "#094b57",
                       border: "none",
-                      cursor: "pointer"
+                      cursor: "pointer",
+                      height: "48px",
+                      padding: "0 26px"
                     }}
-                    className="h-12 px-7 rounded-full font-bold text-sm tracking-wide transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center gap-2"
+                    className="w-full sm:w-auto rounded-full font-bold text-sm tracking-wide transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center justify-center gap-2 shrink-0"
                   >
                     <span>Book Free MSME Consultation</span>
                     <ArrowRight size={16} />
@@ -371,88 +465,304 @@ export default function MsmePage() {
                       color: "#ffffff",
                       textDecoration: "none",
                       backgroundColor: "rgba(255, 255, 255, 0.12)",
-                      border: "1px solid rgba(255, 255, 255, 0.25)"
+                      border: "1px solid rgba(255, 255, 255, 0.25)",
+                      height: "48px",
+                      padding: "0 24px"
                     }}
-                    className="h-12 px-6 rounded-full font-semibold text-sm transition-all duration-300 flex items-center gap-2 hover:bg-white/20"
+                    className="w-full sm:w-auto rounded-full font-semibold text-sm transition-all duration-300 flex items-center justify-center gap-2 hover:bg-white/20 shrink-0"
                   >
                     <span>Explore 6 Services</span>
                     <ChevronDown size={16} />
                   </a>
+                </div>
 
+                {/* Phone Contact Button placed below with 20px vertical spacing */}
+                <div style={{ marginTop: "20px" }}>
                   <a
                     href="tel:+919928529222"
                     style={{
                       color: "#e9c787",
                       textDecoration: "none",
-                      borderColor: "rgba(233, 199, 135, 0.4)"
+                      borderColor: "rgba(233, 199, 135, 0.4)",
+                      height: "44px",
+                      padding: "0 22px",
+                      display: "inline-flex"
                     }}
-                    className="h-12 px-5 rounded-full bg-transparent hover:bg-white/10 font-semibold text-sm transition-all duration-300 flex items-center gap-2 border"
+                    className="rounded-full bg-white/5 hover:bg-white/10 font-semibold text-sm transition-all duration-300 items-center justify-center gap-2 border w-full sm:w-auto"
                   >
-                    <PhoneCall size={16} />
+                    <PhoneCall size={15} />
                     <span>+91 99285 29222</span>
                   </a>
                 </div>
               </div>
 
-              {/* Right Column: Hero Visual Card */}
-              <div className="lg:col-span-5">
-                <div className="relative rounded-3xl p-6 sm:p-8 bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl space-y-6">
-                  <div className="flex items-center justify-between border-b border-white/15 pb-4">
+              {/* Right Column: Hero Visual Card (~40% width) */}
+              <div
+                className="w-full lg:w-[40%]"
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center"
+                }}
+              >
+                <div
+                  style={{
+                    padding: "24px",
+                    backgroundColor: "rgba(255, 255, 255, 0.08)",
+                    border: "1px solid rgba(255, 255, 255, 0.18)",
+                    borderRadius: "24px",
+                    boxShadow: "0 20px 45px -12px rgba(0, 0, 0, 0.35)"
+                  }}
+                  className="relative backdrop-blur-md w-full"
+                >
+                  {/* Card Header */}
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                      borderBottom: "1px solid rgba(255, 255, 255, 0.15)",
+                      paddingBottom: "16px",
+                      marginBottom: "20px"
+                    }}
+                  >
                     <div>
-                      <span style={{ color: "#e9c787" }} className="text-xs uppercase tracking-wider font-bold">
+                      <span
+                        style={{
+                          color: "#e9c787",
+                          fontSize: "11px",
+                          letterSpacing: "0.08em",
+                          fontWeight: 700,
+                          display: "block",
+                          marginBottom: "4px"
+                        }}
+                        className="uppercase"
+                      >
                         Institutional Reach
                       </span>
-                      <h4 style={{ color: "#ffffff", textTransform: "none" }} className="text-xl font-bold mt-0.5">
+                      <h4
+                        style={{
+                          color: "#ffffff",
+                          textTransform: "none",
+                          fontSize: "20px",
+                          fontWeight: 700,
+                          margin: 0,
+                          lineHeight: 1.3
+                        }}
+                      >
                         MSME Growth Engine
                       </h4>
                     </div>
-                    <div className="w-12 h-12 rounded-2xl bg-[#b69455]/20 border border-[#b69455]/40 flex items-center justify-center text-[#e9c787]">
-                      <Award size={24} />
+                    <div
+                      style={{
+                        width: "44px",
+                        height: "44px",
+                        backgroundColor: "rgba(182, 148, 85, 0.2)",
+                        border: "1px solid rgba(182, 148, 85, 0.4)",
+                        borderRadius: "14px",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        color: "#e9c787",
+                        flexShrink: 0
+                      }}
+                    >
+                      <Award size={22} />
                     </div>
                   </div>
 
-                  {/* Bullet points on card */}
-                  <div className="space-y-4 text-sm text-slate-100">
-                    <div className="flex items-start gap-3 bg-white/5 p-3.5 rounded-xl border border-white/10">
-                      <div className="w-8 h-8 rounded-lg bg-[#b69455]/30 text-[#e9c787] flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
+                  {/* Information Rows with 12px gap & 14px vertical internal padding */}
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: "12px",
+                      marginBottom: "20px"
+                    }}
+                  >
+                    {/* Row 01 */}
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "flex-start",
+                        gap: "14px",
+                        backgroundColor: "rgba(255, 255, 255, 0.05)",
+                        padding: "14px 16px",
+                        borderRadius: "14px",
+                        border: "1px solid rgba(255, 255, 255, 0.12)"
+                      }}
+                    >
+                      <div
+                        style={{
+                          width: "32px",
+                          height: "32px",
+                          borderRadius: "8px",
+                          backgroundColor: "rgba(182, 148, 85, 0.3)",
+                          color: "#e9c787",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          fontWeight: 700,
+                          fontSize: "12px",
+                          flexShrink: 0,
+                          marginTop: "2px"
+                        }}
+                      >
                         01
                       </div>
-                      <div>
-                        <p style={{ color: "#ffffff", margin: 0, fontWeight: 600 }}>40+ Financial Institutions</p>
-                        <p style={{ color: "rgba(255, 255, 255, 0.75)", margin: "2px 0 0 0", fontSize: "12px" }}>
+                      <div style={{ flex: 1, minWidth: 0 }}>
+                        <p
+                          style={{
+                            color: "#ffffff",
+                            margin: "0 0 4px 0",
+                            fontWeight: 600,
+                            fontSize: "14px",
+                            lineHeight: 1.3
+                          }}
+                        >
+                          40+ Financial Institutions
+                        </p>
+                        <p
+                          style={{
+                            color: "rgba(255, 255, 255, 0.78)",
+                            margin: 0,
+                            fontSize: "12px",
+                            lineHeight: 1.45
+                          }}
+                        >
                           PSU Banks, Private Lenders, NBFCs, and Venture Debt Funds.
                         </p>
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-3 bg-white/5 p-3.5 rounded-xl border border-white/10">
-                      <div className="w-8 h-8 rounded-lg bg-[#b69455]/30 text-[#e9c787] flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
+                    {/* Row 02 */}
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "flex-start",
+                        gap: "14px",
+                        backgroundColor: "rgba(255, 255, 255, 0.05)",
+                        padding: "14px 16px",
+                        borderRadius: "14px",
+                        border: "1px solid rgba(255, 255, 255, 0.12)"
+                      }}
+                    >
+                      <div
+                        style={{
+                          width: "32px",
+                          height: "32px",
+                          borderRadius: "8px",
+                          backgroundColor: "rgba(182, 148, 85, 0.3)",
+                          color: "#e9c787",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          fontWeight: 700,
+                          fontSize: "12px",
+                          flexShrink: 0,
+                          marginTop: "2px"
+                        }}
+                      >
                         02
                       </div>
-                      <div>
-                        <p style={{ color: "#ffffff", margin: 0, fontWeight: 600 }}>Dedicated Scheme Officers</p>
-                        <p style={{ color: "rgba(255, 255, 255, 0.75)", margin: "2px 0 0 0", fontSize: "12px" }}>
+                      <div style={{ flex: 1, minWidth: 0 }}>
+                        <p
+                          style={{
+                            color: "#ffffff",
+                            margin: "0 0 4px 0",
+                            fontWeight: 600,
+                            fontSize: "14px",
+                            lineHeight: 1.3
+                          }}
+                        >
+                          Dedicated Scheme Officers
+                        </p>
+                        <p
+                          style={{
+                            color: "rgba(255, 255, 255, 0.78)",
+                            margin: 0,
+                            fontSize: "12px",
+                            lineHeight: 1.45
+                          }}
+                        >
                           Expert preparation of Detailed Project Reports (DPR) & Subsidy filing.
                         </p>
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-3 bg-white/5 p-3.5 rounded-xl border border-white/10">
-                      <div className="w-8 h-8 rounded-lg bg-[#b69455]/30 text-[#e9c787] flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
+                    {/* Row 03 */}
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "flex-start",
+                        gap: "14px",
+                        backgroundColor: "rgba(255, 255, 255, 0.05)",
+                        padding: "14px 16px",
+                        borderRadius: "14px",
+                        border: "1px solid rgba(255, 255, 255, 0.12)"
+                      }}
+                    >
+                      <div
+                        style={{
+                          width: "32px",
+                          height: "32px",
+                          borderRadius: "8px",
+                          backgroundColor: "rgba(182, 148, 85, 0.3)",
+                          color: "#e9c787",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          fontWeight: 700,
+                          fontSize: "12px",
+                          flexShrink: 0,
+                          marginTop: "2px"
+                        }}
+                      >
                         03
                       </div>
-                      <div>
-                        <p style={{ color: "#ffffff", margin: 0, fontWeight: 600 }}>Pre-IPO to Bell Ringing</p>
-                        <p style={{ color: "rgba(255, 255, 255, 0.75)", margin: "2px 0 0 0", fontSize: "12px" }}>
+                      <div style={{ flex: 1, minWidth: 0 }}>
+                        <p
+                          style={{
+                            color: "#ffffff",
+                            margin: "0 0 4px 0",
+                            fontWeight: 600,
+                            fontSize: "14px",
+                            lineHeight: 1.3
+                          }}
+                        >
+                          Pre-IPO to Bell Ringing
+                        </p>
+                        <p
+                          style={{
+                            color: "rgba(255, 255, 255, 0.78)",
+                            margin: 0,
+                            fontSize: "12px",
+                            lineHeight: 1.45
+                          }}
+                        >
                           Merchant banker selection, exchange filing, and public subscription.
                         </p>
                       </div>
                     </div>
                   </div>
 
-                  <div className="pt-2 border-t border-white/15 flex items-center justify-between text-xs">
-                    <span style={{ color: "rgba(255, 255, 255, 0.85)" }}>Zero upfront consultation charge</span>
-                    <span style={{ color: "#e9c787", fontWeight: 600 }}>Jaipur & Pan-India</span>
+                  {/* Card Footer */}
+                  <div
+                    style={{
+                      paddingTop: "14px",
+                      borderTop: "1px solid rgba(255, 255, 255, 0.15)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                      fontSize: "12px"
+                    }}
+                  >
+                    <span style={{ color: "rgba(255, 255, 255, 0.85)", fontSize: "12px" }}>
+                      Zero upfront consultation charge
+                    </span>
+                    <span style={{ color: "#e9c787", fontWeight: 600, fontSize: "12px" }}>
+                      Jaipur & Pan-India
+                    </span>
                   </div>
                 </div>
               </div>
@@ -461,92 +771,275 @@ export default function MsmePage() {
         </section>
 
         {/* ================= IMPACT METRICS BAR ================= */}
-        <section className="bg-white border-b border-gray-200 py-8 shadow-xs">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-              <div className="space-y-1">
-                <p className="text-2xl sm:text-3xl font-extrabold text-[#094b57]" style={{ margin: 0 }}>₹500+ Cr</p>
-                <p className="text-xs sm:text-sm text-gray-600 font-medium" style={{ margin: 0 }}>Capital & Debt Syndicated</p>
+        <section
+          style={{
+            backgroundColor: "#ffffff",
+            borderBottom: "1px solid #e5e7eb",
+            paddingTop: "32px",
+            paddingBottom: "32px",
+            boxShadow: "0 1px 3px rgba(0, 0, 0, 0.04)"
+          }}
+        >
+          <div style={{ maxWidth: "1200px", width: "100%", margin: "0 auto", padding: "0 20px" }}>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+              {/* Stat 1 */}
+              <div className="flex flex-col items-center justify-center">
+                <p
+                  className="text-2xl sm:text-3xl font-extrabold text-[#094b57]"
+                  style={{ margin: "0 0 6px 0", lineHeight: 1.2 }}
+                >
+                  ₹500+ Cr
+                </p>
+                <p
+                  className="text-xs sm:text-sm text-gray-600 font-medium"
+                  style={{ margin: 0, lineHeight: 1.3 }}
+                >
+                  Capital & Debt Syndicated
+                </p>
               </div>
-              <div className="space-y-1 border-l border-gray-200">
-                <p className="text-2xl sm:text-3xl font-extrabold text-[#094b57]" style={{ margin: 0 }}>20+ Years</p>
-                <p className="text-xs sm:text-sm text-gray-600 font-medium" style={{ margin: 0 }}>Financial & Banking Advisory</p>
+
+              {/* Stat 2 */}
+              <div className="flex flex-col items-center justify-center border-l border-gray-200">
+                <p
+                  className="text-2xl sm:text-3xl font-extrabold text-[#094b57]"
+                  style={{ margin: "0 0 6px 0", lineHeight: 1.2 }}
+                >
+                  20+ Years
+                </p>
+                <p
+                  className="text-xs sm:text-sm text-gray-600 font-medium"
+                  style={{ margin: 0, lineHeight: 1.3 }}
+                >
+                  Financial & Banking Advisory
+                </p>
               </div>
-              <div className="space-y-1 border-l-0 md:border-l border-gray-200">
-                <p className="text-2xl sm:text-3xl font-extrabold text-[#094b57]" style={{ margin: 0 }}>1,500+</p>
-                <p className="text-xs sm:text-sm text-gray-600 font-medium" style={{ margin: 0 }}>MSMEs & Enterprises Advised</p>
+
+              {/* Stat 3 */}
+              <div className="flex flex-col items-center justify-center border-l-0 lg:border-l border-gray-200">
+                <p
+                  className="text-2xl sm:text-3xl font-extrabold text-[#094b57]"
+                  style={{ margin: "0 0 6px 0", lineHeight: 1.2 }}
+                >
+                  1,500+
+                </p>
+                <p
+                  className="text-xs sm:text-sm text-gray-600 font-medium"
+                  style={{ margin: 0, lineHeight: 1.3 }}
+                >
+                  MSMEs & Enterprises Advised
+                </p>
               </div>
-              <div className="space-y-1 border-l border-gray-200">
-                <p className="text-2xl sm:text-3xl font-extrabold text-[#094b57]" style={{ margin: 0 }}>98%</p>
-                <p className="text-xs sm:text-sm text-gray-600 font-medium" style={{ margin: 0 }}>Subsidy & Sanction Success</p>
+
+              {/* Stat 4 */}
+              <div className="flex flex-col items-center justify-center border-l border-gray-200">
+                <p
+                  className="text-2xl sm:text-3xl font-extrabold text-[#094b57]"
+                  style={{ margin: "0 0 6px 0", lineHeight: 1.2 }}
+                >
+                  98%
+                </p>
+                <p
+                  className="text-xs sm:text-sm text-gray-600 font-medium"
+                  style={{ margin: 0, lineHeight: 1.3 }}
+                >
+                  Subsidy & Sanction Success
+                </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* ================= 6 CORE MSME SERVICES ================= */}
-        <section id="services" className="py-20 bg-[#f9f8f5]">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center space-y-3 mb-16">
-              <span className="inline-block px-3.5 py-1 rounded-full bg-[#094b57]/10 text-[#094b57] text-xs font-bold uppercase tracking-wider">
+        {/* ================= 1. 6 CORE MSME SERVICES ================= */}
+        <section id="services" style={{ padding: "80px 0" }} className="bg-[#f9f8f5]">
+          <div style={{ maxWidth: "1200px", width: "100%", margin: "0 auto", padding: "0 20px" }}>
+            {/* Section Header */}
+            <div className="max-w-3xl mx-auto text-center" style={{ marginBottom: "36px" }}>
+              <span
+                style={{
+                  display: "inline-block",
+                  padding: "6px 14px",
+                  borderRadius: "9999px",
+                  backgroundColor: "rgba(9, 75, 87, 0.1)",
+                  color: "#094b57",
+                  fontSize: "11px",
+                  fontWeight: 700,
+                  letterSpacing: "0.08em",
+                  textTransform: "uppercase",
+                  marginBottom: "14px"
+                }}
+              >
                 Comprehensive Service Spectrum
               </span>
               <h2
-                style={{ textTransform: "none", color: "#094b57" }}
-                className="text-3xl sm:text-4xl font-bold font-serif"
+                style={{
+                  textTransform: "none",
+                  color: "#094b57",
+                  fontSize: "clamp(26px, 3vw, 36px)",
+                  fontWeight: 700,
+                  lineHeight: 1.25,
+                  margin: "0 0 14px 0"
+                }}
+                className="font-serif"
               >
                 Tailored Advisory for Every Stage of MSME Growth
               </h2>
-              <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+              <p
+                style={{
+                  color: "#4b5563",
+                  fontSize: "15px",
+                  lineHeight: 1.6,
+                  margin: 0
+                }}
+              >
                 Whether you need immediate working capital, government grants, institutional factoring, equity investment, or public listing, our 6 core services provide end-to-end execution.
               </p>
             </div>
 
-            {/* 6 Services Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* 6 Services Grid (3-column on desktop, 2-col tablet, 1-col mobile, 28px gap) */}
+            <div
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+              style={{
+                display: "grid",
+                gap: "28px"
+              }}
+            >
               {MSME_SERVICES.map((service, idx) => {
                 const IconComponent = service.icon;
                 return (
                   <div
                     key={service.id}
-                    className="bg-white rounded-2xl p-7 border border-gray-200/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1"
+                    style={{
+                      padding: "26px",
+                      backgroundColor: "#ffffff",
+                      borderRadius: "20px",
+                      border: "1px solid rgba(229, 231, 235, 0.9)",
+                      boxShadow: "0 4px 16px -4px rgba(9, 75, 87, 0.05), 0 2px 6px -2px rgba(0, 0, 0, 0.03)",
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "space-between",
+                      height: "100%",
+                      transition: "all 0.25s ease"
+                    }}
+                    className="group hover:shadow-xl hover:-translate-y-1"
                   >
                     <div>
                       {/* Top Row: Icon + Number Badge */}
-                      <div className="flex items-center justify-between mb-5">
-                        <div className="w-13 h-13 rounded-2xl bg-gradient-to-br from-[#094b57]/10 to-[#b69455]/20 text-[#094b57] flex items-center justify-center group-hover:bg-[#094b57] group-hover:text-white transition-all duration-300 shadow-xs">
-                          <IconComponent size={24} />
+                      <div
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "space-between",
+                          marginBottom: "16px"
+                        }}
+                      >
+                        <div
+                          style={{
+                            width: "48px",
+                            height: "48px",
+                            borderRadius: "14px",
+                            background: "linear-gradient(135deg, rgba(9, 75, 87, 0.08) 0%, rgba(182, 148, 85, 0.16) 100%)",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            color: "#094b57",
+                            transition: "all 0.3s ease"
+                          }}
+                          className="group-hover:bg-[#094b57] group-hover:text-white"
+                        >
+                          <IconComponent size={22} />
                         </div>
-                        <span className="text-2xl font-black text-[#b69455]/30">
+                        <span
+                          style={{
+                            fontSize: "22px",
+                            fontWeight: 900,
+                            color: "rgba(182, 148, 85, 0.35)",
+                            fontFamily: "monospace"
+                          }}
+                        >
                           {String(idx + 1).padStart(2, "0")}
                         </span>
                       </div>
 
-                      {/* Service Tag */}
-                      <span className="inline-block text-[11px] font-bold text-[#b69455] bg-[#b69455]/10 px-2.5 py-1 rounded-md mb-2">
-                        {service.badge}
-                      </span>
+                      {/* Service Tag Badge */}
+                      <div style={{ marginBottom: "10px" }}>
+                        <span
+                          style={{
+                            display: "inline-block",
+                            fontSize: "11px",
+                            fontWeight: 700,
+                            color: "#b69455",
+                            backgroundColor: "rgba(182, 148, 85, 0.12)",
+                            padding: "3px 10px",
+                            borderRadius: "6px",
+                            letterSpacing: "0.02em"
+                          }}
+                        >
+                          {service.badge}
+                        </span>
+                      </div>
 
                       {/* Title & Subtitle */}
                       <h3
-                        style={{ textTransform: "none", color: "#094b57" }}
-                        className="text-xl font-bold group-hover:text-[#0c5e6d] transition mb-1"
+                        style={{
+                          textTransform: "none",
+                          color: "#094b57",
+                          fontSize: "18px",
+                          fontWeight: 700,
+                          lineHeight: 1.3,
+                          margin: "0 0 6px 0",
+                          transition: "color 0.2s ease"
+                        }}
+                        className="group-hover:text-[#b69455]"
                       >
                         {service.title}
                       </h3>
-                      <p className="text-xs font-medium text-gray-500 mb-4" style={{ margin: "0 0 16px 0" }}>
+                      <p
+                        style={{
+                          fontSize: "12px",
+                          fontWeight: 500,
+                          color: "#6b7280",
+                          margin: "0 0 14px 0",
+                          lineHeight: 1.4
+                        }}
+                      >
                         {service.subtitle}
                       </p>
 
                       {/* Description */}
-                      <p className="text-sm text-gray-600 leading-relaxed mb-5" style={{ margin: "0 0 20px 0" }}>
+                      <p
+                        style={{
+                          fontSize: "13.5px",
+                          color: "#4b5563",
+                          lineHeight: 1.55,
+                          margin: "0 0 18px 0"
+                        }}
+                      >
                         {service.description}
                       </p>
 
                       {/* Offerings list */}
-                      <div className="space-y-2.5 pt-4 border-t border-gray-100 mb-6">
+                      <div
+                        style={{
+                          paddingTop: "16px",
+                          borderTop: "1px solid #f3f4f6",
+                          display: "flex",
+                          flexDirection: "column",
+                          gap: "9px",
+                          marginBottom: "20px"
+                        }}
+                      >
                         {service.offerings.slice(0, 3).map((item, oIdx) => (
-                          <div key={oIdx} className="flex items-start gap-2 text-xs text-gray-700">
+                          <div
+                            key={oIdx}
+                            style={{
+                              display: "flex",
+                              alignItems: "flex-start",
+                              gap: "8px",
+                              fontSize: "12px",
+                              color: "#374151",
+                              lineHeight: 1.4
+                            }}
+                          >
                             <CheckCircle2 size={14} className="text-[#094b57] shrink-0 mt-0.5" />
                             <span>{item}</span>
                           </div>
@@ -554,17 +1047,48 @@ export default function MsmePage() {
                       </div>
                     </div>
 
-                    {/* Bottom CTA Card Area */}
-                    <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
-                      <span className="text-[11px] font-semibold text-gray-500 flex items-center gap-1">
-                        <Clock size={12} className="text-[#b69455]" />
+                    {/* Bottom CTA Card Area - flex aligned to bottom */}
+                    <div
+                      style={{
+                        marginTop: "auto",
+                        paddingTop: "16px",
+                        borderTop: "1px solid #f3f4f6",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "space-between"
+                      }}
+                    >
+                      <span
+                        style={{
+                          fontSize: "11.5px",
+                          fontWeight: 600,
+                          color: "#6b7280",
+                          display: "inline-flex",
+                          alignItems: "center",
+                          gap: "5px"
+                        }}
+                      >
+                        <Clock size={12} className="text-[#b69455] shrink-0" />
                         <span>{service.timeline}</span>
                       </span>
 
                       <button
                         onClick={() => handleOpenModal(service.title)}
-                        style={{ background: "none", border: "none", cursor: "pointer" }}
-                        className="inline-flex items-center gap-1.5 text-xs font-bold text-[#094b57] hover:text-[#b69455] transition"
+                        style={{
+                          background: "none",
+                          border: "none",
+                          cursor: "pointer",
+                          display: "inline-flex",
+                          alignItems: "center",
+                          gap: "5px",
+                          fontSize: "12px",
+                          fontWeight: 700,
+                          color: "#094b57",
+                          padding: "4px 8px",
+                          borderRadius: "6px",
+                          transition: "all 0.2s ease"
+                        }}
+                        className="hover:text-[#b69455] hover:bg-[#b69455]/5"
                       >
                         <span>Enquire Now</span>
                         <ArrowUpRight size={14} />
@@ -577,175 +1101,577 @@ export default function MsmePage() {
           </div>
         </section>
 
-        {/* ================= INTERACTIVE SERVICE DEEP-DIVE TABS ================= */}
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center space-y-3 mb-12">
-              <span className="inline-block px-3.5 py-1 rounded-full bg-[#b69455]/15 text-[#8c6f37] text-xs font-bold uppercase tracking-wider">
+        {/* ================= 2. INTERACTIVE SERVICE DEEP-DIVE TABS ================= */}
+        <section style={{ padding: "80px 0" }} className="bg-white">
+          <div style={{ maxWidth: "1200px", width: "100%", margin: "0 auto", padding: "0 20px" }}>
+            {/* Section Header */}
+            <div className="max-w-3xl mx-auto text-center" style={{ marginBottom: "32px" }}>
+              <span
+                style={{
+                  display: "inline-block",
+                  padding: "6px 14px",
+                  borderRadius: "9999px",
+                  backgroundColor: "rgba(182, 148, 85, 0.15)",
+                  color: "#8c6f37",
+                  fontSize: "11px",
+                  fontWeight: 700,
+                  letterSpacing: "0.08em",
+                  textTransform: "uppercase",
+                  marginBottom: "14px"
+                }}
+              >
                 In-Depth Exploration
               </span>
               <h2
-                style={{ textTransform: "none", color: "#094b57" }}
-                className="text-3xl sm:text-4xl font-bold font-serif"
+                style={{
+                  textTransform: "none",
+                  color: "#094b57",
+                  fontSize: "clamp(26px, 3vw, 36px)",
+                  fontWeight: 700,
+                  lineHeight: 1.25,
+                  margin: "0 0 14px 0"
+                }}
+                className="font-serif"
               >
                 Service Deliverables & Eligibility Guide
               </h2>
-              <p className="text-gray-600 text-sm sm:text-base">
+              <p
+                style={{
+                  color: "#4b5563",
+                  fontSize: "15px",
+                  lineHeight: 1.6,
+                  margin: 0
+                }}
+              >
                 Click on any service below to examine specific deliverables, turnaround timelines, and eligibility criteria.
               </p>
             </div>
 
-            {/* Tab Buttons */}
-            <div className="flex flex-wrap items-center justify-center gap-2 mb-10 max-w-5xl mx-auto">
-              {MSME_SERVICES.map((s) => (
-                <button
-                  key={s.id}
-                  onClick={() => setSelectedServiceTab(s.id)}
-                  style={{
-                    backgroundColor: selectedServiceTab === s.id ? "#094b57" : "#f1f3f5",
-                    color: selectedServiceTab === s.id ? "#ffffff" : "#333333",
-                    border: "none",
-                    cursor: "pointer"
-                  }}
-                  className={`px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 ${
-                    selectedServiceTab === s.id ? "shadow-md" : "hover:bg-gray-200"
-                  }`}
-                >
-                  {s.title}
-                </button>
-              ))}
-            </div>
+            {/* Container width ~960px for balanced layout */}
+            <div style={{ maxWidth: "960px", width: "100%", margin: "0 auto" }}>
+              {/* Balanced Tab Grid: 3 columns on desktop, 2 on mobile, equal height buttons */}
+              <div
+                className="grid grid-cols-2 md:grid-cols-3"
+                style={{
+                  display: "grid",
+                  gap: "12px",
+                  marginBottom: "24px"
+                }}
+              >
+                {MSME_SERVICES.map((s) => {
+                  const isSelected = selectedServiceTab === s.id;
+                  return (
+                    <button
+                      key={s.id}
+                      onClick={() => setSelectedServiceTab(s.id)}
+                      style={{
+                        backgroundColor: isSelected ? "#094b57" : "#f3f4f6",
+                        color: isSelected ? "#ffffff" : "#374151",
+                        border: isSelected ? "1px solid #094b57" : "1px solid #e5e7eb",
+                        cursor: "pointer",
+                        padding: "12px 14px",
+                        borderRadius: "12px",
+                        fontSize: "12.5px",
+                        fontWeight: isSelected ? 700 : 600,
+                        textAlign: "center",
+                        minHeight: "48px",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        boxShadow: isSelected ? "0 4px 14px rgba(9, 75, 87, 0.2)" : "none",
+                        transition: "all 0.2s ease"
+                      }}
+                      className={isSelected ? "" : "hover:bg-gray-200 hover:text-[#094b57]"}
+                    >
+                      {s.title}
+                    </button>
+                  );
+                })}
+              </div>
 
-            {/* Tab Content Card */}
-            <div className="max-w-4xl mx-auto bg-[#fcfcfa] rounded-3xl p-6 sm:p-10 border border-gray-200 shadow-sm">
-              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-gray-200">
-                <div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-[#b69455]">
-                    {currentTabService.badge}
-                  </span>
-                  <h3
-                    style={{ textTransform: "none", color: "#094b57" }}
-                    className="text-2xl sm:text-3xl font-bold mt-1 font-serif"
+              {/* Tab Content Card: 28px internal padding */}
+              <div
+                style={{
+                  backgroundColor: "#fcfcfa",
+                  borderRadius: "24px",
+                  padding: "28px",
+                  border: "1px solid #e5e7eb",
+                  boxShadow: "0 6px 20px -4px rgba(0, 0, 0, 0.04)"
+                }}
+              >
+                {/* Header row in details panel */}
+                <div
+                  className="flex flex-col md:flex-row md:items-center justify-between"
+                  style={{
+                    display: "flex",
+                    gap: "16px",
+                    paddingBottom: "22px",
+                    borderBottom: "1px solid #e5e7eb"
+                  }}
+                >
+                  <div>
+                    <span
+                      style={{
+                        fontSize: "11px",
+                        fontWeight: 700,
+                        textTransform: "uppercase",
+                        letterSpacing: "0.08em",
+                        color: "#b69455",
+                        display: "block",
+                        marginBottom: "4px"
+                      }}
+                    >
+                      {currentTabService.badge}
+                    </span>
+                    <h3
+                      style={{
+                        textTransform: "none",
+                        color: "#094b57",
+                        fontSize: "22px",
+                        fontWeight: 700,
+                        margin: "0 0 4px 0",
+                        lineHeight: 1.3
+                      }}
+                      className="font-serif"
+                    >
+                      {currentTabService.title}
+                    </h3>
+                    <p style={{ fontSize: "13px", color: "#4b5563", margin: 0, lineHeight: 1.4 }}>
+                      {currentTabService.subtitle}
+                    </p>
+                  </div>
+
+                  <button
+                    onClick={() => handleOpenModal(currentTabService.title)}
+                    style={{
+                      backgroundColor: "#094b57",
+                      color: "#ffffff",
+                      border: "none",
+                      cursor: "pointer",
+                      height: "44px",
+                      padding: "0 22px",
+                      borderRadius: "9999px",
+                      fontWeight: 700,
+                      fontSize: "12px",
+                      letterSpacing: "0.05em",
+                      textTransform: "uppercase",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: "8px",
+                      flexShrink: 0,
+                      transition: "all 0.2s ease"
+                    }}
+                    className="hover:bg-[#0c5e6d] shadow-sm hover:shadow"
                   >
-                    {currentTabService.title}
-                  </h3>
-                  <p className="text-sm text-gray-600 mt-1" style={{ margin: "4px 0 0 0" }}>{currentTabService.subtitle}</p>
+                    <span>Apply For {currentTabService.title.split(" ")[0]}</span>
+                    <ArrowRight size={14} />
+                  </button>
                 </div>
 
-                <button
-                  onClick={() => handleOpenModal(currentTabService.title)}
-                  style={{
-                    backgroundColor: "#094b57",
-                    color: "#ffffff",
-                    border: "none",
-                    cursor: "pointer"
-                  }}
-                  className="h-11 px-6 rounded-full hover:bg-[#0c5e6d] font-bold text-xs tracking-wider uppercase transition shadow-xs hover:shadow-md shrink-0 flex items-center justify-center gap-2"
-                >
-                  <span>Apply For {currentTabService.title.split(" ")[0]}</span>
-                  <ArrowRight size={14} />
-                </button>
-              </div>
-
-              {/* Offerings Details */}
-              <div className="py-6 space-y-4">
-                <h4
-                  style={{ textTransform: "none", color: "#111827" }}
-                  className="text-sm font-bold uppercase tracking-wider"
-                >
-                  Key Scope of Work & Capabilities
-                </h4>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                  {currentTabService.offerings.map((offering, idx) => (
-                    <div key={idx} className="flex items-start gap-2.5 p-3 rounded-xl bg-white border border-gray-100 shadow-2xs">
-                      <Check size={16} className="text-[#094b57] shrink-0 mt-0.5" />
-                      <span className="text-xs sm:text-sm text-gray-700">{offering}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Meta information grid */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-6 border-t border-gray-200 text-xs">
-                <div className="p-4 rounded-xl bg-white border border-gray-100">
-                  <p className="font-bold text-gray-900 uppercase text-[11px] mb-1">Target Eligibility</p>
-                  <p className="text-gray-600 leading-relaxed" style={{ margin: 0 }}>{currentTabService.eligibility}</p>
-                </div>
-                <div className="p-4 rounded-xl bg-white border border-gray-100">
-                  <p className="font-bold text-gray-900 uppercase text-[11px] mb-1">Expected Turnaround</p>
-                  <p className="text-gray-600 leading-relaxed" style={{ margin: 0 }}>{currentTabService.timeline}</p>
-                </div>
-                <div className="p-4 rounded-xl bg-white border border-gray-100">
-                  <p className="font-bold text-gray-900 uppercase text-[11px] mb-1">Key Deliverables</p>
-                  <ul className="list-disc pl-4 text-gray-600 space-y-1" style={{ margin: 0 }}>
-                    {currentTabService.deliverables.map((d, dIdx) => (
-                      <li key={dIdx}>{d}</li>
+                {/* Offerings Details */}
+                <div style={{ paddingTop: "22px", paddingBottom: "22px" }}>
+                  <h4
+                    style={{
+                      color: "#111827",
+                      fontSize: "13px",
+                      fontWeight: 700,
+                      letterSpacing: "0.05em",
+                      textTransform: "uppercase",
+                      margin: "0 0 14px 0"
+                    }}
+                  >
+                    Key Scope of Work & Capabilities
+                  </h4>
+                  <div
+                    className="grid grid-cols-1 md:grid-cols-2"
+                    style={{
+                      display: "grid",
+                      gap: "12px"
+                    }}
+                  >
+                    {currentTabService.offerings.map((offering, idx) => (
+                      <div
+                        key={idx}
+                        style={{
+                          display: "flex",
+                          alignItems: "flex-start",
+                          gap: "10px",
+                          padding: "12px 14px",
+                          borderRadius: "12px",
+                          backgroundColor: "#ffffff",
+                          border: "1px solid #f3f4f6",
+                          boxShadow: "0 1px 3px rgba(0, 0, 0, 0.02)"
+                        }}
+                      >
+                        <Check size={16} className="text-[#094b57] shrink-0 mt-0.5" />
+                        <span style={{ fontSize: "13px", color: "#374151", lineHeight: 1.45 }}>{offering}</span>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
+                </div>
+
+                {/* Meta Information Cards (Target Eligibility, Expected Turnaround, Key Deliverables) */}
+                <div
+                  className="grid grid-cols-1 md:grid-cols-3"
+                  style={{
+                    display: "grid",
+                    gap: "20px",
+                    paddingTop: "22px",
+                    borderTop: "1px solid #e5e7eb"
+                  }}
+                >
+                  {/* Card 1 */}
+                  <div
+                    style={{
+                      padding: "18px",
+                      borderRadius: "14px",
+                      backgroundColor: "#ffffff",
+                      border: "1px solid #e5e7eb",
+                      display: "flex",
+                      flexDirection: "column",
+                      height: "100%"
+                    }}
+                  >
+                    <p
+                      style={{
+                        fontWeight: 700,
+                        color: "#111827",
+                        textTransform: "uppercase",
+                        fontSize: "11px",
+                        letterSpacing: "0.05em",
+                        margin: "0 0 8px 0"
+                      }}
+                    >
+                      Target Eligibility
+                    </p>
+                    <p style={{ color: "#4b5563", fontSize: "12.5px", lineHeight: 1.55, margin: 0 }}>
+                      {currentTabService.eligibility}
+                    </p>
+                  </div>
+
+                  {/* Card 2 */}
+                  <div
+                    style={{
+                      padding: "18px",
+                      borderRadius: "14px",
+                      backgroundColor: "#ffffff",
+                      border: "1px solid #e5e7eb",
+                      display: "flex",
+                      flexDirection: "column",
+                      height: "100%"
+                    }}
+                  >
+                    <p
+                      style={{
+                        fontWeight: 700,
+                        color: "#111827",
+                        textTransform: "uppercase",
+                        fontSize: "11px",
+                        letterSpacing: "0.05em",
+                        margin: "0 0 8px 0"
+                      }}
+                    >
+                      Expected Turnaround
+                    </p>
+                    <p style={{ color: "#4b5563", fontSize: "12.5px", lineHeight: 1.55, margin: 0 }}>
+                      {currentTabService.timeline}
+                    </p>
+                  </div>
+
+                  {/* Card 3 */}
+                  <div
+                    style={{
+                      padding: "18px",
+                      borderRadius: "14px",
+                      backgroundColor: "#ffffff",
+                      border: "1px solid #e5e7eb",
+                      display: "flex",
+                      flexDirection: "column",
+                      height: "100%"
+                    }}
+                  >
+                    <p
+                      style={{
+                        fontWeight: 700,
+                        color: "#111827",
+                        textTransform: "uppercase",
+                        fontSize: "11px",
+                        letterSpacing: "0.05em",
+                        margin: "0 0 8px 0"
+                      }}
+                    >
+                      Key Deliverables
+                    </p>
+                    <ul
+                      style={{
+                        margin: 0,
+                        paddingLeft: "16px",
+                        fontSize: "12.5px",
+                        color: "#4b5563",
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: "4px"
+                      }}
+                    >
+                      {currentTabService.deliverables.map((d, dIdx) => (
+                        <li key={dIdx} style={{ lineHeight: 1.45 }}>{d}</li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* ================= THE 4-STEP EXECUTION ROADMAP ================= */}
-        <section className="msme-dark-sec py-20 bg-[#094b57] text-white relative overflow-hidden">
-          <div className="container mx-auto px-4 relative z-10">
-            <div className="max-w-3xl mx-auto text-center space-y-3 mb-16">
-              <span className="inline-block px-3.5 py-1 rounded-full bg-white/10 text-[#e9c787] text-xs font-bold uppercase tracking-wider border border-white/15">
+        {/* ================= 3. THE 4-STEP EXECUTION ROADMAP ================= */}
+        <section
+          style={{ padding: "80px 0" }}
+          className="msme-dark-sec bg-[#094b57] text-white relative overflow-hidden"
+        >
+          <div style={{ maxWidth: "1200px", width: "100%", margin: "0 auto", padding: "0 20px", position: "relative", zIndex: 10 }}>
+            {/* Section Header */}
+            <div className="max-w-3xl mx-auto text-center" style={{ marginBottom: "36px" }}>
+              <span
+                style={{
+                  display: "inline-block",
+                  padding: "6px 14px",
+                  borderRadius: "9999px",
+                  backgroundColor: "rgba(255, 255, 255, 0.1)",
+                  color: "#e9c787",
+                  fontSize: "11px",
+                  fontWeight: 700,
+                  letterSpacing: "0.08em",
+                  textTransform: "uppercase",
+                  border: "1px solid rgba(255, 255, 255, 0.15)",
+                  marginBottom: "14px"
+                }}
+              >
                 Streamlined Execution
               </span>
               <h2
-                style={{ color: "#ffffff", textTransform: "none" }}
-                className="text-3xl sm:text-4xl font-bold font-serif"
+                style={{
+                  color: "#ffffff",
+                  textTransform: "none",
+                  fontSize: "clamp(26px, 3vw, 36px)",
+                  fontWeight: 700,
+                  lineHeight: 1.25,
+                  margin: "0 0 14px 0"
+                }}
+                className="font-serif"
               >
                 How SKS INFI Delivers Results
               </h2>
               <p
-                style={{ color: "rgba(255, 255, 255, 0.9)", margin: 0 }}
-                className="text-sm sm:text-base font-light"
+                style={{
+                  color: "rgba(255, 255, 255, 0.9)",
+                  fontSize: "15px",
+                  fontWeight: 300,
+                  lineHeight: 1.6,
+                  margin: 0
+                }}
               >
                 Our proven 4-stage process ensures zero paperwork delays, high approval rates, and continuous financial guidance.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-              <div className="p-6 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/15 space-y-3">
-                <span className="text-3xl font-black text-[#e9c787]">01</span>
-                <h4 style={{ color: "#ffffff", textTransform: "none", margin: 0 }} className="text-lg font-bold">
+            {/* 4 Cards in 1 Row on desktop (lg:grid-cols-4), 2 on tablet, 1 on mobile, 22px gap, 24px padding */}
+            <div
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+              style={{
+                display: "grid",
+                gap: "22px"
+              }}
+            >
+              {/* Step 1 */}
+              <div
+                style={{
+                  padding: "24px",
+                  borderRadius: "18px",
+                  backgroundColor: "rgba(255, 255, 255, 0.08)",
+                  border: "1px solid rgba(255, 255, 255, 0.16)",
+                  display: "flex",
+                  flexDirection: "column",
+                  height: "100%",
+                  backdropFilter: "blur(6px)"
+                }}
+              >
+                <span
+                  style={{
+                    fontSize: "28px",
+                    fontWeight: 900,
+                    color: "#e9c787",
+                    marginBottom: "14px",
+                    fontFamily: "monospace"
+                  }}
+                >
+                  01
+                </span>
+                <h4
+                  style={{
+                    color: "#ffffff",
+                    textTransform: "none",
+                    margin: "0 0 10px 0",
+                    fontSize: "17px",
+                    fontWeight: 700,
+                    lineHeight: 1.3
+                  }}
+                >
                   Diagnostic & Audit
                 </h4>
-                <p style={{ color: "rgba(255, 255, 255, 0.85)", margin: 0 }} className="text-xs leading-relaxed">
+                <p
+                  style={{
+                    color: "rgba(255, 255, 255, 0.82)",
+                    margin: 0,
+                    fontSize: "12.5px",
+                    lineHeight: 1.55
+                  }}
+                >
                   We analyze your business financials, GST returns, and expansion goals to map exact capital needs and subsidy qualifications.
                 </p>
               </div>
 
-              <div className="p-6 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/15 space-y-3">
-                <span className="text-3xl font-black text-[#e9c787]">02</span>
-                <h4 style={{ color: "#ffffff", textTransform: "none", margin: 0 }} className="text-lg font-bold">
+              {/* Step 2 */}
+              <div
+                style={{
+                  padding: "24px",
+                  borderRadius: "18px",
+                  backgroundColor: "rgba(255, 255, 255, 0.08)",
+                  border: "1px solid rgba(255, 255, 255, 0.16)",
+                  display: "flex",
+                  flexDirection: "column",
+                  height: "100%",
+                  backdropFilter: "blur(6px)"
+                }}
+              >
+                <span
+                  style={{
+                    fontSize: "28px",
+                    fontWeight: 900,
+                    color: "#e9c787",
+                    marginBottom: "14px",
+                    fontFamily: "monospace"
+                  }}
+                >
+                  02
+                </span>
+                <h4
+                  style={{
+                    color: "#ffffff",
+                    textTransform: "none",
+                    margin: "0 0 10px 0",
+                    fontSize: "17px",
+                    fontWeight: 700,
+                    lineHeight: 1.3
+                  }}
+                >
                   Scheme & Lender Matching
                 </h4>
-                <p style={{ color: "rgba(255, 255, 255, 0.85)", margin: 0 }} className="text-xs leading-relaxed">
+                <p
+                  style={{
+                    color: "rgba(255, 255, 255, 0.82)",
+                    margin: 0,
+                    fontSize: "12.5px",
+                    lineHeight: 1.55
+                  }}
+                >
                   We match your enterprise with appropriate schemes (CGTMSE, RIPS, TReDS, or VC) and select best-fit institutional partners.
                 </p>
               </div>
 
-              <div className="p-6 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/15 space-y-3">
-                <span className="text-3xl font-black text-[#e9c787]">03</span>
-                <h4 style={{ color: "#ffffff", textTransform: "none", margin: 0 }} className="text-lg font-bold">
+              {/* Step 3 */}
+              <div
+                style={{
+                  padding: "24px",
+                  borderRadius: "18px",
+                  backgroundColor: "rgba(255, 255, 255, 0.08)",
+                  border: "1px solid rgba(255, 255, 255, 0.16)",
+                  display: "flex",
+                  flexDirection: "column",
+                  height: "100%",
+                  backdropFilter: "blur(6px)"
+                }}
+              >
+                <span
+                  style={{
+                    fontSize: "28px",
+                    fontWeight: 900,
+                    color: "#e9c787",
+                    marginBottom: "14px",
+                    fontFamily: "monospace"
+                  }}
+                >
+                  03
+                </span>
+                <h4
+                  style={{
+                    color: "#ffffff",
+                    textTransform: "none",
+                    margin: "0 0 10px 0",
+                    fontSize: "17px",
+                    fontWeight: 700,
+                    lineHeight: 1.3
+                  }}
+                >
                   Turnkey Documentation
                 </h4>
-                <p style={{ color: "rgba(255, 255, 255, 0.85)", margin: 0 }} className="text-xs leading-relaxed">
+                <p
+                  style={{
+                    color: "rgba(255, 255, 255, 0.82)",
+                    margin: 0,
+                    fontSize: "12.5px",
+                    lineHeight: 1.55
+                  }}
+                >
                   Our financial analysts draft comprehensive Detailed Project Reports (DPR), CMA projections, or Pitch Decks meeting strict compliance.
                 </p>
               </div>
 
-              <div className="p-6 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/15 space-y-3">
-                <span className="text-3xl font-black text-[#e9c787]">04</span>
-                <h4 style={{ color: "#ffffff", textTransform: "none", margin: 0 }} className="text-lg font-bold">
+              {/* Step 4 */}
+              <div
+                style={{
+                  padding: "24px",
+                  borderRadius: "18px",
+                  backgroundColor: "rgba(255, 255, 255, 0.08)",
+                  border: "1px solid rgba(255, 255, 255, 0.16)",
+                  display: "flex",
+                  flexDirection: "column",
+                  height: "100%",
+                  backdropFilter: "blur(6px)"
+                }}
+              >
+                <span
+                  style={{
+                    fontSize: "28px",
+                    fontWeight: 900,
+                    color: "#e9c787",
+                    marginBottom: "14px",
+                    fontFamily: "monospace"
+                  }}
+                >
+                  04
+                </span>
+                <h4
+                  style={{
+                    color: "#ffffff",
+                    textTransform: "none",
+                    margin: "0 0 10px 0",
+                    fontSize: "17px",
+                    fontWeight: 700,
+                    lineHeight: 1.3
+                  }}
+                >
                   Sanction & Disbursement
                 </h4>
-                <p style={{ color: "rgba(255, 255, 255, 0.85)", margin: 0 }} className="text-xs leading-relaxed">
+                <p
+                  style={{
+                    color: "rgba(255, 255, 255, 0.82)",
+                    margin: 0,
+                    fontSize: "12.5px",
+                    lineHeight: 1.55
+                  }}
+                >
                   We follow through credit committee approvals, documentation signing, escrow setup, and final bank fund release to your account.
                 </p>
               </div>
@@ -753,21 +1679,49 @@ export default function MsmePage() {
           </div>
         </section>
 
-        {/* ================= QUICK CONSULTATION INLINE FORM ================= */}
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto bg-[#f9f8f5] rounded-3xl p-6 sm:p-12 border border-gray-200 shadow-sm">
-              <div className="text-center max-w-2xl mx-auto mb-10 space-y-2">
-                <span className="inline-block text-xs font-bold uppercase tracking-wider text-[#b69455]">
+        {/* ================= 4. QUICK CONSULTATION INLINE FORM ================= */}
+        <section style={{ padding: "80px 0" }} className="bg-white">
+          <div style={{ maxWidth: "1200px", width: "100%", margin: "0 auto", padding: "0 20px" }}>
+            <div
+              style={{
+                maxWidth: "960px",
+                width: "100%",
+                margin: "0 auto",
+                backgroundColor: "#f9f8f5",
+                borderRadius: "24px",
+                padding: "36px",
+                border: "1px solid #e5e7eb",
+                boxShadow: "0 4px 16px rgba(0, 0, 0, 0.03)"
+              }}
+            >
+              <div className="text-center max-w-2xl mx-auto" style={{ marginBottom: "28px" }}>
+                <span
+                  style={{
+                    display: "inline-block",
+                    fontSize: "11px",
+                    fontWeight: 700,
+                    textTransform: "uppercase",
+                    letterSpacing: "0.08em",
+                    color: "#b69455",
+                    marginBottom: "10px"
+                  }}
+                >
                   Fast-Track Eligibility
                 </span>
                 <h3
-                  style={{ textTransform: "none", color: "#094b57" }}
-                  className="text-2xl sm:text-3xl font-bold font-serif"
+                  style={{
+                    textTransform: "none",
+                    color: "#094b57",
+                    fontSize: "clamp(24px, 2.5vw, 30px)",
+                    fontWeight: 700,
+                    margin: "0 0 10px 0",
+                    lineHeight: 1.3
+                  }}
+                  className="font-serif"
                 >
                   Request an MSME Advisory Assessment
                 </h3>
-                <p className="text-gray-600 text-xs sm:text-sm">
+                <p style={{ color: "#4b5563", fontSize: "14px", lineHeight: 1.55, margin: 0 }}>
                   Fill in your basic enterprise details below. Our senior MSME consultant will evaluate your options and contact you within 24 hours.
                 </p>
               </div>
@@ -787,14 +1741,14 @@ export default function MsmePage() {
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleQuickSubmit} className="space-y-5">
+                <form onSubmit={handleQuickSubmit} style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
                   {formError && (
                     <div className="p-3.5 rounded-xl bg-red-50 text-red-700 border border-red-200 text-xs font-medium">
                       {formError}
                     </div>
                   )}
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-bold text-gray-700 mb-1.5 uppercase tracking-wide">
                         Contact Person Name *
@@ -824,7 +1778,7 @@ export default function MsmePage() {
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-bold text-gray-700 mb-1.5 uppercase tracking-wide">
                         Enterprise / Company Name
@@ -856,7 +1810,7 @@ export default function MsmePage() {
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-bold text-gray-700 mb-1.5 uppercase tracking-wide">
                         Primary Service Needed *
@@ -935,47 +1889,127 @@ export default function MsmePage() {
           </div>
         </section>
 
-        {/* ================= FREQUENTLY ASKED QUESTIONS ================= */}
-        <section className="py-20 bg-[#f9f8f5] border-t border-gray-200">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center space-y-3 mb-12">
-              <span className="inline-block px-3.5 py-1 rounded-full bg-[#094b57]/10 text-[#094b57] text-xs font-bold uppercase tracking-wider">
+        {/* ================= 5. FREQUENTLY ASKED QUESTIONS ================= */}
+        <section style={{ padding: "80px 0" }} className="bg-[#f9f8f5] border-t border-gray-200">
+          <div style={{ maxWidth: "1200px", width: "100%", margin: "0 auto", padding: "0 20px" }}>
+            {/* Section Header */}
+            <div className="max-w-3xl mx-auto text-center" style={{ marginBottom: "28px" }}>
+              <span
+                style={{
+                  display: "inline-block",
+                  padding: "6px 14px",
+                  borderRadius: "9999px",
+                  backgroundColor: "rgba(9, 75, 87, 0.1)",
+                  color: "#094b57",
+                  fontSize: "11px",
+                  fontWeight: 700,
+                  letterSpacing: "0.08em",
+                  textTransform: "uppercase",
+                  marginBottom: "14px"
+                }}
+              >
                 Clear Answers
               </span>
               <h2
-                style={{ textTransform: "none", color: "#094b57" }}
-                className="text-3xl sm:text-4xl font-bold font-serif"
+                style={{
+                  textTransform: "none",
+                  color: "#094b57",
+                  fontSize: "clamp(26px, 3vw, 36px)",
+                  fontWeight: 700,
+                  lineHeight: 1.25,
+                  margin: "0 0 14px 0"
+                }}
+                className="font-serif"
               >
                 MSME Advisory FAQs
               </h2>
-              <p className="text-gray-600 text-sm sm:text-base">
+              <p
+                style={{
+                  color: "#4b5563",
+                  fontSize: "15px",
+                  lineHeight: 1.6,
+                  margin: 0
+                }}
+              >
                 Everything you need to know about loan limits, state subsidies, TReDS invoice discounting, and SME IPO eligibility.
               </p>
             </div>
 
-            <div className="max-w-3xl mx-auto space-y-4">
+            {/* Centered FAQ items with max-width ~850px */}
+            <div
+              style={{
+                maxWidth: "850px",
+                width: "100%",
+                margin: "0 auto",
+                display: "flex",
+                flexDirection: "column",
+                gap: "14px"
+              }}
+            >
               {FAQS.map((faq, index) => {
                 const isOpen = openFaq === index;
                 return (
                   <div
                     key={index}
-                    className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-2xs transition"
+                    style={{
+                      backgroundColor: "#ffffff",
+                      borderRadius: "16px",
+                      border: "1px solid #e5e7eb",
+                      overflow: "hidden",
+                      boxShadow: "0 1px 4px rgba(0, 0, 0, 0.03)",
+                      transition: "box-shadow 0.2s ease"
+                    }}
+                    className="hover:shadow-md"
                   >
                     <button
                       onClick={() => setOpenFaq(isOpen ? null : index)}
-                      style={{ background: "none", border: "none" }}
-                      className="w-full px-6 py-4.5 text-left flex items-center justify-between gap-4 font-bold text-sm sm:text-base text-[#094b57] hover:text-[#0c5e6d] transition cursor-pointer"
+                      style={{
+                        width: "100%",
+                        padding: "18px 20px",
+                        textAlign: "left",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "space-between",
+                        gap: "16px",
+                        background: "none",
+                        border: "none",
+                        cursor: "pointer",
+                        color: "#094b57",
+                        fontWeight: 700,
+                        fontSize: "15px",
+                        lineHeight: 1.35
+                      }}
+                      className="hover:text-[#b69455] transition-colors"
                     >
-                      <span>{faq.q}</span>
-                      {isOpen ? (
-                        <ChevronUp size={18} className="text-[#b69455] shrink-0" />
-                      ) : (
-                        <ChevronDown size={18} className="text-gray-400 shrink-0" />
-                      )}
+                      <span style={{ flex: 1 }}>{faq.q}</span>
+                      <span
+                        style={{
+                          transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
+                          transition: "transform 0.2s ease",
+                          display: "inline-flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          flexShrink: 0
+                        }}
+                      >
+                        <ChevronDown
+                          size={18}
+                          className={isOpen ? "text-[#b69455]" : "text-gray-400"}
+                        />
+                      </span>
                     </button>
 
                     {isOpen && (
-                      <div className="px-6 pb-5 pt-1 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-gray-100">
+                      <div
+                        style={{
+                          padding: "0 20px 20px 20px",
+                          fontSize: "13.5px",
+                          color: "#4b5563",
+                          lineHeight: 1.65,
+                          borderTop: "1px solid #f3f4f6",
+                          paddingTop: "14px"
+                        }}
+                      >
                         {faq.a}
                       </div>
                     )}
@@ -986,35 +2020,83 @@ export default function MsmePage() {
           </div>
         </section>
 
-        {/* ================= DIRECT CONTACT & HOTLINE BANNER ================= */}
-        <section className="msme-dark-sec py-16 bg-gradient-to-r from-[#094b57] via-[#0b5462] to-[#094b57] text-white">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center space-y-6">
-              <span className="inline-block px-3.5 py-1 rounded-full bg-white/10 text-[#e9c787] text-xs font-bold uppercase tracking-wider border border-white/20">
+        {/* ================= 6. DIRECT CONTACT & HOTLINE BANNER ================= */}
+        <section
+          style={{ padding: "72px 0" }}
+          className="msme-dark-sec bg-gradient-to-r from-[#094b57] via-[#0b5462] to-[#094b57] text-white"
+        >
+          <div style={{ maxWidth: "1200px", width: "100%", margin: "0 auto", padding: "0 20px" }}>
+            <div className="max-w-4xl mx-auto text-center">
+              <span
+                style={{
+                  display: "inline-block",
+                  padding: "6px 14px",
+                  borderRadius: "9999px",
+                  backgroundColor: "rgba(255, 255, 255, 0.1)",
+                  color: "#e9c787",
+                  fontSize: "11px",
+                  fontWeight: 700,
+                  letterSpacing: "0.08em",
+                  textTransform: "uppercase",
+                  border: "1px solid rgba(255, 255, 255, 0.2)",
+                  marginBottom: "14px"
+                }}
+              >
                 Direct Consulting Hotline
               </span>
               <h2
-                style={{ color: "#ffffff", textTransform: "none" }}
-                className="text-2xl sm:text-4xl font-bold font-serif"
+                style={{
+                  color: "#ffffff",
+                  textTransform: "none",
+                  fontSize: "clamp(26px, 3.2vw, 36px)",
+                  fontWeight: 700,
+                  lineHeight: 1.3,
+                  margin: "0 0 14px 0"
+                }}
+                className="font-serif"
               >
                 Ready to Discuss Your MSME Financing or Subsidy?
               </h2>
               <p
-                style={{ color: "rgba(255, 255, 255, 0.9)", margin: "0 auto" }}
-                className="text-sm sm:text-base max-w-2xl font-light"
+                style={{
+                  color: "rgba(255, 255, 255, 0.9)",
+                  fontSize: "15px",
+                  fontWeight: 300,
+                  lineHeight: 1.6,
+                  maxWidth: "600px",
+                  margin: "0 auto 26px auto"
+                }}
               >
                 Connect directly with our senior financial consultants in Jaipur. Doorstep advisory and pan-India coverage available.
               </p>
 
-              <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
+              <div
+                style={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: "16px"
+                }}
+              >
                 <a
                   href="tel:+919928529222"
                   style={{
                     backgroundColor: "#b69455",
                     color: "#094b57",
-                    textDecoration: "none"
+                    textDecoration: "none",
+                    height: "48px",
+                    padding: "0 28px",
+                    borderRadius: "9999px",
+                    fontWeight: 700,
+                    fontSize: "14px",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "8px",
+                    boxShadow: "0 6px 20px rgba(0, 0, 0, 0.2)",
+                    transition: "all 0.2s ease"
                   }}
-                  className="h-12 px-7 rounded-full hover:bg-[#c5a365] font-bold text-sm flex items-center gap-2 shadow-lg hover:shadow-xl transition"
+                  className="hover:bg-[#c5a365] hover:-translate-y-0.5"
                 >
                   <PhoneCall size={16} />
                   <span>Call +91 99285 29222</span>
@@ -1024,9 +2106,19 @@ export default function MsmePage() {
                   style={{
                     color: "#ffffff",
                     textDecoration: "none",
-                    borderColor: "rgba(255, 255, 255, 0.25)"
+                    backgroundColor: "rgba(255, 255, 255, 0.1)",
+                    border: "1px solid rgba(255, 255, 255, 0.25)",
+                    height: "48px",
+                    padding: "0 28px",
+                    borderRadius: "9999px",
+                    fontWeight: 600,
+                    fontSize: "14px",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "8px",
+                    transition: "all 0.2s ease"
                   }}
-                  className="h-12 px-7 rounded-full bg-white/10 hover:bg-white/20 font-semibold text-sm flex items-center gap-2 border transition"
+                  className="hover:bg-white/20"
                 >
                   <Mail size={16} />
                   <span>infi@sksinfi.com</span>

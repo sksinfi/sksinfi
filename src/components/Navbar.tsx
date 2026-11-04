@@ -270,7 +270,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
             </div>
 
             {/* Social Icons */}
-            <div className="flex items-center gap-1.5 sm:gap-2 sm:pl-3 sm:border-l sm:border-white/20">
+            <div className="hidden sm:flex items-center gap-1.5 sm:gap-2 sm:pl-3 sm:border-l sm:border-white/20">
               <a
                 href="https://www.facebook.com/profile.php?id=61580467109664"
                 target="_blank"
@@ -358,23 +358,21 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                   src="/img/sksl.jpg"
                   alt="SKS INFI"
                   style={{
-                    height: isScrolled ? "44px" : "50px",
-                    maxHeight: "52px",
+                    height: isScrolled ? "38px" : "44px",
+                    maxHeight: "48px",
                     width: "auto",
-                    maxWidth: "155px",
                     objectFit: "contain",
                     transition: "height 0.2s ease"
                   }}
-                  className="block"
+                  className="block max-w-[120px] sm:max-w-[155px]"
                 />
               </Link>
             </div>
 
             {/* Center: Desktop Navigation Links */}
             <nav
-              className="sks-desktop-nav flex items-center justify-center mx-auto gap-0.5 lg:gap-1 xl:gap-1.5"
+              className="sks-desktop-nav hidden xl:flex items-center justify-center mx-auto gap-1 xl:gap-1.5"
               style={{
-                display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 flexWrap: "nowrap"
@@ -521,7 +519,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
             </nav>
 
             {/* Right: Consultation Action Button */}
-            <div className="sks-desktop-cta flex items-center shrink-0">
+            <div className="sks-desktop-cta hidden xl:flex items-center shrink-0">
               <button
                 onClick={handleEnquiryClick}
                 style={{
@@ -535,8 +533,8 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
               </button>
             </div>
 
-            {/* Mobile / Tablet Actions (< 1024px) */}
-            <div className="sks-mobile-toggle flex items-center gap-2 shrink-0">
+            {/* Mobile / Tablet Actions (< 1280px) */}
+            <div className="sks-mobile-toggle flex xl:hidden items-center gap-2 shrink-0">
               {/* Quick Call Icon Button */}
               <a
                 href="tel:+919928593122"

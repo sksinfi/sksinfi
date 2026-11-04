@@ -251,7 +251,7 @@ a:hover {
   }
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1119px) {
   .sks-desktop-nav {
     display: none !important;
   }
@@ -263,7 +263,7 @@ a:hover {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1120px) {
   .sks-desktop-nav {
     display: flex !important;
   }
