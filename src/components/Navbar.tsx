@@ -239,98 +239,98 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
             </a>
           </div>
 
-          {/* Secondary Links & Social Media Icons */}
-          <div className="flex items-center gap-3 sm:gap-4 shrink-0">
-            <div className="sks-top-nav hidden md:flex items-center gap-3 lg:gap-3.5 text-[11.5px] sm:text-xs">
-              <Link
-                href="/sksinfin"
-                style={{ color: "#ffffff", textDecoration: "none" }}
-                className="hover:text-[#e9c787] font-medium transition-colors whitespace-nowrap"
-              >
-                WHY SKSINFI
-              </Link>
-              <span style={{ color: "rgba(255, 255, 255, 0.25)" }}>|</span>
-              <Link
-                href="/enquirynow"
-                style={{ color: "#ffffff", textDecoration: "none" }}
-                className="hover:text-[#e9c787] font-medium transition-colors whitespace-nowrap"
-              >
-                Get In Touch
-              </Link>
-              <span style={{ color: "rgba(255, 255, 255, 0.25)" }}>|</span>
-              <Link
-                href="/partner-with-us"
-                style={{ color: "#ffffff", textDecoration: "none" }}
-                className="hover:text-[#e9c787] font-medium transition-colors whitespace-nowrap"
-              >
-                BECOME OUR PARTNER
-              </Link>
-              <span style={{ color: "rgba(255, 255, 255, 0.25)" }}>|</span>
-              <Link
-                href="/blogs"
-                style={{ color: "#e9c787", textDecoration: "none" }}
-                className="hover:text-white font-bold transition-colors whitespace-nowrap flex items-center gap-1"
-              >
-                <span>BLOGS</span>
-              </Link>
-            </div>
+            {/* Secondary Links & Social Media Icons */}
+            <div className="flex items-center gap-3 sm:gap-4 shrink-0">
+              <div className="sks-top-nav hidden md:flex items-center gap-3 lg:gap-3.5 text-[11.5px] sm:text-xs">
+                <Link
+                  href="/sksinfin"
+                  style={{ color: "#ffffff", textDecoration: "none" }}
+                  className="hover:text-[#e9c787] font-medium transition-colors duration-200 whitespace-nowrap"
+                >
+                  WHY SKSINFI
+                </Link>
+                <span style={{ color: "rgba(255, 255, 255, 0.25)" }}>|</span>
+                <Link
+                  href="/enquirynow"
+                  style={{ color: "#ffffff", textDecoration: "none" }}
+                  className="hover:text-[#e9c787] font-medium transition-colors duration-200 whitespace-nowrap"
+                >
+                  Get In Touch
+                </Link>
+                <span style={{ color: "rgba(255, 255, 255, 0.25)" }}>|</span>
+                <Link
+                  href="/partner-with-us"
+                  style={{ color: "#ffffff", textDecoration: "none" }}
+                  className="hover:text-[#e9c787] font-medium transition-colors duration-200 whitespace-nowrap"
+                >
+                  BECOME OUR PARTNER
+                </Link>
+                <span style={{ color: "rgba(255, 255, 255, 0.25)" }}>|</span>
+                <Link
+                  href="/blogs"
+                  style={{ color: "#e9c787", textDecoration: "none" }}
+                  className="hover:text-white font-bold transition-colors duration-200 whitespace-nowrap flex items-center gap-1"
+                >
+                  <span>BLOGS</span>
+                </Link>
+              </div>
 
-            {/* Social Icons */}
-            <div className="hidden sm:flex items-center gap-2 sm:pl-3 sm:border-l sm:border-white/20">
-              <a
-                href="https://www.facebook.com/profile.php?id=61580467109664"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-                style={{ color: "#ffffff", textDecoration: "none" }}
-                className="w-6 h-6 rounded-full bg-white/10 hover:bg-[#b69455] flex items-center justify-center transition-all text-[11px] hover:scale-110"
-              >
-                <i className="fab fa-facebook-f"></i>
-              </a>
-              <a
-                href="https://www.instagram.com/sksinfi"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                style={{ color: "#ffffff", textDecoration: "none" }}
-                className="w-6 h-6 rounded-full bg-white/10 hover:bg-[#b69455] flex items-center justify-center transition-all text-[11px] hover:scale-110"
-              >
-                <i className="fab fa-instagram"></i>
-              </a>
-              <a
-                href="https://www.youtube.com/@sksinfi"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="YouTube"
-                style={{ color: "#ffffff", textDecoration: "none" }}
-                className="w-6 h-6 rounded-full bg-white/10 hover:bg-[#b69455] flex items-center justify-center transition-all text-[11px] hover:scale-110"
-              >
-                <i className="fab fa-youtube"></i>
-              </a>
-              <a
-                href="https://www.linkedin.com/in/sksinfi/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                style={{ color: "#ffffff", textDecoration: "none" }}
-                className="w-6 h-6 rounded-full bg-white/10 hover:bg-[#b69455] flex items-center justify-center transition-all text-[11px] hover:scale-110"
-              >
-                <i className="fab fa-linkedin-in"></i>
-              </a>
-              <a
-                href="https://x.com/infi_sks"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="X Twitter"
-                style={{ color: "#ffffff", textDecoration: "none" }}
-                className="w-6 h-6 rounded-full bg-white/10 hover:bg-[#b69455] flex items-center justify-center transition-all text-[11px] hover:scale-110"
-              >
-                <i className="fa-brands fa-x-twitter"></i>
-              </a>
+              {/* Social Icons */}
+              <div className="hidden sm:flex items-center gap-2 sm:pl-3 sm:border-l sm:border-white/20">
+                <a
+                  href="https://www.facebook.com/profile.php?id=61580467109664"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  style={{ color: "#ffffff", textDecoration: "none" }}
+                  className="w-6 h-6 rounded-full bg-white/10 hover:bg-[#b69455] flex items-center justify-center transition-all duration-200 text-[11px] hover:scale-110"
+                >
+                  <i className="fab fa-facebook-f"></i>
+                </a>
+                <a
+                  href="https://www.instagram.com/sksinfi"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  style={{ color: "#ffffff", textDecoration: "none" }}
+                  className="w-6 h-6 rounded-full bg-white/10 hover:bg-[#b69455] flex items-center justify-center transition-all duration-200 text-[11px] hover:scale-110"
+                >
+                  <i className="fab fa-instagram"></i>
+                </a>
+                <a
+                  href="https://www.youtube.com/@sksinfi"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube"
+                  style={{ color: "#ffffff", textDecoration: "none" }}
+                  className="w-6 h-6 rounded-full bg-white/10 hover:bg-[#b69455] flex items-center justify-center transition-all duration-200 text-[11px] hover:scale-110"
+                >
+                  <i className="fab fa-youtube"></i>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/sksinfi/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  style={{ color: "#ffffff", textDecoration: "none" }}
+                  className="w-6 h-6 rounded-full bg-white/10 hover:bg-[#b69455] flex items-center justify-center transition-all duration-200 text-[11px] hover:scale-110"
+                >
+                  <i className="fab fa-linkedin-in"></i>
+                </a>
+                <a
+                  href="https://x.com/infi_sks"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="X Twitter"
+                  style={{ color: "#ffffff", textDecoration: "none" }}
+                  className="w-6 h-6 rounded-full bg-white/10 hover:bg-[#b69455] flex items-center justify-center transition-all duration-200 text-[11px] hover:scale-110"
+                >
+                  <i className="fa-brands fa-x-twitter"></i>
+                </a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
       {/* ================= 2. MAIN NAVIGATION (STICKY) ================= */}
       <header
@@ -363,7 +363,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
             <div className="flex items-center shrink-0">
               <Link
                 href="/"
-                className="inline-flex items-center shrink-0 no-underline py-1"
+                className="inline-flex items-center shrink-0 no-underline"
               >
                 <img
                   src="/img/sksl.jpg"
@@ -382,7 +382,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
 
             {/* Center: Desktop Navigation Links */}
             <nav
-              className="sks-desktop-nav hidden xl:flex items-center justify-center mx-auto gap-2.5 lg:gap-3 xl:gap-[20px]"
+              className="sks-desktop-nav hidden xl:flex items-center justify-center mx-auto gap-2 lg:gap-2.5 xl:gap-[18px]"
               style={{
                 alignItems: "center",
                 justifyContent: "center",
@@ -409,25 +409,25 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                         textDecoration: "none",
                         whiteSpace: "nowrap"
                       }}
-                      className={`relative inline-flex items-center gap-1.5 px-2 xl:px-2.5 py-2 text-[11.5px] xl:text-[12px] font-bold uppercase tracking-wider rounded-lg transition-all ${
+                      className={`relative inline-flex items-center gap-1.5 px-2 xl:px-2.5 py-1.5 text-[11.5px] xl:text-[12px] font-bold uppercase tracking-wider rounded-lg transition-all duration-200 ${
                         active
-                          ? "bg-[#faf1e0]/70 font-bold"
+                          ? "bg-[#faf1e0]/80 font-bold"
                           : "hover:text-[#b69455] hover:bg-[#094b57]/[0.04]"
                       }`}
                     >
                       <span style={{ whiteSpace: "nowrap" }}>{item.label}</span>
                       {hasChildren && (
                         <ChevronDown
-                          className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                          className={`w-3.5 h-3.5 transition-transform duration-200 shrink-0 relative top-[0.5px] ${
                             isOpen
                               ? "rotate-180 text-[#b69455]"
-                              : "text-gray-400 group-hover:text-[#b69455] group-hover:rotate-180"
+                              : "text-[#094b57]/50 group-hover:text-[#b69455] group-hover:rotate-180"
                           }`}
                         />
                       )}
                       {/* Active indicator underline */}
                       {active && (
-                        <span className="absolute bottom-0.5 left-2 right-2 h-[2px] bg-[#b69455] rounded-full" />
+                        <span className="absolute bottom-0 left-2 right-2 h-[2px] bg-[#b69455] rounded-full transition-all duration-200" />
                       )}
                     </Link>
 
@@ -537,10 +537,10 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                   background: "linear-gradient(135deg, #b69455 0%, #c4a25f 50%, #b69455 100%)",
                   color: "#ffffff"
                 }}
-                className="relative inline-flex items-center justify-center gap-2 h-[44px] px-5 sm:px-6 rounded-full text-xs font-bold uppercase tracking-wider hover:shadow-[0_4px_16px_rgba(182,148,85,0.4)] hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer border-none shadow-xs whitespace-nowrap"
+                className="relative inline-flex items-center justify-center gap-2 h-[44px] px-5 sm:px-6 rounded-full text-xs font-bold uppercase tracking-wider hover:shadow-[0_4px_16px_rgba(182,148,85,0.4)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 cursor-pointer border-none shadow-xs whitespace-nowrap leading-none"
               >
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>Enquire Now</span>
+                <Sparkles className="w-3.5 h-3.5 shrink-0" />
+                <span className="leading-none pt-[0.5px]">Enquire Now</span>
               </button>
             </div>
 
