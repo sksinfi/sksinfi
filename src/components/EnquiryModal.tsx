@@ -198,6 +198,7 @@ export default function EnquiryModal({
                     onChange={(e) => setCategory(e.target.value)}
                     className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-sky-500 text-sm bg-white"
                   >
+                    <option value="MSME Advisory">MSME & Corporate Growth</option>
                     <option value="Loans">Loans & Financing</option>
                     <option value="Investments">Investments & Wealth</option>
                     <option value="Insurance">Insurance & Protection</option>
@@ -216,6 +217,12 @@ export default function EnquiryModal({
                     onChange={(e) => setProduct(e.target.value)}
                     className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-sky-500 text-sm bg-white"
                   >
+                    <option value="MSME Financial Solutions">MSME Financial Solutions</option>
+                    <option value="MSME Subsidy & Incentive Solutions">MSME Subsidy & Incentives (RIPS/PMEGP)</option>
+                    <option value="MSME Loan & Financial Services">MSME Loans (CGTMSE / Term)</option>
+                    <option value="Venture Capital & Private Equity">Venture Capital & Private Equity</option>
+                    <option value="TReDS Setup – Invoice Discounting">TReDS Invoice Discounting</option>
+                    <option value="MSME IPO Listing & Fundraising">MSME IPO Listing (BSE SME/NSE Emerge)</option>
                     <option value="Home Loan">Home Loan</option>
                     <option value="Business Loan">Business / MSME Loan</option>
                     <option value="Loan Against Property">Loan Against Property (LAP)</option>

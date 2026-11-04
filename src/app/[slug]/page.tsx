@@ -102,6 +102,9 @@ export default async function DynamicLegacyPage({ params }: PageProps) {
   if (cleanSlug === "blog" || cleanSlug === "blogs") {
     redirect("/blogs");
   }
+  if (cleanSlug === "msme") {
+    redirect("/msme");
+  }
 
   const page = pagesData[cleanSlug];
 

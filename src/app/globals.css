@@ -1408,5 +1408,34 @@ button.btn-primary:active {
   content: none !important;
 }
 
+/* ==========================================================================
+   MSME PAGE STYLES & CONTRAST FIXES
+   Ensure white and light text inside dark sections render clearly
+   and prevent legacy Divi uppercase text-transform.
+   ========================================================================== */
+.msme-page h1,
+.msme-page h2,
+.msme-page h3,
+.msme-page h4,
+.msme-page h5,
+.msme-page h6 {
+  text-transform: none !important;
+}
+
+.msme-dark-sec h1,
+.msme-dark-sec h2,
+.msme-dark-sec h3,
+.msme-dark-sec h4,
+.msme-dark-sec h5,
+.msme-dark-sec h6 {
+  color: #ffffff !important;
+  text-transform: none !important;
+}
+
+.msme-dark-sec p {
+  color: rgba(255, 255, 255, 0.88) !important;
+}
+
+
 
 

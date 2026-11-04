@@ -59,7 +59,7 @@ const NAV_ITEMS: NavItem[] = [
       { label: "Cash Credit / Overdraft", href: "/cas_overdraft" },
       { label: "Project Finance", href: "/project_finance" },
       { label: "CGTMSE", href: "/cgtsme" },
-      { label: "MSME Loan", href: "/msme" },
+      { label: "MSME Services & Solutions", href: "/msme" },
       { label: "Subsidy from Govt.", href: "/subsidy-from" },
       { label: "Car Loan", href: "/car" },
       { label: "Commercial Vehicle", href: "/commercial_vehicle" }
