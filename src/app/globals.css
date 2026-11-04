@@ -355,7 +355,8 @@ a:hover {
   align-items: center;
   position: relative;
   min-height: 44px;
-  padding: 0 15px;
+  max-width: 1240px;
+  padding: 0 20px;
 }
 
 #et-secondary-nav {
@@ -396,10 +397,10 @@ a:hover {
   position: relative;
   width: 100%;
   background-color: #ffffff;
-  min-height: 76px;
+  min-height: 88px;
   transition: all 0.3s ease;
   z-index: 1000;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid rgba(9, 75, 87, 0.08);
 }
 
 #mainheader.sticky {
@@ -407,7 +408,7 @@ a:hover {
   top: 0;
   left: 0;
   right: 0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 16px rgba(9, 75, 87, 0.08);
   background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(8px);
 }
@@ -417,9 +418,9 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1350px;
+  max-width: 1240px;
   margin: 0 auto;
-  padding: 8px 24px;
+  padding: 16px 24px;
 }
 
 .logo_container {

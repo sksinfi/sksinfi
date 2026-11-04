@@ -206,19 +206,25 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
       {/* ================= 1. TOP ANNOUNCEMENT & UTILITY BAR ================= */}
       <div
         id="sks-top-bar"
-        style={{ backgroundColor: "#094b57" }}
-        className="w-full relative z-30 border-b border-white/10 text-white font-sans text-xs"
+        style={{
+          backgroundColor: "#094b57",
+          borderBottom: "1px solid rgba(255, 255, 255, 0.08)"
+        }}
+        className="w-full relative z-30 text-white font-sans text-xs"
       >
-        <div className="max-w-[1400px] w-full mx-auto px-5 sm:px-8 lg:px-10 py-2 sm:py-2.5 flex items-center justify-between gap-2 sm:gap-3">
+        <div
+          style={{ maxWidth: "1240px", minHeight: "44px" }}
+          className="w-full mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-3 sm:gap-4"
+        >
           {/* NRI 24/7 Helpline */}
-          <div className="flex items-center gap-1.5 sm:gap-2">
+          <div className="flex items-center gap-2">
             <span className="relative flex h-2 w-2 shrink-0">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#e9c787] opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-[#b69455]"></span>
             </span>
             <span
               style={{ color: "rgba(255, 255, 255, 0.85)" }}
-              className="text-[11px] sm:text-xs font-medium whitespace-nowrap"
+              className="text-[11.5px] sm:text-xs font-medium whitespace-nowrap"
             >
               <span className="hidden sm:inline">24/7 Service Available to NRI:</span>
               <span className="sm:hidden">24/7 NRI:</span>
@@ -226,7 +232,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
             <a
               href="tel:+919928593122"
               style={{ color: "#ffffff", textDecoration: "none" }}
-              className="hover:text-[#e9c787] font-bold text-[11px] sm:text-xs inline-flex items-center gap-1.5 transition-colors whitespace-nowrap"
+              className="hover:text-[#e9c787] font-bold text-[11.5px] sm:text-xs inline-flex items-center gap-1.5 transition-colors whitespace-nowrap ml-0.5"
             >
               <Phone className="w-3.5 h-3.5 text-[#b69455] shrink-0" />
               <span>+91 99285 93122</span>
@@ -234,8 +240,8 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
           </div>
 
           {/* Secondary Links & Social Media Icons */}
-          <div className="flex items-center gap-2 sm:gap-4 shrink-0">
-            <div className="sks-top-nav hidden md:flex items-center gap-2.5 lg:gap-3 text-[11px] sm:text-xs">
+          <div className="flex items-center gap-3 sm:gap-4 shrink-0">
+            <div className="sks-top-nav hidden md:flex items-center gap-3 lg:gap-3.5 text-[11.5px] sm:text-xs">
               <Link
                 href="/sksinfin"
                 style={{ color: "#ffffff", textDecoration: "none" }}
@@ -243,7 +249,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
               >
                 WHY SKSINFI
               </Link>
-              <span style={{ color: "rgba(255, 255, 255, 0.3)" }}>|</span>
+              <span style={{ color: "rgba(255, 255, 255, 0.25)" }}>|</span>
               <Link
                 href="/enquirynow"
                 style={{ color: "#ffffff", textDecoration: "none" }}
@@ -251,7 +257,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
               >
                 Get In Touch
               </Link>
-              <span style={{ color: "rgba(255, 255, 255, 0.3)" }}>|</span>
+              <span style={{ color: "rgba(255, 255, 255, 0.25)" }}>|</span>
               <Link
                 href="/partner-with-us"
                 style={{ color: "#ffffff", textDecoration: "none" }}
@@ -259,7 +265,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
               >
                 BECOME OUR PARTNER
               </Link>
-              <span style={{ color: "rgba(255, 255, 255, 0.3)" }}>|</span>
+              <span style={{ color: "rgba(255, 255, 255, 0.25)" }}>|</span>
               <Link
                 href="/blogs"
                 style={{ color: "#e9c787", textDecoration: "none" }}
@@ -270,7 +276,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
             </div>
 
             {/* Social Icons */}
-            <div className="hidden sm:flex items-center gap-1.5 sm:gap-2 sm:pl-3 sm:border-l sm:border-white/20">
+            <div className="hidden sm:flex items-center gap-2 sm:pl-3 sm:border-l sm:border-white/20">
               <a
                 href="https://www.facebook.com/profile.php?id=61580467109664"
                 target="_blank"
@@ -336,17 +342,22 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
           backgroundColor: "#ffffff",
           boxShadow: isScrolled
             ? "0 4px 20px -2px rgba(9, 75, 87, 0.08), 0 2px 6px -1px rgba(0, 0, 0, 0.04)"
-            : "0 1px 3px rgba(0, 0, 0, 0.04)"
+            : "0 2px 8px -1px rgba(9, 75, 87, 0.04)",
+          borderBottom: "1px solid rgba(9, 75, 87, 0.08)"
         }}
-        className="w-full font-sans transition-all duration-200 border-b border-gray-100"
+        className="w-full font-sans transition-all duration-200"
       >
-        <div className="max-w-[1400px] w-full mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          style={{ maxWidth: "1240px" }}
+          className="w-full mx-auto px-4 sm:px-6 lg:px-8"
+        >
           <div
             style={{
-              height: isScrolled ? "72px" : "80px",
-              transition: "height 0.2s ease"
+              height: isScrolled ? "76px" : "88px",
+              minHeight: isScrolled ? "76px" : "88px",
+              transition: "height 0.25s ease, min-height 0.25s ease"
             }}
-            className="flex items-center justify-between gap-3 lg:gap-4"
+            className="flex items-center justify-between gap-4 lg:gap-6"
           >
             {/* Left: Brand Logo */}
             <div className="flex items-center shrink-0">
@@ -358,20 +369,20 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                   src="/img/sksl.jpg"
                   alt="SKS INFI"
                   style={{
-                    height: isScrolled ? "38px" : "44px",
-                    maxHeight: "48px",
+                    height: isScrolled ? "44px" : "50px",
+                    maxHeight: "52px",
                     width: "auto",
                     objectFit: "contain",
-                    transition: "height 0.2s ease"
+                    transition: "height 0.25s ease"
                   }}
-                  className="block max-w-[120px] sm:max-w-[155px]"
+                  className="block max-w-[135px] sm:max-w-[165px]"
                 />
               </Link>
             </div>
 
             {/* Center: Desktop Navigation Links */}
             <nav
-              className="sks-desktop-nav hidden xl:flex items-center justify-center mx-auto gap-1 xl:gap-1.5"
+              className="sks-desktop-nav hidden xl:flex items-center justify-center mx-auto gap-2.5 lg:gap-3 xl:gap-[20px]"
               style={{
                 alignItems: "center",
                 justifyContent: "center",
@@ -398,7 +409,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                         textDecoration: "none",
                         whiteSpace: "nowrap"
                       }}
-                      className={`relative inline-flex items-center gap-1 px-1.5 lg:px-2 xl:px-2.5 py-1.5 text-[11px] lg:text-[11.5px] xl:text-[12px] font-bold uppercase tracking-wider rounded-lg transition-all ${
+                      className={`relative inline-flex items-center gap-1.5 px-2 xl:px-2.5 py-2 text-[11.5px] xl:text-[12px] font-bold uppercase tracking-wider rounded-lg transition-all ${
                         active
                           ? "bg-[#faf1e0]/70 font-bold"
                           : "hover:text-[#b69455] hover:bg-[#094b57]/[0.04]"
@@ -407,7 +418,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                       <span style={{ whiteSpace: "nowrap" }}>{item.label}</span>
                       {hasChildren && (
                         <ChevronDown
-                          className={`w-3 h-3 transition-transform duration-200 ${
+                          className={`w-3.5 h-3.5 transition-transform duration-200 ${
                             isOpen
                               ? "rotate-180 text-[#b69455]"
                               : "text-gray-400 group-hover:text-[#b69455] group-hover:rotate-180"
@@ -416,7 +427,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                       )}
                       {/* Active indicator underline */}
                       {active && (
-                        <span className="absolute bottom-0 left-1.5 right-1.5 h-[2px] bg-[#b69455] rounded-full" />
+                        <span className="absolute bottom-0.5 left-2 right-2 h-[2px] bg-[#b69455] rounded-full" />
                       )}
                     </Link>
 
@@ -526,7 +537,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                   background: "linear-gradient(135deg, #b69455 0%, #c4a25f 50%, #b69455 100%)",
                   color: "#ffffff"
                 }}
-                className="relative inline-flex items-center justify-center gap-1.5 h-[40px] px-4 rounded-full text-xs font-bold uppercase tracking-wider hover:shadow-[0_4px_16px_rgba(182,148,85,0.4)] hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer border-none shadow-xs whitespace-nowrap"
+                className="relative inline-flex items-center justify-center gap-2 h-[44px] px-5 sm:px-6 rounded-full text-xs font-bold uppercase tracking-wider hover:shadow-[0_4px_16px_rgba(182,148,85,0.4)] hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer border-none shadow-xs whitespace-nowrap"
               >
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>Enquire Now</span>
@@ -534,13 +545,13 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
             </div>
 
             {/* Mobile / Tablet Actions (< 1280px) */}
-            <div className="sks-mobile-toggle flex xl:hidden items-center gap-2 shrink-0">
+            <div className="sks-mobile-toggle flex xl:hidden items-center gap-2.5 shrink-0">
               {/* Quick Call Icon Button */}
               <a
                 href="tel:+919928593122"
                 aria-label="Call SKS INFI"
                 style={{ color: "#094b57", textDecoration: "none" }}
-                className="w-9 h-9 rounded-full bg-[#094b57]/5 hover:bg-[#094b57]/10 flex items-center justify-center transition-colors"
+                className="w-10 h-10 rounded-full bg-[#094b57]/5 hover:bg-[#094b57]/10 flex items-center justify-center transition-colors"
               >
                 <Phone className="w-4 h-4 text-[#b69455]" />
               </a>
@@ -552,7 +563,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                   background: "linear-gradient(135deg, #b69455 0%, #c4a25f 100%)",
                   color: "#ffffff"
                 }}
-                className="text-[11px] font-bold px-3 py-1.5 rounded-full border-none cursor-pointer uppercase tracking-wide shadow-xs active:scale-95 transition-transform"
+                className="text-[11.5px] font-bold px-3.5 py-2 rounded-full border-none cursor-pointer uppercase tracking-wide shadow-xs active:scale-95 transition-transform"
               >
                 Enquire
               </button>
