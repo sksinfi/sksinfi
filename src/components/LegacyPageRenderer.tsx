@@ -17,14 +17,55 @@ interface LegacyPageRendererProps {
   };
 }
 
+function sanitizeAndBalanceHtml(html: string): string {
+  // Strip any script tags and rogue conflicting legacy styles from HTML
+  const cleaned = html
+    .replace(/\r\n/g, "\n")
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "")
+    .replace(/section\s*\{\s*padding-top:\s*10px;[\s\S]*?background:\s*#f9f0df;[\s\S]*?\}/gi, "")
+    .replace(/\.et_pb_section\s*\{\s*padding:\s*0px\s*!important;\s*\}/gi, "")
+    .replace(/padding-left:\s*700px\s*!important;/gi, "")
+    .replace(/\{\s*background-color:\s*#b69455\s*!important;\s*color:\s*#fff\s*!important;\s*\}/g, "");
+
+  // Prevent rogue closing </div> tags from prematurely closing <main> and pushing content below footer
+  const tokenRegex = /<!--[\s\S]*?-->|<\/?div\b[^>]*>/gi;
+  let openDivs = 0;
+  let result = "";
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+
+  while ((match = tokenRegex.exec(cleaned)) !== null) {
+    const token = match[0];
+    if (token.startsWith("<!--")) {
+      result += cleaned.slice(lastIndex, match.index) + token;
+    } else if (token.startsWith("</")) {
+      if (openDivs > 0) {
+        openDivs--;
+        result += cleaned.slice(lastIndex, match.index) + token;
+      } else {
+        // Discard orphan closing div that would close the parent <main> container
+        result += cleaned.slice(lastIndex, match.index);
+      }
+    } else {
+      openDivs++;
+      result += cleaned.slice(lastIndex, match.index) + token;
+    }
+    lastIndex = tokenRegex.lastIndex;
+  }
+  result += cleaned.slice(lastIndex);
+  if (openDivs > 0) {
+    result += "</div>".repeat(openDivs);
+  }
+  return result;
+}
+
 export default function LegacyPageRenderer({ slug, initialData }: LegacyPageRendererProps) {
   const [modalOpen, setModalOpen] = useState(false);
   const [modalCategory, setModalCategory] = useState<string | undefined>(undefined);
   const [modalProduct, setModalProduct] = useState<string | undefined>(undefined);
 
   const rawHtml = initialData?.html || "";
-  // Strip any script tags from HTML to avoid React 19 script hoisting hydration mismatch
-  const cleanHtml = rawHtml.replace(/\r\n/g, "\n").replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "");
+  const cleanHtml = sanitizeAndBalanceHtml(rawHtml);
   const jsonLd = initialData?.jsonLd || [];
 
   useEffect(() => {
