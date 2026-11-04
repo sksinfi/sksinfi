@@ -9,7 +9,6 @@ import {
   Phone,
   Menu as MenuIcon,
   X as CloseIcon,
-  Sparkles,
   ArrowRight
 } from "lucide-react";
 
@@ -380,12 +379,12 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
               </Link>
             </div>
 
-            {/* Center: Desktop Navigation Links */}
+            {/* Desktop Navigation Links */}
             <nav
-              className="sks-desktop-nav hidden xl:flex items-center justify-center mx-auto gap-2 lg:gap-2.5 xl:gap-[18px]"
+              className="sks-desktop-nav hidden xl:flex items-center justify-end ml-auto gap-2 lg:gap-2.5 xl:gap-[20px]"
               style={{
                 alignItems: "center",
-                justifyContent: "center",
+                justifyContent: "flex-end",
                 flexWrap: "nowrap"
               }}
             >
@@ -529,23 +528,8 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
               })}
             </nav>
 
-            {/* Right: Consultation Action Button */}
-            <div className="sks-desktop-cta hidden xl:flex items-center shrink-0">
-              <button
-                onClick={handleEnquiryClick}
-                style={{
-                  background: "linear-gradient(135deg, #b69455 0%, #c4a25f 50%, #b69455 100%)",
-                  color: "#ffffff"
-                }}
-                className="relative inline-flex items-center justify-center gap-2 h-[44px] px-5 sm:px-6 rounded-full text-xs font-bold uppercase tracking-wider hover:shadow-[0_4px_16px_rgba(182,148,85,0.4)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 cursor-pointer border-none shadow-xs whitespace-nowrap leading-none"
-              >
-                <Sparkles className="w-3.5 h-3.5 shrink-0" />
-                <span className="leading-none pt-[0.5px]">Enquire Now</span>
-              </button>
-            </div>
-
             {/* Mobile / Tablet Actions (< 1280px) */}
-            <div className="sks-mobile-toggle flex xl:hidden items-center gap-2.5 shrink-0">
+            <div className="sks-mobile-toggle flex xl:hidden items-center gap-2.5 shrink-0 ml-auto">
               {/* Quick Call Icon Button */}
               <a
                 href="tel:+919928593122"
@@ -555,18 +539,6 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
               >
                 <Phone className="w-4 h-4 text-[#b69455]" />
               </a>
-
-              {/* Compact Enquire Button */}
-              <button
-                onClick={handleEnquiryClick}
-                style={{
-                  background: "linear-gradient(135deg, #b69455 0%, #c4a25f 100%)",
-                  color: "#ffffff"
-                }}
-                className="text-[11.5px] font-bold px-3.5 py-2 rounded-full border-none cursor-pointer uppercase tracking-wide shadow-xs active:scale-95 transition-transform"
-              >
-                Enquire
-              </button>
 
               {/* Hamburger Menu Toggle Button */}
               <button
