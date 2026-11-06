@@ -1056,22 +1056,40 @@ export default function MsmePage() {
                         borderTop: "1px solid #f3f4f6",
                         display: "flex",
                         alignItems: "center",
-                        justifyContent: "space-between"
+                        justifyContent: "space-between",
+                        gap: "8px"
                       }}
                     >
-                      <span
+                      <Link
+                        href={
+                          service.id === "financial-solutions"
+                            ? "/msme/financial-solutions"
+                            : service.id === "subsidy-solutions"
+                            ? "/msme/subsidy-schemes"
+                            : service.id === "loan-services"
+                            ? "/msme/cgtmse"
+                            : service.id === "venture-capital"
+                            ? "/msme/venture-capital"
+                            : service.id === "treds-setup"
+                            ? "/msme/invoice-discounting"
+                            : service.id === "msme-ipo"
+                            ? "/msme/ipo-listing"
+                            : `/msme/${service.id}`
+                        }
                         style={{
-                          fontSize: "11.5px",
-                          fontWeight: 600,
-                          color: "#6b7280",
                           display: "inline-flex",
                           alignItems: "center",
-                          gap: "5px"
+                          gap: "4px",
+                          fontSize: "12px",
+                          fontWeight: 700,
+                          color: "#094b57",
+                          textDecoration: "none"
                         }}
+                        className="hover:text-[#b69455] transition-colors"
                       >
-                        <Clock size={12} className="text-[#b69455] shrink-0" />
-                        <span>{service.timeline}</span>
-                      </span>
+                        <span>Full Details</span>
+                        <ArrowRight size={13} />
+                      </Link>
 
                       <button
                         onClick={() => handleOpenModal(service.title)}
@@ -1081,18 +1099,18 @@ export default function MsmePage() {
                           cursor: "pointer",
                           display: "inline-flex",
                           alignItems: "center",
-                          gap: "5px",
+                          gap: "4px",
                           fontSize: "12px",
                           fontWeight: 700,
-                          color: "#094b57",
+                          color: "#b69455",
                           padding: "4px 8px",
                           borderRadius: "6px",
                           transition: "all 0.2s ease"
                         }}
-                        className="hover:text-[#b69455] hover:bg-[#b69455]/5"
+                        className="hover:text-[#094b57] hover:bg-[#094b57]/5"
                       >
-                        <span>Enquire Now</span>
-                        <ArrowUpRight size={14} />
+                        <span>Enquire</span>
+                        <ArrowUpRight size={13} />
                       </button>
                     </div>
                   </div>

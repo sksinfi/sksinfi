@@ -44,15 +44,15 @@ const NAV_ITEMS: NavItem[] = [
     bannerBadge: "Strategic Advisory",
     children: [
       { label: "MSME For India", href: "/msme" },
-      { label: "Why SKS INFI", href: "/sksinfin" },
-      { label: "MSME Financial Solutions", href: "/msme#financial-solutions" },
-      { label: "MSME Registration", href: "/msme#registration" },
-      { label: "MSME Subsidy and Intertive Schemes", href: "/msme#subsidy-solutions" },
-      { label: "MSME IPO & Listing", href: "/msme#msme-ipo" },
-      { label: "Invoice Discounting", href: "/msme#treds-setup" },
-      { label: "MSME Growth & Bussiness Solutions", href: "/msme#growth-solutions" },
-      { label: "MSME Venture Capital & Private Equity", href: "/msme#venture-capital" },
-      { label: "CGTSME & MSME", href: "/cgtsme" }
+      { label: "Why SKS INFI", href: "/msme/why-sks-infi" },
+      { label: "MSME Financial Solutions", href: "/msme/financial-solutions" },
+      { label: "MSME Registration", href: "/msme/registration" },
+      { label: "MSME Subsidy and Intertive Schemes", href: "/msme/subsidy-schemes" },
+      { label: "MSME IPO & Listing", href: "/msme/ipo-listing" },
+      { label: "Invoice Discounting", href: "/msme/invoice-discounting" },
+      { label: "MSME Growth & Bussiness Solutions", href: "/msme/growth-solutions" },
+      { label: "MSME Venture Capital & Private Equity", href: "/msme/venture-capital" },
+      { label: "CGTSME & MSME", href: "/msme/cgtmse" }
     ]
   },
   {
