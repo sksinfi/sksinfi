@@ -9,7 +9,8 @@ import {
   Phone,
   Menu as MenuIcon,
   X as CloseIcon,
-  ArrowRight
+  ArrowRight,
+  Sparkles
 } from "lucide-react";
 
 interface NavbarProps {
@@ -365,7 +366,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
           backgroundColor: "#ffffff",
           boxShadow: isScrolled
             ? "0 4px 20px -2px rgba(9, 75, 87, 0.08), 0 2px 6px -1px rgba(0, 0, 0, 0.04)"
-            : "0 2px 8px -1px rgba(9, 75, 87, 0.04)",
+            : "0 2px 10px -2px rgba(9, 75, 87, 0.05)",
           borderBottom: "1px solid rgba(9, 75, 87, 0.08)"
         }}
         className="w-full font-sans transition-all duration-200"
@@ -405,10 +406,10 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
 
             {/* Desktop Navigation Links */}
             <nav
-              className="sks-desktop-nav hidden xl:flex items-center justify-end ml-auto gap-2 lg:gap-2.5 xl:gap-[16px]"
+              className="sks-desktop-nav hidden xl:flex items-center justify-center mx-auto gap-1.5 lg:gap-2 xl:gap-[13px] 2xl:gap-[16px]"
               style={{
                 alignItems: "center",
-                justifyContent: "flex-end",
+                justifyContent: "center",
                 flexWrap: "nowrap"
               }}
             >
@@ -552,6 +553,21 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
               })}
             </nav>
 
+            {/* Right: Enquire Now Consultation Button */}
+            <div className="sks-desktop-cta hidden xl:flex items-center shrink-0 ml-1">
+              <button
+                onClick={handleEnquiryClick}
+                style={{
+                  background: "linear-gradient(135deg, #b69455 0%, #c4a25f 50%, #b69455 100%)",
+                  color: "#ffffff"
+                }}
+                className="relative inline-flex items-center justify-center gap-2 h-[42px] px-5 sm:px-5.5 rounded-full text-xs font-bold uppercase tracking-wider hover:shadow-[0_4px_16px_rgba(182,148,85,0.4)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 cursor-pointer border-none shadow-xs whitespace-nowrap leading-none"
+              >
+                <Sparkles className="w-3.5 h-3.5 shrink-0" />
+                <span className="leading-none pt-[0.5px]">Enquire Now</span>
+              </button>
+            </div>
+
             {/* Mobile / Tablet Actions (< 1280px) */}
             <div className="sks-mobile-toggle flex xl:hidden items-center gap-2.5 shrink-0 ml-auto">
               {/* Quick Call Icon Button */}
@@ -563,6 +579,18 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
               >
                 <Phone className="w-4 h-4 text-[#b69455]" />
               </a>
+
+              {/* Compact Mobile Enquire Button */}
+              <button
+                onClick={handleEnquiryClick}
+                style={{
+                  background: "linear-gradient(135deg, #b69455 0%, #c4a25f 100%)",
+                  color: "#ffffff"
+                }}
+                className="text-[11.5px] font-bold px-3.5 py-2 rounded-full border-none cursor-pointer uppercase tracking-wide shadow-xs active:scale-95 transition-transform"
+              >
+                Enquire
+              </button>
 
               {/* Hamburger Menu Toggle Button */}
               <button
