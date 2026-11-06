@@ -850,7 +850,7 @@ export default function MsmePage() {
         </section>
 
         {/* ================= 1. 6 CORE MSME SERVICES ================= */}
-        <section id="services" style={{ padding: "80px 0" }} className="bg-[#f9f8f5]">
+        <section id="growth-solutions" style={{ padding: "80px 0" }} className="bg-[#f9f8f5]">
           <div style={{ maxWidth: "1200px", width: "100%", margin: "0 auto", padding: "0 20px" }}>
             {/* Section Header */}
             <div className="max-w-3xl mx-auto text-center" style={{ marginBottom: "36px" }}>
@@ -908,6 +908,7 @@ export default function MsmePage() {
                 return (
                   <div
                     key={service.id}
+                    id={service.id}
                     style={{
                       padding: "26px",
                       backgroundColor: "#ffffff",
@@ -1102,7 +1103,7 @@ export default function MsmePage() {
         </section>
 
         {/* ================= 2. INTERACTIVE SERVICE DEEP-DIVE TABS ================= */}
-        <section style={{ padding: "80px 0" }} className="bg-white">
+        <section id="registration" style={{ padding: "80px 0" }} className="bg-white">
           <div style={{ maxWidth: "1200px", width: "100%", margin: "0 auto", padding: "0 20px" }}>
             {/* Section Header */}
             <div className="max-w-3xl mx-auto text-center" style={{ marginBottom: "32px" }}>
@@ -1427,6 +1428,7 @@ export default function MsmePage() {
 
         {/* ================= 3. THE 4-STEP EXECUTION ROADMAP ================= */}
         <section
+          id="why-sks-infi"
           style={{ padding: "80px 0" }}
           className="msme-dark-sec bg-[#094b57] text-white relative overflow-hidden"
         >

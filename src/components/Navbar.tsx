@@ -20,14 +20,40 @@ interface NavItem {
   label: string;
   href: string;
   columns?: number;
+  dropdownWidth?: string;
+  bannerBadge?: string;
   subtitle?: string;
   children?: { label: string; href: string }[];
 }
 
 const NAV_ITEMS: NavItem[] = [
   {
+    label: "HOME",
+    href: "/"
+  },
+  {
     label: "ABOUT US",
     href: "/about"
+  },
+  {
+    label: "MSME",
+    href: "/msme",
+    columns: 2,
+    dropdownWidth: "540px",
+    subtitle: "MSME Capital & Growth Solutions",
+    bannerBadge: "Strategic Advisory",
+    children: [
+      { label: "MSME For India", href: "/msme" },
+      { label: "Why SKS INFI", href: "/sksinfin" },
+      { label: "MSME Financial Solutions", href: "/msme#financial-solutions" },
+      { label: "MSME Registration", href: "/msme#registration" },
+      { label: "MSME Subsidy and Intertive Schemes", href: "/msme#subsidy-solutions" },
+      { label: "MSME IPO & Listing", href: "/msme#msme-ipo" },
+      { label: "Invoice Discounting", href: "/msme#treds-setup" },
+      { label: "MSME Growth & Bussiness Solutions", href: "/msme#growth-solutions" },
+      { label: "MSME Venture Capital & Private Equity", href: "/msme#venture-capital" },
+      { label: "CGTSME & MSME", href: "/cgtsme" }
+    ]
   },
   {
     label: "NRI DESK",
@@ -46,7 +72,9 @@ const NAV_ITEMS: NavItem[] = [
     label: "LOAN",
     href: "/loan",
     columns: 2,
+    dropdownWidth: "480px",
     subtitle: "Loan & Financing Portfolio",
+    bannerBadge: "90+ Partner Banks",
     children: [
       { label: "SKSINFI & Loan", href: "/loan" },
       { label: "Home Loan", href: "/home_loan" },
@@ -54,12 +82,6 @@ const NAV_ITEMS: NavItem[] = [
       { label: "Personal Loan", href: "/personal-loan" },
       { label: "Business Loan", href: "/business-loan" },
       { label: "Education Loan", href: "/education" },
-      { label: "Term Loan", href: "/term-loan" },
-      { label: "Cash Credit / Overdraft", href: "/cas_overdraft" },
-      { label: "Project Finance", href: "/project_finance" },
-      { label: "CGTMSE", href: "/cgtsme" },
-      { label: "MSME Services & Solutions", href: "/msme" },
-      { label: "Subsidy from Govt.", href: "/subsidy-from" },
       { label: "Car Loan", href: "/car" },
       { label: "Commercial Vehicle", href: "/commercial_vehicle" }
     ]
@@ -195,7 +217,9 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
   const isItemActive = (item: NavItem) => {
     if (pathname === item.href) return true;
     if (item.children) {
-      return item.children.some((child) => pathname === child.href);
+      return item.children.some(
+        (child) => pathname === child.href || pathname === child.href.split("#")[0]
+      );
     }
     return false;
   };
@@ -381,7 +405,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
 
             {/* Desktop Navigation Links */}
             <nav
-              className="sks-desktop-nav hidden xl:flex items-center justify-end ml-auto gap-2 lg:gap-2.5 xl:gap-[20px]"
+              className="sks-desktop-nav hidden xl:flex items-center justify-end ml-auto gap-2 lg:gap-2.5 xl:gap-[16px]"
               style={{
                 alignItems: "center",
                 justifyContent: "flex-end",
@@ -448,7 +472,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                       >
                         <div
                           style={{
-                            width: isTwoCols ? "510px" : "255px"
+                            width: item.dropdownWidth || (isTwoCols ? "510px" : "265px")
                           }}
                           className="bg-white rounded-2xl border border-gray-100 border-t-2 border-t-[#b69455] shadow-[0_20px_45px_-8px_rgba(9,75,87,0.18),0_2px_8px_rgba(0,0,0,0.04)] overflow-hidden"
                         >
@@ -459,7 +483,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                             </span>
                             {isTwoCols && (
                               <span className="text-[10px] font-bold text-[#b69455] uppercase tracking-wider">
-                                90+ Partner Banks
+                                {item.bannerBadge || (item.label === "LOAN" ? "90+ Partner Banks" : "Strategic Advisory")}
                               </span>
                             )}
                           </div>
