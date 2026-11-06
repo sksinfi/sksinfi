@@ -29,7 +29,7 @@ export default function CalculatorPage() {
           background: "linear-gradient(135deg, #094b57 0%, #0d6170 50%, #094b57 100%)",
           color: "#ffffff"
         }}
-        className="py-14 px-4 sm:px-6 shadow-md"
+        className="py-10 sm:py-12 px-4 sm:px-6 shadow-md"
       >
         <div className="max-w-5xl mx-auto text-center space-y-3">
           <div

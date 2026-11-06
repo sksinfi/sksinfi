@@ -1021,29 +1021,29 @@ export default function SingleMsmeClient({ page }: SingleMsmeClientProps) {
       </div>
 
       {/* HERO SECTION */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#06333c] via-[#094b57] to-[#0d5967] text-white pt-14 pb-20">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#06333c] via-[#094b57] to-[#0d5967] text-white pt-12 pb-14">
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#b69455_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none" />
 
         <div className="relative max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-[#f4d799] text-xs sm:text-sm font-semibold tracking-wide uppercase mb-5">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-[#f4d799] text-xs sm:text-sm font-semibold tracking-wide uppercase mb-4">
               <Sparkles className="w-4 h-4 text-[#b69455]" />
               {page.badge}
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight font-['Playfair_Display',serif] leading-[1.2] mb-5 text-white">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight font-['Playfair_Display',serif] leading-[1.2] mb-4 text-white">
               {page.title}
             </h1>
 
-            <p className="text-base sm:text-lg md:text-xl text-gray-200 font-light leading-relaxed mb-8 max-w-3xl">
+            <p className="text-base sm:text-lg md:text-xl text-gray-200 font-light leading-relaxed mb-6 max-w-3xl">
               {page.subtitle}
             </p>
 
             {/* Hero CTAs */}
-            <div className="flex flex-wrap items-center gap-4 pt-2">
+            <div className="flex flex-wrap items-center gap-3.5 pt-1">
               <a
                 href="#consultation-form"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-[#b69455] hover:bg-[#a38346] text-white font-medium text-sm sm:text-base shadow-lg shadow-black/20 hover:shadow-xl transition-all"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-[#b69455] hover:bg-[#a38346] text-white font-medium text-sm sm:text-base shadow-lg shadow-black/20 hover:shadow-xl transition-all"
               >
                 <span>Request Advisory Consultation</span>
                 <ArrowRight className="w-4 h-4" />
@@ -1051,7 +1051,7 @@ export default function SingleMsmeClient({ page }: SingleMsmeClientProps) {
 
               <a
                 href="tel:+919928529222"
-                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-lg bg-white/10 hover:bg-white/15 border border-white/20 text-white font-medium text-sm sm:text-base backdrop-blur-sm transition-all"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-white/10 hover:bg-white/15 border border-white/20 text-white font-medium text-sm sm:text-base backdrop-blur-sm transition-all"
               >
                 <PhoneCall className="w-4 h-4 text-[#f4d799]" />
                 <span>+91 99285 29222</span>
@@ -1060,7 +1060,7 @@ export default function SingleMsmeClient({ page }: SingleMsmeClientProps) {
           </div>
 
           {/* Hero Stats Ribbon */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mt-12 pt-8 border-t border-white/15">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mt-8 pt-6 border-t border-white/15">
             {page.heroStats.map((stat, i) => (
               <div
                 key={i}

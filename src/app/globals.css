@@ -16,16 +16,16 @@
 
   /* Global Layout & Spacing Design Tokens */
   --container-width: 1240px;
-  --section-padding-y: 80px;
-  --section-padding-y-lg: 90px;
-  --section-padding-y-sm: 55px;
+  --section-padding-y: 65px;
+  --section-padding-y-lg: 75px;
+  --section-padding-y-sm: 42px;
   --heading-to-sub: 14px;
-  --sub-to-content: 32px;
-  --card-padding: 26px;
-  --card-gap: 24px;
-  --card-gap-y: 28px;
+  --sub-to-content: 28px;
+  --card-padding: 24px;
+  --card-gap: 22px;
+  --card-gap-y: 24px;
   --content-gap: 20px;
-  --btn-gap: 16px;
+  --btn-gap: 14px;
 }
 
 * {
@@ -77,22 +77,41 @@ body {
 }
 
 /* ==========================================================================
-   STANDARD SECTION VERTICAL RHYTHM (65-85px Consistent Spacing)
+   STANDARD SECTION VERTICAL RHYTHM & COMPACT RIBBONS (No Excess White Void)
    ========================================================================== */
-section:not(.home-slider):not(#sks-main-header):not(#top-header):not(#sks-top-bar):not(.blog-reading-bar):not(.et_pb_fullwidth_section),
-.et_pb_section:not(.home-slider):not(.et_pb_fullwidth_section),
-#main-content section:not(.home-slider):not(#sks-main-header):not(#top-header):not(#sks-top-bar) {
-  padding-top: var(--section-padding-y) !important;
-  padding-bottom: var(--section-padding-y) !important;
+section:not(.home-slider):not(#sks-main-header):not(#top-header):not(#sks-top-bar):not(.blog-reading-bar):not(.et_pb_fullwidth_section):not(.stats-section):not(.impact-metrics):not(.compact-section),
+.et_pb_section:not(.home-slider):not(.et_pb_fullwidth_section):not(.stats-section):not(.compact-section),
+#main-content section:not(.home-slider):not(#sks-main-header):not(#top-header):not(#sks-top-bar):not(.stats-section):not(.compact-section) {
+  padding-top: var(--section-padding-y);
+  padding-bottom: var(--section-padding-y);
   position: relative;
 }
 
 @media (max-width: 991px) {
-  section:not(.home-slider):not(#sks-main-header):not(#top-header):not(#sks-top-bar):not(.blog-reading-bar):not(.et_pb_fullwidth_section),
-  .et_pb_section:not(.home-slider):not(.et_pb_fullwidth_section),
-  #main-content section:not(.home-slider):not(#sks-main-header):not(#top-header):not(#sks-top-bar) {
-    padding-top: var(--section-padding-y-sm) !important;
-    padding-bottom: var(--section-padding-y-sm) !important;
+  section:not(.home-slider):not(#sks-main-header):not(#top-header):not(#sks-top-bar):not(.blog-reading-bar):not(.et_pb_fullwidth_section):not(.stats-section):not(.impact-metrics):not(.compact-section),
+  .et_pb_section:not(.home-slider):not(.et_pb_fullwidth_section):not(.stats-section):not(.compact-section),
+  #main-content section:not(.home-slider):not(#sks-main-header):not(#top-header):not(#sks-top-bar):not(.stats-section):not(.compact-section) {
+    padding-top: var(--section-padding-y-sm);
+    padding-bottom: var(--section-padding-y-sm);
+  }
+}
+
+/* Compact Impact Metrics & Statistics Ribbon */
+.stats-section,
+.impact-metrics,
+[class*="stats-ribbon"],
+.compact-section {
+  padding-top: 28px !important;
+  padding-bottom: 28px !important;
+}
+
+@media (max-width: 768px) {
+  .stats-section,
+  .impact-metrics,
+  [class*="stats-ribbon"],
+  .compact-section {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
   }
 }
 
@@ -103,6 +122,43 @@ h1, h2, h3, h4, h5, h6 {
   color: #094b57;
   margin-top: 0;
   margin-bottom: var(--heading-to-sub);
+}
+
+/* ==========================================================================
+   GLOBAL TEXT CONTRAST & ACCESSIBILITY SYSTEM (PREVENTS DARK TEXT ON DARK BG)
+   ========================================================================== */
+.text-white h1, .text-white h2, .text-white h3, .text-white h4, .text-white h5, .text-white h6,
+.msme-dark-sec h1, .msme-dark-sec h2, .msme-dark-sec h3, .msme-dark-sec h4, .msme-dark-sec h5, .msme-dark-sec h6,
+[class*="bg-[#094b57]"] h1, [class*="bg-[#094b57]"] h2, [class*="bg-[#094b57]"] h3, [class*="bg-[#094b57]"] h4,
+[class*="bg-[#06323a]"] h1, [class*="bg-[#06323a]"] h2, [class*="bg-[#06323a]"] h3, [class*="bg-[#06323a]"] h4,
+[class*="bg-[#06363f]"] h1, [class*="bg-[#06363f]"] h2, [class*="bg-[#06363f]"] h3, [class*="bg-[#06363f]"] h4,
+[class*="bg-[#03363D]"] h1, [class*="bg-[#03363D]"] h2, [class*="bg-[#03363D]"] h3, [class*="bg-[#03363D]"] h4,
+[class*="from-[#06323a]"] h1, [class*="from-[#06323a]"] h2, [class*="from-[#06323a]"] h3, [class*="from-[#06323a]"] h4,
+[class*="from-[#094b57]"] h1, [class*="from-[#094b57]"] h2, [class*="from-[#094b57]"] h3, [class*="from-[#094b57]"] h4,
+[class*="from-[#06333c]"] h1, [class*="from-[#06333c]"] h2, [class*="from-[#06333c]"] h3, [class*="from-[#06333c]"] h4,
+footer h1, footer h2, footer h3, footer h4, footer h5, footer h6 {
+  color: #ffffff !important;
+}
+
+/* Ensure Paragraphs on Dark Backgrounds are High-Contrast White */
+.text-white p:not(.text-dark):not(.text-gray-700):not(.text-gray-800):not(.text-gray-900):not(.bg-white p):not(.card p),
+.msme-dark-sec p:not(.text-dark):not(.bg-white p):not(.card p),
+[class*="from-[#06323a]"] p:not(.text-dark):not(.bg-white p):not(.card p),
+[class*="from-[#094b57]"] p:not(.text-dark):not(.bg-white p):not(.card p),
+[class*="from-[#06333c]"] p:not(.text-dark):not(.bg-white p):not(.card p),
+footer p:not(.txtnew) {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* Ensure White Cards inside Dark Sections Retain Clear Dark Text */
+.bg-white h1, .bg-white h2, .bg-white h3, .bg-white h4, .bg-white h5, .bg-white h6,
+.card h1, .card h2, .card h3, .card h4, .card h5, .card h6 {
+  color: #094b57 !important;
+}
+
+.bg-white p,
+.card p {
+  color: #374151 !important;
 }
 
 h1 { font-size: clamp(28px, 3.2vw, 36px); line-height: 1.25; }

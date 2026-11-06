@@ -377,11 +377,11 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
         >
           <div
             style={{
-              height: isScrolled ? "76px" : "88px",
-              minHeight: isScrolled ? "76px" : "88px",
+              height: isScrolled ? "74px" : "86px",
+              minHeight: isScrolled ? "74px" : "86px",
               transition: "height 0.25s ease, min-height 0.25s ease"
             }}
-            className="flex items-center justify-between gap-4 lg:gap-6"
+            className="flex items-center justify-between gap-2 xl:gap-3 2xl:gap-5"
           >
             {/* Left: Brand Logo */}
             <div className="flex items-center shrink-0">
@@ -393,20 +393,20 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                   src="/img/sksl.jpg"
                   alt="SKS INFI"
                   style={{
-                    height: isScrolled ? "44px" : "50px",
-                    maxHeight: "52px",
+                    height: isScrolled ? "42px" : "48px",
+                    maxHeight: "50px",
                     width: "auto",
                     objectFit: "contain",
                     transition: "height 0.25s ease"
                   }}
-                  className="block max-w-[135px] sm:max-w-[165px]"
+                  className="block max-w-[125px] sm:max-w-[145px] xl:max-w-[155px]"
                 />
               </Link>
             </div>
 
             {/* Desktop Navigation Links */}
             <nav
-              className="sks-desktop-nav hidden xl:flex items-center justify-center mx-auto gap-1.5 lg:gap-2 xl:gap-[13px] 2xl:gap-[16px]"
+              className="sks-desktop-nav hidden xl:flex items-center justify-center mx-auto gap-0.5 xl:gap-1.5 2xl:gap-3 flex-nowrap"
               style={{
                 alignItems: "center",
                 justifyContent: "center",
@@ -433,7 +433,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                         textDecoration: "none",
                         whiteSpace: "nowrap"
                       }}
-                      className={`relative inline-flex items-center gap-1.5 px-2 xl:px-2.5 py-1.5 text-[11.5px] xl:text-[12px] font-bold uppercase tracking-wider rounded-lg transition-all duration-200 ${
+                      className={`relative inline-flex items-center gap-1 px-1.5 xl:px-2 2xl:px-2.5 py-1.5 text-[11px] xl:text-[11.5px] 2xl:text-[12px] font-bold uppercase tracking-wide rounded-md transition-all duration-200 ${
                         active
                           ? "bg-[#faf1e0]/80 font-bold"
                           : "hover:text-[#b69455] hover:bg-[#094b57]/[0.04]"
@@ -442,7 +442,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                       <span style={{ whiteSpace: "nowrap" }}>{item.label}</span>
                       {hasChildren && (
                         <ChevronDown
-                          className={`w-3.5 h-3.5 transition-transform duration-200 shrink-0 relative top-[0.5px] ${
+                          className={`w-3 h-3 transition-transform duration-200 shrink-0 relative top-[0.5px] ${
                             isOpen
                               ? "rotate-180 text-[#b69455]"
                               : "text-[#094b57]/50 group-hover:text-[#b69455] group-hover:rotate-180"
@@ -451,7 +451,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                       )}
                       {/* Active indicator underline */}
                       {active && (
-                        <span className="absolute bottom-0 left-2 right-2 h-[2px] bg-[#b69455] rounded-full transition-all duration-200" />
+                        <span className="absolute bottom-0 left-1.5 right-1.5 h-[2px] bg-[#b69455] rounded-full transition-all duration-200" />
                       )}
                     </Link>
 
@@ -554,14 +554,14 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
             </nav>
 
             {/* Right: Enquire Now Consultation Button */}
-            <div className="sks-desktop-cta hidden xl:flex items-center shrink-0 ml-1">
+            <div className="sks-desktop-cta hidden xl:flex items-center shrink-0 ml-2">
               <button
                 onClick={handleEnquiryClick}
                 style={{
                   background: "linear-gradient(135deg, #b69455 0%, #c4a25f 50%, #b69455 100%)",
                   color: "#ffffff"
                 }}
-                className="relative inline-flex items-center justify-center gap-2 h-[42px] px-5 sm:px-5.5 rounded-full text-xs font-bold uppercase tracking-wider hover:shadow-[0_4px_16px_rgba(182,148,85,0.4)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 cursor-pointer border-none shadow-xs whitespace-nowrap leading-none"
+                className="relative inline-flex items-center justify-center gap-1.5 h-[38px] xl:h-[40px] px-3.5 xl:px-4.5 2xl:px-5 rounded-full text-[11px] xl:text-[11.5px] 2xl:text-xs font-bold uppercase tracking-wider hover:shadow-[0_4px_16px_rgba(182,148,85,0.4)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 cursor-pointer border-none shadow-xs whitespace-nowrap leading-none"
               >
                 <Sparkles className="w-3.5 h-3.5 shrink-0" />
                 <span className="leading-none pt-[0.5px]">Enquire Now</span>

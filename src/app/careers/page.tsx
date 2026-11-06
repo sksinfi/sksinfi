@@ -117,13 +117,13 @@ export default function CareersPage() {
       <Navbar />
 
       {/* Header */}
-      <div className="bg-gradient-to-r from-[#094b57] via-[#0d6170] to-[#094b57] text-white py-16 px-4 sm:px-6 shadow-md">
-        <div className="max-w-4xl mx-auto text-center space-y-4">
+      <div className="bg-gradient-to-r from-[#094b57] via-[#0d6170] to-[#094b57] text-white py-12 sm:py-14 px-4 sm:px-6 shadow-md">
+        <div className="max-w-4xl mx-auto text-center space-y-3">
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/10 text-[#f9f0df] text-xs font-semibold tracking-wide border border-white/15">
             <Briefcase size={14} className="text-[#b69455]" />
             <span>Join Our Growing Team</span>
           </div>
-          <h1 className="text-3xl sm:text-5xl font-black tracking-tight">
+          <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-white">
             Build Your Career with SKS INFI
           </h1>
           <p className="text-sm sm:text-base text-slate-200 max-w-2xl mx-auto font-light">
@@ -132,7 +132,7 @@ export default function CareersPage() {
         </div>
       </div>
 
-      <main className="flex-1 max-w-[1240px] mx-auto px-4 sm:px-6 py-16 w-full space-y-16">
+      <main className="flex-1 max-w-[1240px] mx-auto px-4 sm:px-6 py-10 sm:py-12 w-full space-y-12">
         {/* Open Positions Grid */}
         <div className="space-y-6">
           <div className="text-center max-w-2xl mx-auto space-y-2">

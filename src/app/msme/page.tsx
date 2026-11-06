@@ -441,23 +441,17 @@ export default function MsmePage() {
                   </div>
                 </div>
 
-                {/* Hero Action Buttons (Primary & Secondary on same row with 18px gap) */}
-                <div
-                  className="flex flex-col sm:flex-row items-stretch sm:items-center"
-                  style={{
-                    display: "flex",
-                    gap: "18px"
-                  }}
-                >
+                {/* Hero Action Buttons - Unified Responsive Cluster */}
+                <div className="flex flex-wrap items-center gap-3.5 pt-1">
                   <button
                     onClick={() => handleOpenModal("MSME Financial Solutions")}
                     style={{
                       backgroundColor: "#b69455",
-                      color: "#094b57",
+                      color: "#ffffff",
                       border: "none",
                       cursor: "pointer",
-                      height: "48px",
-                      padding: "0 26px"
+                      height: "46px",
+                      padding: "0 24px"
                     }}
                     className="w-full sm:w-auto rounded-full font-bold text-sm tracking-wide transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center justify-center gap-2 shrink-0"
                   >
@@ -472,29 +466,26 @@ export default function MsmePage() {
                       textDecoration: "none",
                       backgroundColor: "rgba(255, 255, 255, 0.12)",
                       border: "1px solid rgba(255, 255, 255, 0.25)",
-                      height: "48px",
-                      padding: "0 24px"
+                      height: "46px",
+                      padding: "0 22px"
                     }}
                     className="w-full sm:w-auto rounded-full font-semibold text-sm transition-all duration-300 flex items-center justify-center gap-2 hover:bg-white/20 shrink-0"
                   >
                     <span>Explore 6 Services</span>
                     <ChevronDown size={16} />
                   </a>
-                </div>
 
-                {/* Phone Contact Button placed below with 20px vertical spacing */}
-                <div style={{ marginTop: "20px" }}>
                   <a
                     href="tel:+919928529222"
                     style={{
                       color: "#e9c787",
                       textDecoration: "none",
-                      borderColor: "rgba(233, 199, 135, 0.4)",
-                      height: "44px",
-                      padding: "0 22px",
-                      display: "inline-flex"
+                      borderColor: "rgba(233, 199, 135, 0.45)",
+                      backgroundColor: "rgba(255, 255, 255, 0.08)",
+                      height: "46px",
+                      padding: "0 20px"
                     }}
-                    className="rounded-full bg-white/5 hover:bg-white/10 font-semibold text-sm transition-all duration-300 items-center justify-center gap-2 border w-full sm:w-auto"
+                    className="rounded-full hover:bg-white/15 font-semibold text-sm transition-all duration-300 flex items-center justify-center gap-2 border w-full sm:w-auto shrink-0"
                   >
                     <PhoneCall size={15} />
                     <span>+91 99285 29222</span>
@@ -778,11 +769,12 @@ export default function MsmePage() {
 
         {/* ================= IMPACT METRICS BAR ================= */}
         <section
+          className="stats-section"
           style={{
             backgroundColor: "#ffffff",
             borderBottom: "1px solid #e5e7eb",
-            paddingTop: "32px",
-            paddingBottom: "32px",
+            paddingTop: "28px",
+            paddingBottom: "28px",
             boxShadow: "0 1px 3px rgba(0, 0, 0, 0.04)"
           }}
         >
