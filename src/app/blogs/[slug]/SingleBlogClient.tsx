@@ -68,7 +68,7 @@ export default function SingleBlogClient({ post, relatedPosts }: SingleBlogClien
         className="blog-reading-bar"
         style={{ width: `${readingProgress}%` }}
       />
-      <div className="min-h-screen flex flex-col bg-white text-[#333333]">
+      <div className="min-h-screen flex flex-col bg-white text-[#333333] overflow-x-hidden w-full">
         <Navbar
           onOpenEnquiry={(cat) => {
             setModalCategory(cat || post.category);

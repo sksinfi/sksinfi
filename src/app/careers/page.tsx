@@ -107,7 +107,7 @@ export default function CareersPage() {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#fcfcfa]" suppressHydrationWarning>
+    <div className="min-h-screen flex flex-col bg-[#fcfcfa] overflow-x-hidden w-full" suppressHydrationWarning>
       <Navbar />
 
       {/* Header */}
@@ -126,7 +126,7 @@ export default function CareersPage() {
         </div>
       </div>
 
-      <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 py-16 w-full space-y-16">
+      <main className="flex-1 max-w-[1240px] mx-auto px-4 sm:px-6 py-16 w-full space-y-16">
         {/* Open Positions Grid */}
         <div className="space-y-6">
           <div className="text-center max-w-2xl mx-auto space-y-2">

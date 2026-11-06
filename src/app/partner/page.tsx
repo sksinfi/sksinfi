@@ -64,7 +64,7 @@ export default function PartnerPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#fcfcfa]" suppressHydrationWarning>
+    <div className="min-h-screen flex flex-col bg-[#fcfcfa] overflow-x-hidden w-full" suppressHydrationWarning>
       <Navbar />
 
       {/* Header */}
@@ -83,7 +83,7 @@ export default function PartnerPage() {
         </div>
       </div>
 
-      <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 py-16 w-full space-y-16">
+      <main className="flex-1 max-w-[1240px] mx-auto px-4 sm:px-6 py-16 w-full space-y-16">
         {/* Value Proposition Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200/80 space-y-3">

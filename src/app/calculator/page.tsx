@@ -22,7 +22,7 @@ export default function CalculatorPage() {
 
   return (
     <>
-      <div className="min-h-screen flex flex-col bg-[#fbfbfa]">
+      <div className="min-h-screen flex flex-col bg-[#fbfbfa] overflow-x-hidden w-full">
         <Navbar onOpenEnquiry={openEnquiry} />
         <div
         style={{
@@ -79,7 +79,7 @@ export default function CalculatorPage() {
         </div>
       </div>
 
-      <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 py-12 w-full">
+      <main className="flex-1 max-w-[1240px] mx-auto px-4 sm:px-6 py-12 w-full">
         {activeTab === "sip" ? (
           <SIPCalculator onStartSIP={() => openEnquiry("Investments", "Mutual Fund SIP")} />
         ) : (

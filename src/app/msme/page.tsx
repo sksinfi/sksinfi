@@ -303,7 +303,7 @@ export default function MsmePage() {
 
           <div
             style={{
-              maxWidth: "1200px",
+              maxWidth: "1240px",
               width: "100%",
               margin: "0 auto",
               padding: "0 20px",
@@ -780,7 +780,7 @@ export default function MsmePage() {
             boxShadow: "0 1px 3px rgba(0, 0, 0, 0.04)"
           }}
         >
-          <div style={{ maxWidth: "1200px", width: "100%", margin: "0 auto", padding: "0 20px" }}>
+          <div style={{ maxWidth: "1240px", width: "100%", margin: "0 auto", padding: "0 20px" }}>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
               {/* Stat 1 */}
               <div className="flex flex-col items-center justify-center">
@@ -851,7 +851,7 @@ export default function MsmePage() {
 
         {/* ================= 1. 6 CORE MSME SERVICES ================= */}
         <section id="growth-solutions" style={{ padding: "80px 0" }} className="bg-[#f9f8f5]">
-          <div style={{ maxWidth: "1200px", width: "100%", margin: "0 auto", padding: "0 20px" }}>
+          <div style={{ maxWidth: "1240px", width: "100%", margin: "0 auto", padding: "0 20px" }}>
             {/* Section Header */}
             <div className="max-w-3xl mx-auto text-center" style={{ marginBottom: "36px" }}>
               <span
@@ -1122,7 +1122,7 @@ export default function MsmePage() {
 
         {/* ================= 2. INTERACTIVE SERVICE DEEP-DIVE TABS ================= */}
         <section id="registration" style={{ padding: "80px 0" }} className="bg-white">
-          <div style={{ maxWidth: "1200px", width: "100%", margin: "0 auto", padding: "0 20px" }}>
+          <div style={{ maxWidth: "1240px", width: "100%", margin: "0 auto", padding: "0 20px" }}>
             {/* Section Header */}
             <div className="max-w-3xl mx-auto text-center" style={{ marginBottom: "32px" }}>
               <span
@@ -1450,7 +1450,7 @@ export default function MsmePage() {
           style={{ padding: "80px 0" }}
           className="msme-dark-sec bg-[#094b57] text-white relative overflow-hidden"
         >
-          <div style={{ maxWidth: "1200px", width: "100%", margin: "0 auto", padding: "0 20px", position: "relative", zIndex: 10 }}>
+          <div style={{ maxWidth: "1240px", width: "100%", margin: "0 auto", padding: "0 20px", position: "relative", zIndex: 10 }}>
             {/* Section Header */}
             <div className="max-w-3xl mx-auto text-center" style={{ marginBottom: "36px" }}>
               <span
@@ -1701,7 +1701,7 @@ export default function MsmePage() {
 
         {/* ================= 4. QUICK CONSULTATION INLINE FORM ================= */}
         <section style={{ padding: "80px 0" }} className="bg-white">
-          <div style={{ maxWidth: "1200px", width: "100%", margin: "0 auto", padding: "0 20px" }}>
+          <div style={{ maxWidth: "1240px", width: "100%", margin: "0 auto", padding: "0 20px" }}>
             <div
               style={{
                 maxWidth: "960px",
@@ -1911,7 +1911,7 @@ export default function MsmePage() {
 
         {/* ================= 5. FREQUENTLY ASKED QUESTIONS ================= */}
         <section style={{ padding: "80px 0" }} className="bg-[#f9f8f5] border-t border-gray-200">
-          <div style={{ maxWidth: "1200px", width: "100%", margin: "0 auto", padding: "0 20px" }}>
+          <div style={{ maxWidth: "1240px", width: "100%", margin: "0 auto", padding: "0 20px" }}>
             {/* Section Header */}
             <div className="max-w-3xl mx-auto text-center" style={{ marginBottom: "28px" }}>
               <span
@@ -2045,7 +2045,7 @@ export default function MsmePage() {
           style={{ padding: "72px 0" }}
           className="msme-dark-sec bg-gradient-to-r from-[#094b57] via-[#0b5462] to-[#094b57] text-white"
         >
-          <div style={{ maxWidth: "1200px", width: "100%", margin: "0 auto", padding: "0 20px" }}>
+          <div style={{ maxWidth: "1240px", width: "100%", margin: "0 auto", padding: "0 20px" }}>
             <div className="max-w-4xl mx-auto text-center">
               <span
                 style={{

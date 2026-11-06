@@ -102,7 +102,7 @@ function BlogsContent() {
             <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-white/5 blur-3xl pointer-events-none" />
             <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-[#b69455]/15 blur-2xl pointer-events-none" />
 
-            <div className="max-w-[1200px] w-full mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="max-w-[1240px] w-full mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
               <div className="max-w-3xl mx-auto text-center">
                 <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-[#e9c787] text-xs md:text-sm font-semibold mb-3 border border-white/15 shadow-xs">
                   <Sparkles className="w-4 h-4 text-[#e9c787]" />
@@ -166,7 +166,7 @@ function BlogsContent() {
             style={{ paddingTop: "22px", paddingBottom: "22px" }}
             className="bg-white border-b border-gray-200"
           >
-            <div className="max-w-[1200px] w-full mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-[1240px] w-full mx-auto px-4 sm:px-6 lg:px-8">
               <div className="flex items-center gap-3 sm:gap-3.5 overflow-x-auto pb-1 md:pb-0 scrollbar-none justify-start md:justify-center">
                 {categories.map((cat) => {
                   const count =
@@ -211,7 +211,7 @@ function BlogsContent() {
           {/* ================= FEATURED POST SPOTLIGHT ================= */}
           {selectedCategory === "All" && !searchQuery && featuredPost && (
             <section className="pt-7 pb-8 md:pt-8 md:pb-10">
-              <div className="max-w-[1200px] w-full mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="max-w-[1240px] w-full mx-auto px-4 sm:px-6 lg:px-8">
                 <div>
                   {/* Section label — tightly coupled with card */}
                   <div className="flex items-center gap-2.5 mb-2.5 sm:mb-3">
@@ -402,7 +402,7 @@ function BlogsContent() {
             style={{ paddingTop: "28px", paddingBottom: "60px" }}
             className="pb-14 sm:pb-16"
           >
-            <div className="max-w-[1200px] w-full mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-[1240px] w-full mx-auto px-4 sm:px-6 lg:px-8">
               <div
                 style={{ marginBottom: "24px", paddingBottom: "16px" }}
                 className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-gray-200"
@@ -648,7 +648,7 @@ function BlogsContent() {
 
           {/* ================= ADVISORY CALL TO ACTION ================= */}
           <section className="py-12 sm:py-16 bg-[#094b57] text-white relative overflow-hidden">
-            <div className="max-w-[1200px] w-full mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="max-w-[1240px] w-full mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
               <div
                 className="w-full mx-auto rounded-[24px] border border-white/15 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-8"
                 style={{
