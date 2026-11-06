@@ -44,6 +44,12 @@ export default function EnquiryModal({
       return;
     }
 
+    const cleanPhone = phone.replace(/\D/g, "");
+    if (cleanPhone.length < 10) {
+      setErrorMsg("Please enter a valid 10-digit contact phone number.");
+      return;
+    }
+
     setLoading(true);
     setErrorMsg("");
 
@@ -76,7 +82,7 @@ export default function EnquiryModal({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200">
       <div className="relative w-full max-w-xl bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-100 animate-in zoom-in-95 duration-200">
         {/* Header Bar */}
         <div className="bg-gradient-to-r from-[#052b32] via-[#094b57] to-[#0d5e6d] p-6 text-white flex justify-between items-center">

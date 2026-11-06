@@ -955,6 +955,13 @@ export default function SingleMsmeClient({ page }: SingleMsmeClientProps) {
       return;
     }
 
+    const cleanPhone = formData.phone.replace(/\D/g, "");
+    if (cleanPhone.length < 10) {
+      setFormError("Please enter a valid 10-digit mobile number.");
+      setFormSubmitting(false);
+      return;
+    }
+
     try {
       const res = await submitLoanEnquiry({
         name: formData.name,

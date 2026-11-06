@@ -53,7 +53,7 @@ const DEFAULT_BLOG_FORM: BlogFormState = {
 
 const PRESET_COVERS = [
   { label: "Home Loan", url: "/images/homeloan.avif" },
-  { label: "Mutual Fund & SIP", url: "/images/sip.png" },
+  { label: "Mutual Fund & SIP", url: "/images/mutual_fund_sip_cover.jpg" },
   { label: "Corporate Finance", url: "/img/aboutus.png" },
   { label: "Consultant / Advisory", url: "/img/sksl.jpg" }
 ];

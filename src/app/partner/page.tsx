@@ -36,6 +36,12 @@ export default function PartnerPage() {
       return;
     }
 
+    const cleanPhone = mobile.replace(/\D/g, "");
+    if (cleanPhone.length < 10) {
+      setErrorMsg("Please enter a valid 10-digit mobile number.");
+      return;
+    }
+
     setLoading(true);
     setErrorMsg("");
 

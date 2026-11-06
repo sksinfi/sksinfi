@@ -50,12 +50,12 @@ export const authenticFooterHtml = `<style>
       <div class="col-6 col-md-3 col-lg-2">
         <h6 class="fw-bold mb-3 text-uppercase text-white">NRI Desk</h6>
         <ul class="list-unstyled">
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/sksinfi_nri.php" class="text-light text-decoration-none">SKS INFI & NRI</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/loan.php" class="text-light text-decoration-none">Loan</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/real_estate.php" class="text-light text-decoration-none">Real Estate</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/investment.php" class="text-light text-decoration-none">Investment</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/insurance.php" class="text-light text-decoration-none">Insurance</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/accountstax.php" class="text-light text-decoration-none">A/Cs & Tax</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/sksinfi_nri" class="text-light text-decoration-none">SKS INFI & NRI</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/loan" class="text-light text-decoration-none">Loan</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/real_estate" class="text-light text-decoration-none">Real Estate</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/investment" class="text-light text-decoration-none">Investment</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/insurance" class="text-light text-decoration-none">Insurance</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/accountstax" class="text-light text-decoration-none">A/Cs & Tax</a></li>
         </ul>
       </div>
 
@@ -63,20 +63,20 @@ export const authenticFooterHtml = `<style>
       <div class="col-6 col-md-3 col-lg-2">
         <h6 class="fw-bold mb-3 text-uppercase text-white">Loans</h6>
         <ul class="list-unstyled">
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/loan.php" class="text-light text-decoration-none">SKS INFI n Loan </a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/home_loan.php" class="text-light text-decoration-none">Home Loan</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/lap.php" class="text-light text-decoration-none">LAP</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/personal-loan.php" class="text-light text-decoration-none">Personal Loan</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/business-loan.php" class="text-light text-decoration-none">Business Loan</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/education.php" class="text-light text-decoration-none">Education Loan</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/term-loan.php" class="text-light text-decoration-none">Term Loan</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/cas_overdraft.php" class="text-light text-decoration-none">Cash credit</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/project_finance.php" class="text-light text-decoration-none">Project Finance</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/cgtsme.php" class="text-light text-decoration-none">CGTSME</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/loan" class="text-light text-decoration-none">SKS INFI n Loan </a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/home_loan" class="text-light text-decoration-none">Home Loan</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/lap" class="text-light text-decoration-none">LAP</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/personal-loan" class="text-light text-decoration-none">Personal Loan</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/business-loan" class="text-light text-decoration-none">Business Loan</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/education" class="text-light text-decoration-none">Education Loan</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/term-loan" class="text-light text-decoration-none">Term Loan</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/cas_overdraft" class="text-light text-decoration-none">Cash credit</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/project_finance" class="text-light text-decoration-none">Project Finance</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/cgtsme" class="text-light text-decoration-none">CGTSME</a></li>
           <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/msme" class="text-light text-decoration-none">MSME Services</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/subsidy-from.php" class="text-light text-decoration-none">Subsidy From</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/car.php" class="text-light text-decoration-none">Car Loan</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/commercial_vehicle.php" class="text-light text-decoration-none">Commercial Vehicle </a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/subsidy-from" class="text-light text-decoration-none">Subsidy From</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/car" class="text-light text-decoration-none">Car Loan</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/commercial_vehicle" class="text-light text-decoration-none">Commercial Vehicle </a></li>
         </ul>
       </div>
 
@@ -84,21 +84,21 @@ export const authenticFooterHtml = `<style>
       <div class="col-6 col-md-6 col-lg-2">
         <h6 class="fw-bold mb-3 text-uppercase text-white">Real Estate</h6>
         <ul class="list-unstyled">
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/residential.php" class="text-light text-decoration-none">Residential</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/commercial.php" class="text-light text-decoration-none">Commercial</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/industrial.php" class="text-light text-decoration-none">Industrial</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/farm_house.php" class="text-light text-decoration-none">Farm House</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/open_land.php" class="text-light text-decoration-none">Open Land</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/residential" class="text-light text-decoration-none">Residential</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/commercial" class="text-light text-decoration-none">Commercial</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/industrial" class="text-light text-decoration-none">Industrial</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/farm_house" class="text-light text-decoration-none">Farm House</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/open_land" class="text-light text-decoration-none">Open Land</a></li>
         </ul>
 
         <h6 class="fw-bold mt-4 mb-3 text-uppercase text-white">Insurance</h6>
         <ul class="list-unstyled">
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/health.php" class="text-light text-decoration-none">Health Insurance</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/life.php" class="text-light text-decoration-none">Life Insurance</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/term.php" class="text-light text-decoration-none">Term Insurance</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/property.php" class="text-light text-decoration-none">Property Insurance</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/travel.php" class="text-light text-decoration-none">Travel Insurance</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/factory.php" class="text-light text-decoration-none">Factory Insurance</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/health" class="text-light text-decoration-none">Health Insurance</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/life" class="text-light text-decoration-none">Life Insurance</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/term" class="text-light text-decoration-none">Term Insurance</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/property" class="text-light text-decoration-none">Property Insurance</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/travel" class="text-light text-decoration-none">Travel Insurance</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/factory" class="text-light text-decoration-none">Factory Insurance</a></li>
         </ul>
       </div>
 
@@ -106,21 +106,21 @@ export const authenticFooterHtml = `<style>
       <div class="col-6 col-md-6 col-lg-2">
         <h6 class="fw-bold mb-3 text-uppercase text-white">Investment</h6>
         <ul class="list-unstyled">
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/mutual_funds.php" class="text-light text-decoration-none">Mutual Fund</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/bonds.php" class="text-light text-decoration-none">Bonds</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/ncd.php" class="text-light text-decoration-none">NCD</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/unlisted_shares.php" class="text-light text-decoration-none">Unlisted Shares</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/equity_demat.php" class="text-light text-decoration-none">Equity & Demat</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/fixed-deposit.php" class="text-light text-decoration-none">Fixed Deposit</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/mutual_funds" class="text-light text-decoration-none">Mutual Fund</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/bonds" class="text-light text-decoration-none">Bonds</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/ncd" class="text-light text-decoration-none">NCD</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/unlisted_shares" class="text-light text-decoration-none">Unlisted Shares</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/equity_demat" class="text-light text-decoration-none">Equity & Demat</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/fixed-deposit" class="text-light text-decoration-none">Fixed Deposit</a></li>
         </ul>
 
         <h6 class="fw-bold mt-4 mb-3 text-white">A/Cs & TAX</h6>
         <ul class="list-unstyled">
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/accounts.php" class="text-light text-decoration-none">Accounts</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/taxation.php" class="text-light text-decoration-none">Taxation</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/gst.php" class="text-light text-decoration-none">GST</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/itr.php" class="text-light text-decoration-none">ITR</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/litigation.php" class="text-light text-decoration-none">Litigation</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/accounts" class="text-light text-decoration-none">Accounts</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/taxation" class="text-light text-decoration-none">Taxation</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/gst" class="text-light text-decoration-none">GST</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/itr" class="text-light text-decoration-none">ITR</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/litigation" class="text-light text-decoration-none">Litigation</a></li>
           <li>
             <i class="fa fa-angle-right me-2 clricn"></i>
             <a href="https://www.sksinfi.com/sitemap.php" class="text-light text-decoration-none txtnew" title="HTML Sitemap">HTML Sitemap</a>

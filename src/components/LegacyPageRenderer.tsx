@@ -350,8 +350,8 @@ export default function LegacyPageRenderer({ slug, initialData }: LegacyPageRend
           alert("Form submitted successfully!");
           form.reset();
         } catch (err) {
-          console.error(err);
-          alert("Form submitted successfully!");
+          console.error("Submission failed:", err);
+          alert("Failed to submit form. Please check your internet connection or call +91 99285 29222 directly.");
         } finally {
           if (submitBtn) {
             submitBtn.disabled = false;

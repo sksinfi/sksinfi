@@ -250,6 +250,12 @@ export default function MsmePage() {
       setFormError("Please enter your name and contact phone number.");
       return;
     }
+
+    const cleanPhone = phone.replace(/\D/g, "");
+    if (cleanPhone.length < 10) {
+      setFormError("Please enter a valid 10-digit mobile number.");
+      return;
+    }
     setFormLoading(true);
     setFormError("");
 
