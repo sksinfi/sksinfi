@@ -48,7 +48,7 @@ export const servicesData: ServiceItem[] = [
       "Property purchase agreement / Title deeds"
     ],
     icon: "Home",
-    image: "/images/homeloan.avif"
+    image: "/images/loans/home_loan.png"
   },
   {
     id: "business-loan",
@@ -79,7 +79,7 @@ export const servicesData: ServiceItem[] = [
       "KYC of all directors/partners"
     ],
     icon: "Briefcase",
-    image: "/images/msme-loan.webp"
+    image: "/images/loans/business_loan.jpg"
   },
   {
     id: "loan-against-property",
@@ -109,7 +109,7 @@ export const servicesData: ServiceItem[] = [
       "Bank statements of last 6 to 12 months"
     ],
     icon: "Building",
-    image: "/images/loanbanner.png"
+    image: "/images/loans/loan_against_property.jpg"
   },
   {
     id: "personal-loan",
@@ -138,7 +138,7 @@ export const servicesData: ServiceItem[] = [
       "6 months salary credit bank statement"
     ],
     icon: "UserCheck",
-    image: "/images/pl.jpeg"
+    image: "/images/loans/personal_loan.png"
   },
 
   // ================= INVESTMENTS =================
