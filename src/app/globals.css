@@ -1243,7 +1243,6 @@ button.btn-primary:active {
 
 /* Content Boxes & Service Cards across pages */
 .service-box,
-.feature-box,
 .content-box,
 .contact-box,
 .main-card,
@@ -1261,7 +1260,6 @@ button.btn-primary:active {
 }
 
 .service-box:hover,
-.feature-box:hover,
 .content-box:hover,
 .contact-box:hover,
 .main-card:hover,
@@ -1781,7 +1779,6 @@ img, video, canvas, svg {
 /* 3. Card Content & Action Button Alignment */
 .card,
 .service-box,
-.feature-box,
 .content-box,
 .main-card {
   display: flex !important;
@@ -1791,8 +1788,7 @@ img, video, canvas, svg {
 }
 
 .card > div:last-child,
-.service-box > div:last-child,
-.feature-box > div:last-child {
+.service-box > div:last-child {
   margin-top: auto !important;
 }
 
