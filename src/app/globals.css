@@ -151,12 +151,12 @@ footer p:not(.txtnew) {
 }
 
 /* Ensure White Cards inside Dark Sections Retain Clear Dark Text */
-.bg-white h1, .bg-white h2, .bg-white h3, .bg-white h4, .bg-white h5, .bg-white h6,
+.bg-white:not(body) h1, .bg-white:not(body) h2, .bg-white:not(body) h3, .bg-white:not(body) h4, .bg-white:not(body) h5, .bg-white:not(body) h6,
 .card h1, .card h2, .card h3, .card h4, .card h5, .card h6 {
   color: #094b57 !important;
 }
 
-.bg-white p,
+.bg-white:not(body) p,
 .card p {
   color: #374151 !important;
 }
@@ -182,15 +182,35 @@ p {
 .blog-hero-title,
 h1.blog-article-title,
 h1.blog-hero-title {
+  color: #ffffff !important;
   text-transform: none !important;
   letter-spacing: -0.02em !important;
   line-height: 1.25 !important;
   overflow: visible !important;
 }
 
-.blog-hero-p {
-  color: #ffffff !important;
-  opacity: 0.95 !important;
+.blog-hero-p,
+p.blog-hero-p {
+  color: #E6F0F0 !important;
+  opacity: 1 !important;
+}
+
+.blog-search-input,
+input.blog-search-input[type="text"] {
+  padding-left: 52px !important;
+  padding-right: 52px !important;
+  padding-top: 14px !important;
+  padding-bottom: 14px !important;
+  height: 52px !important;
+  color: #243746 !important;
+  background-color: #ffffff !important;
+  border-radius: 9999px !important;
+}
+
+.blog-search-input::placeholder,
+input.blog-search-input[type="text"]::placeholder {
+  color: #8A929D !important;
+  opacity: 1 !important;
 }
 
 /* ==========================================================================

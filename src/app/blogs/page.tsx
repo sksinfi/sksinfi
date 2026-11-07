@@ -111,14 +111,14 @@ function BlogsContent() {
 
                 <h1
                   style={{ textTransform: "none", color: "#ffffff", lineHeight: "1.25" }}
-                  className="blog-hero-title text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-3 text-white leading-[1.25] py-1 overflow-visible"
+                  className="blog-hero-title text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-3.5 text-white leading-[1.25] py-1 overflow-visible"
                 >
-                  Expert Financial Insights &amp; Market Advisory
+                  Expert Financial Insights &amp; Market Updates
                 </h1>
 
                 <p
-                  style={{ color: "#ffffff", opacity: 0.95 }}
-                  className="blog-hero-p text-sm md:text-base lg:text-lg leading-relaxed mb-5 max-w-2xl mx-auto"
+                  style={{ color: "#E6F0F0" }}
+                  className="blog-hero-p text-sm sm:text-base md:text-lg leading-relaxed mb-6 max-w-2xl mx-auto font-normal"
                 >
                   Clear, actionable guidance on Home Loans, SIP Compounding, MSME Subsidies,
                   NRI Investments, and Tax Planning from Jaipur&apos;s leading financial consultants.
@@ -126,32 +126,31 @@ function BlogsContent() {
 
                 {/* Search Bar */}
                 <div className="relative max-w-xl mx-auto">
-                  <Search
-                    style={{ left: "18px" }}
-                    className="absolute top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5 pointer-events-none z-10"
-                  />
+                  <div className="absolute left-4.5 top-1/2 -translate-y-1/2 flex items-center justify-center pointer-events-none z-10">
+                    <Search className="w-5 h-5 text-[#64748B]" />
+                  </div>
                   <input
                     type="text"
                     placeholder="Search articles by topic, loan type, mutual funds, or tax..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     style={{
-                      color: "#111827",
+                      color: "#243746",
                       backgroundColor: "#ffffff",
                       paddingLeft: "52px",
-                      paddingRight: "52px",
+                      paddingRight: searchQuery ? "80px" : "24px",
                       paddingTop: "14px",
                       paddingBottom: "14px",
                       height: "52px",
                       borderRadius: "9999px"
                     }}
-                    className="w-full shadow-lg focus:outline-none focus:ring-4 focus:ring-[#b69455]/40 text-sm md:text-base border border-transparent"
+                    className="blog-search-input w-full shadow-[0_4px_20px_rgba(0,0,0,0.08)] focus:outline-none focus:ring-3 focus:ring-[#b69455]/40 text-sm md:text-base border border-slate-200/80 transition-all placeholder-[#8A929D]"
                   />
                   {searchQuery && (
                     <button
                       onClick={() => setSearchQuery("")}
-                      style={{ right: "16px" }}
-                      className="absolute top-1/2 -translate-y-1/2 text-xs bg-gray-200 hover:bg-gray-300 text-gray-700 px-2.5 py-1 rounded-full transition font-medium cursor-pointer z-10"
+                      style={{ right: "14px" }}
+                      className="absolute top-1/2 -translate-y-1/2 text-xs bg-gray-100 hover:bg-gray-200 text-gray-600 px-2.5 py-1 rounded-full transition font-medium cursor-pointer z-10"
                     >
                       Clear
                     </button>
