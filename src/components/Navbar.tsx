@@ -227,8 +227,8 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
         }}
         className="w-full relative z-30 text-white font-sans text-xs overflow-hidden"
       >
-        {/* Decorative Golden Swoosh Curves (Left Edge) */}
-        <div className="absolute left-0 top-0 bottom-0 w-[110px] pointer-events-none overflow-hidden select-none z-0">
+        {/* Decorative Golden Swoosh Curves (Left Edge - hidden on small mobile to avoid text collision) */}
+        <div className="hidden sm:block absolute left-0 top-0 bottom-0 w-[110px] pointer-events-none overflow-hidden select-none z-0">
           <svg
             viewBox="0 0 110 44"
             fill="none"
@@ -255,8 +255,8 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
           </svg>
         </div>
 
-        {/* Decorative Golden Swoosh Curves (Right Edge) */}
-        <div className="absolute right-0 top-0 bottom-0 w-[110px] pointer-events-none overflow-hidden select-none z-0">
+        {/* Decorative Golden Swoosh Curves (Right Edge - hidden on small mobile) */}
+        <div className="hidden sm:block absolute right-0 top-0 bottom-0 w-[110px] pointer-events-none overflow-hidden select-none z-0">
           <svg
             viewBox="0 0 110 44"
             fill="none"
@@ -284,14 +284,14 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
         </div>
 
         <div
-          style={{ maxWidth: "1380px", minHeight: "40px" }}
-          className="w-full mx-auto px-4 sm:px-6 lg:px-8 pl-8 sm:pl-10 lg:pl-12 flex items-center justify-between gap-3 relative z-10 py-1.5"
+          style={{ maxWidth: "1380px", minHeight: "38px" }}
+          className="w-full mx-auto px-3 sm:px-6 lg:px-8 sm:pl-10 lg:pl-12 flex items-center justify-between gap-2 sm:gap-3 relative z-10 py-1 sm:py-1.5"
         >
           {/* Left: NRI 24/7 Helpline */}
-          <div className="flex items-center gap-1.5 sm:gap-2">
+          <div className="flex items-center gap-1 sm:gap-2">
             <span
               style={{ color: "#ffffff" }}
-              className="text-[12px] sm:text-[12.5px] font-normal whitespace-nowrap"
+              className="text-[11px] sm:text-[12.5px] font-normal whitespace-nowrap"
             >
               <span className="hidden sm:inline">24/7 Service Available to NRI:</span>
               <span className="sm:hidden">24/7 NRI:</span>
@@ -299,16 +299,29 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
             <a
               href="tel:+919928593122"
               style={{ color: "#ffffff", textDecoration: "none" }}
-              className="hover:text-[#f5cb68] font-bold text-[12px] sm:text-[12.5px] inline-flex items-center gap-1.5 transition-colors whitespace-nowrap ml-1"
+              className="hover:text-[#f5cb68] font-bold text-[11.5px] sm:text-[12.5px] inline-flex items-center gap-1 sm:gap-1.5 transition-colors whitespace-nowrap ml-0.5"
             >
-              <Phone className="w-3.5 h-3.5 text-[#e2ab39] shrink-0" />
+              <Phone className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#e2ab39] shrink-0" />
               <span>+91 99285 93122</span>
             </a>
             <span className="text-white/35 ml-4 lg:ml-7 hidden md:inline select-none font-light">|</span>
           </div>
 
-          {/* Right: Secondary Links & Flat Social Media Icons */}
-          <div className="flex items-center gap-3 sm:gap-4 shrink-0">
+          {/* Right Mobile Shortcut: Direct WhatsApp Pill */}
+          <a
+            href="https://wa.me/919928593122?text=Hello%20SKS%20INFI%2C%20I%20would%20like%20to%20inquire%20about%20financial%20services"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Chat on WhatsApp"
+            style={{ textDecoration: "none" }}
+            className="flex sm:hidden items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white/10 hover:bg-[#25D366] text-[#25D366] hover:text-white transition-all text-[11px] font-bold border border-white/15 shrink-0"
+          >
+            <i className="fab fa-whatsapp text-xs text-[#25D366]"></i>
+            <span className="text-white/95 font-medium text-[10.5px]">WhatsApp</span>
+          </a>
+
+          {/* Right Desktop: Secondary Links & Flat Social Media Icons */}
+          <div className="hidden sm:flex items-center gap-3 sm:gap-4 shrink-0">
             <div className="sks-top-nav hidden md:flex items-center gap-2.5 lg:gap-3 text-[11.5px] sm:text-xs">
               <Link
                 href="/sksinfin"
@@ -344,8 +357,8 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
               <span className="text-white/35 select-none font-light">|</span>
             </div>
 
-            {/* Flat Social Icons (Direct crisp white glyphs without circle boxes) */}
-            <div className="hidden sm:flex items-center gap-3.5 text-white">
+            {/* Flat Social Icons */}
+            <div className="flex items-center gap-3.5 text-white">
               <a
                 href="https://www.facebook.com/profile.php?id=61580467109664"
                 target="_blank"
@@ -417,15 +430,15 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
       >
         <div
           style={{ maxWidth: "1380px" }}
-          className="w-full mx-auto px-4 sm:px-6 lg:px-8"
+          className="w-full mx-auto px-3 sm:px-6 lg:px-8"
         >
           <div
             style={{
-              height: isScrolled ? "72px" : "80px",
-              minHeight: isScrolled ? "72px" : "80px",
+              height: isScrolled ? "58px" : "66px",
+              minHeight: isScrolled ? "58px" : "66px",
               transition: "height 0.25s ease, min-height 0.25s ease"
             }}
-            className="flex items-center justify-between gap-3 xl:gap-5"
+            className="flex items-center justify-between gap-2 sm:gap-4 xl:gap-5"
           >
             {/* Left: Brand Logo & Tagline with subtle vertical divider */}
             <div className="flex items-center shrink-0">
@@ -437,23 +450,23 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                   src="/img/sksl.jpg"
                   alt="SKS INFI - MSME | LOAN | INVESTMENT"
                   style={{
-                    height: isScrolled ? "52px" : "60px",
-                    maxHeight: "62px",
+                    height: isScrolled ? "44px" : "50px",
+                    maxHeight: "54px",
                     width: "auto",
                     objectFit: "contain",
                     transition: "height 0.25s ease"
                   }}
-                  className="block max-w-[165px] sm:max-w-[195px] xl:max-w-[210px]"
+                  className="block max-w-[135px] sm:max-w-[180px] xl:max-w-[210px]"
                 />
               </Link>
-              {/* Vertical gold divider after logo */}
+              {/* Vertical gold divider after logo (Desktop xl only) */}
               <div
                 style={{
                   width: "1.5px",
-                  height: "30px",
+                  height: "28px",
                   backgroundColor: "#b7832f",
-                  marginLeft: "22px",
-                  marginRight: "22px"
+                  marginLeft: "20px",
+                  marginRight: "20px"
                 }}
                 className="hidden xl:block shrink-0"
               />
@@ -618,16 +631,20 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
               })}
             </nav>
 
-            {/* Mobile / Tablet Actions (< 1280px) - No Enquire button */}
-            <div className="sks-mobile-toggle flex xl:hidden items-center gap-2.5 shrink-0 ml-auto">
+            {/* Mobile / Tablet Actions (< 1280px) */}
+            <div className="sks-mobile-toggle flex xl:hidden items-center gap-2 sm:gap-2.5 shrink-0 ml-auto">
               {/* Quick Call Icon Button */}
               <a
                 href="tel:+919928593122"
                 aria-label="Call SKS INFI"
-                style={{ color: "#004B50", textDecoration: "none" }}
-                className="w-10 h-10 rounded-full bg-[#004B50]/5 hover:bg-[#004B50]/10 flex items-center justify-center transition-colors"
+                style={{
+                  backgroundColor: "rgba(0, 56, 64, 0.06)",
+                  color: "#003840",
+                  textDecoration: "none"
+                }}
+                className="w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center hover:bg-[#003840]/10 active:scale-95 transition-all shrink-0"
               >
-                <Phone className="w-4 h-4 text-[#b69455]" />
+                <Phone className="w-4 h-4 text-[#b7832f]" />
               </a>
 
               {/* Hamburger Menu Toggle Button */}
@@ -635,15 +652,18 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
                 style={{
-                  backgroundColor: "#004B50",
+                  backgroundColor: "#003840",
                   color: "#ffffff"
                 }}
-                className="w-10 h-10 rounded-xl flex items-center justify-center border-none cursor-pointer hover:bg-[#00383C] active:scale-95 transition-all shadow-xs"
+                className="h-9 px-3 sm:h-10 sm:px-3.5 rounded-xl flex items-center justify-center gap-1.5 border-none cursor-pointer hover:bg-[#002b31] active:scale-95 transition-all shadow-xs shrink-0"
               >
                 {mobileMenuOpen ? (
                   <CloseIcon className="w-5 h-5 text-white" />
                 ) : (
-                  <MenuIcon className="w-5 h-5 text-white" />
+                  <>
+                    <MenuIcon className="w-5 h-5 text-white" />
+                    <span className="text-[11.5px] font-bold uppercase tracking-wider text-white hidden xs:inline">Menu</span>
+                  </>
                 )}
               </button>
             </div>
@@ -652,37 +672,38 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
 
         {/* ================= 3. MOBILE MODERN SLIDE DRAWER ================= */}
         {mobileMenuOpen && (
-          <div className="sks-mobile-drawer fixed inset-0 z-[1000]">
+          <div className="sks-mobile-drawer fixed inset-0 z-[10000]">
             {/* Backdrop with blur */}
             <div
-              className="fixed inset-0 bg-black/50 backdrop-blur-xs transition-opacity duration-300"
+              className="fixed inset-0 bg-black/60 backdrop-blur-xs transition-opacity duration-300"
               onClick={() => setMobileMenuOpen(false)}
             />
 
             {/* Slide-in Panel from Right */}
             <div
               style={{
-                width: "86vw",
+                width: "88vw",
                 maxWidth: "360px",
                 backgroundColor: "#ffffff"
               }}
-              className="fixed top-0 right-0 bottom-0 z-[1001] shadow-2xl flex flex-col overflow-hidden animate-in slide-in-from-right duration-300"
+              className="fixed top-0 right-0 bottom-0 z-[10001] shadow-2xl flex flex-col overflow-hidden animate-in slide-in-from-right duration-300"
             >
               {/* Drawer Top Bar */}
-              <div className="p-4 border-b border-gray-100 flex items-center justify-between bg-white shrink-0">
+              <div className="p-3.5 border-b border-gray-100 flex items-center justify-between bg-white shrink-0">
                 <Link
                   href="/"
                   onClick={() => setMobileMenuOpen(false)}
                   style={{ textDecoration: "none" }}
+                  className="flex items-center gap-2"
                 >
                   <img
                     src="/img/sksl.jpg"
                     alt="SKS INFI"
                     style={{
-                      height: "46px",
-                      maxHeight: "48px",
+                      height: "42px",
+                      maxHeight: "44px",
                       width: "auto",
-                      maxWidth: "165px",
+                      maxWidth: "155px",
                       objectFit: "contain"
                     }}
                   />
@@ -697,16 +718,16 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
               </div>
 
               {/* Drawer Quick Action Pills */}
-              <div className="p-3 bg-gray-50/80 border-b border-gray-100 grid grid-cols-3 gap-2 text-xs font-semibold shrink-0">
+              <div className="p-3 bg-gray-50/90 border-b border-gray-100 grid grid-cols-3 gap-2 text-xs font-semibold shrink-0">
                 <Link
                   href="/sksinfin"
                   onClick={() => setMobileMenuOpen(false)}
                   style={{
-                    color: "#004B50",
+                    color: "#003840",
                     backgroundColor: "#ffffff",
                     textDecoration: "none"
                   }}
-                  className="p-2 rounded-xl text-center font-bold border border-gray-200/80 shadow-xs hover:border-[#b69455] transition-colors text-[11.5px]"
+                  className="p-2 rounded-xl text-center font-bold border border-gray-200/80 shadow-xs hover:border-[#b7832f] transition-colors text-[11px]"
                 >
                   Why SKSINFI
                 </Link>
@@ -714,11 +735,11 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                   href="/partner-with-us"
                   onClick={() => setMobileMenuOpen(false)}
                   style={{
-                    color: "#004B50",
+                    color: "#003840",
                     backgroundColor: "#ffffff",
                     textDecoration: "none"
                   }}
-                  className="p-2 rounded-xl text-center font-bold border border-gray-200/80 shadow-xs hover:border-[#b69455] transition-colors text-[11.5px]"
+                  className="p-2 rounded-xl text-center font-bold border border-gray-200/80 shadow-xs hover:border-[#b7832f] transition-colors text-[11px]"
                 >
                   Partner With Us
                 </Link>
@@ -726,18 +747,18 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                   href="/blogs"
                   onClick={() => setMobileMenuOpen(false)}
                   style={{
-                    color: "#004B50",
-                    backgroundColor: "#ffffff",
+                    color: "#003840",
+                    backgroundColor: "#faf5eb",
                     textDecoration: "none"
                   }}
-                  className="p-2 rounded-xl text-center font-bold border border-gray-200/80 shadow-xs hover:border-[#b69455] transition-colors text-[11.5px]"
+                  className="p-2 rounded-xl text-center font-bold border border-[#b7832f]/40 shadow-xs text-[#b7832f] transition-colors text-[11px]"
                 >
                   Blogs
                 </Link>
               </div>
 
               {/* Drawer Scrollable Navigation */}
-              <div className="flex-1 overflow-y-auto p-4 space-y-1">
+              <div className="flex-1 overflow-y-auto px-3.5 py-3 space-y-1">
                 {NAV_ITEMS.map((item) => {
                   const isHome = item.label === "HOME";
                   const hasChildren = item.children && item.children.length > 0;
@@ -746,18 +767,19 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
 
                   if (isHome) {
                     return (
-                      <div key={item.label} className="border-b border-gray-100/70 pb-2 mb-1.5 pt-0.5">
+                      <div key={item.label} className="border-b border-gray-100/80 pt-1 pb-2.5 mb-2">
                         <Link
                           href={item.href}
                           onClick={() => setMobileMenuOpen(false)}
                           style={{
-                            backgroundColor: "#b69455",
+                            backgroundColor: "#b7832f",
                             color: "#ffffff",
                             textDecoration: "none"
                           }}
-                          className="inline-flex items-center justify-center px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-lg shadow-xs hover:bg-[#a38243] transition-colors"
+                          className="w-full flex items-center justify-between py-2.5 px-3.5 text-xs font-bold uppercase tracking-wider rounded-xl shadow-xs hover:bg-[#a67426] active:scale-[0.99] transition-all"
                         >
-                          HOME
+                          <span>HOME</span>
+                          <ChevronRight className="w-4 h-4 text-white/90" />
                         </Link>
                       </div>
                     );
@@ -773,22 +795,42 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                           <button
                             onClick={() => toggleMobileAccordion(item.label)}
                             style={{
-                              color: active ? "#b69455" : "#004B50"
+                              color: isExpanded ? "#003840" : active ? "#b7832f" : "#003840"
                             }}
-                            className={`w-full flex items-center justify-between py-2.5 px-2.5 text-sm font-bold text-left bg-transparent border-none cursor-pointer rounded-lg transition-colors ${
-                              active ? "bg-[#faf1e0]/40" : "hover:bg-gray-50"
+                            className={`w-full flex items-center justify-between py-2.5 px-3 text-sm font-bold text-left bg-transparent border-none cursor-pointer rounded-xl transition-all ${
+                              isExpanded
+                                ? "bg-[#003840]/[0.05] border-l-2 border-[#b7832f]"
+                                : active
+                                ? "bg-[#faf1e0]/50"
+                                : "hover:bg-gray-50"
                             }`}
                           >
-                            <span className="uppercase tracking-wider">{item.label}</span>
-                            <ChevronDown
-                              className={`w-4 h-4 text-gray-400 transition-transform duration-200 ${
-                                isExpanded ? "rotate-180 text-[#b69455]" : ""
-                              }`}
-                            />
+                            <span className="uppercase tracking-wider text-[12.5px]">{item.label}</span>
+                            <div className="flex items-center gap-1.5">
+                              <ChevronDown
+                                className={`w-4 h-4 text-gray-400 transition-transform duration-200 ${
+                                  isExpanded ? "rotate-180 text-[#b7832f]" : ""
+                                }`}
+                              />
+                            </div>
                           </button>
 
                           {isExpanded && (
-                            <div className="bg-[#f8fafc] rounded-xl p-2 my-1 grid grid-cols-1 gap-1 border border-gray-100">
+                            <div className="bg-[#f8fafc] rounded-xl p-2 my-1.5 flex flex-col gap-1 border border-gray-100 animate-in fade-in duration-200">
+                              {/* Direct Parent Link */}
+                              <Link
+                                href={item.href}
+                                onClick={() => setMobileMenuOpen(false)}
+                                style={{
+                                  color: "#003840",
+                                  textDecoration: "none"
+                                }}
+                                className="text-[11.5px] py-1.5 px-3 rounded-lg font-bold text-[#003840] hover:bg-white flex items-center justify-between bg-white/60 border border-gray-200/50 mb-0.5"
+                              >
+                                <span>Overview: {item.label}</span>
+                                <ArrowRight className="w-3.5 h-3.5 text-[#b7832f]" />
+                              </Link>
+
                               {item.children!.map((sub) => {
                                 const isSubActive = pathname === sub.href;
                                 return (
@@ -800,21 +842,21 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                                       color: isSubActive ? "#b69455" : "#334155",
                                       textDecoration: "none"
                                     }}
-                                    className={`text-xs py-2 px-3 rounded-lg transition-all flex items-center justify-between ${
+                                    className={`text-xs py-2 px-3 rounded-lg transition-all flex items-start justify-between gap-2 ${
                                       isSubActive
-                                        ? "bg-white font-bold shadow-xs border border-gray-200/50"
-                                        : "hover:bg-white hover:text-[#004B50] font-medium"
+                                        ? "bg-white font-bold shadow-xs border border-[#b69455]/30 text-[#003840]"
+                                        : "hover:bg-white hover:text-[#003840] font-medium"
                                     }`}
                                   >
-                                    <div className="flex items-center gap-2 truncate">
+                                    <div className="flex items-start gap-2 min-w-0">
                                       <span
-                                        className={`w-1.5 h-1.5 rounded-full shrink-0 ${
-                                          isSubActive ? "bg-[#b69455]" : "bg-gray-300"
+                                        className={`w-1.5 h-1.5 rounded-full shrink-0 mt-1.5 ${
+                                          isSubActive ? "bg-[#b7832f]" : "bg-[#b7832f]/50"
                                         }`}
                                       />
-                                      <span className="truncate">{sub.label}</span>
+                                      <span className="leading-snug break-words text-[11.5px]">{sub.label}</span>
                                     </div>
-                                    <ChevronRight className="w-3.5 h-3.5 text-gray-400 shrink-0" />
+                                    <ChevronRight className="w-3.5 h-3.5 text-gray-400 shrink-0 mt-0.5" />
                                   </Link>
                                 );
                               })}
@@ -826,16 +868,17 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                           href={item.href}
                           onClick={() => setMobileMenuOpen(false)}
                           style={{
-                            color: active ? "#b69455" : "#004B50",
+                            color: active ? "#b7832f" : "#003840",
                             textDecoration: "none"
                           }}
-                          className={`block py-2.5 px-2.5 text-sm font-bold uppercase tracking-wider rounded-lg transition-colors ${
+                          className={`flex items-center justify-between py-2.5 px-3 text-sm font-bold uppercase tracking-wider rounded-xl transition-colors ${
                             active
-                              ? "bg-[#faf1e0]/40"
-                              : "hover:text-[#b69455] hover:bg-gray-50"
+                              ? "bg-[#faf1e0]/50"
+                              : "hover:text-[#b7832f] hover:bg-gray-50"
                           }`}
                         >
-                          {item.label}
+                          <span className="text-[12.5px]">{item.label}</span>
+                          <ChevronRight className="w-4 h-4 text-gray-400 shrink-0" />
                         </Link>
                       )}
                     </div>
@@ -843,8 +886,8 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                 })}
               </div>
 
-              {/* Drawer Fixed Bottom Call & Socials (No Enquire Button) */}
-              <div className="p-4 border-t border-gray-100 bg-gray-50/90 space-y-2.5 shrink-0">
+              {/* Drawer Fixed Bottom Call & Contacts */}
+              <div className="p-4 pb-6 border-t border-gray-100 bg-[#fbfcfd] space-y-2 shrink-0">
                 <a
                   href="tel:+919928593122"
                   style={{
@@ -852,10 +895,25 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                     color: "#ffffff",
                     textDecoration: "none"
                   }}
-                  className="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-xs hover:bg-[#002b31] shadow-xs transition-colors"
+                  className="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-xs hover:bg-[#002b31] shadow-xs active:scale-[0.99] transition-all"
                 >
                   <Phone className="w-4 h-4 text-[#f5cb68]" />
                   <span style={{ color: "#ffffff" }}>Call 24/7 NRI: +91 99285 93122</span>
+                </a>
+
+                <a
+                  href="https://wa.me/919928593122?text=Hello%20SKS%20INFI%2C%20I%20would%20like%20to%20inquire%20about%20financial%20services"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    backgroundColor: "#25D366",
+                    color: "#ffffff",
+                    textDecoration: "none"
+                  }}
+                  className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl font-bold text-xs hover:bg-[#20bd5a] shadow-xs active:scale-[0.99] transition-all"
+                >
+                  <i className="fab fa-whatsapp text-sm"></i>
+                  <span style={{ color: "#ffffff" }}>Chat on WhatsApp</span>
                 </a>
 
                 {/* Social icons in drawer bottom */}
@@ -866,7 +924,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                     rel="noopener noreferrer"
                     aria-label="Facebook"
                     style={{ textDecoration: "none" }}
-                    className="w-8 h-8 rounded-full bg-white border border-gray-200 text-gray-600 hover:text-[#004B50] hover:border-[#004B50] flex items-center justify-center transition-colors text-xs"
+                    className="w-8 h-8 rounded-full bg-white border border-gray-200 text-gray-600 hover:text-[#003840] hover:border-[#003840] flex items-center justify-center transition-colors text-xs"
                   >
                     <i className="fab fa-facebook-f"></i>
                   </a>
@@ -876,7 +934,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                     rel="noopener noreferrer"
                     aria-label="Instagram"
                     style={{ textDecoration: "none" }}
-                    className="w-8 h-8 rounded-full bg-white border border-gray-200 text-gray-600 hover:text-[#004B50] hover:border-[#004B50] flex items-center justify-center transition-colors text-xs"
+                    className="w-8 h-8 rounded-full bg-white border border-gray-200 text-gray-600 hover:text-[#003840] hover:border-[#003840] flex items-center justify-center transition-colors text-xs"
                   >
                     <i className="fab fa-instagram"></i>
                   </a>
@@ -886,7 +944,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                     rel="noopener noreferrer"
                     aria-label="YouTube"
                     style={{ textDecoration: "none" }}
-                    className="w-8 h-8 rounded-full bg-white border border-gray-200 text-gray-600 hover:text-[#004B50] hover:border-[#004B50] flex items-center justify-center transition-colors text-xs"
+                    className="w-8 h-8 rounded-full bg-white border border-gray-200 text-gray-600 hover:text-[#003840] hover:border-[#003840] flex items-center justify-center transition-colors text-xs"
                   >
                     <i className="fab fa-youtube"></i>
                   </a>
@@ -896,7 +954,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                     rel="noopener noreferrer"
                     aria-label="LinkedIn"
                     style={{ textDecoration: "none" }}
-                    className="w-8 h-8 rounded-full bg-white border border-gray-200 text-gray-600 hover:text-[#004B50] hover:border-[#004B50] flex items-center justify-center transition-colors text-xs"
+                    className="w-8 h-8 rounded-full bg-white border border-gray-200 text-gray-600 hover:text-[#003840] hover:border-[#003840] flex items-center justify-center transition-colors text-xs"
                   >
                     <i className="fab fa-linkedin-in"></i>
                   </a>
@@ -906,7 +964,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                     rel="noopener noreferrer"
                     aria-label="X Twitter"
                     style={{ textDecoration: "none" }}
-                    className="w-8 h-8 rounded-full bg-white border border-gray-200 text-gray-600 hover:text-[#004B50] hover:border-[#004B50] flex items-center justify-center transition-colors text-xs"
+                    className="w-8 h-8 rounded-full bg-white border border-gray-200 text-gray-600 hover:text-[#003840] hover:border-[#003840] flex items-center justify-center transition-colors text-xs"
                   >
                     <i className="fa-brands fa-x-twitter"></i>
                   </a>
@@ -918,7 +976,12 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
       </header>
 
       {/* ================= 4. FLOATING WHATSAPP BUTTON ================= */}
-      <aside aria-label="WhatsApp quick chat">
+      <aside
+        aria-label="WhatsApp quick chat"
+        className={`transition-all duration-200 ${
+          mobileMenuOpen ? "opacity-0 pointer-events-none scale-75" : "opacity-100 pointer-events-auto scale-100"
+        }`}
+      >
         <a
           href="https://wa.me/919928593122?text=Hello%20SKS%20INFI%2C%20I%20would%20like%20to%20inquire%20about%20financial%20services"
           target="_blank"
