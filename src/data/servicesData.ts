@@ -141,6 +141,70 @@ export const servicesData: ServiceItem[] = [
     image: "/images/loans/personal_loan.png"
   },
 
+  {
+    id: "car-loan",
+    slug: "car-loan",
+    category: "loans",
+    categoryLabel: "Loans & Financing",
+    title: "New Car Loan",
+    shortDesc: "Drive home your dream car with competitive interest rates and up to 100% on-road funding from top banks.",
+    fullDesc: "SKS INFI partners with nationalized and private banks across India to provide instant car loan approvals with minimal documentation and flexible repayment tenures up to 7 years.",
+    interestRate: "Starting @ 8.65% p.a.",
+    tenure: "Up to 7 Years",
+    maxAmount: "Up to 100% On-Road",
+    features: [
+      "Zero foreclosure & prepayment charges on select banks",
+      "Doorstep documentation & fast turnaround",
+      "Special discounts on corporate & salaried profiles",
+      "Tie-ups with leading automobile dealerships"
+    ],
+    eligibility: [
+      "Salaried individuals (min 1 year work experience)",
+      "Self-employed individuals and business owners (min 2 years ITR)",
+      "Age: 21 to 65 years",
+      "Minimum monthly income: ₹25,000"
+    ],
+    documents: [
+      "PAN Card & Aadhaar Card",
+      "Latest 3 months salary slips or 2 years ITR",
+      "6 months bank statements",
+      "Car proforma invoice from authorized dealer"
+    ],
+    icon: "Car",
+    image: "/images/loans/car_loan.jpg"
+  },
+  {
+    id: "used-car-loan",
+    slug: "used-car-loan",
+    category: "loans",
+    categoryLabel: "Loans & Financing",
+    title: "Used Car Loan & Refinance",
+    shortDesc: "Finance certified pre-owned cars, refinance your existing vehicle, or transfer high-interest auto loans.",
+    fullDesc: "Complete financing solutions for second-hand vehicles including used car purchases, car re-finance for quick equity liquidity, loan takeover, and loan top-up with fast approvals.",
+    interestRate: "Starting @ 10.50% p.a.",
+    tenure: "Up to 5 Years",
+    maxAmount: "Up to 90% Valuation",
+    features: [
+      "Used car purchase funding for certified & multi-brand cars",
+      "Car re-finance to unlock funds against owned vehicles",
+      "Loan takeover with top-up facility",
+      "Financing available for interstate re-registered vehicles"
+    ],
+    eligibility: [
+      "Salaried or self-employed individuals",
+      "Vehicle age should not exceed 10 years at loan maturity",
+      "Clear vehicle registration and ownership history",
+      "Age: 21 to 65 years"
+    ],
+    documents: [
+      "PAN Card & Aadhaar Card",
+      "RC copy of vehicle & insurance policy",
+      "Income proof (salary slip / ITR)",
+      "6 months banking history"
+    ],
+    icon: "Car",
+    image: "/images/loans/used_car_loan.jpg"
+  },
   // ================= INVESTMENTS =================
   {
     id: "mutual-funds",
