@@ -377,8 +377,8 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
         >
           <div
             style={{
-              height: isScrolled ? "74px" : "86px",
-              minHeight: isScrolled ? "74px" : "86px",
+              height: isScrolled ? "78px" : "90px",
+              minHeight: isScrolled ? "78px" : "90px",
               transition: "height 0.25s ease, min-height 0.25s ease"
             }}
             className="flex items-center justify-between gap-2 xl:gap-3 2xl:gap-5"
@@ -393,13 +393,13 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                   src="/img/sksl.jpg"
                   alt="SKS INFI"
                   style={{
-                    height: isScrolled ? "42px" : "48px",
-                    maxHeight: "50px",
+                    height: isScrolled ? "54px" : "64px",
+                    maxHeight: "66px",
                     width: "auto",
                     objectFit: "contain",
                     transition: "height 0.25s ease"
                   }}
-                  className="block max-w-[125px] sm:max-w-[145px] xl:max-w-[155px]"
+                  className="block max-w-[165px] sm:max-w-[195px] xl:max-w-[210px]"
                 />
               </Link>
             </div>
@@ -641,10 +641,10 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                     src="/img/sksl.jpg"
                     alt="SKS INFI"
                     style={{
-                      height: "36px",
-                      maxHeight: "36px",
+                      height: "46px",
+                      maxHeight: "48px",
                       width: "auto",
-                      maxWidth: "140px",
+                      maxWidth: "165px",
                       objectFit: "contain"
                     }}
                   />

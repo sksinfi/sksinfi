@@ -23,8 +23,8 @@ export const authenticFooterHtml = `<style>
     <div class="row gy-4">
 
       <!-- Column 1: Logo + Contact -->
-      <div class="col-12 col-md-6 col-lg-4">
-        <img src="/img/sksl.jpg" alt="SKS Infi" class="mb-3" style="width: 150px;">
+      <div class="col-12 col-md-6 col-lg-4 col-xl-2">
+        <img src="/img/sksl.jpg" alt="SKS Infi" class="mb-3" style="width: 155px; max-width: 100%; border-radius: 6px;">
 
         <p><i class="fa fa-phone me-2 clricn"></i>
           <a href="tel:+919928529222" class="text-light text-decoration-none txtnew">91-99285 29222</a>,
@@ -46,8 +46,45 @@ export const authenticFooterHtml = `<style>
         <p class="txtnew">Mahima Florenza, Patrakar Colony,<br> Mansarovar, Jaipur-302020</p>
       </div>
 
-      <!-- Column 2: NRI Desk -->
-      <div class="col-6 col-md-3 col-lg-2">
+      <!-- Column 2: MSME Solutions -->
+      <div class="col-6 col-md-3 col-lg-4 col-xl-2">
+        <h6 class="fw-bold mb-3 text-uppercase text-white">MSME Solutions</h6>
+        <ul class="list-unstyled">
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/msme" class="text-light text-decoration-none">MSME For India</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/msme/why-sks-infi" class="text-light text-decoration-none">Why SKS INFI</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/msme/financial-solutions" class="text-light text-decoration-none">MSME Financial</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/msme/registration" class="text-light text-decoration-none">MSME Registration</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/msme/subsidy-schemes" class="text-light text-decoration-none">Subsidy Schemes</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/msme/ipo-listing" class="text-light text-decoration-none">MSME IPO & Listing</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/msme/invoice-discounting" class="text-light text-decoration-none">Invoice Discounting</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/msme/growth-solutions" class="text-light text-decoration-none">Growth Solutions</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/msme/venture-capital" class="text-light text-decoration-none">Venture Capital & PE</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/msme/cgtmse" class="text-light text-decoration-none">CGTMSE & MSME</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Loans -->
+      <div class="col-6 col-md-3 col-lg-4 col-xl-2">
+        <h6 class="fw-bold mb-3 text-uppercase text-white">Loans</h6>
+        <ul class="list-unstyled">
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/loan" class="text-light text-decoration-none">SKS INFI n Loan</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/home_loan" class="text-light text-decoration-none">Home Loan</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/lap" class="text-light text-decoration-none">LAP</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/personal-loan" class="text-light text-decoration-none">Personal Loan</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/business-loan" class="text-light text-decoration-none">Business Loan</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/education" class="text-light text-decoration-none">Education Loan</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/term-loan" class="text-light text-decoration-none">Term Loan</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/cas_overdraft" class="text-light text-decoration-none">Cash credit</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/project_finance" class="text-light text-decoration-none">Project Finance</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/cgtsme" class="text-light text-decoration-none">CGTSME</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/subsidy-from" class="text-light text-decoration-none">Subsidy From</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/car" class="text-light text-decoration-none">Car Loan</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/commercial_vehicle" class="text-light text-decoration-none">Commercial Vehicle</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: NRI Desk -->
+      <div class="col-6 col-md-3 col-lg-4 col-xl-2">
         <h6 class="fw-bold mb-3 text-uppercase text-white">NRI Desk</h6>
         <ul class="list-unstyled">
           <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/sksinfi_nri" class="text-light text-decoration-none">SKS INFI & NRI</a></li>
@@ -59,29 +96,8 @@ export const authenticFooterHtml = `<style>
         </ul>
       </div>
 
-      <!-- Column 3: Loans -->
-      <div class="col-6 col-md-3 col-lg-2">
-        <h6 class="fw-bold mb-3 text-uppercase text-white">Loans</h6>
-        <ul class="list-unstyled">
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/loan" class="text-light text-decoration-none">SKS INFI n Loan </a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/home_loan" class="text-light text-decoration-none">Home Loan</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/lap" class="text-light text-decoration-none">LAP</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/personal-loan" class="text-light text-decoration-none">Personal Loan</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/business-loan" class="text-light text-decoration-none">Business Loan</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/education" class="text-light text-decoration-none">Education Loan</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/term-loan" class="text-light text-decoration-none">Term Loan</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/cas_overdraft" class="text-light text-decoration-none">Cash credit</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/project_finance" class="text-light text-decoration-none">Project Finance</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/cgtsme" class="text-light text-decoration-none">CGTSME</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/msme" class="text-light text-decoration-none">MSME Services</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/subsidy-from" class="text-light text-decoration-none">Subsidy From</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/car" class="text-light text-decoration-none">Car Loan</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/commercial_vehicle" class="text-light text-decoration-none">Commercial Vehicle </a></li>
-        </ul>
-      </div>
-
-      <!-- Column 4: Real Estate & Insurance -->
-      <div class="col-6 col-md-6 col-lg-2">
+      <!-- Column 5: Real Estate & Insurance -->
+      <div class="col-6 col-md-3 col-lg-4 col-xl-2">
         <h6 class="fw-bold mb-3 text-uppercase text-white">Real Estate</h6>
         <ul class="list-unstyled">
           <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/residential" class="text-light text-decoration-none">Residential</a></li>
@@ -102,8 +118,8 @@ export const authenticFooterHtml = `<style>
         </ul>
       </div>
 
-      <!-- Column 5: Investment & Tax -->
-      <div class="col-6 col-md-6 col-lg-2">
+      <!-- Column 6: Investment & Tax -->
+      <div class="col-6 col-md-3 col-lg-4 col-xl-2">
         <h6 class="fw-bold mb-3 text-uppercase text-white">Investment</h6>
         <ul class="list-unstyled">
           <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/mutual_funds" class="text-light text-decoration-none">Mutual Fund</a></li>
@@ -131,6 +147,10 @@ export const authenticFooterHtml = `<style>
           </li>
         </ul>
       </div>
+
+    </div>
+  </div>
+</footer>
 
     </div>
   </div>
