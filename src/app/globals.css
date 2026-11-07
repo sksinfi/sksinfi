@@ -1851,6 +1851,63 @@ main > section:last-of-type {
   border-bottom: none !important;
 }
 
+/* ==========================================================================
+   SEGMENT CARDS & SHOWCASE IMAGES OPTIMIZATION
+   ========================================================================== */
+.imgnew,
+img.imgnew,
+.imgnewa,
+img.imgnewa,
+.fincom-section .col-md-6 > img,
+.choose-section .col-md-6 > img,
+.bgcustom .row .col-md-6 > img {
+  width: 100% !important;
+  max-height: 380px !important;
+  min-height: 220px !important;
+  object-fit: cover !important;
+  border-radius: 18px !important;
+  box-shadow: 0 10px 25px -5px rgba(9, 75, 87, 0.12), 0 8px 10px -6px rgba(0, 0, 0, 0.04) !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease !important;
+  display: block !important;
+}
+
+.imgnew:hover,
+img.imgnew:hover,
+.imgnewa:hover,
+img.imgnewa:hover {
+  transform: translateY(-4px) scale(1.015) !important;
+  box-shadow: 0 16px 36px -8px rgba(9, 75, 87, 0.22), 0 10px 14px -6px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Card image frames in grid sections (such as Loan Solutions) */
+.card div[style*="overflow: hidden"] img,
+.service-box div[style*="overflow: hidden"] img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.card:hover div[style*="overflow: hidden"] img,
+.service-box:hover div[style*="overflow: hidden"] img {
+  transform: scale(1.05) !important;
+}
+
+@media (max-width: 768px) {
+  .imgnew,
+  img.imgnew,
+  .imgnewa,
+  img.imgnewa,
+  .fincom-section .col-md-6 > img,
+  .choose-section .col-md-6 > img,
+  .bgcustom .row .col-md-6 > img {
+    max-height: 250px !important;
+    min-height: 180px !important;
+    margin-bottom: 16px !important;
+  }
+}
+
+
 
 
 
