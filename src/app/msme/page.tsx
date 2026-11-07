@@ -286,8 +286,8 @@ export default function MsmePage() {
 
   return (
     <div
-      className="msme-page min-h-screen flex flex-col bg-[#fcfcfa] text-[#333333] overflow-x-hidden"
-      style={{ overflowX: "hidden" }}
+      className="msme-page min-h-screen flex flex-col bg-[#fcfcfa] text-[#333333] overflow-x-clip"
+      style={{ overflowX: "clip" }}
       suppressHydrationWarning
     >
       <Navbar onOpenEnquiry={(cat) => handleOpenModal(cat || "MSME Financial Solutions")} />

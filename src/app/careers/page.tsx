@@ -113,7 +113,7 @@ export default function CareersPage() {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#fcfcfa] overflow-x-hidden w-full" suppressHydrationWarning>
+    <div className="min-h-screen flex flex-col bg-[#fcfcfa] overflow-x-clip w-full" suppressHydrationWarning>
       <Navbar />
 
       {/* Header */}

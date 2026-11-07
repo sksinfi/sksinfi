@@ -218,9 +218,18 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
 
   return (
     <>
-      {/* ================= 1. TOP ANNOUNCEMENT & UTILITY BAR ================= */}
       <div
-        id="sks-top-bar"
+        id="sks-navbar-wrapper"
+        style={{
+          position: "sticky",
+          top: 0,
+          zIndex: 1000
+        }}
+        className="w-full shadow-md"
+      >
+        {/* ================= 1. TOP ANNOUNCEMENT & UTILITY BAR ================= */}
+        <div
+          id="sks-top-bar"
         style={{
           backgroundColor: "#003840",
           borderBottom: "1px solid rgba(255, 255, 255, 0.08)"
@@ -974,6 +983,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
           </div>
         )}
       </header>
+    </div>
 
       {/* ================= 4. FLOATING WHATSAPP BUTTON ================= */}
       <aside

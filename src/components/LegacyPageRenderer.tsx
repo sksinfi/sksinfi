@@ -420,7 +420,7 @@ export default function LegacyPageRenderer({ slug, initialData }: LegacyPageRend
           dangerouslySetInnerHTML={{ __html: schemaStr }}
         />
       ))}
-      <div className="min-h-screen flex flex-col bg-white overflow-x-hidden w-full">
+      <div className="min-h-screen flex flex-col bg-white overflow-x-clip w-full">
         <Navbar
           onOpenEnquiry={(category, product) => {
             setModalCategory(category);

@@ -22,7 +22,7 @@ export default function CalculatorPage() {
 
   return (
     <>
-      <div className="min-h-screen flex flex-col bg-[#fbfbfa] overflow-x-hidden w-full">
+      <div className="min-h-screen flex flex-col bg-[#fbfbfa] overflow-x-clip w-full">
         <Navbar onOpenEnquiry={openEnquiry} />
         <div
         style={{
