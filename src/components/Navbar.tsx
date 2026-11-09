@@ -83,7 +83,8 @@ const NAV_ITEMS: NavItem[] = [
       { label: "Education Loan", href: "/education" },
       { label: "New Car Loan", href: "/car" },
       { label: "Used Car Loan", href: "/car#used-car" },
-      { label: "Commercial Vehicle", href: "/commercial_vehicle" }
+      { label: "Commercial Vehicle", href: "/commercial_vehicle" },
+      { label: "Commercial Equipment", href: "/loan#commercial-equipment" }
     ]
   },
   {

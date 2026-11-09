@@ -205,6 +205,68 @@ export const servicesData: ServiceItem[] = [
     icon: "Car",
     image: "/images/loans/used_car_loan.jpg"
   },
+  {
+    id: "commercial-vehicle",
+    slug: "commercial_vehicle",
+    category: "loans",
+    categoryLabel: "Loans & Financing",
+    title: "Commercial Vehicle & Fleet Financing",
+    shortDesc: "End-to-end financing for trucks, buses, light commercial vehicles (LCVs), and transport fleets.",
+    fullDesc: "SKS INFI provides competitive fleet financing for logistics operators, transport businesses, and corporate fleets with low down payment, flexible tenures up to 5 years, and attractive interest rates.",
+    interestRate: "Starting @ 9.50% p.a.",
+    tenure: "Up to 5 Years",
+    maxAmount: "Up to 90% On-Road",
+    features: [
+      "Funding for light, medium, and heavy commercial vehicles",
+      "Fleet expansion loans with minimal down payment",
+      "Refinancing and loan takeover for existing commercial vehicles",
+      "Quick sanction with top public & private partner banks"
+    ],
+    eligibility: [
+      "Fleet operators, transport companies, and proprietorships",
+      "Minimum 2 years operational experience in logistics/transport",
+      "Satisfactory vehicle repayment track record"
+    ],
+    documents: [
+      "PAN Card & Aadhaar Card of promoters",
+      "Route permits and commercial driver details if applicable",
+      "Past 12 months bank statements & 2 years ITR",
+      "Proforma invoice from authorized commercial dealership"
+    ],
+    icon: "Truck",
+    image: "/images/segments/commercial_vehicle.jpg"
+  },
+  {
+    id: "commercial-equipment",
+    slug: "commercial-equipment",
+    category: "loans",
+    categoryLabel: "Loans & Financing",
+    title: "Commercial Equipment & Machinery Loans",
+    shortDesc: "High-ticket asset financing for heavy earthmoving equipment, cranes, construction machinery, and industrial plants.",
+    fullDesc: "Empower your construction, infrastructure, and manufacturing operations with flexible commercial equipment financing. SKS INFI facilitates customized credit for excavators, cranes, road equipment, concrete mixers, and manufacturing plant machinery with up to 90% funding and structured repayment aligned with project billing cycles.",
+    interestRate: "Starting @ 9.25% p.a.",
+    tenure: "Up to 7 Years",
+    maxAmount: "Up to ₹25 Crore",
+    features: [
+      "Funding for earthmoving, construction, and mining equipment",
+      "Industrial manufacturing plant and machinery loans",
+      "Up to 90% financing on machine cost with low down payment",
+      "Customized repayment tenures aligned with project milestone cash flows"
+    ],
+    eligibility: [
+      "Civil contractors, EPC firms, and infrastructure companies",
+      "Manufacturing MSMEs and industrial units with 2+ years vintage",
+      "Valid GST registration and clean banking history"
+    ],
+    documents: [
+      "Company registration (GST/MSME/Incorporation certificate)",
+      "Proforma invoice / Quotation from authorized equipment OEM/dealer",
+      "Past 2 years audited balance sheets and tax returns",
+      "Last 12 months bank statements"
+    ],
+    icon: "HardHat",
+    image: "/images/loans/commercial_equipment.jpg"
+  },
   // ================= INVESTMENTS =================
   {
     id: "mutual-funds",
