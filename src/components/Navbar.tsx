@@ -81,7 +81,8 @@ const NAV_ITEMS: NavItem[] = [
       { label: "Personal Loan", href: "/personal-loan" },
       { label: "Business Loan", href: "/business-loan" },
       { label: "Education Loan", href: "/education" },
-      { label: "Car Loan", href: "/car" },
+      { label: "New Car Loan", href: "/car" },
+      { label: "Used Car Loan", href: "/car#used-car" },
       { label: "Commercial Vehicle", href: "/commercial_vehicle" }
     ]
   },
