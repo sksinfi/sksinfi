@@ -72,9 +72,8 @@ const NAV_ITEMS: NavItem[] = [
     label: "LOAN",
     href: "/loan",
     columns: 2,
-    dropdownWidth: "480px",
-    subtitle: "Loan & Financing Portfolio",
-    bannerBadge: "90+ Partner Banks",
+    dropdownWidth: "500px",
+    subtitle: "Loan (Associated with 95+ Banks)",
     children: [
       { label: "SKSINFI & Loan", href: "/loan" },
       { label: "Home Loan", href: "/home_loan" },
@@ -559,11 +558,17 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                           {/* Dropdown Header Banner */}
                           <div className="px-4 py-2 bg-gradient-to-r from-[#004B50]/[0.04] to-transparent border-b border-gray-100 flex items-center justify-between">
                             <span className="text-[10px] font-bold text-[#004B50] uppercase tracking-wider">
-                              {item.subtitle || item.label}
+                              {item.label === "LOAN" ? (
+                                <>
+                                  LOAN <span className="text-[#b69455] font-semibold">(ASSOCIATED WITH 95+ BANKS)</span>
+                                </>
+                              ) : (
+                                item.subtitle || item.label
+                              )}
                             </span>
-                            {isTwoCols && (
+                            {isTwoCols && item.bannerBadge && (
                               <span className="text-[10px] font-bold text-[#b69455] uppercase tracking-wider">
-                                {item.bannerBadge || (item.label === "LOAN" ? "90+ Partner Banks" : "Strategic Advisory")}
+                                {item.bannerBadge}
                               </span>
                             )}
                           </div>
