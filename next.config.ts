@@ -9,6 +9,20 @@ const nextConfig: NextConfig = {
       },
     },
   },
+  async redirects() {
+    return [
+      {
+        source: "/sksinfin",
+        destination: "/#why-sks-infi",
+        permanent: true,
+      },
+      {
+        source: "/sksinfin.php",
+        destination: "/#why-sks-infi",
+        permanent: true,
+      },
+    ];
+  },
   async rewrites() {
     return [
       { source: "/index.php", destination: "/" },
@@ -18,7 +32,6 @@ const nextConfig: NextConfig = {
       { source: "/partner_with_us.php", destination: "/partner-with-us" },
       { source: "/enquirynow.php", destination: "/enquirynow" },
       { source: "/apply-now.php", destination: "/enquirynow" },
-      { source: "/sksinfin.php", destination: "/sksinfin" },
       { source: "/admin/contact-t.php", destination: "/admin" },
       { source: "/admin/partner-t.php", destination: "/admin" },
       { source: "/admin/lonenq-t.php", destination: "/admin" },

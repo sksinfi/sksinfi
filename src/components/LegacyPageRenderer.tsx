@@ -69,6 +69,18 @@ export default function LegacyPageRenderer({ slug, initialData }: LegacyPageRend
   const jsonLd = initialData?.jsonLd || [];
 
   useEffect(() => {
+    // Handle initial hash scrolling (e.g. /#why-sks-infi)
+    if (typeof window !== "undefined" && window.location.hash) {
+      setTimeout(() => {
+        try {
+          const hashEl = document.querySelector(window.location.hash);
+          if (hashEl) {
+            hashEl.scrollIntoView({ behavior: "smooth" });
+          }
+        } catch (_) {}
+      }, 300);
+    }
+
     // 0. Robust FAQ Accordion Interactive Toggler
 
 

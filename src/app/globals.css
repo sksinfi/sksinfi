@@ -1903,6 +1903,18 @@ img.imgnewa:hover {
   }
 }
 
+/* Smooth scroll & Anchor offsets for Merged Sections */
+html {
+  scroll-behavior: smooth;
+}
+
+#why-sks-infi,
+#why-sks,
+#why-sksinfi {
+  scroll-margin-top: 110px !important;
+}
+
+
 
 
 

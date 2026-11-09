@@ -44,7 +44,7 @@ const NAV_ITEMS: NavItem[] = [
     bannerBadge: "Strategic Advisory",
     children: [
       { label: "MSME For India", href: "/msme" },
-      { label: "Why SKS INFI", href: "/msme/why-sks-infi" },
+      { label: "Why SKS INFI", href: "/#why-sks-infi" },
       { label: "MSME Financial Solutions", href: "/msme/financial-solutions" },
       { label: "MSME Registration", href: "/msme/registration" },
       { label: "MSME Subsidy and Intertive Schemes", href: "/msme/subsidy-schemes" },
@@ -332,14 +332,6 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
           {/* Right Desktop: Secondary Links & Flat Social Media Icons */}
           <div className="hidden sm:flex items-center gap-3 sm:gap-4 shrink-0">
             <div className="sks-top-nav hidden md:flex items-center gap-2.5 lg:gap-3 text-[11.5px] sm:text-xs">
-              <Link
-                href="/sksinfin"
-                style={{ color: "#ffffff", textDecoration: "none" }}
-                className="hover:text-[#f5cb68] font-semibold transition-colors duration-200 whitespace-nowrap"
-              >
-                WHY SKSINFI
-              </Link>
-              <span className="text-white/35 select-none font-light">|</span>
               <Link
                 href="/enquirynow"
                 style={{ color: "#ffffff", textDecoration: "none" }}
@@ -729,7 +721,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
               {/* Drawer Quick Action Pills */}
               <div className="p-3 bg-gray-50/90 border-b border-gray-100 grid grid-cols-3 gap-2 text-xs font-semibold shrink-0">
                 <Link
-                  href="/sksinfin"
+                  href="/enquirynow"
                   onClick={() => setMobileMenuOpen(false)}
                   style={{
                     color: "#003840",
@@ -738,7 +730,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                   }}
                   className="p-2 rounded-xl text-center font-bold border border-gray-200/80 shadow-xs hover:border-[#b7832f] transition-colors text-[11px]"
                 >
-                  Why SKSINFI
+                  Get In Touch
                 </Link>
                 <Link
                   href="/partner-with-us"
