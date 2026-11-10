@@ -1953,7 +1953,7 @@ html {
 }
 
 /* ==========================================================================
-   APNARUPEE DESIGN SYSTEM & LAYOUT RULES (MATCHING APNARUPEE.COM FOR HOME)
+   APNARUPEE DESIGN SYSTEM & LAYOUT RULES (THEMED TO SKS INFI LOGO: TEAL & GOLD)
    ========================================================================== */
 
 /* 1. Hero & Badges */
@@ -1968,10 +1968,10 @@ html {
   display: inline-flex;
   align-items: center;
   padding: 0.5rem 1.1rem;
-  background-color: rgba(239, 121, 64, 0.1);
-  border: 1px solid rgba(239, 121, 64, 0.28);
+  background-color: rgba(182, 148, 85, 0.12);
+  border: 1px solid rgba(182, 148, 85, 0.35);
   border-radius: 50px;
-  color: #ef7940;
+  color: #b69455;
   font-weight: 600;
   font-size: 0.88rem;
 }
@@ -1985,7 +1985,7 @@ html {
 }
 
 .hero-content h1 .accent-text {
-  color: #ef7940;
+  color: #b69455;
 }
 
 .hero-content p {
@@ -2017,22 +2017,23 @@ html {
 }
 
 .btn-apna-accent {
-  background: linear-gradient(135deg, #ef7940 0%, #e67e22 100%);
+  background: linear-gradient(135deg, #b69455 0%, #c5a059 100%);
   color: #ffffff !important;
   font-weight: 600;
   padding: 0.75rem 1.6rem;
   border-radius: 50px;
   border: none;
-  box-shadow: 0 4px 15px rgba(239, 121, 64, 0.25);
+  box-shadow: 0 4px 15px rgba(182, 148, 85, 0.3);
   transition: all 0.3s ease;
   display: inline-flex;
   align-items: center;
   text-decoration: none;
 }
 .btn-apna-accent:hover {
-  background: linear-gradient(135deg, #d35400 0%, #ef7940 100%);
+  background: linear-gradient(135deg, #9f7d3c 0%, #b69455 100%);
   color: #ffffff !important;
   transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(182, 148, 85, 0.4);
 }
 
 .btn-apna-outline {
@@ -2072,7 +2073,7 @@ html {
   display: block;
   width: 50px;
   height: 3px;
-  background: #ef7940;
+  background: #b69455;
   bottom: 0;
   left: 0;
 }
@@ -2106,13 +2107,13 @@ html {
 .loan-card .icon-box {
   width: 50px;
   height: 50px;
-  background: linear-gradient(135deg, #094b57 0%, #ef7940 100%);
+  background: linear-gradient(135deg, #094b57 0%, #b69455 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(239, 121, 64, 0.25);
+  box-shadow: 0 4px 12px rgba(182, 148, 85, 0.28);
 }
 .loan-card .icon-box i {
   font-size: 1.35rem;
@@ -2153,20 +2154,39 @@ html {
   display: inline-flex;
   align-items: center;
   padding: 0.85rem 2.2rem;
-  background: #ef7940;
+  background: linear-gradient(135deg, #b69455 0%, #c5a059 100%);
   color: #ffffff !important;
   font-size: 1.15rem;
   font-weight: 700;
   border-radius: 50px;
   text-decoration: none;
-  box-shadow: 0 0 0 0 rgba(239, 121, 64, 0.7);
-  animation: pulse-orange 2s infinite;
+  box-shadow: 0 0 0 0 rgba(182, 148, 85, 0.7);
+  animation: pulse-gold 2s infinite;
   transition: all 0.3s ease;
+}
+.cta-btn.blink:hover {
+  background: linear-gradient(135deg, #9f7d3c 0%, #b69455 100%);
+  color: #ffffff !important;
+}
+
+@keyframes pulse-gold {
+  0% {
+    transform: scale(0.98);
+    box-shadow: 0 0 0 0 rgba(182, 148, 85, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 15px rgba(182, 148, 85, 0);
+  }
+  100% {
+    transform: scale(0.98);
+    box-shadow: 0 0 0 0 rgba(182, 148, 85, 0);
+  }
 }
 
 /* 5. About Section */
 .about .about-meta {
-  color: #ef7940;
+  color: #b69455;
   font-weight: 700;
   font-size: 0.85rem;
   letter-spacing: 0.08em;
@@ -2202,7 +2222,7 @@ html {
   color: #1e293b;
 }
 .feature-list li i {
-  color: #ef7940;
+  color: #b69455;
   font-size: 1.1rem;
   flex-shrink: 0;
 }
@@ -2211,7 +2231,7 @@ html {
   height: 58px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid #ef7940;
+  border: 2px solid #b69455;
 }
 .about .profile-name {
   font-size: 1rem;
@@ -2232,7 +2252,7 @@ html {
 }
 .about .contact-info i {
   font-size: 1.4rem;
-  color: #ef7940;
+  color: #b69455;
 }
 .about .contact-label {
   font-size: 0.78rem;
@@ -2253,12 +2273,12 @@ html {
   position: absolute;
   bottom: 0;
   right: 5%;
-  background: linear-gradient(135deg, #ef7940 0%, #e67e22 100%);
+  background: linear-gradient(135deg, #b69455 0%, #c5a059 100%);
   color: #ffffff;
   padding: 1.1rem 1.7rem;
   border-radius: 14px;
   text-align: center;
-  box-shadow: 0 12px 30px rgba(239, 121, 64, 0.35);
+  box-shadow: 0 12px 30px rgba(182, 148, 85, 0.35);
 }
 .about .experience-badge h3 {
   font-size: 2.2rem;
@@ -2300,9 +2320,18 @@ html {
   line-height: 1.55;
   margin-bottom: 0;
 }
-.feature-box.orange { background-color: #fff4eb; }
-.feature-box.orange i { color: #ef7940; }
-.feature-box.orange h4 { color: #c0392b; }
+.feature-box.orange,
+.feature-box.gold {
+  background-color: #fcf9f2;
+}
+.feature-box.orange i,
+.feature-box.gold i {
+  color: #b69455;
+}
+.feature-box.orange h4,
+.feature-box.gold h4 {
+  color: #8c6d2c;
+}
 
 .feature-box.blue { background-color: #edf5fe; }
 .feature-box.blue i { color: #2980b9; }
@@ -2329,7 +2358,7 @@ html {
 .stats-item .stats-line {
   width: 40px;
   height: 3px;
-  background: #ef7940;
+  background: #b69455;
   margin: 12px auto;
   border-radius: 2px;
 }
@@ -2359,7 +2388,7 @@ html {
   position: fixed;
   bottom: 30%;
   right: 0;
-  background: linear-gradient(135deg, #094b57 0%, #ef7940 100%);
+  background: linear-gradient(135deg, #094b57 0%, #b69455 100%);
   color: #ffffff;
   padding: 0.65rem 1.1rem;
   font-size: 15px;
@@ -2399,7 +2428,7 @@ html {
   cursor: pointer;
 }
 #loan-popup-container .close-btn:hover {
-  color: #ef7940;
+  color: #b69455;
 }
 
 

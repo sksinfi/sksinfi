@@ -134,6 +134,72 @@ export default function LegacyPageRenderer({ slug, initialData }: LegacyPageRend
       });
     }
 
+    // 0.2 Home Page Dynamic Blogs Fetching from Website Blog Database
+    if (slug === "index") {
+      fetch("/api/admin/blogs")
+        .then((res) => (res.ok ? res.json() : null))
+        .then((blogs) => {
+          if (Array.isArray(blogs) && blogs.length > 0) {
+            const grid = document.getElementById("home-blogs-grid");
+            if (grid) {
+              const topBlogs = blogs.slice(0, 3);
+              grid.innerHTML = topBlogs
+                .map(
+                  (post: any) => `
+                <div class="col-12 col-md-4">
+                  <div class="card glossy-card h-100 border-0 shadow-sm overflow-hidden" style="border-radius: 18px; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <div style="position: relative; height: 210px; overflow: hidden; background: #f1f5f9;">
+                      <a href="/blogs/${post.slug}" style="display: block; width: 100%; height: 100%;">
+                        <img
+                          src="${post.coverImage || '/images/homeloan.avif'}"
+                          class="card-img-top"
+                          alt="${post.title}"
+                          style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;"
+                        />
+                      </a>
+                      <span
+                        style="position: absolute; top: 14px; left: 14px; background: rgba(9, 75, 87, 0.92); color: #ffffff; padding: 4px 12px; border-radius: 50px; font-size: 11px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;"
+                      >
+                        ${post.category || 'Finance'}
+                      </span>
+                    </div>
+
+                    <div class="card-body p-4 d-flex flex-column justify-content-between" style="flex: 1;">
+                      <div>
+                        <div class="d-flex align-items-center gap-2 text-muted mb-2" style="font-size: 12px; font-weight: 500;">
+                          <span><i class="fa fa-calendar me-1" style="color: #b69455;"></i> ${post.publishedDate || 'Recent'}</span>
+                          <span>•</span>
+                          <span><i class="fa fa-clock-o me-1" style="color: #b69455;"></i> ${post.readTime || '5 min read'}</span>
+                        </div>
+
+                        <h5 class="card-title fw-bold mb-2" style="font-size: 16.5px; line-height: 1.4;">
+                          <a href="/blogs/${post.slug}" style="color: #094b57; text-decoration: none;">
+                            ${post.title}
+                          </a>
+                        </h5>
+
+                        <p class="text-muted small mb-3" style="font-size: 13.5px; line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
+                          ${post.excerpt || ''}
+                        </p>
+                      </div>
+
+                      <div class="pt-2 border-top border-light mt-auto d-flex align-items-center justify-content-between">
+                        <a href="/blogs/${post.slug}" class="btn btn-sm fw-bold text-white px-3.5 py-1.5 rounded-pill d-inline-flex align-items-center gap-1.5" style="background: #b69455; font-size: 12px; text-decoration: none;">
+                          Read Article <i class="fa fa-arrow-right" style="font-size: 10px;"></i>
+                        </a>
+                        <span class="text-muted small" style="font-size: 11.5px;">By ${post.author?.name || 'SKS INFI'}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>`
+                )
+                .join("");
+            }
+          }
+        })
+        .catch(() => {});
+    }
+
 
 
 
