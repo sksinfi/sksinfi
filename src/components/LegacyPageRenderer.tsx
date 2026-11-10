@@ -82,8 +82,6 @@ export default function LegacyPageRenderer({ slug, initialData }: LegacyPageRend
     }
 
     // 0. Robust FAQ Accordion Interactive Toggler
-
-
     const accordionButtons = document.querySelectorAll(".accordion-button");
     accordionButtons.forEach((btn) => {
       if ((btn as any)._faqBound) return;
@@ -117,6 +115,24 @@ export default function LegacyPageRenderer({ slug, initialData }: LegacyPageRend
         }
       });
     });
+
+    // 0.1 Floating Side Popup Drawer Listener
+    const popupToggle = document.getElementById("loan-popup-toggle");
+    const popupContainer = document.getElementById("loan-popup-container");
+    const popupClose = document.getElementById("close-popup");
+
+    if (popupToggle && popupContainer && !(popupToggle as any)._bound) {
+      (popupToggle as any)._bound = true;
+      popupToggle.addEventListener("click", () => {
+        popupContainer.classList.toggle("active");
+      });
+    }
+    if (popupClose && popupContainer && !(popupClose as any)._bound) {
+      (popupClose as any)._bound = true;
+      popupClose.addEventListener("click", () => {
+        popupContainer.classList.remove("active");
+      });
+    }
 
 
 
@@ -315,7 +331,7 @@ export default function LegacyPageRenderer({ slug, initialData }: LegacyPageRend
         const formData = new FormData(form);
         const name = (formData.get("name") as string) || "";
         const email = (formData.get("email") as string) || "";
-        const phone = (formData.get("phone") as string) || (formData.get("mobile") as string) || "";
+        const phone = (formData.get("phone") as string) || (formData.get("mobile") as string) || (formData.get("mobile_no") as string) || "";
         const address = (formData.get("address") as string) || "";
         const city = (formData.get("city") as string) || "";
         const country = (formData.get("country") as string) || "India";
@@ -336,10 +352,12 @@ export default function LegacyPageRenderer({ slug, initialData }: LegacyPageRend
           } else if (
             slug.includes("loan") ||
             form.querySelector('[name="typeofloan"]') ||
-            form.querySelector('[name="amount"]')
+            form.querySelector('[name="amount"]') ||
+            form.querySelector('[name="loan_amount"]') ||
+            form.id === "loan-apply-form"
           ) {
-            const amountStr = (formData.get("amount") as string) || "0";
-            const loanType = (formData.get("typeofloan") as string) || product || "General Loan";
+            const amountStr = (formData.get("amount") as string) || (formData.get("loan_amount") as string) || "0";
+            const loanType = (formData.get("typeofloan") as string) || (formData.get("selected_loan_type") as string) || product || "General Loan";
             await submitLoanEnquiry({
               name,
               email,

@@ -1952,6 +1952,457 @@ html {
   scroll-margin-top: 110px !important;
 }
 
+/* ==========================================================================
+   APNARUPEE DESIGN SYSTEM & LAYOUT RULES (MATCHING APNARUPEE.COM FOR HOME)
+   ========================================================================== */
+
+/* 1. Hero & Badges */
+.apna-hero {
+  padding: 60px 0 50px 0;
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.company-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1.1rem;
+  background-color: rgba(239, 121, 64, 0.1);
+  border: 1px solid rgba(239, 121, 64, 0.28);
+  border-radius: 50px;
+  color: #ef7940;
+  font-weight: 600;
+  font-size: 0.88rem;
+}
+
+.hero-content h1 {
+  font-size: clamp(2.3rem, 3.8vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.18;
+  color: #094b57;
+  margin-bottom: 1.1rem;
+}
+
+.hero-content h1 .accent-text {
+  color: #ef7940;
+}
+
+.hero-content p {
+  font-size: 1.05rem;
+  color: #475569;
+  line-height: 1.65;
+  margin-bottom: 1.7rem;
+  max-width: 580px;
+}
+
+.btn-apna-primary {
+  background: linear-gradient(135deg, #094b57 0%, #0d5f6f 100%);
+  color: #ffffff !important;
+  font-weight: 600;
+  padding: 0.75rem 1.6rem;
+  border-radius: 50px;
+  border: none;
+  box-shadow: 0 4px 15px rgba(9, 75, 87, 0.25);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+.btn-apna-primary:hover {
+  background: linear-gradient(135deg, #06363f 0%, #094b57 100%);
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(9, 75, 87, 0.35);
+}
+
+.btn-apna-accent {
+  background: linear-gradient(135deg, #ef7940 0%, #e67e22 100%);
+  color: #ffffff !important;
+  font-weight: 600;
+  padding: 0.75rem 1.6rem;
+  border-radius: 50px;
+  border: none;
+  box-shadow: 0 4px 15px rgba(239, 121, 64, 0.25);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+.btn-apna-accent:hover {
+  background: linear-gradient(135deg, #d35400 0%, #ef7940 100%);
+  color: #ffffff !important;
+  transform: translateY(-2px);
+}
+
+.btn-apna-outline {
+  border: 1.5px solid #094b57;
+  color: #094b57 !important;
+  font-weight: 600;
+  padding: 0.75rem 1.6rem;
+  border-radius: 50px;
+  background: transparent;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+.btn-apna-outline:hover {
+  background: #094b57;
+  color: #ffffff !important;
+}
+
+/* 2. Section Titles */
+.section-title {
+  position: relative;
+  margin-bottom: 2.2rem;
+}
+.section-title h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #094b57;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 12px;
+  margin-bottom: 0.5rem;
+}
+.section-title h2::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #ef7940;
+  bottom: 0;
+  left: 0;
+}
+.section-title.text-center h2::after {
+  left: calc(50% - 25px);
+}
+.section-title p {
+  color: #64748b;
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+/* 3. Loan Product Cards (Section 2) */
+.loan-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 1.6rem;
+  box-shadow: rgba(50, 50, 93, 0.08) 0px 15px 35px -8px, rgba(0, 0, 0, 0.05) 0px 8px 20px -8px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.loan-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px rgba(9, 75, 87, 0.12);
+  border-color: rgba(9, 75, 87, 0.15);
+}
+.loan-card .icon-box {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #094b57 0%, #ef7940 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(239, 121, 64, 0.25);
+}
+.loan-card .icon-box i {
+  font-size: 1.35rem;
+  color: #ffffff !important;
+}
+.loan-card h5 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #094b57;
+  margin-bottom: 2px;
+}
+.loan-card .rate-display h2 {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #094b57;
+  margin-bottom: 0;
+  line-height: 1;
+}
+
+/* 4. Call to Action 2 Banner */
+.call-to-action-2 {
+  background: linear-gradient(135deg, #094b57 0%, #052b32 100%);
+  padding: 60px 0;
+  color: #ffffff;
+}
+.call-to-action-2 h3 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #ffffff !important;
+  margin-bottom: 0.8rem;
+}
+.call-to-action-2 p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.88) !important;
+  margin-bottom: 1.8rem;
+}
+.cta-btn.blink {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.85rem 2.2rem;
+  background: #ef7940;
+  color: #ffffff !important;
+  font-size: 1.15rem;
+  font-weight: 700;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 0 0 0 rgba(239, 121, 64, 0.7);
+  animation: pulse-orange 2s infinite;
+  transition: all 0.3s ease;
+}
+
+/* 5. About Section */
+.about .about-meta {
+  color: #ef7940;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+  display: inline-block;
+}
+.about .about-title {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #094b57;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+}
+.about .about-description {
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 1.8rem;
+}
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.feature-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+.feature-list li i {
+  color: #ef7940;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+.about .profile-image {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ef7940;
+}
+.about .profile-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #094b57;
+  margin-bottom: 2px;
+}
+.about .profile-position {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-bottom: 0;
+}
+.about .contact-info {
+  background: #f8fafc;
+  padding: 0.8rem 1.2rem;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+.about .contact-info i {
+  font-size: 1.4rem;
+  color: #ef7940;
+}
+.about .contact-label {
+  font-size: 0.78rem;
+  color: #64748b;
+  margin-bottom: 0;
+}
+.about .contact-number {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #094b57;
+  margin-bottom: 0;
+}
+.about .image-wrapper {
+  position: relative;
+  padding-bottom: 30px;
+}
+.about .experience-badge.floating {
+  position: absolute;
+  bottom: 0;
+  right: 5%;
+  background: linear-gradient(135deg, #ef7940 0%, #e67e22 100%);
+  color: #ffffff;
+  padding: 1.1rem 1.7rem;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(239, 121, 64, 0.35);
+}
+.about .experience-badge h3 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #ffffff !important;
+  margin-bottom: 0;
+  line-height: 1;
+}
+.about .experience-badge p {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.92) !important;
+  margin-bottom: 0;
+  font-weight: 600;
+}
+
+/* 6. 4-Step Process Cards */
+.feature-box {
+  height: 100%;
+  padding: 35px 22px;
+  border-radius: 14px;
+  transition: transform 0.3s ease;
+}
+.feature-box:hover {
+  transform: translateY(-5px);
+}
+.feature-box i {
+  font-size: 38px;
+  margin-bottom: 15px;
+  display: inline-block;
+}
+.feature-box h4 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.feature-box p {
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.55;
+  margin-bottom: 0;
+}
+.feature-box.orange { background-color: #fff4eb; }
+.feature-box.orange i { color: #ef7940; }
+.feature-box.orange h4 { color: #c0392b; }
+
+.feature-box.blue { background-color: #edf5fe; }
+.feature-box.blue i { color: #2980b9; }
+.feature-box.blue h4 { color: #1f618d; }
+
+.feature-box.green { background-color: #eafaf1; }
+.feature-box.green i { color: #27ae60; }
+.feature-box.green h4 { color: #1e8449; }
+
+.feature-box.red { background-color: #fdf2f2; }
+.feature-box.red i { color: #e74c3c; }
+.feature-box.red h4 { color: #922b21; }
+
+/* 7. Stats Items */
+.stats-item {
+  padding: 25px 15px;
+}
+.stats-item .stats-num {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #094b57;
+  line-height: 1;
+}
+.stats-item .stats-line {
+  width: 40px;
+  height: 3px;
+  background: #ef7940;
+  margin: 12px auto;
+  border-radius: 2px;
+}
+.stats-item p {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #64748b;
+  margin-bottom: 0;
+}
+
+/* 8. Glossy Cards & Testimonials */
+.glossy-card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #eef2f6;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+.glossy-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(9, 75, 87, 0.1);
+}
+
+/* 9. Floating Slide-out Popup */
+#loan-popup-toggle {
+  z-index: 998;
+  position: fixed;
+  bottom: 30%;
+  right: 0;
+  background: linear-gradient(135deg, #094b57 0%, #ef7940 100%);
+  color: #ffffff;
+  padding: 0.65rem 1.1rem;
+  font-size: 15px;
+  font-weight: 700;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  cursor: pointer;
+  box-shadow: -4px 6px 18px rgba(0, 0, 0, 0.22);
+  transition: transform 0.3s ease;
+}
+#loan-popup-toggle:hover {
+  transform: translateX(-4px);
+}
+#loan-popup-container {
+  z-index: 9999;
+  position: fixed;
+  bottom: 60px;
+  right: -110%;
+  width: 95%;
+  max-width: 390px;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 2px solid #094b57;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  padding: 1.5rem;
+  transition: right 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+#loan-popup-container.active {
+  right: 20px;
+}
+#loan-popup-container .close-btn {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  font-size: 22px;
+  color: #094b57;
+  cursor: pointer;
+}
+#loan-popup-container .close-btn:hover {
+  color: #ef7940;
+}
+
+
 
 
 
