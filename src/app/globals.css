@@ -151,14 +151,52 @@ footer p:not(.txtnew) {
 }
 
 /* Ensure White Cards inside Dark Sections Retain Clear Dark Text */
-.bg-white:not(body) h1, .bg-white:not(body) h2, .bg-white:not(body) h3, .bg-white:not(body) h4, .bg-white:not(body) h5, .bg-white:not(body) h6,
-.card h1, .card h2, .card h3, .card h4, .card h5, .card h6 {
+.card h1, .card h2, .card h3, .card h4, .card h5, .card h6,
+.white-box h1, .white-box h2, .white-box h3, .white-box h4, .white-box h5, .white-box h6 {
   color: #094b57 !important;
 }
 
-.bg-white:not(body) p,
-.card p {
+.card p,
+.white-box p {
   color: #374151 !important;
+}
+
+/* Hero Dark Section explicit contrast guarantee */
+.hero-dark-header h1,
+.hero-dark-header h2 {
+  color: #ffffff !important;
+}
+.hero-dark-header > .container p,
+.hero-dark-header .col-lg-7 p {
+  color: #e2e8f0 !important;
+}
+
+/* Form and cards inside Hero section: Dark high-contrast text */
+.hero-dark-header .card h1,
+.hero-dark-header .card h2,
+.hero-dark-header .card h3,
+.hero-dark-header .card h4,
+.hero-dark-header .card h5,
+.hero-dark-header .card h6,
+.card h1,
+.card h2,
+.card h3,
+.card h4,
+.card h5,
+.card h6 {
+  color: #094b57 !important;
+}
+
+.hero-dark-header .card p,
+.hero-dark-header .card label,
+.card p,
+.card label {
+  color: #374151 !important;
+}
+
+.hero-dark-header .card .text-muted,
+.card .text-muted {
+  color: #64748b !important;
 }
 
 h1 { font-size: clamp(28px, 3.2vw, 36px); line-height: 1.25; }

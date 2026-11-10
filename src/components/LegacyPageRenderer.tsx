@@ -359,11 +359,36 @@ export default function LegacyPageRenderer({ slug, initialData }: LegacyPageRend
               message,
             });
           }
-          alert("Form submitted successfully!");
+
+          const feedbackEl = form.querySelector(".form-feedback") as HTMLElement | null;
+          if (feedbackEl) {
+            feedbackEl.innerHTML = `
+              <div class="p-3 rounded-3 text-center" style="background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.35); color: #065f46;">
+                <div class="fw-bold fs-6 mb-1 d-flex align-items-center justify-center gap-1">
+                  <span>✓ Enquiry Submitted Successfully!</span>
+                </div>
+                <div class="small" style="color: #047857;">Thank you, <b>${name || "Valued Client"}</b>. Our senior financial consultant will call you within 30 minutes.</div>
+              </div>
+            `;
+            feedbackEl.style.display = "block";
+            feedbackEl.scrollIntoView({ behavior: "smooth", block: "nearest" });
+          } else {
+            alert("Thank you! Your enquiry has been received. Our senior advisor will call you within 30 minutes.");
+          }
           form.reset();
         } catch (err) {
           console.error("Submission failed:", err);
-          alert("Failed to submit form. Please check your internet connection or call +91 99285 29222 directly.");
+          const feedbackEl = form.querySelector(".form-feedback") as HTMLElement | null;
+          if (feedbackEl) {
+            feedbackEl.innerHTML = `
+              <div class="p-3 rounded-3 text-center" style="background: rgba(239, 68, 68, 0.12); border: 1px solid rgba(239, 68, 68, 0.35); color: #991b1b;">
+                <div class="fw-bold small mb-1">Submission failed. Please check your network or call +91 99285 93122 directly.</div>
+              </div>
+            `;
+            feedbackEl.style.display = "block";
+          } else {
+            alert("Failed to submit form. Please check your internet connection or call +91 99285 93122 directly.");
+          }
         } finally {
           if (submitBtn) {
             submitBtn.disabled = false;
@@ -432,7 +457,7 @@ export default function LegacyPageRenderer({ slug, initialData }: LegacyPageRend
           dangerouslySetInnerHTML={{ __html: schemaStr }}
         />
       ))}
-      <div className="min-h-screen flex flex-col bg-white overflow-x-clip w-full">
+      <div className="min-h-screen flex flex-col overflow-x-clip w-full">
         <Navbar
           onOpenEnquiry={(category, product) => {
             setModalCategory(category);
