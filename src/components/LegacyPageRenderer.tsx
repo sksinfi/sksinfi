@@ -520,7 +520,7 @@ export default function LegacyPageRenderer({ slug, initialData }: LegacyPageRend
               service_category: serviceCat,
               product_name: loanType,
               loan_amount: parseFloat(amountStr) || 0,
-              city,
+              city: city || country,
               message,
             });
           } else {
@@ -528,7 +528,7 @@ export default function LegacyPageRenderer({ slug, initialData }: LegacyPageRend
               name,
               email,
               phone,
-              address: address || city,
+              address: address || city || country,
               message,
             });
           }
