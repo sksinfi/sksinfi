@@ -226,7 +226,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
           top: 0,
           zIndex: 1000
         }}
-        className="w-full shadow-md"
+        className="w-full"
       >
         {/* ================= 1. TOP ANNOUNCEMENT & UTILITY BAR ================= */}
         <div
@@ -416,23 +416,30 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
         </div>
       </div>
 
-      {/* ================= 2. MAIN NAVIGATION (STICKY) ================= */}
+      {/* ================= 2. MAIN NAVIGATION (OVAL PILL JUST LIKE APNARUPEE) ================= */}
       <header
         id="sks-main-header"
         style={{
-          position: "sticky",
-          top: 0,
-          zIndex: 50,
-          backgroundColor: "#ffffff",
-          boxShadow: isScrolled
-            ? "0 4px 20px rgba(0, 0, 0, 0.10)"
-            : "0 4px 18px rgba(0, 0, 0, 0.08)"
+          backgroundColor: "transparent",
+          padding: isScrolled ? "10px 20px" : "14px 24px",
+          transition: "padding 0.25s ease"
         }}
         className="w-full font-sans transition-all duration-200"
       >
         <div
-          style={{ maxWidth: "1380px" }}
-          className="w-full mx-auto px-3 sm:px-6 lg:px-8"
+          id="sks-navbar-oval-container"
+          style={{
+            maxWidth: "1420px",
+            backgroundColor: "#ffffff",
+            borderRadius: "60px",
+            boxShadow: isScrolled
+              ? "0 12px 35px rgba(0, 56, 64, 0.16), 0 3px 8px rgba(0, 0, 0, 0.05)"
+              : "0 8px 28px rgba(0, 56, 64, 0.11), 0 2px 6px rgba(0, 0, 0, 0.03)",
+            border: "1.5px solid rgba(9, 75, 87, 0.14)",
+            padding: isScrolled ? "0 18px 0 24px" : "0 22px 0 28px",
+            transition: "all 0.25s ease"
+          }}
+          className="w-full mx-auto"
         >
           <div
             style={{
@@ -440,7 +447,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
               minHeight: isScrolled ? "58px" : "66px",
               transition: "height 0.25s ease, min-height 0.25s ease"
             }}
-            className="flex items-center justify-between gap-2 sm:gap-4 xl:gap-5"
+            className="flex items-center justify-between gap-2 sm:gap-3 xl:gap-4"
           >
             {/* Left: Brand Logo & Tagline with subtle vertical divider */}
             <div className="flex items-center shrink-0">
@@ -458,17 +465,17 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                     objectFit: "contain",
                     transition: "height 0.25s ease"
                   }}
-                  className="block max-w-[135px] sm:max-w-[180px] xl:max-w-[210px]"
+                  className="block max-w-[135px] sm:max-w-[180px] xl:max-w-[205px]"
                 />
               </Link>
               {/* Vertical gold divider after logo (Desktop xl only) */}
               <div
                 style={{
                   width: "1.5px",
-                  height: "28px",
+                  height: "26px",
                   backgroundColor: "#b7832f",
-                  marginLeft: "20px",
-                  marginRight: "20px"
+                  marginLeft: "14px",
+                  marginRight: "14px"
                 }}
                 className="hidden xl:block shrink-0"
               />
@@ -476,7 +483,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
 
             {/* Desktop Navigation Links (Evenly distributed with generous spacing) */}
             <nav
-              className="sks-desktop-nav hidden xl:flex items-center justify-between flex-1 gap-1.5 xl:gap-2.5 2xl:gap-5 flex-nowrap pl-2"
+              className="sks-desktop-nav hidden xl:flex items-center justify-between flex-1 gap-1 xl:gap-1.5 2xl:gap-3.5 flex-nowrap pl-1"
               style={{
                 alignItems: "center",
                 flexWrap: "nowrap"
@@ -484,6 +491,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
             >
               {NAV_ITEMS.map((item) => {
                 const isHome = item.label === "HOME";
+                const isContact = item.label === "CONTACT US";
                 const hasChildren = item.children && item.children.length > 0;
                 const isTwoCols = item.columns === 2;
                 const isOpen = activeDropdown === item.label;
@@ -499,9 +507,29 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                           textDecoration: "none",
                           whiteSpace: "nowrap"
                         }}
-                        className="relative inline-flex items-center justify-center px-4 xl:px-5 py-1.5 text-[12px] xl:text-[12.5px] font-bold uppercase tracking-wider rounded-lg shadow-xs hover:bg-[#a67426] active:scale-95 transition-all duration-200"
+                        className="relative inline-flex items-center justify-center px-4 xl:px-4.5 py-1.5 text-[11.5px] xl:text-[12px] font-bold uppercase tracking-wider rounded-full shadow-xs hover:bg-[#a67426] active:scale-95 transition-all duration-200"
                       >
                         <span>HOME</span>
+                      </Link>
+                    </div>
+                  );
+                }
+
+                if (isContact) {
+                  return (
+                    <div key={item.label} className="relative py-2 shrink-0">
+                      <Link
+                        href={item.href}
+                        style={{
+                          backgroundColor: "#003840",
+                          color: "#ffffff",
+                          textDecoration: "none",
+                          whiteSpace: "nowrap",
+                          boxShadow: "0 2px 8px rgba(0, 56, 64, 0.25)"
+                        }}
+                        className="relative inline-flex items-center justify-center px-4 xl:px-4.5 py-1.5 text-[11.5px] xl:text-[12px] font-bold uppercase tracking-wider rounded-full hover:bg-[#b7832f] active:scale-95 transition-all duration-200"
+                      >
+                        <span>CONTACT US</span>
                       </Link>
                     </div>
                   );
