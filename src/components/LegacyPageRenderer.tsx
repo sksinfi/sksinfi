@@ -485,7 +485,9 @@ export default function LegacyPageRenderer({ slug, initialData }: LegacyPageRend
         const formData = new FormData(form);
         const name = (formData.get("name") as string) || "";
         const email = (formData.get("email") as string) || "";
-        const phone = (formData.get("phone") as string) || (formData.get("mobile") as string) || (formData.get("mobile_no") as string) || "";
+        const rawPhone = (formData.get("phone") as string) || (formData.get("mobile") as string) || (formData.get("mobile_no") as string) || "";
+        const countryCode = (formData.get("country_code") as string) || "";
+        const phone = countryCode && !rawPhone.startsWith("+") ? `${countryCode} ${rawPhone}` : rawPhone;
         const address = (formData.get("address") as string) || "";
         const city = (formData.get("city") as string) || "";
         const country = (formData.get("country") as string) || "India";
