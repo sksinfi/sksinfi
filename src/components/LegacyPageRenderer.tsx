@@ -134,6 +134,24 @@ export default function LegacyPageRenderer({ slug, initialData }: LegacyPageRend
       });
     }
 
+    // 0.25 Global Enquiry Buttons Listener (Loan & Category Pages)
+    const enquiryButtons = document.querySelectorAll("[data-open-enquiry]");
+    enquiryButtons.forEach((btn) => {
+      if ((btn as any)._enquiryBound) return;
+      (btn as any)._enquiryBound = true;
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        const category = btn.getAttribute("data-enquiry-category") || "Loans";
+        const product =
+          btn.getAttribute("data-enquiry-product") ||
+          btn.getAttribute("data-open-enquiry") ||
+          "";
+        setModalCategory(category);
+        setModalProduct(product);
+        setModalOpen(true);
+      });
+    });
+
     // 0.2 Home Page Dynamic Blogs Fetching from Website Blog Database
     if (slug === "index") {
       fetch("/api/admin/blogs")
