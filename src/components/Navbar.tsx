@@ -421,7 +421,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
         id="sks-main-header"
         style={{
           backgroundColor: "transparent",
-          padding: isScrolled ? "10px 20px" : "14px 24px",
+          padding: isScrolled ? "8px 16px" : "12px 20px",
           transition: "padding 0.25s ease"
         }}
         className="w-full font-sans transition-all duration-200"
@@ -429,25 +429,25 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
         <div
           id="sks-navbar-oval-container"
           style={{
-            maxWidth: "1420px",
+            maxWidth: "1220px",
             backgroundColor: "#ffffff",
             borderRadius: "60px",
             boxShadow: isScrolled
               ? "0 12px 35px rgba(0, 56, 64, 0.16), 0 3px 8px rgba(0, 0, 0, 0.05)"
               : "0 8px 28px rgba(0, 56, 64, 0.11), 0 2px 6px rgba(0, 0, 0, 0.03)",
             border: "1.5px solid rgba(9, 75, 87, 0.14)",
-            padding: isScrolled ? "0 18px 0 24px" : "0 22px 0 28px",
+            padding: isScrolled ? "0 22px 0 24px" : "0 26px 0 28px",
             transition: "all 0.25s ease"
           }}
           className="w-full mx-auto"
         >
           <div
             style={{
-              height: isScrolled ? "58px" : "66px",
-              minHeight: isScrolled ? "58px" : "66px",
+              height: isScrolled ? "54px" : "60px",
+              minHeight: isScrolled ? "54px" : "60px",
               transition: "height 0.25s ease, min-height 0.25s ease"
             }}
-            className="flex items-center justify-between gap-2 sm:gap-3 xl:gap-4"
+            className="flex items-center justify-between gap-2 sm:gap-3 xl:gap-3.5"
           >
             {/* Left: Brand Logo & Tagline with subtle vertical divider */}
             <div className="flex items-center shrink-0">
@@ -459,23 +459,23 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                   src="/img/sksl.jpg"
                   alt="SKS INFI - MSME | LOAN | INVESTMENT"
                   style={{
-                    height: isScrolled ? "44px" : "50px",
-                    maxHeight: "54px",
+                    height: isScrolled ? "38px" : "44px",
+                    maxHeight: "48px",
                     width: "auto",
                     objectFit: "contain",
                     transition: "height 0.25s ease"
                   }}
-                  className="block max-w-[135px] sm:max-w-[180px] xl:max-w-[205px]"
+                  className="block max-w-[135px] sm:max-w-[165px] xl:max-w-[185px]"
                 />
               </Link>
               {/* Vertical gold divider after logo (Desktop xl only) */}
               <div
                 style={{
                   width: "1.5px",
-                  height: "26px",
+                  height: "24px",
                   backgroundColor: "#b7832f",
-                  marginLeft: "14px",
-                  marginRight: "14px"
+                  marginLeft: "12px",
+                  marginRight: "12px"
                 }}
                 className="hidden xl:block shrink-0"
               />
@@ -507,7 +507,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                           textDecoration: "none",
                           whiteSpace: "nowrap"
                         }}
-                        className="relative inline-flex items-center justify-center px-3.5 xl:px-4 py-1.5 text-[10.5px] xl:text-[11px] font-bold uppercase tracking-wider rounded-full shadow-xs hover:bg-[#a67426] active:scale-95 transition-all duration-200"
+                        className="relative inline-flex items-center justify-center px-3 xl:px-3 py-1 text-[10.5px] xl:text-[11px] font-bold uppercase tracking-wider rounded-full shadow-xs hover:bg-[#a67426] active:scale-95 transition-all duration-200"
                       >
                         <span>HOME</span>
                       </Link>
@@ -527,7 +527,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                           whiteSpace: "nowrap",
                           boxShadow: "0 2px 8px rgba(0, 56, 64, 0.25)"
                         }}
-                        className="relative inline-flex items-center justify-center px-3.5 xl:px-4 py-1.5 text-[10.5px] xl:text-[11px] font-bold uppercase tracking-wider rounded-full hover:bg-[#b7832f] active:scale-95 transition-all duration-200"
+                        className="relative inline-flex items-center justify-center px-3 xl:px-3.5 py-1 text-[10.5px] xl:text-[11px] font-bold uppercase tracking-wider rounded-full hover:bg-[#b7832f] active:scale-95 transition-all duration-200"
                       >
                         <span>CONTACT US</span>
                       </Link>
@@ -549,7 +549,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                         textDecoration: "none",
                         whiteSpace: "nowrap"
                       }}
-                      className="relative inline-flex items-center gap-1 px-1 xl:px-1.5 py-1 text-[11px] xl:text-[11px] font-bold uppercase tracking-wide hover:text-[#b7832f] transition-colors duration-150"
+                      className="relative inline-flex items-center gap-0.5 xl:gap-1 px-1 py-1 text-[10.5px] xl:text-[11px] font-bold uppercase tracking-wide hover:text-[#b7832f] transition-colors duration-150"
                     >
                       <span style={{ whiteSpace: "nowrap" }}>{item.label}</span>
                       {hasChildren && (
