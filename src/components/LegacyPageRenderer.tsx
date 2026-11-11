@@ -512,11 +512,12 @@ export default function LegacyPageRenderer({ slug, initialData }: LegacyPageRend
           ) {
             const amountStr = (formData.get("amount") as string) || (formData.get("loan_amount") as string) || "0";
             const loanType = (formData.get("typeofloan") as string) || (formData.get("selected_loan_type") as string) || product || "General Loan";
+            const serviceCat = (formData.get("service") as string) || (formData.get("service_category") as string) || "Loans";
             await submitLoanEnquiry({
               name,
               email,
               phone,
-              service_category: "Loans",
+              service_category: serviceCat,
               product_name: loanType,
               loan_amount: parseFloat(amountStr) || 0,
               city,
