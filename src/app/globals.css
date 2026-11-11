@@ -2017,12 +2017,12 @@ html {
 }
 
 .btn-apna-accent {
-  background: linear-gradient(135deg, #b69455 0%, #c5a059 100%);
+  background: linear-gradient(135deg, #b69455 0%, #c5a059 100%) !important;
   color: #ffffff !important;
   font-weight: 600;
   padding: 0.75rem 1.6rem;
   border-radius: 50px;
-  border: none;
+  border: none !important;
   box-shadow: 0 4px 15px rgba(182, 148, 85, 0.3);
   transition: all 0.3s ease;
   display: inline-flex;
@@ -2030,26 +2030,40 @@ html {
   text-decoration: none;
 }
 .btn-apna-accent:hover {
-  background: linear-gradient(135deg, #9f7d3c 0%, #b69455 100%);
+  background: linear-gradient(135deg, #9f7d3c 0%, #b69455 100%) !important;
   color: #ffffff !important;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(182, 148, 85, 0.4);
 }
 
 .btn-apna-outline {
-  border: 1.5px solid #094b57;
+  border: 1.5px solid #094b57 !important;
   color: #094b57 !important;
   font-weight: 600;
   padding: 0.75rem 1.6rem;
   border-radius: 50px;
-  background: transparent;
+  background: transparent !important;
+  background-color: transparent !important;
   transition: all 0.3s ease;
   display: inline-flex;
   align-items: center;
   text-decoration: none;
 }
+.btn-apna-outline span,
+.btn-apna-outline i {
+  color: #094b57 !important;
+  transition: color 0.3s ease;
+}
 .btn-apna-outline:hover {
-  background: #094b57;
+  background: #094b57 !important;
+  background-color: #094b57 !important;
+  border-color: #094b57 !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(9, 75, 87, 0.25);
+}
+.btn-apna-outline:hover span,
+.btn-apna-outline:hover i {
   color: #ffffff !important;
 }
 
@@ -2131,6 +2145,22 @@ html {
   color: #094b57;
   margin-bottom: 0;
   line-height: 1;
+}
+
+.loan-card ul li a {
+  color: #334155 !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+}
+.loan-card ul li a:hover,
+.loan-card ul li a:hover span {
+  color: #094b57 !important;
+}
+.loan-card ul li a:hover i {
+  color: #b69455 !important;
+  transform: scale(1.15);
 }
 
 .btn-know-more {

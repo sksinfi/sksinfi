@@ -160,14 +160,15 @@ export default function LegacyPageRenderer({ slug, initialData }: LegacyPageRend
       (serviceSelect as any)._serviceBound = true;
       const optionsMap: Record<string, string[]> = {
         "Loan": [
-          "Home Loan (Starting @ 8.40%)",
+          "Home Loan",
           "Loan Against Property (LAP)",
-          "Business Loan & Working Capital",
-          "Personal Loan & Emergency Credit",
+          "Business Loan",
+          "Personal Loan",
           "Education Loan",
           "New Car Loan",
           "Used Car Loan",
-          "Commercial Vehicle & Equipment"
+          "Commercial Vehicle",
+          "Commercial Equipment"
         ],
         "MSME": [
           "MSME Financial Solutions",
@@ -176,7 +177,9 @@ export default function LegacyPageRenderer({ slug, initialData }: LegacyPageRend
           "MSME IPO & Listing",
           "Invoice Discounting (TReDS)",
           "CGTMSE Collateral-Free Loan",
-          "MSME Growth & Business Solutions"
+          "MSME Growth & Business Solutions",
+          "Venture Capital",
+          "Private Equity"
         ],
         "Real Estate": [
           "Residential (Plots, Villas & Flats)",
@@ -186,7 +189,7 @@ export default function LegacyPageRenderer({ slug, initialData }: LegacyPageRend
           "Open Land & Agricultural Land"
         ],
         "Investment": [
-          "Mutual Funds & SIP Wealth Planning",
+          "Mutual Funds & SIP",
           "Bonds & Debentures",
           "Non-Convertible Debentures (NCD)",
           "Unlisted & Pre-IPO Shares",
@@ -196,7 +199,7 @@ export default function LegacyPageRenderer({ slug, initialData }: LegacyPageRend
         "Insurance": [
           "Health Insurance (Comprehensive)",
           "Life & Term Insurance",
-          "General & Factory Property Insurance",
+          "General, Factory and Property Insurance",
           "Motor & Fleet Insurance"
         ],
         "A/CS & Tax": [

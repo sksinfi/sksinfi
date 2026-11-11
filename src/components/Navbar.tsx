@@ -507,7 +507,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                           textDecoration: "none",
                           whiteSpace: "nowrap"
                         }}
-                        className="relative inline-flex items-center justify-center px-3 xl:px-3 py-1 text-[10.5px] xl:text-[11px] font-bold uppercase tracking-wider rounded-full shadow-xs hover:bg-[#a67426] active:scale-95 transition-all duration-200"
+                        className="relative inline-flex items-center justify-center px-3 xl:px-3 py-1 text-[9.5px] xl:text-[10px] font-semibold uppercase tracking-wider rounded-full shadow-xs hover:bg-[#a67426] active:scale-95 transition-all duration-200"
                       >
                         <span>HOME</span>
                       </Link>
@@ -527,7 +527,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                           whiteSpace: "nowrap",
                           boxShadow: "0 2px 8px rgba(0, 56, 64, 0.25)"
                         }}
-                        className="relative inline-flex items-center justify-center px-3 xl:px-3.5 py-1 text-[10.5px] xl:text-[11px] font-bold uppercase tracking-wider rounded-full hover:bg-[#b7832f] active:scale-95 transition-all duration-200"
+                        className="relative inline-flex items-center justify-center px-3 xl:px-3.5 py-1 text-[9.5px] xl:text-[10px] font-semibold uppercase tracking-wider rounded-full hover:bg-[#b7832f] active:scale-95 transition-all duration-200"
                       >
                         <span>CONTACT US</span>
                       </Link>
@@ -549,12 +549,12 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                         textDecoration: "none",
                         whiteSpace: "nowrap"
                       }}
-                      className="relative inline-flex items-center gap-0.5 xl:gap-1 px-1 py-1 text-[10.5px] xl:text-[11px] font-bold uppercase tracking-wide hover:text-[#b7832f] transition-colors duration-150"
+                      className="relative inline-flex items-center gap-0.5 xl:gap-1 px-1 py-1 text-[9.5px] xl:text-[10px] font-semibold uppercase tracking-wide hover:text-[#b7832f] transition-colors duration-150"
                     >
                       <span style={{ whiteSpace: "nowrap" }}>{item.label}</span>
                       {hasChildren && (
                         <ChevronDown
-                          className={`w-3 h-3 transition-transform duration-200 shrink-0 stroke-[2] ${
+                          className={`w-2.5 h-2.5 transition-transform duration-200 shrink-0 stroke-[2.2] ${
                             isOpen
                               ? "rotate-180 text-[#b7832f]"
                               : "text-[#003840] group-hover:text-[#b7832f]"
