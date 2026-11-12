@@ -81,13 +81,18 @@ export default function LegacyPageRenderer({ slug, initialData }: LegacyPageRend
       }, 300);
     }
 
-    // 0. Robust FAQ Accordion Interactive Toggler
+    // 0. FAQ Accordion Interactive Toggler (fallback only if Bootstrap is not loaded)
     const accordionButtons = document.querySelectorAll(".accordion-button");
     accordionButtons.forEach((btn) => {
       if ((btn as any)._faqBound) return;
       (btn as any)._faqBound = true;
 
       btn.addEventListener("click", (e) => {
+        if (typeof window !== "undefined" && (window as any).bootstrap?.Collapse) {
+          // Let Bootstrap 5 handle the collapse natively with smooth animation
+          return;
+        }
+
         const targetSelector = btn.getAttribute("data-bs-target");
         if (!targetSelector) return;
         const targetEl = document.querySelector(targetSelector) as HTMLElement | null;
