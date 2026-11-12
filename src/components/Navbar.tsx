@@ -65,7 +65,7 @@ const NAV_ITEMS: NavItem[] = [
       { label: "Real Estate", href: "/real_estate" },
       { label: "Investment", href: "/investment" },
       { label: "Insurance", href: "/insurance" },
-      { label: "A/Cs & Tax", href: "/accountstax" }
+      { label: "Tax & Compliances", href: "/accountstax" }
     ]
   },
   {
@@ -130,7 +130,7 @@ const NAV_ITEMS: NavItem[] = [
     ]
   },
   {
-    label: "A/CS & TAX",
+    label: "Tax & Compliances",
     href: "/accountstax",
     subtitle: "Tax Planning, GST & Audit Support",
     children: [

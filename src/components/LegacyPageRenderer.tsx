@@ -202,6 +202,14 @@ export default function LegacyPageRenderer({ slug, initialData }: LegacyPageRend
         "General, Factory and Property Insurance",
         "Motor & Fleet Insurance"
       ],
+      "Tax & Compliances": [
+        "ITR & Audit",
+        "GST Registration",
+        "Firm & Company Set-up",
+        "Statutory Compliances",
+        "Insolvency Audit",
+        "Insolvency Compliances"
+      ],
       "A/CS & Tax": [
         "ITR & Audit",
         "GST Registration",

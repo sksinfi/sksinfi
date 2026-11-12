@@ -91,7 +91,7 @@ export const authenticFooterHtml = `<style>
           <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/real_estate" class="text-light text-decoration-none">Real Estate</a></li>
           <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/investment" class="text-light text-decoration-none">Investment</a></li>
           <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/insurance" class="text-light text-decoration-none">Insurance</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/accountstax" class="text-light text-decoration-none">A/Cs & Tax</a></li>
+          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/accountstax" class="text-light text-decoration-none">Tax & Compliances</a></li>
         </ul>
       </div>
 
@@ -129,7 +129,7 @@ export const authenticFooterHtml = `<style>
           <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/fixed-deposit" class="text-light text-decoration-none">Fixed Deposit</a></li>
         </ul>
 
-        <h6 class="fw-bold mt-4 mb-3 text-white">A/Cs & TAX</h6>
+        <h6 class="fw-bold mt-4 mb-3 text-white">Tax & Compliances</h6>
         <ul class="list-unstyled">
           <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/accounts" class="text-light text-decoration-none">Accounts</a></li>
           <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/taxation" class="text-light text-decoration-none">Taxation</a></li>
