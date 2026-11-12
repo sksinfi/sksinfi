@@ -2212,6 +2212,13 @@ html {
   }
 }
 
+@media (min-width: 992px) {
+  .text-nowrap-lg,
+  .text-nowrap-xl {
+    white-space: nowrap !important;
+  }
+}
+
 /* 2. Section Titles */
 .section-title {
   position: relative;
