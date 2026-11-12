@@ -121,8 +121,57 @@ Recipient: ${recipientEmail}
     let mailResult: any = null;
     let modeUsed = "logged_in_dev_mode";
 
-    // Check if SMTP is configured
-    if (process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS) {
+    // Method 1: Resend (Easiest Modern API - Only 1 API Key needed)
+    if (process.env.RESEND_API_KEY) {
+      modeUsed = "resend";
+      try {
+        const res = await fetch("https://api.resend.com/emails", {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            from: process.env.RESEND_FROM || "SKS INFI Leads <onboarding@resend.dev>",
+            to: [recipientEmail],
+            reply_to: email !== "Not provided" ? email : undefined,
+            subject,
+            html: htmlContent,
+            text: textContent
+          })
+        });
+        mailResult = await res.json();
+      } catch (err: any) {
+        console.error("Resend API Error:", err.message);
+      }
+    }
+    // Method 2: Web3Forms (Zero Password - 1 Free Access Key)
+    else if (process.env.WEB3FORMS_ACCESS_KEY) {
+      modeUsed = "web3forms";
+      try {
+        const res = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            access_key: process.env.WEB3FORMS_ACCESS_KEY,
+            to: recipientEmail,
+            subject,
+            from_name: "SKS INFI Website",
+            name,
+            phone,
+            email,
+            service: serviceDisplay,
+            location: `${city ? `${city}, ` : ""}${country}`,
+            message
+          })
+        });
+        mailResult = await res.json();
+      } catch (err: any) {
+        console.error("Web3Forms Error:", err.message);
+      }
+    }
+    // Method 3: Standard SMTP (cPanel Webmail, Gmail, or Zoho)
+    else if (process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS) {
       modeUsed = "smtp_live";
       try {
         const transporter = nodemailer.createTransport({
@@ -157,7 +206,7 @@ Recipient: ${recipientEmail}
       subject,
       mailResult: mailResult || {
         status: "logged_in_dev_mode",
-        note: "Email payload rendered and logged. Configure SMTP_HOST, SMTP_USER, SMTP_PASS in .env.local for live inbox delivery to infi@sksinfi.com."
+        note: "Email logged. Provide RESEND_API_KEY, WEB3FORMS_ACCESS_KEY, or SMTP_PASS in .env.local to send live emails to infi@sksinfi.com."
       }
     });
   } catch (error: any) {
@@ -168,4 +217,3 @@ Recipient: ${recipientEmail}
     );
   }
 }
-
