@@ -319,7 +319,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
 
           {/* Right Mobile Shortcut: Direct WhatsApp Pill */}
           <a
-            href="https://wa.me/919928593122?text=Hello%20SKS%20INFI%2C%20I%20would%20like%20to%20inquire%20about%20financial%20services"
+            href="https://wa.me/919928529222?text=Hello%20SKS%20INFI%2C%20I%20would%20like%20to%20inquire%20about%20financial%20services"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Chat on WhatsApp"
@@ -938,7 +938,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                 </a>
 
                 <a
-                  href="https://wa.me/919928593122?text=Hello%20SKS%20INFI%2C%20I%20would%20like%20to%20inquire%20about%20financial%20services"
+                  href="https://wa.me/919928529222?text=Hello%20SKS%20INFI%2C%20I%20would%20like%20to%20inquire%20about%20financial%20services"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
@@ -1020,7 +1020,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
         }`}
       >
         <a
-          href="https://wa.me/919928593122?text=Hello%20SKS%20INFI%2C%20I%20would%20like%20to%20inquire%20about%20financial%20services"
+          href="https://wa.me/919928529222?text=Hello%20SKS%20INFI%2C%20I%20would%20like%20to%20inquire%20about%20financial%20services"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Chat on WhatsApp with SKS INFI"
