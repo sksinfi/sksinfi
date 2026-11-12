@@ -1982,10 +1982,12 @@ html {
   line-height: 1.18;
   color: #094b57;
   margin-bottom: 1.1rem;
+  text-transform: none !important;
 }
 
 .hero-content h1 .accent-text {
   color: #b69455;
+  text-transform: none !important;
 }
 
 .hero-content p {
