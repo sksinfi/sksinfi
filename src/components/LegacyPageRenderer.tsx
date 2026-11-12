@@ -152,78 +152,82 @@ export default function LegacyPageRenderer({ slug, initialData }: LegacyPageRend
       });
     });
 
-    // 0.26 Home Page Hero Service & Sub-Service dynamic dropdown handler
-    const serviceSelect = document.getElementById("home-service-select") as HTMLSelectElement | null;
-    const subserviceSelect = document.getElementById("home-subservice-select") as HTMLSelectElement | null;
+    // 0.26 Home Page Hero & Popup Service & Sub-Service dynamic dropdown handler
+    const optionsMap: Record<string, string[]> = {
+      "Loan": [
+        "Home Loan",
+        "Loan Against Property (LAP)",
+        "Business Loan",
+        "Personal Loan",
+        "Education Loan",
+        "New Car Loan",
+        "Used Car Loan",
+        "Commercial Vehicle",
+        "Commercial Equipment"
+      ],
+      "MSME": [
+        "MSME Financial Solutions",
+        "MSME Subsidy and Incentive Schemes",
+        "MSME Registration (UDYAM)",
+        "MSME IPO & Listing",
+        "Invoice Discounting (TReDS)",
+        "CGTMSE Collateral-Free Loan",
+        "MSME Growth & Business Solutions",
+        "Venture Capital",
+        "Private Equity"
+      ],
+      "Real Estate": [
+        "Residential (Plots, Villas & Flats)",
+        "Commercial (Showrooms & Offices)",
+        "Industrial Land & RIICO Warehouses",
+        "Luxury Farm House",
+        "Open Land & Agricultural Land"
+      ],
+      "Investment": [
+        "Mutual Funds & SIP",
+        "Bonds & Debentures",
+        "Non-Convertible Debentures (NCD)",
+        "Unlisted & Pre-IPO Shares",
+        "Equity & Demat",
+        "Fixed Deposit"
+      ],
+      "Insurance": [
+        "Health Insurance (Comprehensive)",
+        "Life & Term Insurance",
+        "General, Factory and Property Insurance",
+        "Motor & Fleet Insurance"
+      ],
+      "A/CS & Tax": [
+        "Income Tax Return (ITR Filing)",
+        "GST Registration & Monthly Returns",
+        "Company & LLP Incorporation",
+        "Auditing & Regulatory Compliance"
+      ],
+      "NRI Desk": [
+        "NRI Home Loan in India",
+        "NRI Real Estate Investment",
+        "NRI Mutual Funds & SIP",
+        "NRE / NRO Banking & FEMA Advisory"
+      ]
+    };
 
-    if (serviceSelect && subserviceSelect && !(serviceSelect as any)._serviceBound) {
-      (serviceSelect as any)._serviceBound = true;
-      const optionsMap: Record<string, string[]> = {
-        "Loan": [
-          "Home Loan",
-          "Loan Against Property (LAP)",
-          "Business Loan",
-          "Personal Loan",
-          "Education Loan",
-          "New Car Loan",
-          "Used Car Loan",
-          "Commercial Vehicle",
-          "Commercial Equipment"
-        ],
-        "MSME": [
-          "MSME Financial Solutions",
-          "MSME Subsidy and Incentive Schemes",
-          "MSME Registration (UDYAM)",
-          "MSME IPO & Listing",
-          "Invoice Discounting (TReDS)",
-          "CGTMSE Collateral-Free Loan",
-          "MSME Growth & Business Solutions",
-          "Venture Capital",
-          "Private Equity"
-        ],
-        "Real Estate": [
-          "Residential (Plots, Villas & Flats)",
-          "Commercial (Showrooms & Offices)",
-          "Industrial Land & RIICO Warehouses",
-          "Luxury Farm House",
-          "Open Land & Agricultural Land"
-        ],
-        "Investment": [
-          "Mutual Funds & SIP",
-          "Bonds & Debentures",
-          "Non-Convertible Debentures (NCD)",
-          "Unlisted & Pre-IPO Shares",
-          "Equity & Demat",
-          "Fixed Deposit"
-        ],
-        "Insurance": [
-          "Health Insurance (Comprehensive)",
-          "Life & Term Insurance",
-          "General, Factory and Property Insurance",
-          "Motor & Fleet Insurance"
-        ],
-        "A/CS & Tax": [
-          "Income Tax Return (ITR Filing)",
-          "GST Registration & Monthly Returns",
-          "Company & LLP Incorporation",
-          "Auditing & Regulatory Compliance"
-        ],
-        "NRI Desk": [
-          "NRI Home Loan in India",
-          "NRI Real Estate Investment",
-          "NRI Mutual Funds & SIP",
-          "NRE / NRO Banking & FEMA Advisory"
-        ]
-      };
+    const setupDropdown = (sId: string, subId: string) => {
+      const s = document.getElementById(sId) as HTMLSelectElement | null;
+      const sub = document.getElementById(subId) as HTMLSelectElement | null;
+      if (s && sub && !(s as any)._serviceBound) {
+        (s as any)._serviceBound = true;
+        s.addEventListener("change", () => {
+          const selected = s.value;
+          const products = optionsMap[selected] || optionsMap["Loan"];
+          sub.innerHTML = products
+            .map((p, idx) => `<option value="${p}" ${idx === 0 ? "selected" : ""}>${p}</option>`)
+            .join("");
+        });
+      }
+    };
 
-      serviceSelect.addEventListener("change", () => {
-        const selected = serviceSelect.value;
-        const products = optionsMap[selected] || optionsMap["Loan"];
-        subserviceSelect.innerHTML = products
-          .map((p, idx) => `<option value="${p}" ${idx === 0 ? "selected" : ""}>${p}</option>`)
-          .join("");
-      });
-    }
+    setupDropdown("home-service-select", "home-subservice-select");
+    setupDropdown("popup-service-select", "popup-subservice-select");
 
     // 0.2 Home Page Dynamic Blogs Fetching from Website Blog Database
     if (slug === "index") {
