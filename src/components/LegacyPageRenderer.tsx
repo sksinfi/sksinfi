@@ -655,7 +655,36 @@ export default function LegacyPageRenderer({ slug, initialData }: LegacyPageRend
             });
           }
 
-          // Dispatch SMS notification to SKS INFI admin
+          // 1. Direct Web3Forms submission from client browser for instant email delivery
+          try {
+            const chosenService = (formData.get("service") as string) || (formData.get("service_category") as string) || (slug.includes("partner") ? "Partner" : "General");
+            const chosenSubService = (formData.get("typeofloan") as string) || (formData.get("selected_loan_type") as string) || product || "";
+            const serviceDisplay = chosenSubService ? `${chosenService} - ${chosenSubService}` : chosenService;
+            const web3Key = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "d18ec79a-acd1-49fd-91aa-e1c3c0f73983";
+
+            fetch("https://api.web3forms.com/submit", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+              },
+              body: JSON.stringify({
+                access_key: web3Key,
+                subject: `New Lead Enquiry: ${serviceDisplay} from ${name || "Website Visitor"}`,
+                from_name: "SKS INFI Website Leads",
+                name: name || "Website Visitor",
+                phone: phone || "Not provided",
+                email: email || "Not provided",
+                service: serviceDisplay,
+                location: `${city ? `${city}, ` : ""}${country}`,
+                message: message || "General Consultation Request"
+              })
+            }).catch((w3Err) => console.warn("Web3Forms client dispatch notice:", w3Err));
+          } catch (web3Err) {
+            console.warn("Web3Forms client dispatch notice:", web3Err);
+          }
+
+          // 2. Dispatch SMS notification to SKS INFI admin
           try {
             const chosenService = (formData.get("service") as string) || (formData.get("service_category") as string) || (slug.includes("partner") ? "Partner" : "General");
             const chosenSubService = (formData.get("typeofloan") as string) || (formData.get("selected_loan_type") as string) || product || "";
@@ -677,7 +706,7 @@ export default function LegacyPageRenderer({ slug, initialData }: LegacyPageRend
             console.warn("SMS notification dispatch failed:", smsErr);
           }
 
-          // Dispatch Email notification to infi@sksinfi.com
+          // 3. Dispatch Email notification to infi@sksinfi.com
           try {
             const chosenService = (formData.get("service") as string) || (formData.get("service_category") as string) || (slug.includes("partner") ? "Partner" : "General");
             const chosenSubService = (formData.get("typeofloan") as string) || (formData.get("selected_loan_type") as string) || product || "";

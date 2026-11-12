@@ -65,6 +65,71 @@ export default function EnquiryModal({
         message: message || undefined
       });
 
+      const serviceDisplay = product ? `${category} - ${product}` : category;
+      const web3Key = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "d18ec79a-acd1-49fd-91aa-e1c3c0f73983";
+
+      // 1. Direct Web3Forms submission from client browser for instant email delivery
+      try {
+        fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify({
+            access_key: web3Key,
+            subject: `New Lead Enquiry: ${serviceDisplay} from ${name}`,
+            from_name: "SKS INFI Fast-Track Desk",
+            name,
+            phone,
+            email: email || "Not provided",
+            service: serviceDisplay,
+            location: city || "Jaipur, India",
+            message: message ? `${message} | Amount: ₹${amount || "N/A"}` : `Loan Amount: ₹${amount || "N/A"}`
+          })
+        }).catch((w3Err) => console.warn("Web3Forms modal dispatch notice:", w3Err));
+      } catch (wErr) {
+        console.warn("Web3Forms modal error:", wErr);
+      }
+
+      // 2. Dispatch SMS notification to SKS INFI admin (+91 99285 93122)
+      try {
+        fetch("/api/send-sms", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name,
+            phone,
+            email,
+            service: category,
+            subService: product,
+            city,
+            message: amount ? `Amount: ₹${amount}. ${message}` : message
+          })
+        }).catch((err) => console.warn("SMS modal notification error:", err));
+      } catch (smsErr) {
+        console.warn("SMS dispatch notice:", smsErr);
+      }
+
+      // 3. Dispatch Server Email notification
+      try {
+        fetch("/api/send-email", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name,
+            phone,
+            email,
+            service: category,
+            subService: product,
+            city,
+            message: amount ? `Amount: ₹${amount}. ${message}` : message
+          })
+        }).catch((err) => console.warn("Email modal notification error:", err));
+      } catch (emailErr) {
+        console.warn("Email dispatch notice:", emailErr);
+      }
+
       setSuccess(true);
       setTimeout(() => {
         // Reset after short delay
@@ -75,7 +140,7 @@ export default function EnquiryModal({
       }, 500);
     } catch (err: any) {
       console.error(err);
-      setErrorMsg("Failed to submit inquiry. Please try again or call +91 99285 29222 directly.");
+      setErrorMsg("Failed to submit inquiry. Please try again or call +91 99285 93122 directly.");
     } finally {
       setLoading(false);
     }
