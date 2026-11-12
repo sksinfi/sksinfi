@@ -1015,8 +1015,15 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
       {/* ================= 4. FLOATING WHATSAPP BUTTON ================= */}
       <aside
         aria-label="WhatsApp quick chat"
+        style={{
+          position: "fixed",
+          right: "24px",
+          bottom: "24px",
+          zIndex: 99999,
+          pointerEvents: mobileMenuOpen ? "none" : "auto"
+        }}
         className={`transition-all duration-200 ${
-          mobileMenuOpen ? "opacity-0 pointer-events-none scale-75" : "opacity-100 pointer-events-auto scale-100"
+          mobileMenuOpen ? "opacity-0 scale-75" : "opacity-100 scale-100"
         }`}
       >
         <a
@@ -1025,10 +1032,6 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
           rel="noopener noreferrer"
           aria-label="Chat on WhatsApp with SKS INFI"
           style={{
-            position: "fixed",
-            right: "22px",
-            bottom: "24px",
-            zIndex: 9999,
             backgroundColor: "#25D366",
             color: "#ffffff",
             width: "56px",
@@ -1039,7 +1042,9 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
             justifyContent: "center",
             boxShadow: "0 6px 20px rgba(37, 211, 102, 0.45)",
             transition: "all 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
-            textDecoration: "none"
+            textDecoration: "none",
+            cursor: "pointer",
+            position: "relative"
           }}
           className="hover:scale-110 active:scale-95 group"
         >
