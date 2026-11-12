@@ -385,7 +385,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
         <div
           id="sks-navbar-oval-container"
           style={{
-            maxWidth: "1220px",
+            maxWidth: "840px",
             backgroundColor: "#ffffff",
             borderRadius: "60px",
             boxShadow: isScrolled
