@@ -182,11 +182,11 @@ export default function LegacyPageRenderer({ slug, initialData }: LegacyPageRend
         "Private Equity"
       ],
       "Real Estate": [
-        "Residential (Plots, Villas & Flats)",
-        "Commercial (Showrooms & Offices)",
-        "Industrial Land & RIICO Warehouses",
-        "Luxury Farm House",
-        "Open Land & Agricultural Land"
+        "Residential (Plots, Villa & Flats)",
+        "Commercial Offices",
+        "Industrial Properties & Warehouses",
+        "Farm Houses & Out Houses",
+        "Approved Open Land"
       ],
       "Investment": [
         "Mutual Funds & SIP",
@@ -203,10 +203,12 @@ export default function LegacyPageRenderer({ slug, initialData }: LegacyPageRend
         "Motor & Fleet Insurance"
       ],
       "A/CS & Tax": [
-        "Income Tax Return (ITR Filing)",
-        "GST Registration & Monthly Returns",
-        "Company & LLP Incorporation",
-        "Auditing & Regulatory Compliance"
+        "ITR & Audit",
+        "GST Registration",
+        "FSSAI & Company Set-up",
+        "Statutory Compliances",
+        "Forensic Audit",
+        "Insolvency Compliances"
       ],
       "NRI Desk": [
         "NRI Home Loan in India",
