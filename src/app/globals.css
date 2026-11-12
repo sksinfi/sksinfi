@@ -1455,6 +1455,99 @@ label,
   display: inline-block !important;
 }
 
+/* ==========================================================================
+   CALCULATOR INPUTS & SLIDERS STYLING
+   ========================================================================== */
+.calc-compact-input,
+#loan-amount-input,
+#interest-rate-input,
+#loan-tenure-input {
+  width: 140px !important;
+  max-width: 140px !important;
+  height: 38px !important;
+  min-height: 38px !important;
+  padding: 6px 12px !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  border-radius: 8px !important;
+  text-align: right !important;
+  border: 1.5px solid #cbd5e1 !important;
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  box-sizing: border-box !important;
+  display: inline-block !important;
+}
+
+#interest-rate-input,
+#loan-tenure-input {
+  width: 105px !important;
+  max-width: 105px !important;
+}
+
+.form-range {
+  width: 100% !important;
+  height: 1.6rem !important;
+  background: transparent !important;
+  cursor: pointer;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  margin: 6px 0 !important;
+}
+
+.form-range:focus {
+  outline: none !important;
+}
+
+.form-range::-webkit-slider-runnable-track {
+  width: 100% !important;
+  height: 6px !important;
+  background: #e2e8f0 !important;
+  border-radius: 9999px !important;
+}
+
+.form-range::-webkit-slider-thumb {
+  height: 20px !important;
+  width: 20px !important;
+  border-radius: 50% !important;
+  background: #094b57 !important;
+  border: 2.5px solid #ffffff !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25) !important;
+  margin-top: -7px !important;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.15s ease !important;
+  -webkit-appearance: none !important;
+}
+
+.form-range::-webkit-slider-thumb:hover,
+.form-range::-webkit-slider-thumb:active {
+  transform: scale(1.2) !important;
+  background: #b69455 !important;
+}
+
+.form-range::-moz-range-track {
+  width: 100% !important;
+  height: 6px !important;
+  background: #e2e8f0 !important;
+  border-radius: 9999px !important;
+}
+
+.form-range::-moz-range-thumb {
+  height: 20px !important;
+  width: 20px !important;
+  border-radius: 50% !important;
+  background: #094b57 !important;
+  border: 2.5px solid #ffffff !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25) !important;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.15s ease !important;
+}
+
+.form-range::-moz-range-thumb:hover,
+.form-range::-moz-range-thumb:active {
+  transform: scale(1.2) !important;
+  background: #b69455 !important;
+}
+
 .col-md-12:has(form),
 form:has(.form-control) {
   margin-left: auto !important;

@@ -303,6 +303,73 @@ export default function LegacyPageRenderer({ slug, initialData }: LegacyPageRend
 
 
 
+    // 1. Initialize Loan EMI Calculator (Homepage & Loan Page)
+    // Homepage variant (kebab-case IDs)
+    const homeLoanAmount = document.getElementById("loan-amount") as HTMLInputElement | null;
+    const homeLoanAmountInput = document.getElementById("loan-amount-input") as HTMLInputElement | null;
+    const homeInterestRate = document.getElementById("interest-rate") as HTMLInputElement | null;
+    const homeInterestRateInput = document.getElementById("interest-rate-input") as HTMLInputElement | null;
+    const homeLoanTenure = document.getElementById("loan-tenure") as HTMLInputElement | null;
+    const homeLoanTenureInput = document.getElementById("loan-tenure-input") as HTMLInputElement | null;
+    const homeMonthlyEmi = document.getElementById("monthly-emi");
+    const homeTotalInterest = document.getElementById("total-interest");
+    const homeTotalPayment = document.getElementById("total-payment");
+
+    if (homeLoanAmount && homeLoanAmountInput && homeInterestRate && homeInterestRateInput && homeLoanTenure && homeLoanTenureInput) {
+      function calculateHomeEMI() {
+        const principal = parseFloat(homeLoanAmountInput!.value) || 0;
+        const annualRate = parseFloat(homeInterestRateInput!.value) || 0;
+        const tenureYears = parseFloat(homeLoanTenureInput!.value) || 0;
+
+        if (principal <= 0 || annualRate <= 0 || tenureYears <= 0) {
+          if (homeMonthlyEmi) homeMonthlyEmi.textContent = "₹0";
+          if (homeTotalInterest) homeTotalInterest.textContent = "₹0";
+          if (homeTotalPayment) homeTotalPayment.textContent = "₹0";
+          return;
+        }
+
+        const tenureMonths = tenureYears * 12;
+        const monthlyRate = annualRate / 12 / 100;
+
+        const emi =
+          (principal * monthlyRate * Math.pow(1 + monthlyRate, tenureMonths)) /
+          (Math.pow(1 + monthlyRate, tenureMonths) - 1);
+        const totalPaymentVal = emi * tenureMonths;
+        const interestVal = totalPaymentVal - principal;
+
+        if (homeMonthlyEmi) homeMonthlyEmi.textContent = "₹" + Math.round(emi).toLocaleString("en-IN");
+        if (homeTotalInterest) homeTotalInterest.textContent = "₹" + Math.round(interestVal).toLocaleString("en-IN");
+        if (homeTotalPayment) homeTotalPayment.textContent = "₹" + Math.round(totalPaymentVal).toLocaleString("en-IN");
+      }
+
+      function syncPair(slider: HTMLInputElement, numInput: HTMLInputElement) {
+        slider.addEventListener("input", () => {
+          numInput.value = slider.value;
+          calculateHomeEMI();
+        });
+        numInput.addEventListener("input", () => {
+          const val = parseFloat(numInput.value);
+          if (!isNaN(val)) {
+            slider.value = String(val);
+          }
+          calculateHomeEMI();
+        });
+        numInput.addEventListener("change", () => {
+          const val = parseFloat(numInput.value);
+          if (!isNaN(val)) {
+            slider.value = String(val);
+          }
+          calculateHomeEMI();
+        });
+      }
+
+      syncPair(homeLoanAmount, homeLoanAmountInput);
+      syncPair(homeInterestRate, homeInterestRateInput);
+      syncPair(homeLoanTenure, homeLoanTenureInput);
+      calculateHomeEMI();
+    }
+
+    // Loan page variant (camelCase IDs)
     const loanAmount = document.getElementById("loanAmount") as HTMLInputElement | null;
     const loanAmountInput = document.getElementById("loanAmountInput") as HTMLInputElement | null;
     const interestRate = document.getElementById("interestRate") as HTMLInputElement | null;
@@ -441,39 +508,78 @@ export default function LegacyPageRenderer({ slug, initialData }: LegacyPageRend
     }
 
     // 3. Initialize SIP Calculator if present
+    const monthlyInvEl = document.getElementById("monthly_investment") as HTMLInputElement | null;
+    const periodEl = document.getElementById("investment_period") as HTMLInputElement | null;
+    const returnEl = document.getElementById("expected_return") as HTMLInputElement | null;
     const sipBtn = document.getElementById("calculateButton");
-    if (sipBtn) {
-      sipBtn.addEventListener("click", () => {
-        const monthlyInvEl = document.getElementById("monthly_investment") as HTMLInputElement | null;
-        const periodEl = document.getElementById("investment_period") as HTMLInputElement | null;
-        const returnEl = document.getElementById("expected_return") as HTMLInputElement | null;
-        const resultsEl = document.getElementById("results");
+    const futureValEl = document.getElementById("future_value");
+    const totalInvEl = document.getElementById("total_investment");
+    const wealthGainEl = document.getElementById("wealth_gain");
+    const resultsEl = document.getElementById("results");
 
-        if (!monthlyInvEl || !periodEl || !returnEl || !resultsEl) return;
+    function calculateSIP() {
+      if (!monthlyInvEl || !periodEl || !returnEl) return;
 
-        const p = parseFloat(monthlyInvEl.value);
-        const t = parseFloat(periodEl.value);
-        const r = parseFloat(returnEl.value);
+      const p = parseFloat(monthlyInvEl.value);
+      const t = parseFloat(periodEl.value);
+      const r = parseFloat(returnEl.value);
 
-        if (isNaN(p) || isNaN(t) || isNaN(r) || p <= 0 || t <= 0) {
-          resultsEl.innerHTML = `<div class="alert alert-danger">Please enter valid values.</div>`;
-          return;
+      if (isNaN(p) || isNaN(t) || isNaN(r) || p <= 0 || t <= 0) {
+        if (futureValEl && totalInvEl && wealthGainEl) {
+          futureValEl.textContent = "₹0";
+          totalInvEl.textContent = "₹0";
+          wealthGainEl.textContent = "+₹0";
         }
+        return;
+      }
 
-        const i = r / (12 * 100);
-        const n = t * 12;
-        const futureValue = p * ((Math.pow(1 + i, n) - 1) / i) * (1 + i);
-        const totalInvestment = p * n;
-        const interestEarned = futureValue - totalInvestment;
+      const i = r / (12 * 100);
+      const n = t * 12;
+      let futureValue = 0;
+      if (i > 0) {
+        futureValue = p * ((Math.pow(1 + i, n) - 1) / i) * (1 + i);
+      } else {
+        futureValue = p * n;
+      }
+      const totalInvestment = p * n;
+      const wealthGain = Math.max(0, futureValue - totalInvestment);
 
+      if (futureValEl && totalInvEl && wealthGainEl) {
+        futureValEl.textContent = "₹" + Math.round(futureValue).toLocaleString("en-IN");
+        totalInvEl.textContent = "₹" + Math.round(totalInvestment).toLocaleString("en-IN");
+        wealthGainEl.textContent = "+₹" + Math.round(wealthGain).toLocaleString("en-IN");
+      } else if (resultsEl) {
         resultsEl.innerHTML = `
           <div class="card shadow-sm p-4 bg-light">
             <h4 class="mb-3 text-[#094b57] fw-bold">SIP Summary</h4>
             <p><strong>Future Value (Maturity Amount):</strong> ₹${Math.round(futureValue).toLocaleString("en-IN")}</p>
             <p><strong>Total Investment:</strong> ₹${Math.round(totalInvestment).toLocaleString("en-IN")}</p>
-            <p><strong>Total Earned (Interest):</strong> ₹${Math.round(interestEarned).toLocaleString("en-IN")}</p>
+            <p><strong>Total Earned (Interest):</strong> ₹${Math.round(wealthGain).toLocaleString("en-IN")}</p>
           </div>
         `;
+      }
+    }
+
+    if (monthlyInvEl && periodEl && returnEl) {
+      [monthlyInvEl, periodEl, returnEl].forEach((input) => {
+        input.addEventListener("input", calculateSIP);
+        input.addEventListener("change", calculateSIP);
+      });
+      calculateSIP();
+    }
+
+    if (sipBtn) {
+      sipBtn.addEventListener("click", () => {
+        calculateSIP();
+        if (resultsEl) {
+          resultsEl.style.transition = "transform 0.15s ease, box-shadow 0.15s ease";
+          resultsEl.style.transform = "scale(1.02)";
+          resultsEl.style.boxShadow = "0 4px 14px rgba(9, 75, 87, 0.15)";
+          setTimeout(() => {
+            resultsEl.style.transform = "scale(1)";
+            resultsEl.style.boxShadow = "none";
+          }, 200);
+        }
       });
     }
 
