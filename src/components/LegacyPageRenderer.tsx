@@ -677,6 +677,28 @@ export default function LegacyPageRenderer({ slug, initialData }: LegacyPageRend
             console.warn("SMS notification dispatch failed:", smsErr);
           }
 
+          // Dispatch Email notification to infi@sksinfi.com
+          try {
+            const chosenService = (formData.get("service") as string) || (formData.get("service_category") as string) || (slug.includes("partner") ? "Partner" : "General");
+            const chosenSubService = (formData.get("typeofloan") as string) || (formData.get("selected_loan_type") as string) || product || "";
+            fetch("/api/send-email", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                name,
+                phone,
+                email,
+                service: chosenService,
+                subService: chosenSubService,
+                country,
+                city: city || address,
+                message,
+              }),
+            }).catch((err) => console.warn("Email notification fetch error:", err));
+          } catch (emailErr) {
+            console.warn("Email notification dispatch failed:", emailErr);
+          }
+
           const feedbackEl = form.querySelector(".form-feedback") as HTMLElement | null;
           if (feedbackEl) {
             feedbackEl.innerHTML = `
