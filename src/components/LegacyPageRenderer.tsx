@@ -205,9 +205,9 @@ export default function LegacyPageRenderer({ slug, initialData }: LegacyPageRend
       "A/CS & Tax": [
         "ITR & Audit",
         "GST Registration",
-        "FSSAI & Company Set-up",
+        "Firm & Company Set-up",
         "Statutory Compliances",
-        "Forensic Audit",
+        "Insolvency Audit",
         "Insolvency Compliances"
       ],
       "NRI Desk": [
