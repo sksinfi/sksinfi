@@ -2113,6 +2113,12 @@ html {
   transform: translateX(4px);
 }
 
+@media (min-width: 768px) {
+  .text-nowrap-md {
+    white-space: nowrap !important;
+  }
+}
+
 /* 2. Section Titles */
 .section-title {
   position: relative;
