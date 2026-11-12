@@ -100,6 +100,50 @@ const NAV_ITEMS: NavItem[] = [
       { label: "Farm House", href: "/farm_house" },
       { label: "Open Land", href: "/open_land" }
     ]
+  },
+  {
+    label: "INVESTMENT",
+    href: "/investment",
+    subtitle: "Wealth Creation & Portfolio Management",
+    children: [
+      { label: "Why Investment", href: "/why_investment" },
+      { label: "Mutual Fund & SIP", href: "/mutual_funds" },
+      { label: "Bonds & Debentures", href: "/bonds" },
+      { label: "NCD", href: "/ncd" },
+      { label: "Unlisted Shares", href: "/unlisted_shares" },
+      { label: "Equity & Demat", href: "/equity_demat" },
+      { label: "Fixed Deposit", href: "/fixed-deposit" }
+    ]
+  },
+  {
+    label: "INSURANCE",
+    href: "/insurance",
+    subtitle: "Comprehensive Risk Protection",
+    children: [
+      { label: "Why Insurance", href: "/why_insurance" },
+      { label: "Health Insurance", href: "/health" },
+      { label: "Life Insurance", href: "/life" },
+      { label: "Term Insurance", href: "/term" },
+      { label: "Property Insurance", href: "/property" },
+      { label: "Travel Insurance", href: "/travel" },
+      { label: "Factory Insurance", href: "/factory" }
+    ]
+  },
+  {
+    label: "A/CS & TAX",
+    href: "/accountstax",
+    subtitle: "Tax Planning, GST & Audit Support",
+    children: [
+      { label: "Accounts", href: "/accounts" },
+      { label: "Taxation", href: "/taxation" },
+      { label: "GST", href: "/gst" },
+      { label: "ITR", href: "/itr" },
+      { label: "Litigation", href: "/litigation" }
+    ]
+  },
+  {
+    label: "CONTACT US",
+    href: "/contact"
   }
 ];
 
@@ -385,7 +429,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
         <div
           id="sks-navbar-oval-container"
           style={{
-            maxWidth: "840px",
+            maxWidth: "1220px",
             backgroundColor: "#ffffff",
             borderRadius: "60px",
             boxShadow: isScrolled
@@ -439,7 +483,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
 
             {/* Desktop Navigation Links (Evenly distributed with generous spacing) */}
             <nav
-              className="sks-desktop-nav hidden xl:flex items-center justify-between flex-1 gap-2 xl:gap-4 flex-nowrap pl-2"
+              className="sks-desktop-nav hidden xl:flex items-center justify-between flex-1 gap-1 xl:gap-1.5 2xl:gap-3.5 flex-nowrap pl-1"
               style={{
                 alignItems: "center",
                 flexWrap: "nowrap"
@@ -447,6 +491,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
             >
               {NAV_ITEMS.map((item) => {
                 const isHome = item.label === "HOME";
+                const isContact = item.label === "CONTACT US";
                 const hasChildren = item.children && item.children.length > 0;
                 const isTwoCols = item.columns === 2;
                 const isOpen = activeDropdown === item.label;
@@ -462,9 +507,29 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                           textDecoration: "none",
                           whiteSpace: "nowrap"
                         }}
-                        className="relative inline-flex items-center justify-center px-4 py-1.5 text-xs xl:text-[12.5px] font-semibold uppercase tracking-wider rounded-full shadow-xs hover:bg-[#a67426] active:scale-95 transition-all duration-200"
+                        className="relative inline-flex items-center justify-center px-3 xl:px-3 py-1 text-[9.5px] xl:text-[10px] font-semibold uppercase tracking-wider rounded-full shadow-xs hover:bg-[#a67426] active:scale-95 transition-all duration-200"
                       >
                         <span>HOME</span>
+                      </Link>
+                    </div>
+                  );
+                }
+
+                if (isContact) {
+                  return (
+                    <div key={item.label} className="relative py-2 shrink-0">
+                      <Link
+                        href={item.href}
+                        style={{
+                          backgroundColor: "#003840",
+                          color: "#ffffff",
+                          textDecoration: "none",
+                          whiteSpace: "nowrap",
+                          boxShadow: "0 2px 8px rgba(0, 56, 64, 0.25)"
+                        }}
+                        className="relative inline-flex items-center justify-center px-3 xl:px-3.5 py-1 text-[9.5px] xl:text-[10px] font-semibold uppercase tracking-wider rounded-full hover:bg-[#b7832f] active:scale-95 transition-all duration-200"
+                      >
+                        <span>CONTACT US</span>
                       </Link>
                     </div>
                   );
@@ -484,12 +549,12 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                         textDecoration: "none",
                         whiteSpace: "nowrap"
                       }}
-                      className="relative inline-flex items-center gap-1 xl:gap-1.5 px-2.5 py-1 text-xs xl:text-[12.5px] font-semibold uppercase tracking-wide hover:text-[#b7832f] transition-colors duration-150"
+                      className="relative inline-flex items-center gap-0.5 xl:gap-1 px-1 py-1 text-[9.5px] xl:text-[10px] font-semibold uppercase tracking-wide hover:text-[#b7832f] transition-colors duration-150"
                     >
                       <span style={{ whiteSpace: "nowrap" }}>{item.label}</span>
                       {hasChildren && (
                         <ChevronDown
-                          className={`w-3.5 h-3.5 transition-transform duration-200 shrink-0 stroke-[2.2] ${
+                          className={`w-2.5 h-2.5 transition-transform duration-200 shrink-0 stroke-[2.2] ${
                             isOpen
                               ? "rotate-180 text-[#b7832f]"
                               : "text-[#003840] group-hover:text-[#b7832f]"
