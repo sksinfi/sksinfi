@@ -167,62 +167,145 @@ export default function LegacyPageRenderer({ slug, initialData }: LegacyPageRend
         "Education Loan",
         "New Car Loan",
         "Used Car Loan",
-        "Commercial Vehicle",
-        "Commercial Equipment"
+        "Commercial Vehicle Loan",
+        "Commercial Equipment Loan",
+        "Machinery Loan",
+        "Term Loan",
+        "Cash Credit / Overdraft",
+        "Project Finance",
+        "CGTMSE Collateral-Free Loan",
+        "Working Capital Loan"
+      ],
+      "Loans": [
+        "Home Loan",
+        "Loan Against Property (LAP)",
+        "Business Loan",
+        "Personal Loan",
+        "Education Loan",
+        "New Car Loan",
+        "Used Car Loan",
+        "Commercial Vehicle Loan",
+        "Commercial Equipment Loan",
+        "Machinery Loan",
+        "Term Loan",
+        "Cash Credit / Overdraft",
+        "Project Finance",
+        "CGTMSE Collateral-Free Loan",
+        "Working Capital Loan"
+      ],
+      "Retail Loan": [
+        "Home Loan",
+        "Loan Against Property (LAP)",
+        "Business Loan",
+        "Personal Loan",
+        "Education Loan",
+        "New Car Loan",
+        "Used Car Loan",
+        "Commercial Vehicle Loan",
+        "Commercial Equipment Loan",
+        "Machinery Loan"
       ],
       "MSME": [
-        "MSME Financial Solutions",
-        "MSME Subsidy and Incentive Schemes",
-        "MSME Registration (UDYAM)",
+        "MSME Subsidy & Incentive Schemes",
+        "MSME Loan & Financial Solutions",
         "MSME IPO & Listing",
-        "Invoice Discounting (TReDS)",
-        "CGTMSE Collateral-Free Loan",
         "MSME Growth & Business Solutions",
-        "Venture Capital",
-        "Private Equity"
+        "MSME Set-up & Registration (UDYAM)",
+        "Advisory on Venture Capital & Private Equity",
+        "Invoice Discounting (TReDS Set-ups)",
+        "CGTMSE Collateral-Free Funding",
+        "Project Finance & Machinery Setup"
       ],
       "Real Estate": [
         "Residential (Plots, Villa & Flats)",
-        "Commercial Offices",
+        "Commercial Offices & Retail Spaces",
         "Industrial Properties & Warehouses",
         "Farm Houses & Out Houses",
-        "Approved Open Land"
+        "Approved Open Land & Plots",
+        "RERA Advisory & Legal Title Verification"
       ],
       "Investment": [
         "Mutual Funds & SIP",
         "Bonds & Debentures",
-        "Non-Convertible Debentures (NCD)",
+        "Non Convertible Debentures (NCDs)",
+        "Govt. Securities (G-Sec)",
         "Unlisted & Pre-IPO Shares",
+        "Fixed Deposit (Corporate & Bank)",
         "Equity & Demat",
-        "Fixed Deposit"
+        "Portfolio Management Services (PMS)",
+        "Alternative Investment Funds (AIF)",
+        "Sovereign Gold Bonds (SGB)"
+      ],
+      "Investments": [
+        "Mutual Funds & SIP",
+        "Bonds & Debentures",
+        "Non Convertible Debentures (NCDs)",
+        "Govt. Securities (G-Sec)",
+        "Unlisted & Pre-IPO Shares",
+        "Fixed Deposit (Corporate & Bank)",
+        "Equity & Demat",
+        "Portfolio Management Services (PMS)",
+        "Alternative Investment Funds (AIF)",
+        "Sovereign Gold Bonds (SGB)"
       ],
       "Insurance": [
         "Health Insurance (Comprehensive)",
-        "Life & Term Insurance",
-        "General, Factory and Property Insurance",
-        "Motor & Fleet Insurance"
+        "Term & Life Insurance",
+        "General Insurance",
+        "Factory Insurance",
+        "Property & Fire Insurance",
+        "Stock Insurance",
+        "Workmen Compensation Insurance",
+        "Travel Insurance",
+        "Motor & Vehicle Insurance",
+        "Marine & Transit Insurance",
+        "Keyman & Corporate Insurance"
       ],
       "Tax & Compliances": [
-        "ITR & Audit",
-        "GST Registration",
-        "Firm & Company Set-up",
-        "Statutory Compliances",
+        "ITR Filing & Tax Audit",
+        "GST Registration & Return Filing",
+        "Firm & Company Set-up (LLP / Pvt Ltd)",
+        "Statutory Compliances & ROC",
         "Insolvency Audit",
-        "Insolvency Compliances"
+        "Insolvency Compliances",
+        "Accounting & Bookkeeping Services",
+        "Income Tax Appeals & Litigation"
       ],
       "A/CS & Tax": [
-        "ITR & Audit",
-        "GST Registration",
-        "Firm & Company Set-up",
-        "Statutory Compliances",
+        "ITR Filing & Tax Audit",
+        "GST Registration & Return Filing",
+        "Firm & Company Set-up (LLP / Pvt Ltd)",
+        "Statutory Compliances & ROC",
         "Insolvency Audit",
-        "Insolvency Compliances"
+        "Insolvency Compliances",
+        "Accounting & Bookkeeping Services",
+        "Income Tax Appeals & Litigation"
+      ],
+      "Taxation": [
+        "ITR Filing & Tax Audit",
+        "GST Registration & Return Filing",
+        "Firm & Company Set-up (LLP / Pvt Ltd)",
+        "Statutory Compliances & ROC",
+        "Insolvency Audit",
+        "Insolvency Compliances",
+        "Accounting & Bookkeeping Services",
+        "Income Tax Appeals & Litigation"
       ],
       "NRI Desk": [
         "NRI Home Loan in India",
-        "NRI Real Estate Investment",
-        "NRI Mutual Funds & SIP",
-        "NRE / NRO Banking & FEMA Advisory"
+        "NRI Real Estate & Property Advisory",
+        "NRI Mutual Funds & Demat Investment",
+        "NRE / NRO Account & Banking Advisory",
+        "NRI Taxation & FEMA Compliances",
+        "NRI Insurance Solutions"
+      ],
+      "NRI Services": [
+        "NRI Home Loan in India",
+        "NRI Real Estate & Property Advisory",
+        "NRI Mutual Funds & Demat Investment",
+        "NRE / NRO Account & Banking Advisory",
+        "NRI Taxation & FEMA Compliances",
+        "NRI Insurance Solutions"
       ]
     };
 

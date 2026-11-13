@@ -11,6 +11,88 @@ interface EnquiryModalProps {
   initialProduct?: string;
 }
 
+const categoryProductsMap: Record<string, string[]> = {
+  "Loans": [
+    "Home Loan",
+    "Loan Against Property (LAP)",
+    "Business Loan",
+    "Personal Loan",
+    "Education Loan",
+    "New Car Loan",
+    "Used Car Loan",
+    "Commercial Vehicle Loan",
+    "Commercial Equipment Loan",
+    "Machinery Loan",
+    "Term Loan",
+    "Cash Credit / Overdraft",
+    "Project Finance",
+    "CGTMSE Collateral-Free Loan",
+    "Working Capital Loan"
+  ],
+  "MSME Advisory": [
+    "MSME Subsidy & Incentive Schemes",
+    "MSME Loan & Financial Solutions",
+    "MSME IPO & Listing",
+    "MSME Growth & Business Solutions",
+    "MSME Set-up & Registration (UDYAM)",
+    "Advisory on Venture Capital & Private Equity",
+    "Invoice Discounting (TReDS Set-ups)",
+    "CGTMSE Collateral-Free Funding",
+    "Project Finance & Machinery Setup"
+  ],
+  "Investments": [
+    "Mutual Funds & SIP",
+    "Bonds & Debentures",
+    "Non Convertible Debentures (NCDs)",
+    "Govt. Securities (G-Sec)",
+    "Unlisted & Pre-IPO Shares",
+    "Fixed Deposit (Corporate & Bank)",
+    "Equity & Demat",
+    "Portfolio Management Services (PMS)",
+    "Alternative Investment Funds (AIF)",
+    "Sovereign Gold Bonds (SGB)"
+  ],
+  "Insurance": [
+    "Health Insurance (Comprehensive)",
+    "Term & Life Insurance",
+    "General Insurance",
+    "Factory Insurance",
+    "Property & Fire Insurance",
+    "Stock Insurance",
+    "Workmen Compensation Insurance",
+    "Travel Insurance",
+    "Motor & Vehicle Insurance",
+    "Marine & Transit Insurance",
+    "Keyman & Corporate Insurance"
+  ],
+  "Real Estate": [
+    "Residential (Plots, Villa & Flats)",
+    "Commercial Offices & Retail Spaces",
+    "Industrial Properties & Warehouses",
+    "Farm Houses & Out Houses",
+    "Approved Open Land & Plots",
+    "RERA Advisory & Legal Title Verification"
+  ],
+  "Taxation": [
+    "ITR Filing & Tax Audit",
+    "GST Registration & Return Filing",
+    "Firm & Company Set-up (LLP / Pvt Ltd)",
+    "Statutory Compliances & ROC",
+    "Insolvency Audit",
+    "Insolvency Compliances",
+    "Accounting & Bookkeeping Services",
+    "Income Tax Appeals & Litigation"
+  ],
+  "NRI Services": [
+    "NRI Home Loan in India",
+    "NRI Real Estate & Property Advisory",
+    "NRI Mutual Funds & Demat Investment",
+    "NRE / NRO Account & Banking Advisory",
+    "NRI Taxation & FEMA Compliances",
+    "NRI Insurance Solutions"
+  ]
+};
+
 export default function EnquiryModal({
   isOpen,
   onClose,
@@ -266,7 +348,12 @@ export default function EnquiryModal({
                   </label>
                   <select
                     value={category}
-                    onChange={(e) => setCategory(e.target.value)}
+                    onChange={(e) => {
+                      const newCat = e.target.value;
+                      setCategory(newCat);
+                      const prods = categoryProductsMap[newCat] || categoryProductsMap["Loans"];
+                      setProduct(prods[0]);
+                    }}
                     className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-sky-500 text-sm bg-white"
                   >
                     <option value="MSME Advisory">MSME & Corporate Growth</option>
@@ -288,24 +375,9 @@ export default function EnquiryModal({
                     onChange={(e) => setProduct(e.target.value)}
                     className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-sky-500 text-sm bg-white"
                   >
-                    <option value="MSME Financial Solutions">MSME Financial Solutions</option>
-                    <option value="MSME Subsidy & Incentive Solutions">MSME Subsidy & Incentives (RIPS/PMEGP)</option>
-                    <option value="MSME Loan & Financial Services">MSME Loans (CGTMSE / Term)</option>
-                    <option value="Venture Capital & Private Equity">Venture Capital & Private Equity</option>
-                    <option value="TReDS Setup – Invoice Discounting">TReDS Invoice Discounting</option>
-                    <option value="MSME IPO Listing & Fundraising">MSME IPO Listing (BSE SME/NSE Emerge)</option>
-                    <option value="Home Loan">Home Loan</option>
-                    <option value="Business Loan">Business / MSME Loan</option>
-                    <option value="Loan Against Property">Loan Against Property (LAP)</option>
-                    <option value="Personal Loan">Personal Loan</option>
-                    <option value="Mutual Funds & SIP">Mutual Funds & SIP</option>
-                    <option value="Govt & Corporate Bonds">Govt / Corporate Bonds</option>
-                    <option value="Unlisted Pre-IPO Shares">Unlisted Pre-IPO Shares</option>
-                    <option value="Term / Life Insurance">Term & Life Insurance</option>
-                    <option value="Health Insurance">Health Insurance</option>
-                    <option value="Jaipur Real Estate">Jaipur Real Estate / Plots</option>
-                    <option value="Taxation & ITR">Taxation & ITR Filing</option>
-                    <option value="NRI Advisory">NRI Financial Solutions</option>
+                    {(categoryProductsMap[category] || categoryProductsMap["Loans"]).map((p) => (
+                      <option key={p} value={p}>{p}</option>
+                    ))}
                   </select>
                 </div>
               </div>
