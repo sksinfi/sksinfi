@@ -2311,8 +2311,8 @@ html {
   color: #094b57 !important;
 }
 .loan-card ul li a:hover i {
-  color: #b69455 !important;
-  transform: scale(1.15);
+  color: #094b57 !important;
+  transform: translateX(3px);
 }
 
 .btn-know-more {
