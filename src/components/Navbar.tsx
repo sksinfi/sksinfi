@@ -334,14 +334,6 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
           <div className="hidden sm:flex items-center gap-3 sm:gap-4 shrink-0">
             <div className="sks-top-nav hidden md:flex items-center gap-2.5 lg:gap-3 text-[11.5px] sm:text-xs">
               <Link
-                href="/enquirynow"
-                style={{ color: "#ffffff", textDecoration: "none" }}
-                className="hover:text-[#f5cb68] font-semibold transition-colors duration-200 whitespace-nowrap"
-              >
-                Get In Touch
-              </Link>
-              <span className="text-white/35 select-none font-light">|</span>
-              <Link
                 href="/partner-with-us"
                 style={{ color: "#ffffff", textDecoration: "none" }}
                 className="hover:text-[#f5cb68] font-semibold transition-colors duration-200 whitespace-nowrap"
@@ -754,19 +746,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
               </div>
 
               {/* Drawer Quick Action Pills */}
-              <div className="p-3 bg-gray-50/90 border-b border-gray-100 grid grid-cols-3 gap-2 text-xs font-semibold shrink-0">
-                <Link
-                  href="/enquirynow"
-                  onClick={() => setMobileMenuOpen(false)}
-                  style={{
-                    color: "#003840",
-                    backgroundColor: "#ffffff",
-                    textDecoration: "none"
-                  }}
-                  className="p-2 rounded-xl text-center font-bold border border-gray-200/80 shadow-xs hover:border-[#b7832f] transition-colors text-[11px]"
-                >
-                  Get In Touch
-                </Link>
+              <div className="p-3 bg-gray-50/90 border-b border-gray-100 grid grid-cols-2 gap-2 text-xs font-semibold shrink-0">
                 <Link
                   href="/partner-with-us"
                   onClick={() => setMobileMenuOpen(false)}
