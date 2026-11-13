@@ -12,91 +12,116 @@ interface EnquiryModalProps {
 }
 
 const categoryProductsMap: Record<string, string[]> = {
-  "Loans": [
+  "Retail Loan": [
     "Home Loan",
-    "Loan Against Property (LAP)",
-    "Business Loan",
+    "Loan Against Property",
     "Personal Loan",
-    "Education Loan",
+    "Business Loan",
     "New Car Loan",
     "Used Car Loan",
+    "Education Loan",
     "Commercial Vehicle Loan",
     "Commercial Equipment Loan",
-    "Machinery Loan",
-    "Term Loan",
-    "Cash Credit / Overdraft",
-    "Project Finance",
-    "CGTMSE Collateral-Free Loan",
-    "Working Capital Loan"
+    "Machinery Loan"
   ],
-  "MSME Advisory": [
-    "MSME Subsidy & Incentive Schemes",
+  "Loans": [
+    "Home Loan",
+    "Loan Against Property",
+    "Personal Loan",
+    "Business Loan",
+    "New Car Loan",
+    "Used Car Loan",
+    "Education Loan",
+    "Commercial Vehicle Loan",
+    "Commercial Equipment Loan",
+    "Machinery Loan"
+  ],
+  "Loan": [
+    "Home Loan",
+    "Loan Against Property",
+    "Personal Loan",
+    "Business Loan",
+    "New Car Loan",
+    "Used Car Loan",
+    "Education Loan",
+    "Commercial Vehicle Loan",
+    "Commercial Equipment Loan",
+    "Machinery Loan"
+  ],
+  "MSME": [
+    "MSME Subsidy & Incentive",
     "MSME Loan & Financial Solutions",
     "MSME IPO & Listing",
     "MSME Growth & Business Solutions",
-    "MSME Set-up & Registration (UDYAM)",
+    "MSME Set-up & Registration",
     "Advisory on Venture Capital & Private Equity",
-    "Invoice Discounting (TReDS Set-ups)",
-    "CGTMSE Collateral-Free Funding",
-    "Project Finance & Machinery Setup"
+    "Invoice Discounting (TReDS Set-ups)"
+  ],
+  "MSME Advisory": [
+    "MSME Subsidy & Incentive",
+    "MSME Loan & Financial Solutions",
+    "MSME IPO & Listing",
+    "MSME Growth & Business Solutions",
+    "MSME Set-up & Registration",
+    "Advisory on Venture Capital & Private Equity",
+    "Invoice Discounting (TReDS Set-ups)"
+  ],
+  "Investment": [
+    "Mutual Funds & SIP",
+    "Bonds & Debentures",
+    "Non Convertible Debentures (NCDs)",
+    "Govt. Securities (G-Sec)",
+    "Unlisted Shares",
+    "Fixed Deposit",
+    "Equity & Demat"
   ],
   "Investments": [
     "Mutual Funds & SIP",
     "Bonds & Debentures",
     "Non Convertible Debentures (NCDs)",
     "Govt. Securities (G-Sec)",
-    "Unlisted & Pre-IPO Shares",
-    "Fixed Deposit (Corporate & Bank)",
-    "Equity & Demat",
-    "Portfolio Management Services (PMS)",
-    "Alternative Investment Funds (AIF)",
-    "Sovereign Gold Bonds (SGB)"
+    "Unlisted Shares",
+    "Fixed Deposit",
+    "Equity & Demat"
   ],
   "Insurance": [
-    "Health Insurance (Comprehensive)",
+    "Health Insurance",
     "Term & Life Insurance",
     "General Insurance",
     "Factory Insurance",
-    "Property & Fire Insurance",
+    "Property Insurance",
     "Stock Insurance",
-    "Workmen Compensation Insurance",
-    "Travel Insurance",
-    "Motor & Vehicle Insurance",
-    "Marine & Transit Insurance",
-    "Keyman & Corporate Insurance"
+    "Workmen Insurance"
+  ],
+  "Tax & Compliances": [
+    "ITR & Audit",
+    "GST Registration",
+    "Firm & Company Set-up",
+    "Statutory Compliances",
+    "Insolvency Audit",
+    "Insolvency Compliances"
+  ],
+  "Taxation": [
+    "ITR & Audit",
+    "GST Registration",
+    "Firm & Company Set-up",
+    "Statutory Compliances",
+    "Insolvency Audit",
+    "Insolvency Compliances"
   ],
   "Real Estate": [
     "Residential (Plots, Villa & Flats)",
-    "Commercial Offices & Retail Spaces",
+    "Commercial Offices",
     "Industrial Properties & Warehouses",
     "Farm Houses & Out Houses",
-    "Approved Open Land & Plots",
-    "RERA Advisory & Legal Title Verification"
-  ],
-  "Taxation": [
-    "ITR Filing & Tax Audit",
-    "GST Registration & Return Filing",
-    "Firm & Company Set-up (LLP / Pvt Ltd)",
-    "Statutory Compliances & ROC",
-    "Insolvency Audit",
-    "Insolvency Compliances",
-    "Accounting & Bookkeeping Services",
-    "Income Tax Appeals & Litigation"
-  ],
-  "NRI Services": [
-    "NRI Home Loan in India",
-    "NRI Real Estate & Property Advisory",
-    "NRI Mutual Funds & Demat Investment",
-    "NRE / NRO Account & Banking Advisory",
-    "NRI Taxation & FEMA Compliances",
-    "NRI Insurance Solutions"
+    "Approved Open Land"
   ]
 };
 
 export default function EnquiryModal({
   isOpen,
   onClose,
-  initialCategory = "Loans",
+  initialCategory = "Retail Loan",
   initialProduct = "Home Loan"
 }: EnquiryModalProps) {
   const [name, setName] = useState("");
@@ -351,18 +376,17 @@ export default function EnquiryModal({
                     onChange={(e) => {
                       const newCat = e.target.value;
                       setCategory(newCat);
-                      const prods = categoryProductsMap[newCat] || categoryProductsMap["Loans"];
+                      const prods = categoryProductsMap[newCat] || categoryProductsMap["Retail Loan"];
                       setProduct(prods[0]);
                     }}
                     className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-sky-500 text-sm bg-white"
                   >
-                    <option value="MSME Advisory">MSME & Corporate Growth</option>
-                    <option value="Loans">Loans & Financing</option>
-                    <option value="Investments">Investments & Wealth</option>
-                    <option value="Insurance">Insurance & Protection</option>
-                    <option value="Real Estate">Real Estate Advisory</option>
-                    <option value="Taxation">Taxation & Legal</option>
-                    <option value="NRI Services">NRI Financial Concierge</option>
+                    <option value="Retail Loan">Retail Loan</option>
+                    <option value="MSME">MSME</option>
+                    <option value="Investment">Investment</option>
+                    <option value="Insurance">Insurance</option>
+                    <option value="Tax & Compliances">Tax & Compliances</option>
+                    <option value="Real Estate">Real Estate</option>
                   </select>
                 </div>
 
@@ -375,7 +399,7 @@ export default function EnquiryModal({
                     onChange={(e) => setProduct(e.target.value)}
                     className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-sky-500 text-sm bg-white"
                   >
-                    {(categoryProductsMap[category] || categoryProductsMap["Loans"]).map((p) => (
+                    {(categoryProductsMap[category] || categoryProductsMap["Retail Loan"]).map((p) => (
                       <option key={p} value={p}>{p}</option>
                     ))}
                   </select>

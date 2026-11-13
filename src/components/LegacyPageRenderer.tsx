@@ -159,153 +159,117 @@ export default function LegacyPageRenderer({ slug, initialData }: LegacyPageRend
 
     // 0.26 Home Page Hero & Popup Service & Sub-Service dynamic dropdown handler
     const optionsMap: Record<string, string[]> = {
-      "Loan": [
+      "Retail Loan": [
         "Home Loan",
-        "Loan Against Property (LAP)",
-        "Business Loan",
+        "Loan Against Property",
         "Personal Loan",
-        "Education Loan",
+        "Business Loan",
         "New Car Loan",
         "Used Car Loan",
+        "Education Loan",
         "Commercial Vehicle Loan",
         "Commercial Equipment Loan",
-        "Machinery Loan",
-        "Term Loan",
-        "Cash Credit / Overdraft",
-        "Project Finance",
-        "CGTMSE Collateral-Free Loan",
-        "Working Capital Loan"
+        "Machinery Loan"
+      ],
+      "Loan": [
+        "Home Loan",
+        "Loan Against Property",
+        "Personal Loan",
+        "Business Loan",
+        "New Car Loan",
+        "Used Car Loan",
+        "Education Loan",
+        "Commercial Vehicle Loan",
+        "Commercial Equipment Loan",
+        "Machinery Loan"
       ],
       "Loans": [
         "Home Loan",
-        "Loan Against Property (LAP)",
-        "Business Loan",
+        "Loan Against Property",
         "Personal Loan",
-        "Education Loan",
+        "Business Loan",
         "New Car Loan",
         "Used Car Loan",
-        "Commercial Vehicle Loan",
-        "Commercial Equipment Loan",
-        "Machinery Loan",
-        "Term Loan",
-        "Cash Credit / Overdraft",
-        "Project Finance",
-        "CGTMSE Collateral-Free Loan",
-        "Working Capital Loan"
-      ],
-      "Retail Loan": [
-        "Home Loan",
-        "Loan Against Property (LAP)",
-        "Business Loan",
-        "Personal Loan",
         "Education Loan",
-        "New Car Loan",
-        "Used Car Loan",
         "Commercial Vehicle Loan",
         "Commercial Equipment Loan",
         "Machinery Loan"
       ],
       "MSME": [
-        "MSME Subsidy & Incentive Schemes",
+        "MSME Subsidy & Incentive",
         "MSME Loan & Financial Solutions",
         "MSME IPO & Listing",
         "MSME Growth & Business Solutions",
-        "MSME Set-up & Registration (UDYAM)",
+        "MSME Set-up & Registration",
         "Advisory on Venture Capital & Private Equity",
-        "Invoice Discounting (TReDS Set-ups)",
-        "CGTMSE Collateral-Free Funding",
-        "Project Finance & Machinery Setup"
+        "Invoice Discounting (TReDS Set-ups)"
       ],
-      "Real Estate": [
-        "Residential (Plots, Villa & Flats)",
-        "Commercial Offices & Retail Spaces",
-        "Industrial Properties & Warehouses",
-        "Farm Houses & Out Houses",
-        "Approved Open Land & Plots",
-        "RERA Advisory & Legal Title Verification"
+      "MSME Advisory": [
+        "MSME Subsidy & Incentive",
+        "MSME Loan & Financial Solutions",
+        "MSME IPO & Listing",
+        "MSME Growth & Business Solutions",
+        "MSME Set-up & Registration",
+        "Advisory on Venture Capital & Private Equity",
+        "Invoice Discounting (TReDS Set-ups)"
       ],
       "Investment": [
         "Mutual Funds & SIP",
         "Bonds & Debentures",
         "Non Convertible Debentures (NCDs)",
         "Govt. Securities (G-Sec)",
-        "Unlisted & Pre-IPO Shares",
-        "Fixed Deposit (Corporate & Bank)",
-        "Equity & Demat",
-        "Portfolio Management Services (PMS)",
-        "Alternative Investment Funds (AIF)",
-        "Sovereign Gold Bonds (SGB)"
+        "Unlisted Shares",
+        "Fixed Deposit",
+        "Equity & Demat"
       ],
       "Investments": [
         "Mutual Funds & SIP",
         "Bonds & Debentures",
         "Non Convertible Debentures (NCDs)",
         "Govt. Securities (G-Sec)",
-        "Unlisted & Pre-IPO Shares",
-        "Fixed Deposit (Corporate & Bank)",
-        "Equity & Demat",
-        "Portfolio Management Services (PMS)",
-        "Alternative Investment Funds (AIF)",
-        "Sovereign Gold Bonds (SGB)"
+        "Unlisted Shares",
+        "Fixed Deposit",
+        "Equity & Demat"
       ],
       "Insurance": [
-        "Health Insurance (Comprehensive)",
+        "Health Insurance",
         "Term & Life Insurance",
         "General Insurance",
         "Factory Insurance",
-        "Property & Fire Insurance",
+        "Property Insurance",
         "Stock Insurance",
-        "Workmen Compensation Insurance",
-        "Travel Insurance",
-        "Motor & Vehicle Insurance",
-        "Marine & Transit Insurance",
-        "Keyman & Corporate Insurance"
+        "Workmen Insurance"
       ],
       "Tax & Compliances": [
-        "ITR Filing & Tax Audit",
-        "GST Registration & Return Filing",
-        "Firm & Company Set-up (LLP / Pvt Ltd)",
-        "Statutory Compliances & ROC",
+        "ITR & Audit",
+        "GST Registration",
+        "Firm & Company Set-up",
+        "Statutory Compliances",
         "Insolvency Audit",
-        "Insolvency Compliances",
-        "Accounting & Bookkeeping Services",
-        "Income Tax Appeals & Litigation"
-      ],
-      "A/CS & Tax": [
-        "ITR Filing & Tax Audit",
-        "GST Registration & Return Filing",
-        "Firm & Company Set-up (LLP / Pvt Ltd)",
-        "Statutory Compliances & ROC",
-        "Insolvency Audit",
-        "Insolvency Compliances",
-        "Accounting & Bookkeeping Services",
-        "Income Tax Appeals & Litigation"
+        "Insolvency Compliances"
       ],
       "Taxation": [
-        "ITR Filing & Tax Audit",
-        "GST Registration & Return Filing",
-        "Firm & Company Set-up (LLP / Pvt Ltd)",
-        "Statutory Compliances & ROC",
+        "ITR & Audit",
+        "GST Registration",
+        "Firm & Company Set-up",
+        "Statutory Compliances",
         "Insolvency Audit",
-        "Insolvency Compliances",
-        "Accounting & Bookkeeping Services",
-        "Income Tax Appeals & Litigation"
+        "Insolvency Compliances"
       ],
-      "NRI Desk": [
-        "NRI Home Loan in India",
-        "NRI Real Estate & Property Advisory",
-        "NRI Mutual Funds & Demat Investment",
-        "NRE / NRO Account & Banking Advisory",
-        "NRI Taxation & FEMA Compliances",
-        "NRI Insurance Solutions"
+      "A/CS & Tax": [
+        "ITR & Audit",
+        "GST Registration",
+        "Firm & Company Set-up",
+        "Statutory Compliances",
+        "Insolvency Audit",
+        "Insolvency Compliances"
       ],
-      "NRI Services": [
-        "NRI Home Loan in India",
-        "NRI Real Estate & Property Advisory",
-        "NRI Mutual Funds & Demat Investment",
-        "NRE / NRO Account & Banking Advisory",
-        "NRI Taxation & FEMA Compliances",
-        "NRI Insurance Solutions"
+      "Real Estate": [
+        "Residential (Plots, Villa & Flats)",
+        "Commercial Offices",
+        "Industrial Properties & Warehouses",
+        "Farm Houses & Out Houses",
+        "Approved Open Land"
       ]
     };
 
@@ -316,7 +280,7 @@ export default function LegacyPageRenderer({ slug, initialData }: LegacyPageRend
         (s as any)._serviceBound = true;
         s.addEventListener("change", () => {
           const selected = s.value;
-          const products = optionsMap[selected] || optionsMap["Loan"];
+          const products = optionsMap[selected] || optionsMap["Retail Loan"] || optionsMap["Loan"];
           sub.innerHTML = products
             .map((p, idx) => `<option value="${p}" ${idx === 0 ? "selected" : ""}>${p}</option>`)
             .join("");
