@@ -73,16 +73,18 @@ export const authenticFooterHtml = `<style>
       <div class="col-12 col-md-6 col-lg-4 col-xl-2">
         <img src="/img/sksl.jpg" alt="SKS Infi" class="mb-3" style="width: 155px; max-width: 100%; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
 
-        <p class="mb-2">
-          <i class="fa fa-phone clricn me-2"></i>
-          <a href="tel:+919928529222" class="text-decoration-none txtnew">+91 99285 29222</a>,
-          <a href="tel:+919928593122" class="text-decoration-none txtnew">+91 99285 93122</a>
-        </p>
+        <div class="d-flex align-items-start mb-2">
+          <i class="fa fa-phone clricn me-2 mt-1" style="font-size: 13px; flex-shrink: 0;"></i>
+          <div class="d-flex flex-column" style="gap: 3px;">
+            <a href="tel:+919928529222" class="text-decoration-none txtnew text-nowrap">+91 99285 29222</a>
+            <a href="tel:+919928593122" class="text-decoration-none txtnew text-nowrap">+91 99285 93122</a>
+          </div>
+        </div>
 
-        <p class="mb-4">
-          <i class="fa fa-envelope clricn me-2"></i>
-          <a href="mailto:infi@sksinfi.com" class="text-decoration-none txtnew">infi@sksinfi.com</a>
-        </p>
+        <div class="d-flex align-items-center mb-4">
+          <i class="fa fa-envelope clricn me-2" style="font-size: 13px; flex-shrink: 0;"></i>
+          <a href="mailto:infi@sksinfi.com" class="text-decoration-none txtnew text-nowrap">infi@sksinfi.com</a>
+        </div>
 
         <h6 class="fw-bold text-white footer-heading mb-2 text-uppercase" style="font-size: 13px;">RAJASTHAN OFFICE</h6>
         <p class="txtnew mb-3">520, 5th Floor, Sunny Trade Center,<br> New Aatish Market, Jaipur-302020</p>
