@@ -669,52 +669,71 @@ export default function LegacyPageRenderer({ slug, initialData }: LegacyPageRend
         const message = (formData.get("message") as string) || "";
         const product = (formData.get("product") as string) || (formData.get("product_name") as string) || "loan";
 
+        const isPartner =
+          form.getAttribute("action")?.includes("partner") ||
+          slug.includes("partner") ||
+          form.id === "partner-form";
+
         try {
-          if (form.getAttribute("action")?.includes("partner") || slug.includes("partner")) {
-            await submitPartnerEnquiry({
-              name,
-              email,
-              mobile: phone,
-              country,
-              city,
-              product_interest: product,
-              message,
-            });
-          } else if (
-            slug.includes("loan") ||
-            form.querySelector('[name="typeofloan"]') ||
-            form.querySelector('[name="amount"]') ||
-            form.querySelector('[name="loan_amount"]') ||
-            form.id === "loan-apply-form"
-          ) {
-            const amountStr = (formData.get("amount") as string) || (formData.get("loan_amount") as string) || "0";
-            const loanType = (formData.get("typeofloan") as string) || (formData.get("selected_loan_type") as string) || product || "General Loan";
-            const serviceCat = (formData.get("service") as string) || (formData.get("service_category") as string) || "Loans";
-            await submitLoanEnquiry({
-              name,
-              email,
-              phone,
-              service_category: serviceCat,
-              product_name: loanType,
-              loan_amount: parseFloat(amountStr) || 0,
-              city: city || country,
-              message,
-            });
-          } else {
-            await submitContactEnquiry({
-              name,
-              email,
-              phone,
-              address: address || city || country,
-              message,
-            });
+          // 1. Supabase database record (async background dispatch so DB latency or network issues never block user feedback or email)
+          try {
+            if (isPartner) {
+              submitPartnerEnquiry({
+                name,
+                email,
+                mobile: phone,
+                country,
+                city,
+                product_interest: product || "Partnership Proposal",
+                message,
+              }).catch((err) => console.warn("Partner enquiry db notice:", err));
+            } else if (
+              slug.includes("loan") ||
+              form.querySelector('[name="typeofloan"]') ||
+              form.querySelector('[name="amount"]') ||
+              form.querySelector('[name="loan_amount"]') ||
+              form.id === "loan-apply-form"
+            ) {
+              const amountStr = (formData.get("amount") as string) || (formData.get("loan_amount") as string) || "0";
+              const loanType = (formData.get("typeofloan") as string) || (formData.get("selected_loan_type") as string) || product || "General Loan";
+              const serviceCat = (formData.get("service") as string) || (formData.get("service_category") as string) || "Loans";
+              submitLoanEnquiry({
+                name,
+                email,
+                phone,
+                service_category: serviceCat,
+                product_name: loanType,
+                loan_amount: parseFloat(amountStr) || 0,
+                city: city || country,
+                message,
+              }).catch((err) => console.warn("Loan enquiry db notice:", err));
+            } else {
+              submitContactEnquiry({
+                name,
+                email,
+                phone,
+                address: address || city || country,
+                message,
+              }).catch((err) => console.warn("Contact enquiry db notice:", err));
+            }
+          } catch (dbErr) {
+            console.warn("Database storage notice:", dbErr);
           }
 
-          // 1. Direct Web3Forms submission from client browser for instant email delivery
+          const chosenService =
+            (formData.get("service") as string) ||
+            (formData.get("service_category") as string) ||
+            (isPartner ? "Become Our Partner" : "General Consultation");
+          const chosenSubService =
+            (formData.get("typeofloan") as string) ||
+            (formData.get("selected_loan_type") as string) ||
+            (formData.get("product") as string) ||
+            (formData.get("product_name") as string) ||
+            (isPartner ? "Partnership Proposal" : "");
+          const serviceDisplay = chosenSubService ? `${chosenService} - ${chosenSubService}` : chosenService;
+
+          // 2. Direct Web3Forms submission from client browser for instant email delivery
           try {
-            const chosenService = (formData.get("service") as string) || (formData.get("service_category") as string) || (slug.includes("partner") ? "Partner" : "General");
-            const chosenSubService = (formData.get("typeofloan") as string) || (formData.get("selected_loan_type") as string) || product || "";
-            const serviceDisplay = chosenSubService ? `${chosenService} - ${chosenSubService}` : chosenService;
             const web3Key = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "d18ec79a-acd1-49fd-91aa-e1c3c0f73983";
 
             fetch("https://api.web3forms.com/submit", {
@@ -732,17 +751,15 @@ export default function LegacyPageRenderer({ slug, initialData }: LegacyPageRend
                 email: email || "Not provided",
                 service: serviceDisplay,
                 location: `${city ? `${city}, ` : ""}${country}`,
-                message: message || "General Consultation Request"
+                message: message || (isPartner ? "Partnership Proposal Request" : "General Consultation Request")
               })
             }).catch((w3Err) => console.warn("Web3Forms client dispatch notice:", w3Err));
           } catch (web3Err) {
             console.warn("Web3Forms client dispatch notice:", web3Err);
           }
 
-          // 2. Dispatch SMS notification to SKS INFI admin
+          // 3. Dispatch SMS notification to SKS INFI admin
           try {
-            const chosenService = (formData.get("service") as string) || (formData.get("service_category") as string) || (slug.includes("partner") ? "Partner" : "General");
-            const chosenSubService = (formData.get("typeofloan") as string) || (formData.get("selected_loan_type") as string) || product || "";
             fetch("/api/send-sms", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
@@ -761,10 +778,8 @@ export default function LegacyPageRenderer({ slug, initialData }: LegacyPageRend
             console.warn("SMS notification dispatch failed:", smsErr);
           }
 
-          // 3. Dispatch Email notification to infi@sksinfi.com
+          // 4. Dispatch Email notification to infi@sksinfi.com
           try {
-            const chosenService = (formData.get("service") as string) || (formData.get("service_category") as string) || (slug.includes("partner") ? "Partner" : "General");
-            const chosenSubService = (formData.get("typeofloan") as string) || (formData.get("selected_loan_type") as string) || product || "";
             fetch("/api/send-email", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
@@ -776,9 +791,9 @@ export default function LegacyPageRenderer({ slug, initialData }: LegacyPageRend
                 subService: chosenSubService,
                 country,
                 city: city || address,
-                message,
+                message: message || (isPartner ? "Partnership Proposal Request" : ""),
               }),
-            }).catch((err) => console.warn("Email notification fetch error:", err));
+            }).catch((err) => console.warn("Email notification dispatch error:", err));
           } catch (emailErr) {
             console.warn("Email notification dispatch failed:", emailErr);
           }
@@ -787,16 +802,16 @@ export default function LegacyPageRenderer({ slug, initialData }: LegacyPageRend
           if (feedbackEl) {
             feedbackEl.innerHTML = `
               <div class="p-3 rounded-3 text-center" style="background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.35); color: #065f46;">
-                <div class="fw-bold fs-6 mb-1 d-flex align-items-center justify-center gap-1">
-                  <span>✓ Enquiry Submitted Successfully!</span>
+                <div class="fw-bold fs-6 mb-1 d-flex align-items-center justify-content-center gap-1">
+                  <span>✓ ${isPartner ? "Partnership Request Submitted Successfully!" : "Enquiry Submitted Successfully!"}</span>
                 </div>
-                <div class="small" style="color: #047857;">Thank you, <b>${name || "Valued Client"}</b>. Our senior financial consultant will call you within 30 minutes.</div>
+                <div class="small" style="color: #047857;">Thank you, <b>${name || (isPartner ? "Partner" : "Valued Client")}</b>. ${isPartner ? "Our executive desk will review your proposal and get in touch with you shortly." : "Our senior financial consultant will call you within 30 minutes."}</div>
               </div>
             `;
             feedbackEl.style.display = "block";
             feedbackEl.scrollIntoView({ behavior: "smooth", block: "nearest" });
           } else {
-            alert("Thank you! Your enquiry has been received. Our senior advisor will call you within 30 minutes.");
+            alert(isPartner ? "Thank you! Your partnership request has been received. Our executive desk will contact you shortly." : "Thank you! Your enquiry has been received. Our senior advisor will call you within 30 minutes.");
           }
           form.reset();
         } catch (err) {

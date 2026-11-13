@@ -46,15 +46,61 @@ export default function PartnerPage() {
     setErrorMsg("");
 
     try {
-      await submitPartnerEnquiry({
-        name,
-        email: email || "partner@sksinfi.com",
-        mobile,
-        country,
-        city,
-        product_interest: product,
-        message: message || undefined
-      });
+      try {
+        await submitPartnerEnquiry({
+          name,
+          email: email || "partner@sksinfi.com",
+          mobile,
+          country,
+          city,
+          product_interest: product,
+          message: message || undefined
+        });
+      } catch (dbErr) {
+        console.warn("DB submission notice:", dbErr);
+      }
+
+      // Dispatch direct email notification
+      try {
+        await fetch("/api/send-email", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name,
+            phone: mobile,
+            email: email || "partner@sksinfi.com",
+            service: "Become Our Partner",
+            subService: product,
+            country,
+            city,
+            message: message || "Partnership Application Submitted",
+          }),
+        });
+      } catch (emailErr) {
+        console.warn("Email dispatch notice:", emailErr);
+      }
+
+      // Dispatch Web3Forms backup
+      try {
+        const web3Key = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "d18ec79a-acd1-49fd-91aa-e1c3c0f73983";
+        fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Accept": "application/json" },
+          body: JSON.stringify({
+            access_key: web3Key,
+            subject: `New Channel Partner Application: ${name}`,
+            from_name: "SKS INFI Partner Desk",
+            name,
+            phone: mobile,
+            email: email || "Not provided",
+            service: `Become Our Partner - ${product}`,
+            location: `${city}, ${country}`,
+            message: message || "Partnership Application Submitted"
+          })
+        }).catch((wErr) => console.warn("Web3Forms notice:", wErr));
+      } catch (wErr) {
+        console.warn("Web3Forms notice:", wErr);
+      }
 
       setSuccess(true);
       setName("");
