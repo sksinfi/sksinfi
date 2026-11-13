@@ -1,149 +1,200 @@
-// Auto-generated authentic footer HTML from legacy_php/footer.php
+// Auto-generated authentic footer HTML
 export const authenticFooterHtml = `<style>
   .logoheight {
     height: 90px !important;
   }
 
-  .list-unstyled a {
-    color: #aaaaaa !important;
-    font-size: 14px !important;
+  .footer-service-list li {
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+  }
+
+  .footer-service-list a {
+    color: #cbd5e1 !important;
+    font-size: 13.5px !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .footer-service-list a:hover {
+    color: #b69455 !important;
+    transform: translateX(2px);
+  }
+
+  .footer-service-list i {
+    color: #b69455 !important;
+    font-size: 11px;
+    margin-right: 8px;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+  }
+
+  .footer-service-list a:hover i {
+    transform: translateX(2px);
   }
 
   .txtnew {
-    color: #aaaaaa !important;
+    color: #cbd5e1 !important;
+    font-size: 13.5px;
+    line-height: 1.6;
   }
 
   .clricn {
-    color: #aaaaaa !important;
+    color: #b69455 !important;
+  }
+
+  .footer-heading {
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    position: relative;
+    padding-bottom: 8px;
+  }
+
+  .footer-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 28px;
+    height: 2px;
+    background: #b69455;
+    border-radius: 2px;
   }
 </style>
 
-<footer class="text-light pt-5 pb-5" style="background: #094b57;">
+<footer class="text-light pt-5 pb-4" style="background: #094b57;">
   <div class="container">
-    <div class="row gy-4">
+    <div class="row gy-4 gx-3 gx-xl-4">
 
-      <!-- Column 1: Logo + Contact -->
+      <!-- Column 1: Logo + Contact + Offices -->
       <div class="col-12 col-md-6 col-lg-4 col-xl-2">
-        <img src="/img/sksl.jpg" alt="SKS Infi" class="mb-3" style="width: 155px; max-width: 100%; border-radius: 6px;">
+        <img src="/img/sksl.jpg" alt="SKS Infi" class="mb-3" style="width: 155px; max-width: 100%; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
 
-        <p><i class="fa fa-phone me-2 clricn"></i>
-          <a href="tel:+919928529222" class="text-light text-decoration-none txtnew">91-99285 29222</a>,
-          <a href="tel:+919461783227" class="text-light text-decoration-none txtnew">+91 99285 93122</a>
+        <p class="mb-2">
+          <i class="fa fa-phone clricn me-2"></i>
+          <a href="tel:+919928529222" class="text-decoration-none txtnew">+91 99285 29222</a>,
+          <a href="tel:+919928593122" class="text-decoration-none txtnew">+91 99285 93122</a>
         </p>
 
-        <p><i class="fa fa-envelope me-2 clricn"></i>
-          <a href="mailto:infi@sksinfi.com" class="text-light text-decoration-none txtnew">infi@sksinfi.com</a>
+        <p class="mb-4">
+          <i class="fa fa-envelope clricn me-2"></i>
+          <a href="mailto:infi@sksinfi.com" class="text-decoration-none txtnew">infi@sksinfi.com</a>
         </p>
 
-        <h6 class="mt-4 fw-bold text-white">RAJASTHAN OFFICE</h6>
-        <p class="txtnew">520, 5th Floor, Sunny Trade Center,<br> New Aatish Market, Jaipur-302020</p>
+        <h6 class="fw-bold text-white footer-heading mb-2 text-uppercase" style="font-size: 13px;">RAJASTHAN OFFICE</h6>
+        <p class="txtnew mb-3">520, 5th Floor, Sunny Trade Center,<br> New Aatish Market, Jaipur-302020</p>
 
-        <h6 class="fw-bold text-white">DELHI OFFICE</h6>
-        <p class="txtnew">Surya Kiran Building, KG Marg,<br> Connaught Palace, New Delhi-110001</p>
+        <h6 class="fw-bold text-white footer-heading mb-2 text-uppercase" style="font-size: 13px;">DELHI OFFICE</h6>
+        <p class="txtnew mb-3">Surya Kiran Building, KG Marg,<br> Connaught Place, New Delhi-110001</p>
 
-        <h6 class="fw-bold text-white">GUJARAT OFFICE</h6>
-        <p class="txtnew">E-1006, Titanium City Centre,<br> Near Sachin Tower, Anand Nagar Road,<br> Ahmedabad-380015</p>
+        <h6 class="fw-bold text-white footer-heading mb-2 text-uppercase" style="font-size: 13px;">GUJARAT OFFICE</h6>
+        <p class="txtnew mb-0">E-1006, Titanium City Centre,<br> Near Sachin Tower, Anand Nagar Road,<br> Ahmedabad-380015</p>
       </div>
 
       <!-- Column 2: MSME Solutions -->
       <div class="col-6 col-md-3 col-lg-4 col-xl-2">
-        <h6 class="fw-bold mb-3 text-uppercase text-white">MSME Solutions</h6>
-        <ul class="list-unstyled">
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/msme" class="text-light text-decoration-none">MSME For India</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/msme/why-sks-infi" class="text-light text-decoration-none">Why SKS INFI</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/msme/financial-solutions" class="text-light text-decoration-none">MSME Financial</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/msme/registration" class="text-light text-decoration-none">MSME Registration</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/msme/subsidy-schemes" class="text-light text-decoration-none">Subsidy Schemes</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/msme/ipo-listing" class="text-light text-decoration-none">MSME IPO & Listing</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/msme/invoice-discounting" class="text-light text-decoration-none">Invoice Discounting</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/msme/growth-solutions" class="text-light text-decoration-none">Growth Solutions</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/msme/venture-capital" class="text-light text-decoration-none">Venture Capital & PE</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/msme/cgtmse" class="text-light text-decoration-none">CGTMSE & MSME</a></li>
+        <h6 class="fw-bold mb-3 text-uppercase text-white footer-heading">MSME Solutions</h6>
+        <ul class="list-unstyled footer-service-list">
+          <li><a href="/msme"><i class="fa fa-chevron-right"></i><span>MSME For India</span></a></li>
+          <li><a href="/msme/why-sks-infi"><i class="fa fa-chevron-right"></i><span>Why SKS INFI</span></a></li>
+          <li><a href="/msme/financial-solutions"><i class="fa fa-chevron-right"></i><span>MSME Financial</span></a></li>
+          <li><a href="/msme/registration"><i class="fa fa-chevron-right"></i><span>MSME Registration</span></a></li>
+          <li><a href="/msme/subsidy-schemes"><i class="fa fa-chevron-right"></i><span>Subsidy Schemes</span></a></li>
+          <li><a href="/msme/ipo-listing"><i class="fa fa-chevron-right"></i><span>MSME IPO &amp; Listing</span></a></li>
+          <li><a href="/msme/invoice-discounting"><i class="fa fa-chevron-right"></i><span>Invoice Discounting</span></a></li>
+          <li><a href="/msme/growth-solutions"><i class="fa fa-chevron-right"></i><span>Growth Solutions</span></a></li>
+          <li><a href="/msme/venture-capital"><i class="fa fa-chevron-right"></i><span>Venture Capital &amp; PE</span></a></li>
+          <li><a href="/msme/cgtmse"><i class="fa fa-chevron-right"></i><span>CGTMSE &amp; MSME</span></a></li>
         </ul>
       </div>
 
       <!-- Column 3: Loans -->
       <div class="col-6 col-md-3 col-lg-4 col-xl-2">
-        <h6 class="fw-bold mb-3 text-uppercase text-white">Loans</h6>
-        <ul class="list-unstyled">
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/loan" class="text-light text-decoration-none">SKS INFI n Loan</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/home_loan" class="text-light text-decoration-none">Home Loan</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/lap" class="text-light text-decoration-none">LAP</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/personal-loan" class="text-light text-decoration-none">Personal Loan</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/business-loan" class="text-light text-decoration-none">Business Loan</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/education" class="text-light text-decoration-none">Education Loan</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/term-loan" class="text-light text-decoration-none">Term Loan</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/cas_overdraft" class="text-light text-decoration-none">Cash credit</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/project_finance" class="text-light text-decoration-none">Project Finance</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/cgtsme" class="text-light text-decoration-none">CGTSME</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/subsidy-from" class="text-light text-decoration-none">Subsidy From</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/car" class="text-light text-decoration-none">Car Loan</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/commercial_vehicle" class="text-light text-decoration-none">Commercial Vehicle</a></li>
+        <h6 class="fw-bold mb-3 text-uppercase text-white footer-heading">Loans</h6>
+        <ul class="list-unstyled footer-service-list">
+          <li><a href="/loan"><i class="fa fa-chevron-right"></i><span>SKS INFI &amp; Loan</span></a></li>
+          <li><a href="/home_loan"><i class="fa fa-chevron-right"></i><span>Home Loan</span></a></li>
+          <li><a href="/lap"><i class="fa fa-chevron-right"></i><span>LAP</span></a></li>
+          <li><a href="/personal-loan"><i class="fa fa-chevron-right"></i><span>Personal Loan</span></a></li>
+          <li><a href="/business-loan"><i class="fa fa-chevron-right"></i><span>Business Loan</span></a></li>
+          <li><a href="/education"><i class="fa fa-chevron-right"></i><span>Education Loan</span></a></li>
+          <li><a href="/term-loan"><i class="fa fa-chevron-right"></i><span>Term Loan</span></a></li>
+          <li><a href="/cas_overdraft"><i class="fa fa-chevron-right"></i><span>Cash Credit</span></a></li>
+          <li><a href="/project_finance"><i class="fa fa-chevron-right"></i><span>Project Finance</span></a></li>
+          <li><a href="/cgtsme"><i class="fa fa-chevron-right"></i><span>CGTMSE</span></a></li>
+          <li><a href="/msme/subsidy-schemes"><i class="fa fa-chevron-right"></i><span>MSME Subsidy Schemes</span></a></li>
+          <li><a href="/car"><i class="fa fa-chevron-right"></i><span>Car Loan</span></a></li>
+          <li><a href="/commercial_vehicle"><i class="fa fa-chevron-right"></i><span>Commercial Vehicle</span></a></li>
         </ul>
       </div>
 
-      <!-- Column 4: NRI Desk -->
+      <!-- Column 4: NRI Desk & Real Estate -->
       <div class="col-6 col-md-3 col-lg-4 col-xl-2">
-        <h6 class="fw-bold mb-3 text-uppercase text-white">NRI Desk</h6>
-        <ul class="list-unstyled">
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/sksinfi_nri" class="text-light text-decoration-none">SKS INFI & NRI</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/loan" class="text-light text-decoration-none">Loan</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/real_estate" class="text-light text-decoration-none">Real Estate</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/investment" class="text-light text-decoration-none">Investment</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/insurance" class="text-light text-decoration-none">Insurance</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/accountstax" class="text-light text-decoration-none">Tax & Compliances</a></li>
+        <h6 class="fw-bold mb-3 text-uppercase text-white footer-heading">NRI Desk</h6>
+        <ul class="list-unstyled footer-service-list mb-4">
+          <li><a href="/sksinfi_nri"><i class="fa fa-chevron-right"></i><span>SKS INFI &amp; NRI</span></a></li>
+          <li><a href="/loan"><i class="fa fa-chevron-right"></i><span>Loan</span></a></li>
+          <li><a href="/real_estate"><i class="fa fa-chevron-right"></i><span>Real Estate</span></a></li>
+          <li><a href="/investment"><i class="fa fa-chevron-right"></i><span>Investment</span></a></li>
+          <li><a href="/insurance"><i class="fa fa-chevron-right"></i><span>Insurance</span></a></li>
+          <li><a href="/accountstax"><i class="fa fa-chevron-right"></i><span>Tax &amp; Compliances</span></a></li>
+        </ul>
+
+        <h6 class="fw-bold mb-3 text-uppercase text-white footer-heading">Real Estate</h6>
+        <ul class="list-unstyled footer-service-list">
+          <li><a href="/residential"><i class="fa fa-chevron-right"></i><span>Residential</span></a></li>
+          <li><a href="/commercial"><i class="fa fa-chevron-right"></i><span>Commercial</span></a></li>
+          <li><a href="/industrial"><i class="fa fa-chevron-right"></i><span>Industrial</span></a></li>
+          <li><a href="/farm_house"><i class="fa fa-chevron-right"></i><span>Farm House</span></a></li>
+          <li><a href="/open_land"><i class="fa fa-chevron-right"></i><span>Open Land</span></a></li>
         </ul>
       </div>
 
-      <!-- Column 5: Real Estate & Insurance -->
+      <!-- Column 5: Investment & Insurance -->
       <div class="col-6 col-md-3 col-lg-4 col-xl-2">
-        <h6 class="fw-bold mb-3 text-uppercase text-white">Real Estate</h6>
-        <ul class="list-unstyled">
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/residential" class="text-light text-decoration-none">Residential</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/commercial" class="text-light text-decoration-none">Commercial</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/industrial" class="text-light text-decoration-none">Industrial</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/farm_house" class="text-light text-decoration-none">Farm House</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/open_land" class="text-light text-decoration-none">Open Land</a></li>
+        <h6 class="fw-bold mb-3 text-uppercase text-white footer-heading">Investment</h6>
+        <ul class="list-unstyled footer-service-list mb-4">
+          <li><a href="/mutual_funds"><i class="fa fa-chevron-right"></i><span>Mutual Fund</span></a></li>
+          <li><a href="/bonds"><i class="fa fa-chevron-right"></i><span>Bonds</span></a></li>
+          <li><a href="/ncd"><i class="fa fa-chevron-right"></i><span>NCD</span></a></li>
+          <li><a href="/unlisted_shares"><i class="fa fa-chevron-right"></i><span>Unlisted Shares</span></a></li>
+          <li><a href="/equity_demat"><i class="fa fa-chevron-right"></i><span>Equity &amp; Demat</span></a></li>
+          <li><a href="/fixed-deposit"><i class="fa fa-chevron-right"></i><span>Fixed Deposit</span></a></li>
         </ul>
 
-        <h6 class="fw-bold mt-4 mb-3 text-uppercase text-white">Insurance</h6>
-        <ul class="list-unstyled">
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/health" class="text-light text-decoration-none">Health Insurance</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/life" class="text-light text-decoration-none">Life Insurance</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/term" class="text-light text-decoration-none">Term Insurance</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/property" class="text-light text-decoration-none">Property Insurance</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/travel" class="text-light text-decoration-none">Travel Insurance</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/factory" class="text-light text-decoration-none">Factory Insurance</a></li>
+        <h6 class="fw-bold mb-3 text-uppercase text-white footer-heading">Insurance</h6>
+        <ul class="list-unstyled footer-service-list">
+          <li><a href="/health"><i class="fa fa-chevron-right"></i><span>Health Insurance</span></a></li>
+          <li><a href="/life"><i class="fa fa-chevron-right"></i><span>Life Insurance</span></a></li>
+          <li><a href="/term"><i class="fa fa-chevron-right"></i><span>Term Insurance</span></a></li>
+          <li><a href="/property"><i class="fa fa-chevron-right"></i><span>Property Insurance</span></a></li>
+          <li><a href="/travel"><i class="fa fa-chevron-right"></i><span>Travel Insurance</span></a></li>
+          <li><a href="/factory"><i class="fa fa-chevron-right"></i><span>Factory Insurance</span></a></li>
         </ul>
       </div>
 
-      <!-- Column 6: Investment & Tax -->
+      <!-- Column 6: Tax & Compliances + Quick Links -->
       <div class="col-6 col-md-3 col-lg-4 col-xl-2">
-        <h6 class="fw-bold mb-3 text-uppercase text-white">Investment</h6>
-        <ul class="list-unstyled">
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/mutual_funds" class="text-light text-decoration-none">Mutual Fund</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/bonds" class="text-light text-decoration-none">Bonds</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/ncd" class="text-light text-decoration-none">NCD</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/unlisted_shares" class="text-light text-decoration-none">Unlisted Shares</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/equity_demat" class="text-light text-decoration-none">Equity & Demat</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/fixed-deposit" class="text-light text-decoration-none">Fixed Deposit</a></li>
+        <h6 class="fw-bold mb-3 text-uppercase text-white footer-heading">Tax &amp; Compliances</h6>
+        <ul class="list-unstyled footer-service-list mb-4">
+          <li><a href="/accounts"><i class="fa fa-chevron-right"></i><span>Accounts</span></a></li>
+          <li><a href="/taxation"><i class="fa fa-chevron-right"></i><span>Taxation</span></a></li>
+          <li><a href="/gst"><i class="fa fa-chevron-right"></i><span>GST</span></a></li>
+          <li><a href="/itr"><i class="fa fa-chevron-right"></i><span>ITR</span></a></li>
+          <li><a href="/litigation"><i class="fa fa-chevron-right"></i><span>Litigation</span></a></li>
+          <li><a href="/accountstax"><i class="fa fa-chevron-right"></i><span>Compliance Advisory</span></a></li>
         </ul>
 
-        <h6 class="fw-bold mt-4 mb-3 text-white">Tax & Compliances</h6>
-        <ul class="list-unstyled">
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/accounts" class="text-light text-decoration-none">Accounts</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/taxation" class="text-light text-decoration-none">Taxation</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/gst" class="text-light text-decoration-none">GST</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/itr" class="text-light text-decoration-none">ITR</a></li>
-          <li><i class="fa fa-angle-right me-2 clricn"></i><a href="/litigation" class="text-light text-decoration-none">Litigation</a></li>
-          <li>
-            <i class="fa fa-angle-right me-2 clricn"></i>
-            <a href="https://www.sksinfi.com/sitemap.php" class="text-light text-decoration-none txtnew" title="HTML Sitemap">HTML Sitemap</a>
-          </li>
-          <li>
-            <i class="fa fa-angle-right me-2 clricn"></i>
-            <a href="/blogs" class="text-light text-decoration-none txtnew" title="Financial Blogs & Insights">Financial Blogs & Insights</a>
-          </li>
+        <h6 class="fw-bold mb-3 text-uppercase text-white footer-heading">Quick Links</h6>
+        <ul class="list-unstyled footer-service-list">
+          <li><a href="/about"><i class="fa fa-chevron-right"></i><span>About SKS INFI</span></a></li>
+          <li><a href="/contact"><i class="fa fa-chevron-right"></i><span>Contact Us</span></a></li>
+          <li><a href="/partner-with-us"><i class="fa fa-chevron-right"></i><span>Partner With Us</span></a></li>
+          <li><a href="/blogs"><i class="fa fa-chevron-right"></i><span>Financial Blogs</span></a></li>
+          <li><a href="/sitemap.xml" target="_blank"><i class="fa fa-chevron-right"></i><span>Sitemap</span></a></li>
         </ul>
       </div>
 
@@ -151,25 +202,21 @@ export const authenticFooterHtml = `<style>
   </div>
 </footer>
 
-    </div>
-  </div>
-</footer>
-
-<div class="text-light py-3" style="background-color: #03363D;">
+<div class="text-light py-3" style="background-color: #03363D; border-top: 1px solid rgba(255,255,255,0.08);">
   <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
 
     <!-- Left: Copyright -->
     <div class="text-center text-md-start mb-2 mb-md-0">
-      <p style="color:#aaaaaa!important; margin-bottom: 0;"> © Copyright 2025 - Parken Solution Pvt. Ltd . All Rights Reserved.</p>
+      <p style="color: #94a3b8 !important; margin-bottom: 0; font-size: 13.5px;">&copy; Copyright 2025 - SKS INFI. All Rights Reserved.</p>
     </div>
 
     <!-- Right: Social Icons -->
     <div class="text-center text-md-end">
-      <a href="https://www.facebook.com/profile.php?id=61580467109664" target="_blank" class="text-light me-3 fs-6"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://www.instagram.com/sksinfi/" class="text-light me-3 fs-6" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.youtube.com/@sksinfi" class="text-light fs-6 me-3" target="_blank"><i class="fab fa-youtube"></i></a>
-      <a href="https://x.com/infi_sks" class="text-light fs-6 me-3" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-      <a href="https://www.linkedin.com/in/sksinfi/" class="text-light fs-6" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://www.facebook.com/profile.php?id=61580467109664" target="_blank" class="text-light me-3 fs-6" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/sksinfi/" class="text-light me-3 fs-6" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.youtube.com/@sksinfi" class="text-light fs-6 me-3" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      <a href="https://x.com/infi_sks" class="text-light fs-6 me-3" target="_blank" aria-label="Twitter X"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="https://www.linkedin.com/in/sksinfi/" class="text-light fs-6" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
     </div>
 
   </div>
