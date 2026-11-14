@@ -405,7 +405,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                 style={{ color: "#e2ab39", textDecoration: "none" }}
                 className="hover:text-white font-bold transition-colors duration-200 whitespace-nowrap"
               >
-                BLOGS
+                Blog
               </Link>
               <span className="text-white/35 select-none font-light">|</span>
             </div>
@@ -837,7 +837,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
                   }}
                   className="p-2 rounded-xl text-center font-bold border border-[#b7832f]/40 shadow-xs text-[#b7832f] transition-colors text-[11px]"
                 >
-                  Blogs
+                  Blog
                 </Link>
               </div>
 
