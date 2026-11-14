@@ -297,8 +297,18 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
           style={{ maxWidth: "1380px", minHeight: "38px" }}
           className="w-full mx-auto px-3 sm:px-6 lg:px-8 sm:pl-10 lg:pl-12 flex items-center justify-between gap-2 sm:gap-3 relative z-10 py-1 sm:py-1.5"
         >
-          {/* Left: NRI 24/7 Helpline */}
+          {/* Left: NRI 24/7 Helpline & Mobile Auspicious Emblem */}
           <div className="flex items-center gap-1 sm:gap-2">
+            <div className="flex md:hidden items-center mr-1 shrink-0" title="परस्परोपग्रहो जीवानाम्">
+              <div className="bg-white px-1 py-0.5 rounded shadow-xs flex items-center">
+                <img
+                  src="/img/jain-symbol.jpg"
+                  style={{ height: "18px", width: "auto", objectFit: "contain" }}
+                  height={18}
+                  alt="परस्परोपग्रहो जीवानाम्"
+                />
+              </div>
+            </div>
             <span
               style={{ color: "#ffffff" }}
               className="text-[11px] sm:text-[12.5px] font-normal whitespace-nowrap"
@@ -315,6 +325,37 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
               <span>+91 99285 93122</span>
             </a>
             <span className="text-white/35 ml-4 lg:ml-7 hidden md:inline select-none font-light">|</span>
+          </div>
+
+          {/* Center: Auspicious Jain Prateek Chinh & Sacred Motto */}
+          <div className="hidden md:flex items-center justify-center shrink-0">
+            <div
+              title="परस्परोपग्रहो जीवानाम् - All life is bound together by mutual support and interdependence"
+              style={{
+                backgroundColor: "rgba(255, 255, 255, 0.08)",
+                border: "1px solid rgba(255, 216, 133, 0.35)",
+                boxShadow: "0 1px 4px rgba(0, 0, 0, 0.2)"
+              }}
+              className="px-2.5 py-0.5 rounded-full inline-flex items-center gap-2 transition-all hover:bg-white/12"
+            >
+              <div className="bg-white px-1 py-0.5 rounded flex items-center shadow-xs">
+                <img
+                  src="/img/jain-symbol.jpg"
+                  style={{ height: "22px", width: "auto", objectFit: "contain" }}
+                  height={22}
+                  alt="परस्परोपग्रहो जीवानाम्"
+                />
+              </div>
+              <span
+                style={{
+                  color: "#ffd885",
+                  textShadow: "0 1px 2px rgba(0, 0, 0, 0.5)"
+                }}
+                className="text-[11px] lg:text-[11.5px] font-bold tracking-wide select-none"
+              >
+                परस्परोपग्रहो जीवानाम्
+              </span>
+            </div>
           </div>
 
           {/* Right Mobile Shortcut: Direct WhatsApp Pill */}
