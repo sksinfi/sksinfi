@@ -2646,6 +2646,16 @@ html {
   color: #b69455;
 }
 
+/* SKS Desktop Main Navbar Typography */
+.sks-desktop-nav a.sks-main-nav-link,
+.sks-desktop-nav > div > a {
+  font-size: 11px !important;
+  letter-spacing: 0.02em !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+}
+
+
 
 
 
