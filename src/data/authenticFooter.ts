@@ -87,13 +87,13 @@ export const authenticFooterHtml = `<style>
         </div>
 
         <h6 class="fw-bold text-white footer-heading mb-2 text-uppercase" style="font-size: 13px;">RAJASTHAN OFFICE</h6>
-        <p class="txtnew mb-3">520, 5th Floor, Sunny Trade Center,<br> New Aatish Market, Jaipur-302020</p>
+        <p class="txtnew mb-3">520, 5th Floor<br>Sunny Trade Centre<br>New Aatish Market<br>Jaipur - 302020</p>
 
         <h6 class="fw-bold text-white footer-heading mb-2 text-uppercase" style="font-size: 13px;">DELHI OFFICE</h6>
-        <p class="txtnew mb-3">Surya Kiran Building, KG Marg,<br> Connaught Place, New Delhi-110001</p>
+        <p class="txtnew mb-3">Surya Kiran Building<br>KG Marg, Connaught Place<br>New Delhi - 110001</p>
 
         <h6 class="fw-bold text-white footer-heading mb-2 text-uppercase" style="font-size: 13px;">GUJARAT OFFICE</h6>
-        <p class="txtnew mb-0">E-1006, Titanium City Centre,<br> Near Sachin Tower, Anand Nagar Road,<br> Ahmedabad-380015</p>
+        <p class="txtnew mb-0">E-1006, Titanium City Centre<br>Near Sachin Tower<br>Anand Nagar Road<br>Ahmedabad - 380015</p>
       </div>
 
       <!-- Column 2: MSME Solutions -->
