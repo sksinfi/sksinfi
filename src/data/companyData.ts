@@ -79,23 +79,23 @@ export const companyInfo = {
   ],
   faqs: [
     {
-      question: "What financial services does SKS INFI provide?",
+      question: "What financial services does SKS INFI provide ?",
       answer: "SKS INFI is a premier one-stop financial consultancy offering Home Loans, Business & MSME Loans, Loan Against Property, Personal Loans, Mutual Funds & SIP Planning, Government & Corporate Bonds, Health & Life Insurance, Real Estate advisory in Jaipur, and Corporate GST/ITR Taxation."
     },
     {
-      question: "How long does loan approval typically take with SKS INFI?",
+      question: "How long does loan approval typically take with SKS INFI ?",
       answer: "With complete documentation, preliminary approval is processed within 24 to 48 hours. Disbursal time varies from 48 hours for unsecured personal/business loans to 4-7 working days for home loans and property-backed loans."
     },
     {
-      question: "Are there any upfront charges to check loan eligibility?",
+      question: "Are there any upfront charges to check loan eligibility ?",
       answer: "No. Checking your loan eligibility and receiving expert consultancy from SKS INFI is 100% free with zero hidden consultation charges."
     },
     {
-      question: "How can I partner with SKS INFI as a DSA or Referral Partner?",
+      question: "How can I partner with SKS INFI as a DSA or Referral Partner ?",
       answer: "You can apply through our 'Partner With Us' portal or contact us directly on +91 99285 29222. We offer industry-leading payout structures, complete operational backend support, and prompt commission settlements."
     },
     {
-      question: "Can NRIs invest in Indian real estate or mutual funds through SKS INFI?",
+      question: "Can NRIs invest in Indian real estate or mutual funds through SKS INFI ?",
       answer: "Yes, we have a specialized NRI Concierge desk providing assistance with NRE/NRO banking, FEMA compliance, 15CA/CB certificates, property acquisition in Jaipur, and high-yield bond investments."
     }
   ]
