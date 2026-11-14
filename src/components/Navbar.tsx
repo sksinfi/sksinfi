@@ -297,15 +297,24 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
           style={{ maxWidth: "1380px", minHeight: "38px" }}
           className="w-full mx-auto px-3 sm:px-6 lg:px-8 sm:pl-10 lg:pl-12 flex items-center justify-between gap-2 sm:gap-3 relative z-10 py-1 sm:py-1.5"
         >
-          {/* Left: NRI 24/7 Helpline & Mobile Auspicious Emblem */}
+          {/* Left: NRI 24/7 Helpline & Mobile Auspicious Emblems */}
           <div className="flex items-center gap-1 sm:gap-2">
-            <div className="flex md:hidden items-center mr-1 shrink-0" title="परस्परोपग्रहो जीवानाम्">
+            <div className="flex md:hidden items-center gap-1 mr-1 shrink-0" title="परस्परोपग्रहो जीवानाम् • जय जिनेंद्र">
               <div className="bg-white px-1 py-0.5 rounded shadow-xs flex items-center">
                 <img
                   src="/img/jain-symbol.jpg"
                   style={{ height: "18px", width: "auto", objectFit: "contain" }}
                   height={18}
                   alt="परस्परोपग्रहो जीवानाम्"
+                />
+              </div>
+              <div className="bg-white p-[1px] rounded-full flex items-center shadow-xs">
+                <img
+                  src="/img/jai-jinendra-round.png"
+                  style={{ height: "18px", width: "18px", objectFit: "cover", borderRadius: "9999px" }}
+                  height={18}
+                  width={18}
+                  alt="जय जिनेंद्र"
                 />
               </div>
             </div>
@@ -327,10 +336,10 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
             <span className="text-white/35 ml-4 lg:ml-7 hidden md:inline select-none font-light">|</span>
           </div>
 
-          {/* Center: Auspicious Jain Prateek Chinh & Sacred Motto */}
+          {/* Center: Auspicious Jain Emblems (Prateek Chinh & Jai Jinendra Swastika) */}
           <div className="hidden md:flex items-center justify-center shrink-0">
             <div
-              title="परस्परोपग्रहो जीवानाम् - All life is bound together by mutual support and interdependence"
+              title="परस्परोपग्रहो जीवानाम् • जय जिनेंद्र"
               style={{
                 backgroundColor: "rgba(255, 255, 255, 0.08)",
                 border: "1px solid rgba(255, 216, 133, 0.35)",
@@ -338,7 +347,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
               }}
               className="px-2.5 py-0.5 rounded-full inline-flex items-center gap-2 transition-all hover:bg-white/12"
             >
-              <div className="bg-white px-1 py-0.5 rounded flex items-center shadow-xs">
+              <div className="bg-white px-1 py-0.5 rounded flex items-center shadow-xs" title="परस्परोपग्रहो जीवानाम्">
                 <img
                   src="/img/jain-symbol.jpg"
                   style={{ height: "22px", width: "auto", objectFit: "contain" }}
@@ -355,6 +364,15 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps = {}) {
               >
                 परस्परोपग्रहो जीवानाम्
               </span>
+              <div className="bg-white p-[1px] rounded-full flex items-center shadow-xs ml-0.5" title="जय जिनेंद्र">
+                <img
+                  src="/img/jai-jinendra-round.png"
+                  style={{ height: "22px", width: "22px", objectFit: "cover", borderRadius: "9999px" }}
+                  height={22}
+                  width={22}
+                  alt="जय जिनेंद्र"
+                />
+              </div>
             </div>
           </div>
 
