@@ -79,7 +79,7 @@ export default function CareersPage() {
       setResumeFileName("");
     } catch (err: any) {
       console.error(err);
-      setErrorMsg("Failed to submit application. Please email your CV directly to info@sksinfi.com.");
+      setErrorMsg("Failed to submit application. Please email your CV directly to infi@sksinfi.com.");
     } finally {
       setLoading(false);
     }

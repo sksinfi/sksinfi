@@ -1319,7 +1319,7 @@ export default function SingleMsmeClient({ page }: SingleMsmeClientProps) {
                   </div>
                   <div className="flex items-center gap-3">
                     <Mail className="w-5 h-5 text-[#f4d799]" />
-                    <span>info@sksinfi.com</span>
+                    <span>infi@sksinfi.com</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <Building2 className="w-5 h-5 text-[#f4d799]" />

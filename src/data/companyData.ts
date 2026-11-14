@@ -5,7 +5,7 @@ export const companyInfo = {
   phone: "+91 99285 29222",
   phoneRaw: "919928529222",
   secondaryPhone: "+91 98290 52922",
-  email: "info@sksinfi.com",
+  email: "infi@sksinfi.com",
   adminEmail: "sksinfi.jpr@gmail.com",
   address: "Plot No. 12, SKS Tower, Main Tonk Road, Jaipur, Rajasthan 302018",
   city: "Jaipur",
